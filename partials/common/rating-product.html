@@ -1,0 +1,86 @@
+<section class="container px-4 py-10" data-aos="fade-up" data-aos-delay="250">
+    <!-- Title -->
+    <h2 class="mb-4 text-2xl font-bold md:text-2xl text-slate-900">
+        Đánh giá Sản phẩm
+    </h2>
+
+    <!-- Rating options with stars -->
+    <div class="flex flex-wrap items-center gap-4 mb-6">
+        <label class="flex items-center gap-2 transition-colors cursor-pointer hover:text-gold">
+        <input type="radio" name="rating" value="1" class="w-4 h-4 border-gray-300 text-gold focus:ring-navy" />
+        <span class="flex gap-0.5">
+            <i class="fas fa-star text-navy"></i>
+        </span>
+        </label>
+
+        <label class="flex items-center gap-2 transition-colors cursor-pointer hover:text-gold">
+        <input type="radio" name="rating" value="2" class="w-4 h-4 border-gray-300 text-gold focus:ring-navy" />
+        <span class="flex gap-0.5">
+            <i class="fas fa-star text-navy"></i>
+            <i class="fas fa-star text-navy"></i>
+        </span>
+        </label>
+
+        <label class="flex items-center gap-2 transition-colors cursor-pointer hover:text-gold">
+        <input type="radio" name="rating" value="3" class="w-4 h-4 border-gray-300 text-gold focus:ring-navy" />
+        <span class="flex gap-0.5">
+            <i class="fas fa-star text-navy"></i>
+            <i class="fas fa-star text-navy"></i>
+            <i class="fas fa-star text-navy"></i>
+        </span>
+        </label>
+
+        <label class="flex items-center gap-2 transition-colors cursor-pointer hover:text-gold">
+        <input type="radio" name="rating" value="4" class="w-4 h-4 border-gray-300 text-gold focus:ring-navy" />
+        <span class="flex gap-0.5">
+            <i class="fas fa-star text-navy"></i>
+            <i class="fas fa-star text-navy"></i>
+            <i class="fas fa-star text-navy"></i>
+            <i class="fas fa-star text-navy"></i>
+        </span>
+        </label>
+
+        <label class="flex items-center gap-2 transition-colors cursor-pointer hover:text-gold">
+        <input type="radio" name="rating" value="5" class="w-4 h-4 border-gray-300 text-gold focus:ring-navy" />
+        <span class="flex gap-0.5">
+            <i class="fas fa-star text-navy"></i>
+            <i class="fas fa-star text-navy"></i>
+            <i class="fas fa-star text-navy"></i>
+            <i class="fas fa-star text-navy"></i>
+            <i class="fas fa-star text-navy"></i>
+        </span>
+        </label>
+    </div>
+
+    <!-- Comment Box -->
+    <div class="p-6 bg-white border shadow-sm rounded-xl border-slate-200">
+        <label for="comment" class="block mb-2 text-sm font-medium text-slate-700">Nội dung đánh giá</label>
+        <textarea id="comment" rows="5" placeholder="Chia sẻ trải nghiệm của bạn về văn phòng này..."
+        class="w-full px-4 py-3 text-sm bg-white border rounded-lg resize-none border-slate-300 focus:outline-none focus:ring-2 focus:ring-navy"></textarea>
+
+        <!-- Form row (removed captcha) -->
+        <div class="grid grid-cols-1 gap-3 mt-4 sm:grid-cols-2">
+        <!-- Name -->
+        <div>
+            <label for="name" class="block mb-1.5 text-xs font-medium text-slate-700">Họ và tên</label>
+            <input id="name" type="text" placeholder="Nhập họ và tên của bạn"
+            class="w-full px-4 py-2.5 text-sm bg-white border rounded-lg border-slate-300 focus:outline-none focus:ring-2 focus:ring-navy" />
+        </div>
+
+        <!-- Email -->
+        <div>
+            <label for="email" class="block mb-1.5 text-xs font-medium text-slate-700">Email</label>
+            <input id="email" type="email" placeholder="Nhập email của bạn"
+            class="w-full px-4 py-2.5 text-sm bg-white border rounded-lg border-slate-300 focus:outline-none focus:ring-2 focus:ring-navy" />
+        </div>
+        </div>
+
+        <!-- Submit -->
+        <div class="flex justify-end mt-5">
+        <button
+            class="px-8 py-3 text-sm font-bold text-white transition-all rounded-lg bg-gradient-to-r from-navy to-navy-light hover:from-navy hover:to-navy-light hover:shadow-lg">
+            <i class="mr-2 fas fa-paper-plane"></i>Gửi đánh giá
+        </button>
+        </div>
+    </div>
+</section>

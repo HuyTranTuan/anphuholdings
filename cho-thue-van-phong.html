@@ -1,0 +1,1424 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./styles/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./styles/aos.css" />
+  <link rel="stylesheet" href="./styles/odometer-theme-default.css" />
+  <link rel="stylesheet" href="./styles/styles.css" />
+  <link rel="stylesheet" href="./styles/cta-style.css" />
+  <link rel="stylesheet" href="./styles/output.css?v=1" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <title>Cho Thuê Văn Phòng Theo Quận</title>
+  
+  <style>
+    .hover-bubble {
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      transition: color 0.4s ease-in-out;
+    }
+
+    .hover-bubble::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      right: 100%;
+      bottom: 100%;
+
+      width: 200vmax;
+      height: 100vmax;
+
+      border-radius: 50%;
+      background-color: #ec4899;
+      transform-origin: center;
+      transform: translate3d(50%, 50%, 0) scale(0);
+      transition: transform 0.45s ease-in-out;
+    }
+    .hover-bubble:hover::before {
+      transform: translate3d(50%, 50%, 0) scale(1);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <div id="header"></div>
+  <button
+    class="md:hidden inline-block absolute top-4 right-0 mr-2.5 z-[100]"
+    type="button"
+    data-drawer-target="responsive-menu"
+    data-drawer-show="responsive-menu"
+    aria-controls="responsive-menu"
+  >
+    <svg
+      class="size-8"
+      fill="currentColor"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path fill="none" d="M0 0h24v24H0V0z"></path>
+      <path
+        d="M3 18h13v-2H3v2zm0-5h10v-2H3v2zm0-7v2h13V6H3zm18 9.59L17.42 12 21 8.41 19.59 7l-5 5 5 5L21 15.59z"
+      ></path>
+    </svg>
+  </button>
+
+  <!-- Navbar ended -->
+  <section class="bg-primary-10">
+    <div class="h-auto w-full bg-cover bg-center bg-no-repeat" style="background-image: url('assets/images/layer.svg')">
+      <div
+        class="container flex h-[225px] flex-col items-center justify-center sm:h-[250px] md:h-[300px] lg:h-[350px] xl:h-[400px] 2xl:h-[450px]">
+        <h1 id="pageTitle" class="common-hero-heading">Cho thuê văn phòng</h1>
+
+        <!-- Breadcrumb -->
+        <div id="breadCrumb" data-aos="fade-left" data-aos-anchor="#example-anchor" data-aos-offset="500"
+          data-aos-duration="500" class="flex" aria-label="Breadcrumb">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Content Started -->
+  <section class="container overflow-x-hidden">
+
+    <!-- Mega search -->
+    <div id="mega-search"></div>
+
+    <!-- Rating start -->
+    <div id="ratingStar" data-aos="fade-right"></div>
+
+    <!-- Building rentals by district -->
+    <div id="officeRental"></div>
+
+    <!-- VĂN PHÒNG CHO THUÊ  -->
+    <section id="officeRentalWard1"></section>
+    <section id="officeRentalWard2"></section>
+    <section id="officeRentalWard3"></section>
+    <section id="officeRentalWard4"></section>
+    <section id="officeRentalWard5"></section>
+    <section id="officeRentalWard6"></section>
+    <section id="officeRentalWard7"></section>
+    <section id="officeRentalWard8"></section>
+    <section id="officeRentalWard9"></section>
+    <section id="officeRentalWard10"></section>
+    <section id="officeRentalWard11"></section>
+    <section id="officeRentalWard12"></section>
+    <section id="officeRentalWardBinhThanh"></section>
+    <section id="officeRentalWardGoVap"></section>
+    <section id="officeRentalWardPhuNhuan"></section>
+    <section id="officeRentalWardTanBinh"></section>
+    <section id="officeRentalWardThuDuc"></section>
+    <section id="officeRentalWardBinhChanh"></section>
+  </section>
+
+  <!-- Quy trình dịch vụ tư vấn -->
+  <section id="processConsulting"></section>
+
+  <!-- maps -->
+  <!-- đang bị sai layout -->
+  <section class="container mx-auto px-4 xl:px-0 bg-white py-16">
+    <h2 class="text-3xl font-bold text-navy uppercase mt-12 mb-5">
+      Bản đồ các tòa nhà cho thuê văn phòng tại tp.HCM
+    </h2>
+    <div id="map"></div>
+  </section>
+
+  <!-- General information -->
+  <section id="generalInformation"></section>
+
+  <!-- FAQ Section -->
+  <section id="faq"></section>
+
+  <!-- Tìm thuê văn phòng theo phường mới -->
+  <section id="officeNewWard"></section>
+
+  <!-- Cẩm nang tìm văn phòng -->
+  <section id="handbook"></section>
+
+  <!-- Consulting team -->
+  <section id="consultingTeam"></section>
+
+  <!-- Contact Section -->
+  <section id="contact2"></section>
+
+  <!-- Responsive menu -->
+  <div
+      id="responsive-menu"
+      tabindex="-1"
+      aria-labelledby="responsive-menu-label"
+      class="fixed left-0 top-0 z-[100] h-screen w-72 -translate-x-full overflow-y-auto border-r bg-white p-4 transition-transform"
+  >
+      <a href="#">
+        <img src="/assets/logo/anphu-holdings.jpg" />
+      </a>
+      <button
+        type="button"
+        data-drawer-hide="responsive-menu"
+        aria-controls="responsive-menu"
+        class="absolute end-2.5 top-2.5 inline-flex h-8 w-8 items-center justify-center rounded-lg bg-transparent text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white"
+      >
+        <svg
+            class="h-3 w-3"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 14 14"
+        >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+            />
+        </svg>
+        <span class="sr-only">Close menu</span>
+      </button>
+      <div class="overflow-y-auto py-4">
+        <ul class="space-y-2 font-medium">
+            <!-- Văn phòng cho thuê -->
+            <li>
+              <button
+                  type="button"
+                  class="group flex w-full items-center rounded-lg p-2 text-base text-gray-900 transition duration-75 hover:bg-gray-200 dark:text-white dark:hover:bg-gray-700"
+                  aria-controls="dropdown-cho-thue-van-phong"
+                  data-collapse-toggle="dropdown-cho-thue-van-phong"
+              >
+                <a 
+                  target="_blank" 
+                  class="flex-1 whitespace-nowrap text-left"
+                  href="/cho-thue-van-phong.html"
+                >
+                  Cho thuê văn phòng
+                </a>
+                <svg
+                  class="h-3 w-3"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 6"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m1 1 4 4 4-4"
+                  />
+                </svg>
+              </button>
+              <ul id="dropdown-cho-thue-van-phong" class="hidden space-y-2 py-2">
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-cho-thue-quan-1.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Văn phòng cho thuê Quận 1
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-cho-thue-quan-1.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Văn phòng cho thuê Quận 2
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-cho-thue-quan-1.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Văn phòng cho thuê Quận 3
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-cho-thue-quan-1.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Văn phòng cho thuê Quận 4
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-cho-thue-quan-1.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Văn phòng cho thuê Quận 5
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-cho-thue-quan-1.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Văn phòng cho thuê Quận 7
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-cho-thue-quan-1.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Văn phòng cho thuê Quận 8
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-cho-thue-quan-1.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Văn phòng cho thuê Quận 9
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-cho-thue-quan-1.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Văn phòng cho thuê Quận 10
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-cho-thue-quan-1.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Văn phòng cho thuê Quận 11
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-cho-thue-quan-1.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Văn phòng cho thuê Quận 12
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-cho-thue-quan-1.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Văn phòng cho thuê Quận Bình Thạnh
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-cho-thue-quan-1.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Văn phòng cho thuê Quận Gò Vấp
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-cho-thue-quan-1.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Văn phòng cho thuê Quận Tân Bình
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-cho-thue-quan-1.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Văn phòng cho thuê Quận Tân Phú
+                    </a>
+                  </li>
+              </ul>
+            </li>
+
+            <!-- Văn phòng theo phường -->
+            <li>
+              <button
+                  type="button"
+                  class="group flex w-full items-center rounded-lg p-2 text-base text-gray-900 transition duration-75 hover:bg-gray-200 dark:text-white dark:hover:bg-gray-700"
+                  aria-controls="dropdown-cho-thue-van-phong-theo-phuong"
+                  data-collapse-toggle="dropdown-cho-thue-van-phong-theo-phuong"
+              >
+                <a 
+                  target="_blank" 
+                  class="flex-1 whitespace-nowrap text-left"
+                  href="/#"
+                >
+                  Văn phòng theo phường
+                </a>
+                <svg
+                  class="h-3 w-3"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 6"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m1 1 4 4 4-4"
+                  />
+                </svg>
+              </button>
+              <ul id="dropdown-cho-thue-van-phong-theo-phuong" class="hidden space-y-2 py-2">
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-cho-thue-phuong-tan-dinh.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Phường Sài Gòn - Quận 1
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-cho-thue-phuong-tan-dinh.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Phường Tân Định - Quận 1
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-cho-thue-phuong-tan-dinh.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Phường Bến Thành - Quận 1
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-cho-thue-phuong-tan-dinh.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Phường Cầu Ông Lãnh - Quận 1
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-cho-thue-phuong-tan-dinh.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Phường Bàn Cờ - Quận 3
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-cho-thue-phuong-tan-dinh.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Phường Xuân Hòa - Quận 3
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-cho-thue-phuong-tan-dinh.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Phường Võ Thị Sáu - Quận 3
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-cho-thue-phuong-tan-dinh.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Phường Khánh Hội - Quận 4
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-cho-thue-phuong-tan-dinh.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Phường Bến Vân Đồn - Quận 4
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-cho-thue-phuong-tan-dinh.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Phường Chợ Lớn - Quận 5
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-cho-thue-phuong-tan-dinh.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Phường Hùng Vương - Quận 5
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-cho-thue-phuong-tan-dinh.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Phường Tân Hưng - Quận 7
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-cho-thue-phuong-tan-dinh.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Phường Phú Mỹ Hưng - Quận 7
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-cho-thue-phuong-tan-dinh.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Phường Tân Phong – Tân Quy - Quận 7
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-cho-thue-phuong-tan-dinh.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Phường Nhật Tảo Quận - 10
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-cho-thue-phuong-tan-dinh.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Phường Đồng Tiến - Quận 10
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-cho-thue-phuong-tan-dinh.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Phường Vĩnh Viễn - Quận 10
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-cho-thue-phuong-tan-dinh.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Phường Hòa Bình - Quận 11
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-cho-thue-phuong-tan-dinh.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Phường Thiên Hộ - Quận 11
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-cho-thue-phuong-tan-dinh.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Phường Lạc Long Quân -Quận 11
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-cho-thue-phuong-tan-dinh.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Phường Thanh Đa - Quận Bình Thạnh
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-cho-thue-phuong-tan-dinh.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Phường Văn Thánh - Quận Bình Thạnh
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-cho-thue-phuong-tan-dinh.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Phường Bạch Đằng - Quận Bình Thạnh
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-cho-thue-phuong-tan-dinh.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Phường Bình Lợi - Quận Bình Thạnh
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-cho-thue-phuong-tan-dinh.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Phường Bình Tân - Quận Tân Bình
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-cho-thue-phuong-tan-dinh.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Phường Tân Tạo - Quận Tân Bình
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-cho-thue-phuong-tan-dinh.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Phường An Lạc - Quận Tân Bình
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-cho-thue-phuong-tan-dinh.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Phường Bình Trị Đông - Quận Tân Bình
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-cho-thue-phuong-tan-dinh.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Phường An Hội – Thống Nhất - Quận Tân phú
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-cho-thue-phuong-tan-dinh.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Phường Tân Quý – Tân Sơn Nhì - Quận Tân phú
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-cho-thue-phuong-tan-dinh.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Phường Phú Thọ Hòa – Hòa Thạnh - Quận Tân phú
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-cho-thue-phuong-tan-dinh.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Phường An Hội – Thống Nhất - Quận Tân phú
+                    </a>
+                  </li>
+              </ul>
+            </li>
+
+            <!-- Văn phòng theo hạng -->
+            <li>
+              <button
+                  type="button"
+                  class="group flex w-full items-center rounded-lg p-2 text-base text-gray-900 transition duration-75 hover:bg-gray-200 dark:text-white dark:hover:bg-gray-700"
+                  aria-controls="dropdown-cho-thue-van-phong-theo-hang"
+                  data-collapse-toggle="dropdown-cho-thue-van-phong-theo-hang"
+              >
+                <a 
+                  target="_blank" 
+                  class="flex-1 whitespace-nowrap text-left"
+                  href="/#"
+                >
+                  Văn phòng theo hạng
+                </a>
+                <svg
+                  class="h-3 w-3"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 6"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m1 1 4 4 4-4"
+                  />
+                </svg>
+              </button>
+              <ul id="dropdown-cho-thue-van-phong-theo-hang" class="hidden space-y-2 py-2">
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-hang-a.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Văn phòng hạng A
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-hang-a.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Văn phòng hạng B
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-hang-a.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Văn phòng hạng C
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-hang-a.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Văn phòng hạng giá rẻ
+                    </a>
+                  </li>
+              </ul>
+            </li>
+
+            <!-- Văn phòng trọn gói-->
+            <li>
+              <button
+                  type="button"
+                  class="group flex w-full items-center rounded-lg p-2 text-base text-gray-900 transition duration-75 hover:bg-gray-200 dark:text-white dark:hover:bg-gray-700"
+                  aria-controls="dropdown-cho-thue-van-phong-tron-goi"
+                  data-collapse-toggle="dropdown-cho-thue-van-phong-tron-goi"
+              >
+                <a 
+                  target="_blank" 
+                  class="flex-1 whitespace-nowrap text-left"
+                  href="/van-phong-tron-goi-theo-quan.html"
+                >
+                  Văn phòng trọn gói
+                </a>
+                <svg
+                  class="h-3 w-3"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 6"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m1 1 4 4 4-4"
+                  />
+                </svg>
+              </button>
+              <ul id="dropdown-cho-thue-van-phong-tron-goi" class="hidden space-y-2 py-2">
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-tron-goi-quan-1.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Văn phòng trọn gói Quận 1
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-tron-goi-quan-1.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Văn phòng trọn gói Quận 3
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-tron-goi-quan-1.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Văn phòng trọn gói Quận 4
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-tron-goi-quan-1.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Văn phòng trọn gói Quận 5
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-tron-goi-quan-1.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Văn phòng trọn gói Quận 7
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-tron-goi-quan-1.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Văn phòng trọn gói Quận 10
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-tron-goi-quan-1.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Văn phòng trọn gói Quận Bình Thạnh
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-tron-goi-quan-1.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Văn phòng trọn gói Quận Tân Bình
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-tron-goi-quan-1.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Văn phòng trọn gói Quận Thủ Đức
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-tron-goi-quan-1.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Văn phòng trọn gói Quận Phú Nhuận
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/van-phong-tron-goi-quan-1.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      >Văn phòng trọn gói Quận Gò Vấp
+                    </a>
+                  </li>
+              </ul>
+            </li>
+
+            <!-- Cho thuê tòa nhà -->
+            <li>
+              <button
+                  type="button"
+                  class="group flex w-full items-center rounded-lg p-2 text-base text-gray-900 transition duration-75 hover:bg-gray-200 dark:text-white dark:hover:bg-gray-700"
+                  aria-controls="dropdown-cho-thue-toa-nha"
+                  data-collapse-toggle="dropdown-cho-thue-toa-nha"
+              >
+                <a 
+                  target="_blank" 
+                  class="flex-1 whitespace-nowrap text-left"
+                  href="/cho-thue-toa-nha.html"
+                >
+                  Cho thuê tòa nhà
+                </a>
+                <svg
+                  class="h-3 w-3"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 6"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m1 1 4 4 4-4"
+                  />
+                </svg>
+              </button>
+              <ul id="dropdown-cho-thue-toa-nha" class="hidden space-y-2 py-2">
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/cho-thue-toa-nha-quan-1.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Cho thuê tòa nhà Quận 1
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/cho-thue-toa-nha-quan-1.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Cho thuê tòa nhà Quận 3
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/cho-thue-toa-nha-quan-1.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Cho thuê tòa nhà Quận 4
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/cho-thue-toa-nha-quan-1.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Cho thuê tòa nhà Quận 5
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/cho-thue-toa-nha-quan-1.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Cho thuê tòa nhà Quận 7
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/cho-thue-toa-nha-quan-1.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Cho thuê tòa nhà Quận 10
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/cho-thue-toa-nha-quan-1.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Cho thuê toà nhà Quận Bình Thạnh
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/cho-thue-toa-nha-quan-1.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Cho thuê toà nhà Quận Tân Bình
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/cho-thue-toa-nha-quan-1.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Cho thuê toà nhà Quận Thủ Đức
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/cho-thue-toa-nha-quan-1.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Cho thuê toà nhà Quận Phú Nhuận
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/cho-thue-toa-nha-quan-1.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Cho thuê toà nhà Quận Gò Vấp
+                    </a>
+                  </li>
+              </ul>
+            </li>
+
+            <!-- Nội thất văn phòng -->
+            <li>
+              <button
+                  type="button"
+                  class="group flex w-full items-center rounded-lg p-2 text-base text-gray-900 transition duration-75 hover:bg-gray-200 dark:text-white dark:hover:bg-gray-700"
+                  aria-controls="dropdown-noi-that-van-phong"
+                  data-collapse-toggle="dropdown-noi-that-van-phong"
+              >
+                <a 
+                  target="_blank" 
+                  class="flex-1 whitespace-nowrap text-left"
+                  href="/#"
+                >
+                  Nội thất văn phòng
+                </a>
+                <svg
+                  class="h-3 w-3"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 6"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m1 1 4 4 4-4"
+                  />
+                </svg>
+              </button>
+              <ul id="dropdown-noi-that-van-phong" class="hidden space-y-2 py-2">
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/thiet-ke-thi-cong-noi-that.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Thiết kế thi công nội thất
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="/thiet-ke-thi-cong-noi-that.html"
+                      class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
+                    >
+                      Dự án đã hoàn thiện
+                    </a>
+                  </li>
+              </ul>
+            </li>
+
+        </ul>
+      </div>
+  </div>
+
+  <!-- footer -->
+  <div id="footer"></div>
+
+  <!-- thư viện -->
+  <!-- Scripts -->
+  <script src="./js/breadcrumb.js"></script>
+  <script src="js/fontawesome.min.js"></script>
+  <script src="js/flowbite.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/odometer.js"></script>
+  <script src="js/swiper-bundle.min.js"></script>
+  <script src="js/index.js"></script>
+  <script src="js/users-rating-swiper.js"></script>
+  <script src="js/include.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/nouislider@15.6.1/dist/nouislider.min.js"></script>
+
+  <script>
+    AOS.init();
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      includeHTML("#header", "./partials/common/header.html");
+      includeHTML("#breadCrumb", "./partials/common/bread-crumb.html", initBreadcrumb);
+      includeHTML("#mega-search", "./partials/detail/search-mega.html");
+      includeHTML("#ratingStar", "./partials/common/rating-star.html");
+      includeHTML("#officeRental", "./partials/office-rental/office-rental.html");
+      includeHTML("#officeRentalWard1", "./partials/office-rental/office-rental-ward-1.html");
+      includeHTML("#officeRentalWard2", "./partials/office-rental/office-rental-ward-1.html");
+      includeHTML("#officeRentalWard3", "./partials/office-rental/office-rental-ward-1.html");
+      includeHTML("#officeRentalWard4", "./partials/office-rental/office-rental-ward-1.html");
+      includeHTML("#officeRentalWard5", "./partials/office-rental/office-rental-ward-1.html");
+      includeHTML("#officeRentalWard6", "./partials/office-rental/office-rental-ward-1.html");
+      includeHTML("#officeRentalWard7", "./partials/office-rental/office-rental-ward-1.html");
+      includeHTML("#officeRentalWard8", "./partials/office-rental/office-rental-ward-1.html");
+      includeHTML("#officeRentalWard9", "./partials/office-rental/office-rental-ward-1.html");
+      includeHTML("#officeRentalWard10", "./partials/office-rental/office-rental-ward-1.html");
+      includeHTML("#officeRentalWard11", "./partials/office-rental/office-rental-ward-1.html");
+      includeHTML("#officeRentalWard12", "./partials/office-rental/office-rental-ward-1.html");
+      includeHTML("#officeRentalWardBinhThanh", "./partials/office-rental/office-rental-ward-1.html");
+      includeHTML("#officeRentalWardPhuNhuan", "./partials/office-rental/office-rental-ward-1.html");
+      includeHTML("#officeRentalWardGoVap", "./partials/office-rental/office-rental-ward-1.html");
+      includeHTML("#officeRentalWardTanBinh", "./partials/office-rental/office-rental-ward-1.html");
+      includeHTML("#officeRentalWardThuDuc", "./partials/office-rental/office-rental-ward-1.html");
+      includeHTML("#officeRentalWardBinhChanh", "./partials/office-rental/office-rental-ward-1.html");
+      includeHTML("#processConsulting", "./partials/office-rental/process-consulting.html");
+      includeHTML("#map", "./partials/maps/map-1.html");
+      includeHTML("#pagination", "./partials/common/pagination.html");
+      includeHTML("#consultingTeam", "./partials/common/consulting-team.html");
+      includeHTML("#generalInformation", "./partials/common/general-information.html");
+      includeHTML("#handbook", "./partials/office-rental/handbook.html");
+      includeHTML("#officeNewWard", "./partials/office-rental/office-new-ward.html");
+      includeHTML("#faq", "./partials/common/faq.html");
+      includeHTML("#contact2", "./partials/common/contact-2.html");
+      includeHTML("#footer", "./partials/common/footer.html");
+    });
+  </script>
+
+  <script>
+    function toggleFaq(button) {
+      const answer = button.nextElementSibling;
+      const icon = button.querySelector('i');
+
+      if (answer.classList.contains('hidden')) {
+        answer.classList.remove('hidden');
+        icon.classList.add('rotate-180');
+        button.classList.add('bg-blue-50');
+      } else {
+        answer.classList.add('hidden');
+        icon.classList.remove('rotate-180');
+        button.classList.remove('bg-blue-50');
+      }
+    }
+  </script>
+
+  <script>
+    function toggleFullInfo() {
+      const fullContent = document.getElementById('info-full');
+      const btnText = document.getElementById('btnText');
+      const btnIcon = document.getElementById('btnIcon');
+      const btn = document.getElementById('toggleInfoBtn');
+
+      if (fullContent.classList.contains('hidden')) {
+        // Mở nội dung
+        fullContent.classList.remove('hidden');
+        btnText.textContent = 'Thu gọn';
+        btnIcon.classList.remove('fa-chevron-down');
+        btnIcon.classList.add('fa-chevron-up');
+
+        // Scroll nhẹ xuống để người dùng biết đã mở (tuỳ chọn)
+        // fullContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        // Đóng nội dung
+        fullContent.classList.add('hidden');
+        btnText.textContent = 'Xem thêm';
+        btnIcon.classList.remove('fa-chevron-up');
+        btnIcon.classList.add('fa-chevron-down');
+
+        // Scroll lại lên đầu section
+        document.getElementById('general-info-section').scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  </script>
+
+  <script>
+    AOS.init({
+      delay: 0,
+      duration: 1000,
+    });
+
+    // reviews
+    const swiper = new Swiper('.h2-reviews-swiper', {
+      slidesPerView: 3,
+      pagination: {
+        el: '.h2-reviews-swiper-pagination',
+        clickable: true,
+        dynamicBullets: true,
+      },
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
+        320: {
+          slidesPerView: 2,
+          spaceBetween: 10,
+        },
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 15,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+      },
+    });
+
+    // agent
+    const agent = new Swiper('.h2-agent-swiper', {
+      slidesPerView: 3,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+      },
+    });
+
+    function initPhuongSwiper() {
+      const el = document.querySelector('.phuong-swiper');
+      if (!el || el.classList.contains('swiper-initialized')) return;
+
+      new Swiper(el, {
+        slidesPerView: 4,
+        spaceBetween: 24,
+        loop: true,
+        speed: 800,
+        grabCursor: true,
+
+        navigation: {
+          nextEl: '.phuong-swiper-button-next',
+          prevEl: '.phuong-swiper-button-prev',
+        },
+
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        },
+
+        breakpoints: {
+          0: { slidesPerView: 1, spaceBetween: 16 },
+          640: { slidesPerView: 2, spaceBetween: 20 },
+          1024: { slidesPerView: 3, spaceBetween: 24 },
+          1280: { slidesPerView: 4, spaceBetween: 24 },
+        },
+      });
+    }
+
+
+    // Team Swiper
+    function initTeamSwiper() {
+      const el = document.querySelector('.team-swiper');
+
+      if (!el) return;
+
+      // chống init trùng
+      if (el.classList.contains('swiper-initialized')) return;
+
+      new Swiper(el, {
+        slidesPerView: 4,
+        spaceBetween: 24,
+        // Ensure autoHeight is false (default)
+        autoHeight: false, 
+        // This helper ensures all slides are same height
+        watchSlidesProgress: true,
+        loop: true,
+        speed: 800,
+        grabCursor: true,
+
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        },
+
+        breakpoints: {
+          0: { slidesPerView: 1, spaceBetween: 16 },
+          640: { slidesPerView: 2, spaceBetween: 20 },
+          1024: { slidesPerView: 3, spaceBetween: 24 },
+          1280: { slidesPerView: 4, spaceBetween: 24 },
+        },
+      });
+    }
+  </script>
+
+  <script>
+    // Slider diện tích
+    const areaSlider = document.getElementById('areaSlider');
+    noUiSlider.create(areaSlider, {
+      start: [100, 1000], // giá trị mặc định
+      connect: true,
+      range: {
+        min: 10,
+        max: 2000
+      },
+      step: 10,
+      tooltips: true,
+      format: {
+        to: value => Math.round(value),
+        from: value => Number(value)
+      }
+    });
+
+    const areaMinVal = document.getElementById('areaMinVal');
+    const areaMaxVal = document.getElementById('areaMaxVal');
+    areaSlider.noUiSlider.on('update', (values) => {
+      areaMinVal.textContent = values[0];
+      areaMaxVal.textContent = values[1];
+    });
+
+    // Slider giá thuê
+    const priceSlider = document.getElementById('priceSlider');
+    noUiSlider.create(priceSlider, {
+      start: [20, 50], // giá trị mặc định
+      connect: true,
+      range: {
+        min: 8,
+        max: 65
+      },
+      step: 1,
+      tooltips: true,
+      format: {
+        to: value => Math.round(value),
+        from: value => Number(value)
+      }
+    });
+
+    const priceMinVal = document.getElementById('priceMinVal');
+    const priceMaxVal = document.getElementById('priceMaxVal');
+    priceSlider.noUiSlider.on('update', (values) => {
+      priceMinVal.textContent = values[0];
+      priceMaxVal.textContent = values[1];
+    });
+  </script>
+
+  <script>
+    function toggleFullInfo() {
+      const fullContent = document.getElementById('info-full');
+      const gradient = document.getElementById('seo-gradient');
+      const btn = document.getElementById('toggleInfoBtn');
+      const btnText = document.getElementById('btnText');
+      const btnIcon = document.getElementById('btnIcon');
+
+      if (fullContent.classList.contains('hidden')) {
+        fullContent.classList.remove('hidden');
+        gradient.classList.add('hidden');
+        btnText.textContent = 'Thu gọn';
+        btnIcon.classList.remove('fa-chevron-down');
+        btnIcon.classList.add('fa-chevron-up');
+        // Scroll to full content
+        fullContent.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      } else {
+        fullContent.classList.add('hidden');
+        gradient.classList.remove('hidden');
+        btnText.textContent = 'Xem thêm';
+        btnIcon.classList.remove('fa-chevron-up');
+        btnIcon.classList.add('fa-chevron-down');
+        // Scroll back to preview
+        document.getElementById('info-preview').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+  </script>
+
+  <script>
+    function initOfficeSwiper() {
+      // Wait a short moment for the includeHTML to finish rendering the content
+      setTimeout(() => {
+        const swiperSections = document.querySelectorAll(".office-rental-swiper");
+        
+        swiperSections.forEach((section) => {
+          if (section.dataset.initialized === "true") return;
+
+          // Target the correct wrapper class
+          const wrapper = section.querySelector('.swiper-wrapper');
+          const nextBtn = section.querySelector('.fa-chevron-right')?.closest('button');
+          const prevBtn = section.querySelector('.fa-chevron-left')?.closest('button');
+
+          if (wrapper && nextBtn && prevBtn) {
+            const getScrollStep = () => {
+              const firstCard = wrapper.querySelector('.swiper-slide');
+              // Scroll by card width + 24px gap
+              return firstCard ? firstCard.offsetWidth + 24 : 374; 
+            };
+
+            nextBtn.onclick = (e) => {
+              e.preventDefault();
+              wrapper.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
+            };
+
+            prevBtn.onclick = (e) => {
+              e.preventDefault();
+              wrapper.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
+            };
+
+            section.dataset.initialized = "true";
+          }
+        });
+      }, 400); // 400ms is safer for multiple includeHTML calls
+    }
+    initOfficeSwiper()
+  </script>
+</body>
+
+</html>
