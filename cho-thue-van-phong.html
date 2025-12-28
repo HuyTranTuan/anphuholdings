@@ -11,8 +11,30 @@
   <link rel="stylesheet" href="./styles/cta-style.css" />
   <link rel="stylesheet" href="./styles/output.css?v=1" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/nouislider@15.6.1/dist/nouislider.min.css" rel="stylesheet">
 
   <title>Cho Thuê Văn Phòng Theo Quận</title>
+
+  <style>
+    .noUi-handle {
+      width: 12px;
+      height: 12px;
+      border-radius: 9999px;
+      border: 1px solid #1e3a8a;
+      background: white;
+      box-shadow: 0 0 0 2px #eff6ff;
+      transition: all 0.3s ease;
+    }
+
+    .noUi-handle:hover {
+      background: #e0f2fe;
+    }
+
+    .noUi-connect {
+      background: linear-gradient(to right, #1e3a8a, #2563eb);
+      border-radius: 9999px;
+    }
+  </style>
   
   <style>
     .hover-bubble {
@@ -1285,56 +1307,6 @@
   </script>
 
   <script>
-    // Slider diện tích
-    const areaSlider = document.getElementById('areaSlider');
-    noUiSlider.create(areaSlider, {
-      start: [100, 1000], // giá trị mặc định
-      connect: true,
-      range: {
-        min: 10,
-        max: 2000
-      },
-      step: 10,
-      tooltips: true,
-      format: {
-        to: value => Math.round(value),
-        from: value => Number(value)
-      }
-    });
-
-    const areaMinVal = document.getElementById('areaMinVal');
-    const areaMaxVal = document.getElementById('areaMaxVal');
-    areaSlider.noUiSlider.on('update', (values) => {
-      areaMinVal.textContent = values[0];
-      areaMaxVal.textContent = values[1];
-    });
-
-    // Slider giá thuê
-    const priceSlider = document.getElementById('priceSlider');
-    noUiSlider.create(priceSlider, {
-      start: [20, 50], // giá trị mặc định
-      connect: true,
-      range: {
-        min: 8,
-        max: 65
-      },
-      step: 1,
-      tooltips: true,
-      format: {
-        to: value => Math.round(value),
-        from: value => Number(value)
-      }
-    });
-
-    const priceMinVal = document.getElementById('priceMinVal');
-    const priceMaxVal = document.getElementById('priceMaxVal');
-    priceSlider.noUiSlider.on('update', (values) => {
-      priceMinVal.textContent = values[0];
-      priceMaxVal.textContent = values[1];
-    });
-  </script>
-
-  <script>
     function toggleFullInfo() {
       const fullContent = document.getElementById('info-full');
       const gradient = document.getElementById('seo-gradient');
@@ -1399,6 +1371,177 @@
       }, 400); // 400ms is safer for multiple includeHTML calls
     }
     initOfficeSwiper()
+  </script>
+
+  <script>
+    setTimeout(() => {
+      const slider = document.getElementById('price-slider');
+      const minDisplay = document.getElementById('min-price-display');
+      const maxDisplay = document.getElementById('max-price-display');
+      const minInput = document.getElementById('min-price-input');
+      const maxInput = document.getElementById('max-price-input');
+      // Giá tính theo VND
+      let MIN_PRICE = 20000000; // 20 triệu
+      let MAX_PRICE = 500000000; // 500 triệu
+
+      function formatVND(value) {
+        // Đổi sang "triệu"
+        let trieu = Math.round(value / 1000000);
+        return trieu.toLocaleString('vi-VN') + ' triệu';
+      }
+
+      noUiSlider.create(slider, {
+        start: [MIN_PRICE, MIN_PRICE], // điểm bắt đầu
+        connect: true,
+        step: 1000000, // bước 1 triệu
+        range: {
+          min: MIN_PRICE,
+          max: MAX_PRICE,
+        },
+      });
+      
+      slider.noUiSlider.on('update', function (values, handle) {
+        let minVal = Math.round(values[0]);
+        let maxVal = Math.round(values[1]);
+        
+        minDisplay.textContent = formatVND(minVal);
+        maxDisplay.textContent = formatVND(maxVal);
+        
+        // Gán vào input hidden để gửi form
+        minInput.value = minVal;
+        maxInput.value = maxVal;
+      });
+    
+      // Area Slider
+      const areaSlider = document.getElementById('area-slider');
+      const minAreaDisplay = document.getElementById('min-area-display');
+      const maxAreaDisplay = document.getElementById('max-area-display');
+      const minAreaInput = document.getElementById('min-area-input');
+      const maxAreaInput = document.getElementById('max-area-input');
+      let MIN_AREA = 20; // 20 m2
+      let MAX_AREA = 50; // 500 m2
+
+      if (areaSlider) {
+        noUiSlider.create(areaSlider, {
+          start: [MIN_AREA, MIN_AREA],
+          connect: true,
+          step: 10,
+          range: {
+            min: MIN_AREA,
+            max: MAX_AREA,
+          },
+        });
+        
+        areaSlider.noUiSlider.on('update', function (values, handle) {
+          let minVal = Math.round(values[0]);
+          let maxVal = Math.round(values[1]);
+
+          minAreaDisplay.textContent = minVal + ' m²';
+          maxAreaDisplay.textContent = maxVal + ' m²';
+
+          minAreaInput.value = minVal;
+          maxAreaInput.value = maxVal;
+        });
+      }
+    
+      // Floor Slider
+      const floorSlider = document.getElementById('floor-slider');
+      const minFloorDisplay = document.getElementById('min-floor-display');
+      const maxFloorDisplay = document.getElementById('max-floor-display');
+      const minFloorInput = document.getElementById('min-floor-input');
+      const maxFloorInput = document.getElementById('max-floor-input');
+
+      let MIN_FLOOR = 1;
+      let MAX_FLOOR = 50;
+      
+      if (floorSlider) {
+        noUiSlider.create(floorSlider, {
+          start: [MIN_FLOOR, MIN_FLOOR],
+          connect: true,
+          step: 1,
+          range: {
+            min: MIN_FLOOR,
+            max: MAX_FLOOR,
+          },
+        });
+        
+        floorSlider.noUiSlider.on('update', function (values, handle) {
+          let minVal = Math.round(values[0]);
+          let maxVal = Math.round(values[1]);
+          
+          minFloorDisplay.textContent = minVal;
+          maxFloorDisplay.textContent = maxVal;
+          
+          minFloorInput.value = minVal;
+          maxFloorInput.value = maxVal;
+        });
+      }
+
+      // Capacity Slider
+      const capacitySlider = document.getElementById('capacity-slider');
+      const minCapacityDisplay = document.getElementById('min-capacity-display');
+      const maxCapacityDisplay = document.getElementById('max-capacity-display');
+      const minCapacityInput = document.getElementById('min-capacity-input');
+      const maxCapacityInput = document.getElementById('max-capacity-input');
+
+      let MIN_PEOPLE = 1;
+      let MAX_PEOPLE = 100;
+
+      if (capacitySlider) {
+        noUiSlider.create(capacitySlider, {
+          start: [MIN_PEOPLE, MIN_PEOPLE],
+          connect: true,
+          step: 1,
+          range: {
+            min: MIN_PEOPLE,
+            max: MAX_PEOPLE,
+          },
+        });
+        
+        capacitySlider.noUiSlider.on('update', function (values, handle) {
+          let minVal = Math.round(values[0]);
+          let maxVal = Math.round(values[1]);
+          
+          minCapacityDisplay.textContent = minVal;
+          maxCapacityDisplay.textContent = maxVal;
+          
+          minCapacityInput.value = minVal;
+          maxCapacityInput.value = maxVal;
+        });
+      }
+      
+      // Toggle search form collapse/expand
+      const toggleBtn = document.getElementById('toggle-search-btn');
+      const searchFormContent = document.getElementById('search-form-content');
+      const toggleText = document.getElementById('toggle-search-text');
+      const toggleIcon = document.getElementById('toggle-search-icon');
+    
+      if (toggleBtn && searchFormContent) {
+        toggleBtn.addEventListener('click', function () {
+          // Check if currently hidden
+          var isHidden =
+          searchFormContent.classList.contains('hidden') ||
+          searchFormContent.style.display === 'none' ||
+          window.getComputedStyle(searchFormContent).display === 'none';
+          
+          if (isHidden) {
+            // Show the form
+            searchFormContent.classList.remove('hidden');
+            searchFormContent.style.display = 'grid';
+            toggleText.textContent = 'Thu gọn';
+            toggleIcon.classList.remove('fa-chevron-down');
+            toggleIcon.classList.add('fa-chevron-up');
+          } else {
+            // Hide the form
+            searchFormContent.classList.add('hidden');
+            searchFormContent.style.display = 'none';
+            toggleText.textContent = 'Mở rộng';
+            toggleIcon.classList.remove('fa-chevron-up');
+            toggleIcon.classList.add('fa-chevron-down');
+          }
+        });
+      }
+    }, 200);
   </script>
 </body>
 
