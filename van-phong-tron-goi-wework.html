@@ -13,7 +13,7 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/nouislider@15.6.1/dist/nouislider.min.css" rel="stylesheet">
 
-  <title>Cho thuê tòa nhà Quận 1</title>
+  <title>Văn phòng trọn gói của WeWork </title>
 
   <style>
     .noUi-handle {
@@ -65,7 +65,7 @@
     <div class="h-auto w-full bg-cover bg-center bg-no-repeat pb-10 pt-10" style="background-image: url('assets/images/layer.svg')">
       <div
         class="container flex h-[170px] flex-col items-center justify-center sm:h-[200px] md:h-[250px] lg:h-[300px] xl:h-[350px] 2xl:h-[400px]">
-        <h1 id="pageTitle" class="common-hero-heading">Cho thuê tòa nhà quận 1</h1>
+        <h1 id="pageTitle" class="common-hero-heading">Văn phòng trọn gói của WeWork</h1>
 
         <!-- Breadcrumb -->
         <div id="breadCrumb" data-aos="fade-left" data-aos-anchor="#example-anchor" data-aos-offset="500"
@@ -80,16 +80,14 @@
   <!-- Content Started -->
   <div class="container overflow-x-hidden">
 
-
     <!-- Rating start -->
     <div id="ratingStar" data-aos="fade-right"></div>
 
-    <!-- Building rentals by district -->
-    <div id="officeRental"></div>
+    <section id="officeRentalWard1"></section>
 
-    <!-- DANH SÁCH TÒA NHÀ VĂN PHÒNG QUẬN 1 -->
+    <!-- DANH SÁCH CÁC CAO ỐC VĂN PHÒNG QUẬN 1 -->
     <div class="container py-10 px-4 mx-auto">
-      <h1 class="mb-8 text-3xl font-bold text-gray-900">DANH SÁCH TÒA NHÀ VĂN PHÒNG QUẬN 1</h1>
+      <h1 class="mb-8 text-3xl font-bold text-gray-900">DANH SÁCH CÁC CAO ỐC VĂN PHÒNG QUẬN 1</h1>
 
       <div class="grid grid-cols-1 gap-8 lg:grid-cols-12">
         <div class="grid grid-cols-1 gap-6 lg:col-span-8 sm:grid-cols-2 xl:grid-cols-3">
@@ -527,17 +525,26 @@
       </div>
     </div>
 
+    <!-- Map -->
+    <div id="map"></div>
+
     <!-- Thông tin chung -->
     <div id="generalInformation"></div>
+
+    <!-- Raiting Product -->
+    <div id="ratingProduct"></div>
+
+    <!-- FAQ Section -->
+      <section id="faq"></section>
+
+    <!-- Văn phòng theo phường mới Start -->
+      <section id="officeNewWard"></section>
 
     <!-- Cẩm nang tìm văn phòng -->
       <section id="handbook"></section>
 
     <!-- Gặp gỡ đội ngũ tư vấn -->
     <section id="consultingTeam"></section>
-
-    <!-- Liên hệ -->
-    <section id="contact2"></section>
 
   </div>
 
@@ -1473,13 +1480,17 @@
       includeHTML("#breadCrumb", "./partials/common/bread-crumb.html", initBreadcrumb);
       includeHTML("#mega-search", "./partials/detail/search-mega.html");
       includeHTML("#ratingStar", "./partials/common/rating-star.html");
-      includeHTML("#officeRental", "./partials/office-rental/office-rental.html");
+      includeHTML("#officeRentalWard1", "./partials/office-rental/office-rental-ward-1.html");
       includeHTML("#office-rental-filter", "./partials/office-rental/office-rental-filter.html");
+      includeHTML("#map", "./partials/maps/map-1.html");
       includeHTML("#pagination1", "./partials/common/pagination.html");
       includeHTML("#pagination2", "./partials/common/pagination.html");
       includeHTML("#contact2", "./partials/common/contact-2.html");
       includeHTML("#generalInformation", "./partials/common/general-information.html");
+      includeHTML("#ratingProduct", "./partials/common/rating-product.html");
       includeHTML("#handbook", "./partials/office-rental/handbook.html");
+      includeHTML("#officeNewWard", "./partials/office-rental/office-new-ward.html");
+      includeHTML("#faq", "./partials/common/faq.html");
       includeHTML("#consultingTeam", "./partials/common/consulting-team.html");
       includeHTML("#footer", "./partials/common/footer.html");
     });

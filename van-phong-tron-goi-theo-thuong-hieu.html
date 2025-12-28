@@ -11,28 +11,35 @@
   <link rel="stylesheet" href="./styles/cta-style.css" />
   <link rel="stylesheet" href="./styles/output.css?v=1" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/nouislider@15.6.1/dist/nouislider.min.css" rel="stylesheet">
 
-  <title>Cho thuê tòa nhà Quận 1</title>
-
+  <title>Văn phòng trọn gói theo thương hiệu</title>
+  
   <style>
-    .noUi-handle {
-      width: 12px;
-      height: 12px;
-      border-radius: 9999px;
-      border: 1px solid #1e3a8a;
-      background: white;
-      box-shadow: 0 0 0 2px #eff6ff;
-      transition: all 0.3s ease;
+    .hover-bubble {
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      transition: color 0.4s ease-in-out;
     }
 
-    .noUi-handle:hover {
-      background: #e0f2fe;
-    }
+    .hover-bubble::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      right: 100%;
+      bottom: 100%;
 
-    .noUi-connect {
-      background: linear-gradient(to right, #1e3a8a, #2563eb);
-      border-radius: 9999px;
+      width: 200vmax;
+      height: 100vmax;
+
+      border-radius: 50%;
+      background-color: #ec4899;
+      transform-origin: center;
+      transform: translate3d(50%, 50%, 0) scale(0);
+      transition: transform 0.45s ease-in-out;
+    }
+    .hover-bubble:hover::before {
+      transform: translate3d(50%, 50%, 0) scale(1);
     }
   </style>
 </head>
@@ -65,7 +72,7 @@
     <div class="h-auto w-full bg-cover bg-center bg-no-repeat pb-10 pt-10" style="background-image: url('assets/images/layer.svg')">
       <div
         class="container flex h-[170px] flex-col items-center justify-center sm:h-[200px] md:h-[250px] lg:h-[300px] xl:h-[350px] 2xl:h-[400px]">
-        <h1 id="pageTitle" class="common-hero-heading">Cho thuê tòa nhà quận 1</h1>
+        <h1 id="pageTitle" class="common-hero-heading">Văn phòng trọn gói theo thương hiệu</h1>
 
         <!-- Breadcrumb -->
         <div id="breadCrumb" data-aos="fade-left" data-aos-anchor="#example-anchor" data-aos-offset="500"
@@ -77,8 +84,9 @@
     </div>
   </section>
 
+
   <!-- Content Started -->
-  <div class="container overflow-x-hidden">
+  <section class="container overflow-x-hidden">
 
 
     <!-- Rating start -->
@@ -87,459 +95,56 @@
     <!-- Building rentals by district -->
     <div id="officeRental"></div>
 
-    <!-- DANH SÁCH TÒA NHÀ VĂN PHÒNG QUẬN 1 -->
-    <div class="container py-10 px-4 mx-auto">
-      <h1 class="mb-8 text-3xl font-bold text-gray-900">DANH SÁCH TÒA NHÀ VĂN PHÒNG QUẬN 1</h1>
+    <!-- VĂN PHÒNG CHO THUÊ  -->
+    <section id="officeRentalWard1"></section>
+    <section id="officeRentalWard2"></section>
+    <section id="officeRentalWard3"></section>
+    <section id="officeRentalWard4"></section>
+    <section id="officeRentalWard5"></section>
+    <section id="officeRentalWard6"></section>
+    <section id="officeRentalWard7"></section>
+    <section id="officeRentalWard8"></section>
+    <section id="officeRentalWard9"></section>
+    <section id="officeRentalWard10"></section>
+    <section id="officeRentalWard11"></section>
+    <section id="officeRentalWard12"></section>
+    <section id="officeRentalWardBinhThanh"></section>
+    <section id="officeRentalWardGoVap"></section>
+    <section id="officeRentalWardPhuNhuan"></section>
+    <section id="officeRentalWardTanBinh"></section>
+    <section id="officeRentalWardThuDuc"></section>
+    <section id="officeRentalWardBinhChanh"></section>
+  </section>
 
-      <div class="grid grid-cols-1 gap-8 lg:grid-cols-12">
-        <div class="grid grid-cols-1 gap-6 lg:col-span-8 sm:grid-cols-2 xl:grid-cols-3">
+  <!-- Quy trình dịch vụ tư vấn -->
+  <section id="processConsulting"></section>
 
-          <!-- Card 1 -->
-          <div class="overflow-hidden transition bg-white shadow-md rounded-2xl hover:shadow-xl h-fit">
-            <div class="relative">
-              <span
-                class="absolute z-10 px-3 py-1 text-xs font-bold text-white bg-yellow-500 rounded-full top-3 left-3">LEED
-                GOLD</span>
-              <img src="assets/images/detail/detail-1.jpg" alt="The Nexus" class="object-cover w-full h-48" />
-            </div>
-            <div class="p-5">
-              <h3 class="text-lg font-semibold text-gray-900">The Nexus</h3>
-              <p class="mt-1 text-sm text-gray-600">3A-3B Tôn Đức Thắng, Phường Sài Gòn, Quận 1</p>
+  <!-- maps -->
+  <!-- đang bị sai layout -->
+  <section class="container mx-auto px-4 xl:px-0 bg-white py-16">
+    <h2 class="text-3xl font-bold text-navy uppercase mt-12 mb-5">
+      Bản đồ các tòa nhà cho thuê văn phòng tại tp.HCM
+    </h2>
+    <div id="map"></div>
+  </section>
 
-              <div class="flex items-center gap-4 mt-4 text-sm">
-                <div class="flex items-center gap-1">
-                  <i class="text-blue-600 fa-regular fa-building"></i>
-                  <span class="text-gray-700">60 - 66 USD/m²</span>
-                </div>
-                <div class="flex gap-2 ml-auto">
-                  <button class="flex items-center justify-center bg-gray-100 rounded-full w-9 h-9 hover:bg-gray-200">
-                    <i class="text-gray-600 fa-regular fa-heart"></i>
-                  </button>
-                  <button class="flex items-center justify-center text-white bg-blue-600 rounded-full w-9 h-9">
-                    <i class="fa-solid fa-360"></i>
-                  </button>
-                </div>
-              </div>
+  <!-- General information -->
+  <section id="generalInformation"></section>
 
-              <div class="flex items-center justify-between mt-4 text-xs text-gray-500">
-                <span>Cập nhật ngày 02/12/2025</span>
-                <label class="flex items-center gap-2 cursor-pointer">
-                  <input type="checkbox" class="w-4 h-4 text-blue-600 rounded" />
-                  <span>So sánh</span>
-                </label>
-              </div>
-            </div>
-          </div>
+  <!-- FAQ Section -->
+  <section id="faq"></section>
 
-          <!-- Card 2 -->
-          <div class="overflow-hidden transition bg-white shadow-md rounded-2xl hover:shadow-xl h-fit">
-            <div class="relative">
-              <span
-                class="absolute z-10 px-3 py-1 text-xs font-bold text-white bg-yellow-500 rounded-full top-3 left-3">LEED
-                GOLD</span>
-              <img src="assets/images/detail/detail-2.jpg" alt="Saigon Marina IFC Tower"
-                class="object-cover w-full h-48" />
-            </div>
-            <div class="p-5">
-              <h3 class="text-lg font-semibold text-gray-900">Saigon Marina IFC Tower</h3>
-              <p class="mt-1 text-sm text-gray-600">2 Tôn Đức Thắng, Phường Sài Gòn, Quận 1</p>
+  <!-- Tìm thuê văn phòng theo phường mới -->
+  <section id="officeNewWard"></section>
 
-              <div class="flex items-center gap-4 mt-4 text-sm">
-                <div class="flex items-center gap-1">
-                  <i class="text-blue-600 fa-regular fa-building"></i>
-                  <span class="text-gray-700">66 - 66 USD/m²</span>
-                </div>
-                <div class="flex gap-2 ml-auto">
-                  <button class="flex items-center justify-center bg-gray-100 rounded-full w-9 h-9 hover:bg-gray-200">
-                    <i class="text-gray-600 fa-regular fa-heart"></i>
-                  </button>
-                  <button class="flex items-center justify-center text-white bg-blue-600 rounded-full w-9 h-9">
-                    <i class="fa-solid fa-360"></i>
-                  </button>
-                </div>
-              </div>
+  <!-- Cẩm nang tìm văn phòng -->
+  <section id="handbook"></section>
 
-              <div class="flex items-center justify-between mt-4 text-xs text-gray-500">
-                <span>Cập nhật ngày 02/12/2025</span>
-                <label class="flex items-center gap-2 cursor-pointer">
-                  <input type="checkbox" class="w-4 h-4 text-blue-600 rounded" />
-                  <span>So sánh</span>
-                </label>
-              </div>
-            </div>
-          </div>
+  <!-- Consulting team -->
+  <section id="consultingTeam"></section>
 
-          <!-- Card 3 -->
-          <div class="overflow-hidden transition bg-white shadow-md rounded-2xl hover:shadow-xl h-fit">
-            <div class="relative">
-              <span
-                class="absolute z-10 px-3 py-1 text-xs font-bold text-white bg-yellow-500 rounded-full top-3 left-3">LEED
-                GOLD</span>
-              <img src="assets/images/detail/detail-3.jpg" alt="The Nexus" class="object-cover w-full h-48" />
-            </div>
-            <div class="p-5">
-              <h3 class="text-lg font-semibold text-gray-900">The Nexus</h3>
-              <p class="mt-1 text-sm text-gray-600">3A-3B Tôn Đức Thắng, Phường Sài Gòn, Quận 1</p>
-
-              <div class="flex items-center gap-4 mt-4 text-sm">
-                <div class="flex items-center gap-1">
-                  <i class="text-blue-600 fa-regular fa-building"></i>
-                  <span class="text-gray-700">60 - 66 USD/m²</span>
-                </div>
-                <div class="flex gap-2 ml-auto">
-                  <button class="flex items-center justify-center bg-gray-100 rounded-full w-9 h-9 hover:bg-gray-200">
-                    <i class="text-gray-600 fa-regular fa-heart"></i>
-                  </button>
-                  <button class="flex items-center justify-center text-white bg-blue-600 rounded-full w-9 h-9">
-                    <i class="fa-solid fa-360"></i>
-                  </button>
-                </div>
-              </div>
-
-              <div class="flex items-center justify-between mt-4 text-xs text-gray-500">
-                <span>Cập nhật ngày 02/12/2025</span>
-                <label class="flex items-center gap-2 cursor-pointer">
-                  <input type="checkbox" class="w-4 h-4 text-blue-600 rounded" />
-                  <span>So sánh</span>
-                </label>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 4 -->
-          <div class="overflow-hidden transition bg-white shadow-md rounded-2xl hover:shadow-xl h-fit">
-            <div class="relative">
-              <span
-                class="absolute z-10 px-3 py-1 text-xs font-bold text-white bg-yellow-500 rounded-full top-3 left-3">LEED
-                GOLD</span>
-              <img src="assets/images/detail/detail-4.jpg" alt="Saigon Marina IFC Tower"
-                class="object-cover w-full h-48" />
-            </div>
-            <div class="p-5">
-              <h3 class="text-lg font-semibold text-gray-900">Saigon Marina IFC Tower</h3>
-              <p class="mt-1 text-sm text-gray-600">2 Tôn Đức Thắng, Phường Sài Gòn, Quận 1</p>
-
-              <div class="flex items-center gap-4 mt-4 text-sm">
-                <div class="flex items-center gap-1">
-                  <i class="text-blue-600 fa-regular fa-building"></i>
-                  <span class="text-gray-700">66 - 66 USD/m²</span>
-                </div>
-                <div class="flex gap-2 ml-auto">
-                  <button class="flex items-center justify-center bg-gray-100 rounded-full w-9 h-9 hover:bg-gray-200">
-                    <i class="text-gray-600 fa-regular fa-heart"></i>
-                  </button>
-                  <button class="flex items-center justify-center text-white bg-blue-600 rounded-full w-9 h-9">
-                    <i class="fa-solid fa-360"></i>
-                  </button>
-                </div>
-              </div>
-
-              <div class="flex items-center justify-between mt-4 text-xs text-gray-500">
-                <span>Cập nhật ngày 02/12/2025</span>
-                <label class="flex items-center gap-2 cursor-pointer">
-                  <input type="checkbox" class="w-4 h-4 text-blue-600 rounded" />
-                  <span>So sánh</span>
-                </label>
-              </div>
-            </div>
-          </div>
-          <!-- Card 5 -->
-          <div class="overflow-hidden transition bg-white shadow-md rounded-2xl hover:shadow-xl h-fit">
-            <div class="relative">
-              <span
-                class="absolute z-10 px-3 py-1 text-xs font-bold text-white bg-yellow-500 rounded-full top-3 left-3">LEED
-                GOLD</span>
-              <img src="assets/images/detail/detail-5.jpg" alt="The Nexus" class="object-cover w-full h-48" />
-            </div>
-            <div class="p-5">
-              <h3 class="text-lg font-semibold text-gray-900">The Nexus</h3>
-              <p class="mt-1 text-sm text-gray-600">3A-3B Tôn Đức Thắng, Phường Sài Gòn, Quận 1</p>
-
-              <div class="flex items-center gap-4 mt-4 text-sm">
-                <div class="flex items-center gap-1">
-                  <i class="text-blue-600 fa-regular fa-building"></i>
-                  <span class="text-gray-700">60 - 66 USD/m²</span>
-                </div>
-                <div class="flex gap-2 ml-auto">
-                  <button class="flex items-center justify-center bg-gray-100 rounded-full w-9 h-9 hover:bg-gray-200">
-                    <i class="text-gray-600 fa-regular fa-heart"></i>
-                  </button>
-                  <button class="flex items-center justify-center text-white bg-blue-600 rounded-full w-9 h-9">
-                    <i class="fa-solid fa-360"></i>
-                  </button>
-                </div>
-              </div>
-
-              <div class="flex items-center justify-between mt-4 text-xs text-gray-500">
-                <span>Cập nhật ngày 02/12/2025</span>
-                <label class="flex items-center gap-2 cursor-pointer">
-                  <input type="checkbox" class="w-4 h-4 text-blue-600 rounded" />
-                  <span>So sánh</span>
-                </label>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 6 -->
-          <div class="overflow-hidden transition bg-white shadow-md rounded-2xl hover:shadow-xl h-fit">
-            <div class="relative">
-              <span
-                class="absolute z-10 px-3 py-1 text-xs font-bold text-white bg-yellow-500 rounded-full top-3 left-3">LEED
-                GOLD</span>
-              <img src="assets/images/detail/detail-6.jpg" alt="Saigon Marina IFC Tower"
-                class="object-cover w-full h-48" />
-            </div>
-            <div class="p-5">
-              <h3 class="text-lg font-semibold text-gray-900">Saigon Marina IFC Tower</h3>
-              <p class="mt-1 text-sm text-gray-600">2 Tôn Đức Thắng, Phường Sài Gòn, Quận 1</p>
-
-              <div class="flex items-center gap-4 mt-4 text-sm">
-                <div class="flex items-center gap-1">
-                  <i class="text-blue-600 fa-regular fa-building"></i>
-                  <span class="text-gray-700">66 - 66 USD/m²</span>
-                </div>
-                <div class="flex gap-2 ml-auto">
-                  <button class="flex items-center justify-center bg-gray-100 rounded-full w-9 h-9 hover:bg-gray-200">
-                    <i class="text-gray-600 fa-regular fa-heart"></i>
-                  </button>
-                  <button class="flex items-center justify-center text-white bg-blue-600 rounded-full w-9 h-9">
-                    <i class="fa-solid fa-360"></i>
-                  </button>
-                </div>
-              </div>
-
-              <div class="flex items-center justify-between mt-4 text-xs text-gray-500">
-                <span>Cập nhật ngày 02/12/2025</span>
-                <label class="flex items-center gap-2 cursor-pointer">
-                  <input type="checkbox" class="w-4 h-4 text-blue-600 rounded" />
-                  <span>So sánh</span>
-                </label>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 7 -->
-          <div class="overflow-hidden transition bg-white shadow-md rounded-2xl hover:shadow-xl h-fit">
-            <div class="relative">
-              <span
-                class="absolute z-10 px-3 py-1 text-xs font-bold text-white bg-yellow-500 rounded-full top-3 left-3">LEED
-                GOLD</span>
-              <img src="assets/images/detail/detail-7.jpg" alt="The Nexus" class="object-cover w-full h-48" />
-            </div>
-            <div class="p-5">
-              <h3 class="text-lg font-semibold text-gray-900">The Nexus</h3>
-              <p class="mt-1 text-sm text-gray-600">3A-3B Tôn Đức Thắng, Phường Sài Gòn, Quận 1</p>
-
-              <div class="flex items-center gap-4 mt-4 text-sm">
-                <div class="flex items-center gap-1">
-                  <i class="text-blue-600 fa-regular fa-building"></i>
-                  <span class="text-gray-700">60 - 66 USD/m²</span>
-                </div>
-                <div class="flex gap-2 ml-auto">
-                  <button class="flex items-center justify-center bg-gray-100 rounded-full w-9 h-9 hover:bg-gray-200">
-                    <i class="text-gray-600 fa-regular fa-heart"></i>
-                  </button>
-                  <button class="flex items-center justify-center text-white bg-blue-600 rounded-full w-9 h-9">
-                    <i class="fa-solid fa-360"></i>
-                  </button>
-                </div>
-              </div>
-
-              <div class="flex items-center justify-between mt-4 text-xs text-gray-500">
-                <span>Cập nhật ngày 02/12/2025</span>
-                <label class="flex items-center gap-2 cursor-pointer">
-                  <input type="checkbox" class="w-4 h-4 text-blue-600 rounded" />
-                  <span>So sánh</span>
-                </label>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 8 -->
-          <div class="overflow-hidden transition bg-white shadow-md rounded-2xl hover:shadow-xl h-fit">
-            <div class="relative">
-              <span
-                class="absolute z-10 px-3 py-1 text-xs font-bold text-white bg-yellow-500 rounded-full top-3 left-3">LEED
-                GOLD</span>
-              <img src="assets/images/detail/detail-8.jpg" alt="Saigon Marina IFC Tower"
-                class="object-cover w-full h-48" />
-            </div>
-            <div class="p-5">
-              <h3 class="text-lg font-semibold text-gray-900">Saigon Marina IFC Tower</h3>
-              <p class="mt-1 text-sm text-gray-600">2 Tôn Đức Thắng, Phường Sài Gòn, Quận 1</p>
-
-              <div class="flex items-center gap-4 mt-4 text-sm">
-                <div class="flex items-center gap-1">
-                  <i class="text-blue-600 fa-regular fa-building"></i>
-                  <span class="text-gray-700">66 - 66 USD/m²</span>
-                </div>
-                <div class="flex gap-2 ml-auto">
-                  <button class="flex items-center justify-center bg-gray-100 rounded-full w-9 h-9 hover:bg-gray-200">
-                    <i class="text-gray-600 fa-regular fa-heart"></i>
-                  </button>
-                  <button class="flex items-center justify-center text-white bg-blue-600 rounded-full w-9 h-9">
-                    <i class="fa-solid fa-360"></i>
-                  </button>
-                </div>
-              </div>
-
-              <div class="flex items-center justify-between mt-4 text-xs text-gray-500">
-                <span>Cập nhật ngày 02/12/2025</span>
-                <label class="flex items-center gap-2 cursor-pointer">
-                  <input type="checkbox" class="w-4 h-4 text-blue-600 rounded" />
-                  <span>So sánh</span>
-                </label>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 9 -->
-          <div class="overflow-hidden transition bg-white shadow-md rounded-2xl hover:shadow-xl h-fit">
-            <div class="relative">
-              <span
-                class="absolute z-10 px-3 py-1 text-xs font-bold text-white bg-yellow-500 rounded-full top-3 left-3">LEED
-                GOLD</span>
-              <img src="assets/images/detail/detail-9.jpg" alt="Saigon Marina IFC Tower"
-                class="object-cover w-full h-48" />
-            </div>
-            <div class="p-5">
-              <h3 class="text-lg font-semibold text-gray-900">Saigon Marina IFC Tower</h3>
-              <p class="mt-1 text-sm text-gray-600">2 Tôn Đức Thắng, Phường Sài Gòn, Quận 1</p>
-
-              <div class="flex items-center gap-4 mt-4 text-sm">
-                <div class="flex items-center gap-1">
-                  <i class="text-blue-600 fa-regular fa-building"></i>
-                  <span class="text-gray-700">66 - 66 USD/m²</span>
-                </div>
-                <div class="flex gap-2 ml-auto">
-                  <button class="flex items-center justify-center bg-gray-100 rounded-full w-9 h-9 hover:bg-gray-200">
-                    <i class="text-gray-600 fa-regular fa-heart"></i>
-                  </button>
-                  <button class="flex items-center justify-center text-white bg-blue-600 rounded-full w-9 h-9">
-                    <i class="fa-solid fa-360"></i>
-                  </button>
-                </div>
-              </div>
-
-              <div class="flex items-center justify-between mt-4 text-xs text-gray-500">
-                <span>Cập nhật ngày 02/12/2025</span>
-                <label class="flex items-center gap-2 cursor-pointer">
-                  <input type="checkbox" class="w-4 h-4 text-blue-600 rounded" />
-                  <span>So sánh</span>
-                </label>
-              </div>
-            </div>
-          </div>
-
-        </div>
-        <!-- Pagination -->
-        <div class="flex justify-center mt-5 lg:hidden">
-          <div id="pagination1"></div>
-        </div>
-
-        <!-- Office rental filter -->
-        <div class="lg:col-span-4">
-            <!-- Bộ lọc cố định khi scroll (có thể thêm sticky sau) -->
-            <div class="border border-gray-300 p-6 space-y-8 bg-white shadow-md rounded-2xl">
-
-            <!-- diện tích và giá thuê -->
-            <!-- Slider diện tích -->
-            <div class="mb-6">
-                <h3 class="mb-3 text-lg font-bold">Diện tích Quận 1</h3>
-                <label class="block mb-2 text-sm font-medium text-gray-700">Diện tích (m²)</label>
-                <div id="areaSlider"></div>
-                <div class="mt-2 text-sm text-gray-600">
-                Từ <span id="areaMinVal">0</span> m² đến <span id="areaMaxVal">0</span> m²
-                </div>
-            </div>
-
-            <!-- Slider giá thuê -->
-            <div class="mb-6">
-                <h3 class="mb-3 text-lg font-bold">Giá thuê Quận 1</h3>
-                <label class="block mb-2 text-sm font-medium text-gray-700">Giá thuê ($/m²/tháng)</label>
-                <div id="priceSlider"></div>
-                <div class="mt-2 text-sm text-gray-600">
-                Từ $<span id="priceMinVal">0</span> đến $<span id="priceMaxVal">0</span>
-                </div>
-            </div>
-
-            <!-- diện tích và giá thuê -->
-
-
-            <!-- Hạng văn phòng -->
-            <div class="space-y-4">
-                <div>
-                <h3 class="mb-3 text-lg font-bold">Hạng văn phòng Quận 1</h3>
-                <div class="flex flex-wrap justify-between text-sm gap-2">
-                    <button class="px-4 py-2 border border-gray-300 rounded-full hover:bg-blue-50">Hạng A</button>
-                    <button class="px-4 py-2 border border-gray-300 rounded-full hover:bg-blue-50">Hạng B</button>
-                    <button class="px-4 py-2 border border-gray-300 rounded-full hover:bg-blue-50">Hạng C</button>
-                    <button class="px-4 py-2 border border-gray-300 rounded-full hover:bg-blue-50">Giá rẻ</button>
-                </div>
-                </div>
-
-                <div>
-                <h3 class="mb-3 text-lg font-bold">Hướng Quận 1</h3>
-                <div class="flex flex-wrap justify-between text-sm gap-3">
-                    <button class="px-4 py-2 border border-gray-300 rounded-full hover:bg-blue-50">Đông</button>
-                    <button class="px-4 py-2 border border-gray-300 rounded-full hover:bg-blue-50">Tây</button>
-                    <button class="px-4 py-2 border border-gray-300 rounded-full hover:bg-blue-50">Nam</button>
-                    <button class="px-4 py-2 border border-gray-300 rounded-full hover:bg-blue-50">Bắc</button>
-                </div>
-                </div>
-
-                <div>
-                <h3 class="mb-3 text-lg font-bold">Phường mới Quận 1</h3>
-                <select
-                    class="w-full px-4 text-sm py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <option>Chọn phường</option>
-                    <option>Phường Bến Nghé</option>
-                    <option>Phường Đa Kao</option>
-                    <!-- thêm các phường khác -->
-                </select>
-                </div>
-
-                <div>
-                <h3 class="mb-3 text-lg font-bold">Đường Quận 1</h3>
-                <select
-                    class="w-full px-4 text-sm py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <option>Chọn đường</option>
-                    <option>Tôn Đức Thắng</option>
-                    <option>Lê Duẩn</option>
-                    <option>Hai Bà Trưng</option>
-                    <!-- thêm đường khác -->
-                </select>
-                </div>
-            </div>
-
-            <button
-                class="w-full py-4 font-bold text-white transition bg-blue-600 rounded-xl hover:bg-blue-700">
-                Đặt lại
-            </button>
-            </div>
-        </div>
-
-        <!-- Pagination -->
-        <div class="hidden lg:flex justify-center mt-5 lg:col-span-8">
-          <div id="pagination2"></div>
-        </div>
-        
-      </div>
-    </div>
-
-    <!-- Thông tin chung -->
-    <div id="generalInformation"></div>
-
-    <!-- Cẩm nang tìm văn phòng -->
-      <section id="handbook"></section>
-
-    <!-- Gặp gỡ đội ngũ tư vấn -->
-    <section id="consultingTeam"></section>
-
-    <!-- Liên hệ -->
-    <section id="contact2"></section>
-
-  </div>
+  <!-- Contact Section -->
+  <section id="contact2"></section>
 
   <!-- Responsive menu -->
   <div
@@ -1473,16 +1078,82 @@
       includeHTML("#breadCrumb", "./partials/common/bread-crumb.html", initBreadcrumb);
       includeHTML("#mega-search", "./partials/detail/search-mega.html");
       includeHTML("#ratingStar", "./partials/common/rating-star.html");
-      includeHTML("#officeRental", "./partials/office-rental/office-rental.html");
-      includeHTML("#office-rental-filter", "./partials/office-rental/office-rental-filter.html");
-      includeHTML("#pagination1", "./partials/common/pagination.html");
-      includeHTML("#pagination2", "./partials/common/pagination.html");
-      includeHTML("#contact2", "./partials/common/contact-2.html");
+      includeHTML("#officeRental", "./partials/office-rental/office-rental-brand.html");
+      includeHTML("#officeRentalWard1", "./partials/office-rental/office-rental-ward-1.html");
+      includeHTML("#officeRentalWard2", "./partials/office-rental/office-rental-ward-1.html");
+      includeHTML("#officeRentalWard3", "./partials/office-rental/office-rental-ward-1.html");
+      includeHTML("#officeRentalWard4", "./partials/office-rental/office-rental-ward-1.html");
+      includeHTML("#officeRentalWard5", "./partials/office-rental/office-rental-ward-1.html");
+      includeHTML("#officeRentalWard6", "./partials/office-rental/office-rental-ward-1.html");
+      includeHTML("#officeRentalWard7", "./partials/office-rental/office-rental-ward-1.html");
+      includeHTML("#officeRentalWard8", "./partials/office-rental/office-rental-ward-1.html");
+      includeHTML("#officeRentalWard9", "./partials/office-rental/office-rental-ward-1.html");
+      includeHTML("#officeRentalWard10", "./partials/office-rental/office-rental-ward-1.html");
+      includeHTML("#officeRentalWard11", "./partials/office-rental/office-rental-ward-1.html");
+      includeHTML("#officeRentalWard12", "./partials/office-rental/office-rental-ward-1.html");
+      includeHTML("#officeRentalWardBinhThanh", "./partials/office-rental/office-rental-ward-1.html");
+      includeHTML("#officeRentalWardPhuNhuan", "./partials/office-rental/office-rental-ward-1.html");
+      includeHTML("#officeRentalWardGoVap", "./partials/office-rental/office-rental-ward-1.html");
+      includeHTML("#officeRentalWardTanBinh", "./partials/office-rental/office-rental-ward-1.html");
+      includeHTML("#officeRentalWardThuDuc", "./partials/office-rental/office-rental-ward-1.html");
+      includeHTML("#officeRentalWardBinhChanh", "./partials/office-rental/office-rental-ward-1.html");
+      includeHTML("#processConsulting", "./partials/office-rental/process-consulting.html");
+      includeHTML("#map", "./partials/maps/map-1.html");
+      includeHTML("#pagination", "./partials/common/pagination.html");
+      includeHTML("#consultingTeam", "./partials/common/consulting-team.html");
       includeHTML("#generalInformation", "./partials/common/general-information.html");
       includeHTML("#handbook", "./partials/office-rental/handbook.html");
-      includeHTML("#consultingTeam", "./partials/common/consulting-team.html");
+      includeHTML("#officeNewWard", "./partials/office-rental/office-new-ward.html");
+      includeHTML("#faq", "./partials/common/faq.html");
+      includeHTML("#contact2", "./partials/common/contact-2.html");
       includeHTML("#footer", "./partials/common/footer.html");
     });
+  </script>
+
+  <script>
+    function toggleFaq(button) {
+      const answer = button.nextElementSibling;
+      const icon = button.querySelector('i');
+
+      if (answer.classList.contains('hidden')) {
+        answer.classList.remove('hidden');
+        icon.classList.add('rotate-180');
+        button.classList.add('bg-blue-50');
+      } else {
+        answer.classList.add('hidden');
+        icon.classList.remove('rotate-180');
+        button.classList.remove('bg-blue-50');
+      }
+    }
+  </script>
+
+  <script>
+    function toggleFullInfo() {
+      const fullContent = document.getElementById('info-full');
+      const btnText = document.getElementById('btnText');
+      const btnIcon = document.getElementById('btnIcon');
+      const btn = document.getElementById('toggleInfoBtn');
+
+      if (fullContent.classList.contains('hidden')) {
+        // Mở nội dung
+        fullContent.classList.remove('hidden');
+        btnText.textContent = 'Thu gọn';
+        btnIcon.classList.remove('fa-chevron-down');
+        btnIcon.classList.add('fa-chevron-up');
+
+        // Scroll nhẹ xuống để người dùng biết đã mở (tuỳ chọn)
+        // fullContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        // Đóng nội dung
+        fullContent.classList.add('hidden');
+        btnText.textContent = 'Xem thêm';
+        btnIcon.classList.remove('fa-chevron-up');
+        btnIcon.classList.add('fa-chevron-down');
+
+        // Scroll lại lên đầu section
+        document.getElementById('general-info-section').scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   </script>
 
   <script>
@@ -1546,7 +1217,6 @@
       },
     });
 
-    // New ward
     function initPhuongSwiper() {
       const el = document.querySelector('.phuong-swiper');
       if (!el || el.classList.contains('swiper-initialized')) return;
@@ -1577,6 +1247,7 @@
         },
       });
     }
+
 
     // Team Swiper
     function initTeamSwiper() {
@@ -1618,10 +1289,10 @@
     // Slider diện tích
     const areaSlider = document.getElementById('areaSlider');
     noUiSlider.create(areaSlider, {
-      start: [0, 0], // giá trị mặc định
+      start: [100, 1000], // giá trị mặc định
       connect: true,
       range: {
-        min: 0,
+        min: 10,
         max: 2000
       },
       step: 10,
@@ -1642,10 +1313,10 @@
     // Slider giá thuê
     const priceSlider = document.getElementById('priceSlider');
     noUiSlider.create(priceSlider, {
-      start: [0, 0], // giá trị mặc định
+      start: [20, 50], // giá trị mặc định
       connect: true,
       range: {
-        min: 0,
+        min: 8,
         max: 65
       },
       step: 1,
@@ -1730,7 +1401,6 @@
     }
     initOfficeSwiper()
   </script>
-
 </body>
 
 </html>
