@@ -1139,35 +1139,6 @@
   </script>
 
   <script>
-    function toggleFullInfo() {
-      const fullContent = document.getElementById('info-full');
-      const btnText = document.getElementById('btnText');
-      const btnIcon = document.getElementById('btnIcon');
-      const btn = document.getElementById('toggleInfoBtn');
-
-      if (fullContent.classList.contains('hidden')) {
-        // Mở nội dung
-        fullContent.classList.remove('hidden');
-        btnText.textContent = 'Thu gọn';
-        btnIcon.classList.remove('fa-chevron-down');
-        btnIcon.classList.add('fa-chevron-up');
-
-        // Scroll nhẹ xuống để người dùng biết đã mở (tuỳ chọn)
-        // fullContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      } else {
-        // Đóng nội dung
-        fullContent.classList.add('hidden');
-        btnText.textContent = 'Xem thêm';
-        btnIcon.classList.remove('fa-chevron-up');
-        btnIcon.classList.add('fa-chevron-down');
-
-        // Scroll lại lên đầu section
-        document.getElementById('general-info-section').scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  </script>
-
-  <script>
     AOS.init({
       delay: 0,
       duration: 1000,

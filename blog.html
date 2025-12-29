@@ -36,8 +36,8 @@
       </style>
    </head>
    <body>
-      <!-- Navbar started -->
-      <header id="header"></header>
+      <!-- Header -->
+      <div id="header"></div>
       <button
          class="md:hidden inline-block absolute top-4 right-0 mr-2.5 z-[100]"
          type="button"
@@ -58,61 +58,29 @@
          </svg>
       </button>
 
-      <!-- Details Started -->
+      <!-- Navbar ended -->
       <section class="bg-primary-10">
-         <div
-            class="h-auto bg-cover bg-center bg-no-repeat"
-            style="background-image: url(&quot;assets/images/layer.svg&quot;)"
-         >
+         <div class="h-auto w-full bg-cover bg-center bg-no-repeat pb-10 pt-10" style="background-image: url('assets/images/layer.svg')">
             <div
-               class="container flex h-[225px] flex-col items-center justify-center sm:h-[250px] md:h-[300px] lg:h-[350px] xl:h-[400px] 2xl:h-[450px]"
-            >
-               <h1 class="common-hero-heading">Blog Details</h1>
+            class="container flex h-[170px] flex-col items-center justify-center sm:h-[200px] md:h-[250px]">
+            <h1 id="pageTitle" class="common-hero-heading">Blog Details</h1>
 
-               <div class="flex" aria-label="Breadcrumb">
-                  <ol class="inline-flex items-center space-x-1 md:space-x-2">
-                     <li class="inline-flex items-center">
-                        <a
-                           href="#"
-                           class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-primary dark:text-gray-400 dark:hover:text-white"
-                        >
-                           <i class="fa-solid fa-house me-2.5 h-3 w-3"></i>
-                           Home
-                        </a>
-                     </li>
-                     <li>
-                        <div class="flex items-center">
-                           <i
-                              class="fa-solid fa-chevron-right mx-1 h-3 w-3 text-gray-400"
-                           ></i>
-                           <a
-                              href="blogs.html"
-                              class="ms-1 text-sm font-medium text-gray-700 hover:text-primary dark:text-gray-400 dark:hover:text-white md:ms-2"
-                              >Blogs</a
-                           >
-                        </div>
-                     </li>
-                     <li aria-current="page">
-                        <div class="flex items-center">
-                           <i
-                              class="fa-solid fa-chevron-right mx-1 h-3 w-3 text-gray-400"
-                           ></i>
-                           <span
-                              class="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400 md:ms-2"
-                              >Blog Details</span
-                           >
-                        </div>
-                     </li>
-                  </ol>
-               </div>
+            <!-- Breadcrumb -->
+            <div id="breadCrumb" data-aos="fade-left" data-aos-anchor="#example-anchor" data-aos-offset="500"
+               data-aos-duration="500" class="flex" aria-label="Breadcrumb">
             </div>
+            </div>
+            <!-- Mega search -->
+            <div id="mega-search"></div>
          </div>
       </section>
-      <!-- Details Ended -->
+
+      <!-- Rating start -->
+      <div id="ratingStar" data-aos="fade-right"></div>
 
       <!-- Blog Details Started -->
       <section
-         class="section-padding-120 gap-30 container grid px-4 lg:grid-cols-3 xl:px-0"
+         class="container grid gap-30 px-4 py-10 lg:grid-cols-3 xl:px-0"
       >
          <div class="lg:col-span-2">
             <div class="relative w-full">
@@ -415,605 +383,9 @@
             </div>
          </div>
          <!-- sidebar -->
-         <div class="gap-30 flex w-full flex-col">
-            <div class="p-30 rounded-[20px] shadow-shadow10">
-               <h4
-                  class="text-base font-bold text-new-900 md:text-lg lg:text-xl lg:font-medium xl:text-2xl"
-               >
-                  Search Here
-               </h4>
-               <hr class="my-3 bg-new-200 md:my-3.5 lg:my-4 xl:my-5" />
-
-               <form class="mx-auto max-w-md">
-                  <label
-                     for="default-search"
-                     class="sr-only mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                     >Search</label
-                  >
-                  <div class="relative">
-                     <div
-                        class="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3"
-                     >
-                        <svg
-                           class="h-4 w-4 text-gray-500 dark:text-gray-400"
-                           aria-hidden="true"
-                           xmlns="http://www.w3.org/2000/svg"
-                           fill="none"
-                           viewBox="0 0 20 20"
-                        >
-                           <path
-                              stroke="currentColor"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="2"
-                              d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
-                           />
-                        </svg>
-                     </div>
-                     <input
-                        type="search"
-                        id="default-search"
-                        class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-4 ps-10 text-sm text-gray-900 focus:border-primary focus:ring-primary"
-                        placeholder="Search..."
-                        required
-                     />
-                     <button
-                        type="submit"
-                        class="absolute bottom-2.5 end-2.5 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white hover:bg-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-300"
-                     >
-                        Search
-                     </button>
-                  </div>
-               </form>
-            </div>
-
-            <div class="p-30 rounded-[20px] shadow-shadow10">
-               <h4
-                  class="text-base font-bold text-new-900 md:text-lg lg:text-xl lg:font-medium xl:text-2xl"
-               >
-                  Top Categories
-               </h4>
-               <hr class="my-3 bg-new-200 md:my-3.5 lg:my-4 xl:my-5" />
-
-               <ol
-                  class="space-y-5 font-poppins text-sm font-medium text-new-900 md:text-base lg:text-lg"
-               >
-                  <li class="transition-all hover:text-secondary-400">
-                     <a href="#">Modern Luxury Living</a>
-                  </li>
-                  <li class="transition-all hover:text-secondary-400">
-                     <a href="#">Pro Home Finders</a>
-                  </li>
-                  <li class="transition-all hover:text-secondary-400">
-                     <a href="#">Free Service</a>
-                  </li>
-                  <li class="transition-all hover:text-secondary-400">
-                     <a href="#">Rent Home</a>
-                  </li>
-                  <li class="transition-all hover:text-secondary-400">
-                     <a href="#">Home Awaits</a>
-                  </li>
-                  <li class="transition-all hover:text-secondary-400">
-                     <a href="#">Forever Home</a>
-                  </li>
-               </ol>
-            </div>
-
-            <div class="p-30 rounded-[20px] shadow-shadow10">
-               <h4
-                  class="text-base font-bold text-new-900 md:text-lg lg:text-xl lg:font-medium xl:text-2xl"
-               >
-                  Popular Posts
-               </h4>
-
-               <div class="mt-4 w-full space-y-5 md:mt-5 lg:mt-6 xl:mt-7">
-                  <!-- Card 1 -->
-                  <div class="flex gap-2.5 md:gap-3 lg:gap-3.5 xl:gap-4">
-                     <div class="size-fit">
-                        <div class="size-20">
-                           <img
-                              src="assets/images/image-99.png"
-                              alt="Property"
-                              class="size-20 rounded-[20px] object-cover object-center"
-                           />
-                        </div>
-                     </div>
-                     <div>
-                        <p class="font-poppins text-xs text-new-800">
-                           <i
-                              class="fa-regular fa-calendar-days text-secondary"
-                           ></i>
-                           October 19, 2022
-                        </p>
-                        <a
-                           href="#"
-                           class="mt-1.5 text-base font-bold text-new-900 md:text-lg lg:text-xl"
-                        >
-                           A picture is worth standard us return
-                        </a>
-                     </div>
-                  </div>
-
-                  <!-- Card 2 -->
-                  <div class="flex gap-2.5 md:gap-3 lg:gap-3.5 xl:gap-4">
-                     <div class="size-fit">
-                        <div class="size-20">
-                           <img
-                              src="assets/images/image-100.png"
-                              alt="Property"
-                              class="size-20 rounded-[20px] object-cover object-center"
-                           />
-                        </div>
-                     </div>
-                     <div>
-                        <p class="font-poppins text-xs text-new-800">
-                           <i
-                              class="fa-regular fa-calendar-days text-secondary"
-                           ></i>
-                           October 19, 2022
-                        </p>
-                        <a
-                           href="#"
-                           class="mt-1.5 text-base font-bold text-new-900 md:text-lg lg:text-xl"
-                        >
-                           Your journ homeowner ship starts here
-                        </a>
-                     </div>
-                  </div>
-
-                  <!-- Card 3 -->
-                  <div class="flex gap-2.5 md:gap-3 lg:gap-3.5 xl:gap-4">
-                     <div class="size-fit">
-                        <div class="size-20">
-                           <img
-                              src="assets/images/image-99.png"
-                              alt="Property"
-                              class="size-20 rounded-[20px] object-cover object-center"
-                           />
-                        </div>
-                     </div>
-                     <div>
-                        <p class="font-poppins text-xs text-new-800">
-                           <i
-                              class="fa-regular fa-calendar-days text-secondary"
-                           ></i>
-                           October 19, 2022
-                        </p>
-                        <a
-                           href="#"
-                           class="mt-1.5 text-base font-bold text-new-900 md:text-lg lg:text-xl"
-                        >
-                           Trust us to guide you the a through the process
-                        </a>
-                     </div>
-                  </div>
-               </div>
-            </div>
-
-            <div class="p-30 rounded-[20px] shadow-shadow10">
-               <h4
-                  class="text-base font-bold text-new-900 md:text-lg lg:text-xl lg:font-medium xl:text-2xl"
-               >
-                  Popular Tags
-               </h4>
-
-               <div class="mt-4 flex flex-wrap gap-2.5 md:mt-5 lg:mt-6 xl:mt-7">
-                  <a href="#" class="tag">Swift Cargo</a>
-                  <a href="#" class="tag">Global</a>
-                  <a href="#" class="tag">Nexus</a>
-                  <a href="#" class="tag">Freight</a>
-                  <a href="#" class="tag">Elite Trans</a>
-                  <a href="#" class="tag">Precision</a>
-               </div>
-            </div>
-         </div>
+         <div id="blogSearchSidebar"></div>
       </section>
       <!-- Blog Details Ended -->
-
-      <!-- Footer Section Start -->
-      <footer class="section-padding-t">
-         <div
-            class="container mb-6 grid w-full max-w-[1230px] grid-cols-6 gap-3 px-3 md:mb-10 md:grid-cols-5 lg:mb-14 2xl:px-0"
-         >
-            <div data-aos="fade-up" class="col-span-4 md:col-span-2">
-               <a href="" class="flex items-center gap-x-3">
-                  <img
-                     src="assets/images/logo.png"
-                     alt="Homelist"
-                     class="size-fit"
-                  />
-               </a>
-
-               <div class="mt-10">
-                  <h5 class="mb-5 text-lg font-bold text-nature-600 md:text-xl">
-                     Address
-                  </h5>
-                  <address
-                     class="font-poppins text-sm text-nature-400 md:text-base"
-                  >
-                     Your address goes there
-                     <span class="my-2 block">+(088) 123 456 789</span>
-                     mail@example.com
-                  </address>
-               </div>
-            </div>
-            <div
-               data-aos="fade-up"
-               data-aos-delay="150"
-               class="col-span-2 md:col-span-1"
-            >
-               <h5
-                  class="mb-2.5 text-lg font-bold text-nature-600 md:mb-3.5 md:text-xl lg:mb-5"
-               >
-                  About Us
-               </h5>
-               <ul
-                  class="grid gap-2 font-poppins text-sm text-nature-400 md:gap-3 md:text-base lg:gap-4"
-               >
-                  <li class="transition-all hover:text-nature-500">
-                     <a href="#">Press</a>
-                  </li>
-                  <li class="transition-all hover:text-nature-500">
-                     <a href="#">Resources and Policies</a>
-                  </li>
-                  <li class="transition-all hover:text-nature-500">
-                     <a href="#">Careers</a>
-                  </li>
-                  <li class="transition-all hover:text-nature-500">
-                     <a href="#">Content Integrity</a>
-                  </li>
-                  <li class="transition-all hover:text-nature-500">
-                     <a href="#">Investor Relations</a>
-                  </li>
-               </ul>
-            </div>
-            <div
-               data-aos="fade-up"
-               data-aos-delay="300"
-               class="col-span-3 md:col-span-1"
-            >
-               <h5
-                  class="mb-2.5 text-lg font-bold text-nature-600 md:mb-3.5 md:text-xl lg:mb-5"
-               >
-                  Tour by Categories
-               </h5>
-               <ul
-                  class="grid gap-2 font-poppins text-sm text-nature-400 md:gap-3 md:text-base lg:gap-4"
-               >
-                  <li class="transition-all hover:text-nature-500">
-                     <a href="#">Outdoor Activities</a>
-                  </li>
-                  <li class="transition-all hover:text-nature-500">
-                     <a href="#">City Tours </a>
-                  </li>
-                  <li class="transition-all hover:text-nature-500">
-                     <a href="#">Cultural & Thematic Tours</a>
-                  </li>
-                  <li class="transition-all hover:text-nature-500">
-                     <a href="#">Indulgence & Luxury Tours</a>
-                  </li>
-                  <li class="transition-all hover:text-nature-500">
-                     <a href="#">Family Friendly Tours</a>
-                  </li>
-                  <li class="transition-all hover:text-nature-500">
-                     <a href="#">Relaxation Tours</a>
-                  </li>
-               </ul>
-            </div>
-            <div
-               data-aos="fade-up"
-               data-aos-delay="450"
-               class="col-span-3 md:col-span-1"
-            >
-               <h5
-                  class="mb-2.5 text-lg font-bold text-nature-600 md:mb-3.5 md:text-xl lg:mb-5"
-               >
-                  Tripadvisor Sites
-               </h5>
-               <ul
-                  class="grid gap-2 font-poppins text-sm text-nature-400 md:gap-3 md:text-base lg:gap-4"
-               >
-                  <li class="transition-all hover:text-nature-500">
-                     <a href="#">Jetsetter</a>
-                  </li>
-                  <li class="transition-all hover:text-nature-500">
-                     <a href="#">Cruise Critic</a>
-                  </li>
-                  <li class="transition-all hover:text-nature-500">
-                     <a href="#">Seat Guru</a>
-                  </li>
-                  <li class="transition-all hover:text-nature-500">
-                     <a href="#">Holiday Lettings</a>
-                  </li>
-                  <li class="transition-all hover:text-nature-500">
-                     <a href="#">Vacation Home</a>
-                  </li>
-                  <li class="transition-all hover:text-nature-500">
-                     <a href="#">Rentals</a>
-                  </li>
-                  <li class="transition-all hover:text-nature-500">
-                     <a href="#">Reco Trip Designers</a>
-                  </li>
-               </ul>
-            </div>
-         </div>
-         <div class="container max-w-[1230px]">
-            <hr />
-         </div>
-         <div
-            class="container mb-3.5 mt-5 flex max-w-[1230px] flex-col items-center justify-center gap-y-3.5 px-3 md:mb-6 md:mt-10 md:flex-row md:justify-between lg:mb-9 lg:mt-[54px] 2xl:px-0"
-         >
-            <p class="text-sm leading-[14px] text-nature-400">
-               &copy;2024 Homelist Creative
-            </p>
-            <p
-               class="pt-3.5 text-center text-sm leading-[14px] text-nature-400 sm:hidden"
-            >
-               Get The App
-            </p>
-            <div class="flex items-center gap-x-2 md:gap-x-3">
-               <p
-                  class="hidden text-sm leading-[14px] text-nature-400 sm:inline-block"
-               >
-                  Get The App
-               </p>
-               <a href="#">
-                  <img
-                     src="assets/images/image-56.png"
-                     alt="Homelist_footer"
-                     class="max-h-[38px] max-w-[135px] object-cover object-center"
-                  />
-               </a>
-               <a href="#">
-                  <img
-                     src="assets/images/image-7.png"
-                     alt="Homelist_footer"
-                     class="max-h-[38px] max-w-[135px] object-cover object-center"
-                  />
-               </a>
-            </div>
-            <div class="flex items-center gap-x-4 md:gap-x-7 lg:gap-x-10">
-               <p class="text-sm leading-[14px] text-nature-400">Follow Us</p>
-               <ul class="flex items-center gap-x-4 md:gap-x-7 lg:gap-x-10">
-                  <li>
-                     <a href="#"
-                        ><i
-                           class="fa-brands fa-facebook-f text-sm text-nature-200 transition-all hover:text-[#1877f2] md:text-base lg:text-lg"
-                        ></i
-                     ></a>
-                  </li>
-                  <li>
-                     <a href="#"
-                        ><i
-                           class="fa-brands fa-x-twitter text-sm text-nature-200 transition-all hover:text-[#000] md:text-base lg:text-lg"
-                        ></i
-                     ></a>
-                  </li>
-                  <li>
-                     <a href="#"
-                        ><i
-                           class="fa-brands fa-instagram text-sm text-nature-200 transition-all hover:text-[#c32aa3] md:text-base lg:text-lg"
-                        ></i
-                     ></a>
-                  </li>
-                  <li>
-                     <a href="#"
-                        ><i
-                           class="fa-brands fa-linkedin-in text-sm text-nature-200 transition-all hover:text-[#0a66c2] md:text-base lg:text-lg"
-                        ></i
-                     ></a>
-                  </li>
-               </ul>
-            </div>
-         </div>
-      </footer>
-
-      <!-- NOTE: splitted content -->
-      <!-- drawer component -->
-      <div
-         id="drawer-right-example"
-         class="fixed right-0 top-0 z-[60] h-screen w-96 translate-x-full overflow-y-auto border-l bg-white p-10 transition-transform"
-         tabindex="-1"
-         aria-labelledby="drawer-right-label"
-      >
-         <a href="index.html">
-            <img src="assets/images/logo.png" alt="Homelist" />
-         </a>
-         <button
-            type="button"
-            data-drawer-hide="drawer-right-example"
-            aria-controls="drawer-right-example"
-            class="group absolute right-10 top-10 inline-flex size-[38px] items-center justify-center rounded-full bg-rose-100 text-sm text-rose-600"
-         >
-            <svg
-               class="size-3.5 transition-transform duration-500 ease-in-out group-hover:rotate-180"
-               aria-hidden="true"
-               xmlns="http://www.w3.org/2000/svg"
-               fill="none"
-               viewBox="0 0 14 14"
-            >
-               <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
-               />
-            </svg>
-            <span class="sr-only">Close menu</span>
-         </button>
-
-         <div class="mt-8">
-            <article
-               class="prose prose-ul:m-0 prose-ul:list-none prose-ul:space-y-2.5 prose-ul:pl-0 prose-li:pl-0"
-            >
-               <h3>About Us</h3>
-               <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Corporis quos illo odio incidunt optio sunt impedit! Quis
-                  nesciunt, expedita doloribus temporibus eos, eum corporis amet
-                  voluptatem sapiente consectetur exercitationem doloremque?
-               </p>
-               <h3>Contact Info</h3>
-               <div>
-                  <ul>
-                     <li>
-                        <h4 class="m-0 font-semibold">Email</h4>
-                        <div class="flex items-center gap-x-1.5">
-                           <span
-                              class="inline-flex size-8 items-center justify-center rounded-md bg-primary-50 text-primary"
-                           >
-                              <i class="fa-solid fa-envelope text-primary"></i>
-                           </span>
-                           <span class="text-base leading-none text-slate-500"
-                              >support@homelist.com</span
-                           >
-                        </div>
-                     </li>
-                     <li>
-                        <h4 class="m-0 font-semibold">Phone</h4>
-                        <div class="flex items-center gap-x-1.5">
-                           <span
-                              class="inline-flex size-8 items-center justify-center rounded-md bg-primary-50 text-primary"
-                           >
-                              <i class="fa-solid fa-phone text-primary"></i>
-                           </span>
-                           <span class="text-base text-slate-500"
-                              >+880 131 245 6340</span
-                           >
-                        </div>
-                     </li>
-                     <li>
-                        <h4 class="m-0 font-semibold">Address</h4>
-                        <div class="flex items-center gap-x-1.5">
-                           <span
-                              class="inline-flex size-8 items-center justify-center rounded-md bg-primary-50 text-primary"
-                           >
-                              <i
-                                 class="fa-solid fa-map-marker-alt text-primary"
-                              ></i>
-                           </span>
-                           <span class="text-base text-slate-500"
-                              >1234, Street, City, USA.</span
-                           >
-                        </div>
-                     </li>
-                  </ul>
-               </div>
-
-               <div class="mt-8">
-                  <h3>Follow Us</h3>
-                  <menu class="flex items-center gap-x-2.5">
-                     <li>
-                        <a
-                           href="#"
-                           class="group flex size-10 items-center justify-center rounded-full bg-primary-50"
-                        >
-                           <i
-                              class="fa-brands fa-facebook text-lg text-primary transition-transform duration-700 group-hover:rotate-[360deg] group-hover:scale-125"
-                           ></i>
-                        </a>
-                     </li>
-                     <li>
-                        <a
-                           href="#"
-                           class="group flex size-10 items-center justify-center rounded-full bg-primary-50"
-                        >
-                           <i
-                              class="fa-brands fa-twitter text-lg text-primary transition-transform duration-700 group-hover:rotate-[360deg] group-hover:scale-125"
-                           ></i>
-                        </a>
-                     </li>
-                     <li>
-                        <a
-                           href="#"
-                           class="group flex size-10 items-center justify-center rounded-full bg-primary-50"
-                        >
-                           <i
-                              class="fa-brands fa-instagram text-lg text-primary transition-transform duration-700 group-hover:rotate-[360deg] group-hover:scale-125"
-                           ></i>
-                        </a>
-                     </li>
-                     <li>
-                        <a
-                           href="#"
-                           class="group flex size-10 items-center justify-center rounded-full bg-primary-50"
-                        >
-                           <i
-                              class="fa-brands fa-linkedin text-lg text-primary transition-transform duration-700 group-hover:rotate-[360deg] group-hover:scale-125"
-                           ></i>
-                        </a>
-                     </li>
-                  </menu>
-               </div>
-            </article>
-         </div>
-      </div>
-
-      <!-- search modal -->
-      <div
-         id="search-modal"
-         data-modal-backdrop="static"
-         tabindex="-1"
-         aria-hidden="true"
-         class="fixed left-0 right-0 top-0 z-50 hidden h-[calc(100%-1rem)] max-h-full w-full items-center justify-center overflow-y-auto overflow-x-hidden md:inset-0"
-      >
-         <div
-            class="flex max-h-full w-full max-w-screen-md flex-col items-center justify-center p-4"
-         >
-            <button
-               data-modal-hide="search-modal"
-               class="group flex size-8 items-center justify-center rounded-full bg-rose-100 text-xl text-rose-600"
-            >
-               <i
-                  class="fa-solid fa-times transition-transform duration-500 group-hover:rotate-180"
-               ></i>
-            </button>
-
-            <form class="mx-auto mt-16 w-full">
-               <label
-                  for="default-search"
-                  class="sr-only mb-2 text-sm font-medium text-gray-900"
-                  >Search</label
-               >
-               <div class="relative">
-                  <div
-                     class="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3"
-                  >
-                     <svg
-                        class="h-4 w-4 text-gray-500"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 20 20"
-                     >
-                        <path
-                           stroke="currentColor"
-                           stroke-linecap="round"
-                           stroke-linejoin="round"
-                           stroke-width="2"
-                           d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
-                        />
-                     </svg>
-                  </div>
-                  <input
-                     type="search"
-                     id="default-search"
-                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-4 ps-10 text-sm text-gray-900 focus:border-primary focus:ring-primary"
-                     placeholder="Search for Properties..."
-                     required
-                  />
-                  <button
-                     type="submit"
-                     class="absolute bottom-2.5 end-2.5 rounded-lg bg-primary-600 px-4 py-2 text-sm font-medium text-white hover:bg-primary focus:outline-none focus:ring-4 focus:ring-blue-300"
-                  >
-                     Search
-                  </button>
-               </div>
-            </form>
-         </div>
-      </div>
-      
 
       <!-- Responsive menu -->
       <div
@@ -1054,7 +426,7 @@
                   <li>
                   <button
                         type="button"
-                        class="group flex w-full items-center rounded-lg p-2 text-base text-gray-900 transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                        class="group flex w-full items-center rounded-lg p-2 text-base text-gray-900 transition duration-75 hover:bg-gray-200 dark:text-white dark:hover:bg-gray-700"
                         aria-controls="dropdown-cho-thue-van-phong"
                         data-collapse-toggle="dropdown-cho-thue-van-phong"
                   >
@@ -1086,7 +458,7 @@
                         <a
                            target="_blank"
                            href="van-phong-cho-thue-quan-1.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Văn phòng cho thuê Quận 1
                         </a>
@@ -1095,7 +467,7 @@
                         <a
                            target="_blank"
                            href="van-phong-cho-thue-quan-1.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Văn phòng cho thuê Quận 2
                         </a>
@@ -1104,7 +476,7 @@
                         <a
                            target="_blank"
                            href="van-phong-cho-thue-quan-1.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Văn phòng cho thuê Quận 3
                         </a>
@@ -1113,7 +485,7 @@
                         <a
                            target="_blank"
                            href="van-phong-cho-thue-quan-1.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Văn phòng cho thuê Quận 4
                         </a>
@@ -1122,7 +494,7 @@
                         <a
                            target="_blank"
                            href="van-phong-cho-thue-quan-1.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Văn phòng cho thuê Quận 5
                         </a>
@@ -1131,7 +503,7 @@
                         <a
                            target="_blank"
                            href="van-phong-cho-thue-quan-1.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Văn phòng cho thuê Quận 7
                         </a>
@@ -1140,7 +512,7 @@
                         <a
                            target="_blank"
                            href="van-phong-cho-thue-quan-1.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Văn phòng cho thuê Quận 8
                         </a>
@@ -1149,7 +521,7 @@
                         <a
                            target="_blank"
                            href="van-phong-cho-thue-quan-1.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Văn phòng cho thuê Quận 9
                         </a>
@@ -1158,7 +530,7 @@
                         <a
                            target="_blank"
                            href="van-phong-cho-thue-quan-1.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Văn phòng cho thuê Quận 10
                         </a>
@@ -1167,7 +539,7 @@
                         <a
                            target="_blank"
                            href="van-phong-cho-thue-quan-1.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Văn phòng cho thuê Quận 11
                         </a>
@@ -1176,7 +548,7 @@
                         <a
                            target="_blank"
                            href="van-phong-cho-thue-quan-1.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Văn phòng cho thuê Quận 12
                         </a>
@@ -1185,7 +557,7 @@
                         <a
                            target="_blank"
                            href="van-phong-cho-thue-quan-1.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Văn phòng cho thuê Quận Bình Thạnh
                         </a>
@@ -1194,7 +566,7 @@
                         <a
                            target="_blank"
                            href="van-phong-cho-thue-quan-1.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Văn phòng cho thuê Quận Gò Vấp
                         </a>
@@ -1203,7 +575,7 @@
                         <a
                            target="_blank"
                            href="van-phong-cho-thue-quan-1.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Văn phòng cho thuê Quận Tân Bình
                         </a>
@@ -1212,7 +584,7 @@
                         <a
                            target="_blank"
                            href="van-phong-cho-thue-quan-1.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Văn phòng cho thuê Quận Tân Phú
                         </a>
@@ -1224,17 +596,11 @@
                   <li>
                   <button
                         type="button"
-                        class="group flex w-full items-center rounded-lg p-2 text-base text-gray-900 transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                        class="group flex justify-between w-full items-center rounded-lg p-2 text-base text-gray-900 transition duration-75 hover:bg-gray-200 dark:text-white dark:hover:bg-gray-700"
                         aria-controls="dropdown-cho-thue-van-phong-theo-phuong"
                         data-collapse-toggle="dropdown-cho-thue-van-phong-theo-phuong"
                   >
-                     <a 
-                        target="_blank" 
-                        class="flex-1 whitespace-nowrap text-left"
-                        href="#"
-                     >
-                        Văn phòng theo phường
-                     </a>
+                     Văn phòng theo phường
                      <svg
                         class="h-3 w-3"
                         aria-hidden="true"
@@ -1256,7 +622,7 @@
                         <a
                            target="_blank"
                            href="van-phong-cho-thue-phuong-tan-dinh.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Phường Sài Gòn - Quận 1
                         </a>
@@ -1265,7 +631,7 @@
                         <a
                            target="_blank"
                            href="van-phong-cho-thue-phuong-tan-dinh.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Phường Tân Định - Quận 1
                         </a>
@@ -1274,7 +640,7 @@
                         <a
                            target="_blank"
                            href="van-phong-cho-thue-phuong-tan-dinh.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Phường Bến Thành - Quận 1
                         </a>
@@ -1283,7 +649,7 @@
                         <a
                            target="_blank"
                            href="van-phong-cho-thue-phuong-tan-dinh.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Phường Cầu Ông Lãnh - Quận 1
                         </a>
@@ -1292,7 +658,7 @@
                         <a
                            target="_blank"
                            href="van-phong-cho-thue-phuong-tan-dinh.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Phường Bàn Cờ - Quận 3
                         </a>
@@ -1301,7 +667,7 @@
                         <a
                            target="_blank"
                            href="van-phong-cho-thue-phuong-tan-dinh.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Phường Xuân Hòa - Quận 3
                         </a>
@@ -1310,7 +676,7 @@
                         <a
                            target="_blank"
                            href="van-phong-cho-thue-phuong-tan-dinh.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Phường Võ Thị Sáu - Quận 3
                         </a>
@@ -1319,7 +685,7 @@
                         <a
                            target="_blank"
                            href="van-phong-cho-thue-phuong-tan-dinh.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Phường Khánh Hội - Quận 4
                         </a>
@@ -1328,7 +694,7 @@
                         <a
                            target="_blank"
                            href="van-phong-cho-thue-phuong-tan-dinh.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Phường Bến Vân Đồn - Quận 4
                         </a>
@@ -1337,7 +703,7 @@
                         <a
                            target="_blank"
                            href="van-phong-cho-thue-phuong-tan-dinh.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Phường Chợ Lớn - Quận 5
                         </a>
@@ -1346,7 +712,7 @@
                         <a
                            target="_blank"
                            href="van-phong-cho-thue-phuong-tan-dinh.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Phường Hùng Vương - Quận 5
                         </a>
@@ -1355,7 +721,7 @@
                         <a
                            target="_blank"
                            href="van-phong-cho-thue-phuong-tan-dinh.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Phường Tân Hưng - Quận 7
                         </a>
@@ -1364,7 +730,7 @@
                         <a
                            target="_blank"
                            href="van-phong-cho-thue-phuong-tan-dinh.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Phường Phú Mỹ Hưng - Quận 7
                         </a>
@@ -1373,7 +739,7 @@
                         <a
                            target="_blank"
                            href="van-phong-cho-thue-phuong-tan-dinh.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Phường Tân Phong – Tân Quy - Quận 7
                         </a>
@@ -1382,7 +748,7 @@
                         <a
                            target="_blank"
                            href="van-phong-cho-thue-phuong-tan-dinh.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Phường Nhật Tảo Quận - 10
                         </a>
@@ -1391,7 +757,7 @@
                         <a
                            target="_blank"
                            href="van-phong-cho-thue-phuong-tan-dinh.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Phường Đồng Tiến - Quận 10
                         </a>
@@ -1400,7 +766,7 @@
                         <a
                            target="_blank"
                            href="van-phong-cho-thue-phuong-tan-dinh.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Phường Vĩnh Viễn - Quận 10
                         </a>
@@ -1409,7 +775,7 @@
                         <a
                            target="_blank"
                            href="van-phong-cho-thue-phuong-tan-dinh.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Phường Hòa Bình - Quận 11
                         </a>
@@ -1418,7 +784,7 @@
                         <a
                            target="_blank"
                            href="van-phong-cho-thue-phuong-tan-dinh.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Phường Thiên Hộ - Quận 11
                         </a>
@@ -1427,7 +793,7 @@
                         <a
                            target="_blank"
                            href="van-phong-cho-thue-phuong-tan-dinh.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Phường Lạc Long Quân -Quận 11
                         </a>
@@ -1436,7 +802,7 @@
                         <a
                            target="_blank"
                            href="van-phong-cho-thue-phuong-tan-dinh.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Phường Thanh Đa - Quận Bình Thạnh
                         </a>
@@ -1445,7 +811,7 @@
                         <a
                            target="_blank"
                            href="van-phong-cho-thue-phuong-tan-dinh.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Phường Văn Thánh - Quận Bình Thạnh
                         </a>
@@ -1454,7 +820,7 @@
                         <a
                            target="_blank"
                            href="van-phong-cho-thue-phuong-tan-dinh.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Phường Bạch Đằng - Quận Bình Thạnh
                         </a>
@@ -1463,7 +829,7 @@
                         <a
                            target="_blank"
                            href="van-phong-cho-thue-phuong-tan-dinh.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Phường Bình Lợi - Quận Bình Thạnh
                         </a>
@@ -1472,7 +838,7 @@
                         <a
                            target="_blank"
                            href="van-phong-cho-thue-phuong-tan-dinh.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Phường Bình Tân - Quận Tân Bình
                         </a>
@@ -1481,7 +847,7 @@
                         <a
                            target="_blank"
                            href="van-phong-cho-thue-phuong-tan-dinh.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Phường Tân Tạo - Quận Tân Bình
                         </a>
@@ -1490,7 +856,7 @@
                         <a
                            target="_blank"
                            href="van-phong-cho-thue-phuong-tan-dinh.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Phường An Lạc - Quận Tân Bình
                         </a>
@@ -1499,7 +865,7 @@
                         <a
                            target="_blank"
                            href="van-phong-cho-thue-phuong-tan-dinh.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Phường Bình Trị Đông - Quận Tân Bình
                         </a>
@@ -1508,7 +874,7 @@
                         <a
                            target="_blank"
                            href="van-phong-cho-thue-phuong-tan-dinh.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Phường An Hội – Thống Nhất - Quận Tân phú
                         </a>
@@ -1517,7 +883,7 @@
                         <a
                            target="_blank"
                            href="van-phong-cho-thue-phuong-tan-dinh.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Phường Tân Quý – Tân Sơn Nhì - Quận Tân phú
                         </a>
@@ -1526,7 +892,7 @@
                         <a
                            target="_blank"
                            href="van-phong-cho-thue-phuong-tan-dinh.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Phường Phú Thọ Hòa – Hòa Thạnh - Quận Tân phú
                         </a>
@@ -1535,7 +901,7 @@
                         <a
                            target="_blank"
                            href="van-phong-cho-thue-phuong-tan-dinh.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Phường An Hội – Thống Nhất - Quận Tân phú
                         </a>
@@ -1547,17 +913,11 @@
                   <li>
                   <button
                         type="button"
-                        class="group flex w-full items-center rounded-lg p-2 text-base text-gray-900 transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                        class="group flex justify-between w-full items-center rounded-lg p-2 text-base text-gray-900 transition duration-75 hover:bg-gray-200 dark:text-white dark:hover:bg-gray-700"
                         aria-controls="dropdown-cho-thue-van-phong-theo-hang"
                         data-collapse-toggle="dropdown-cho-thue-van-phong-theo-hang"
                   >
-                     <a 
-                        target="_blank" 
-                        class="flex-1 whitespace-nowrap text-left"
-                        href="#"
-                     >
-                        Văn phòng theo hạng
-                     </a>
+                     Văn phòng theo hạng
                      <svg
                         class="h-3 w-3"
                         aria-hidden="true"
@@ -1579,7 +939,7 @@
                         <a
                            target="_blank"
                            href="van-phong-hang-a.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Văn phòng hạng A
                         </a>
@@ -1588,7 +948,7 @@
                         <a
                            target="_blank"
                            href="van-phong-hang-a.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Văn phòng hạng B
                         </a>
@@ -1597,7 +957,7 @@
                         <a
                            target="_blank"
                            href="van-phong-hang-a.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Văn phòng hạng C
                         </a>
@@ -1606,7 +966,7 @@
                         <a
                            target="_blank"
                            href="van-phong-hang-a.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Văn phòng hạng giá rẻ
                         </a>
@@ -1618,7 +978,7 @@
                   <li>
                   <button
                         type="button"
-                        class="group flex w-full items-center rounded-lg p-2 text-base text-gray-900 transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                        class="group flex w-full items-center rounded-lg p-2 text-base text-gray-900 transition duration-75 hover:bg-gray-200 dark:text-white dark:hover:bg-gray-700"
                         aria-controls="dropdown-cho-thue-van-phong-tron-goi"
                         data-collapse-toggle="dropdown-cho-thue-van-phong-tron-goi"
                   >
@@ -1650,7 +1010,7 @@
                         <a
                            target="_blank"
                            href="van-phong-tron-goi-quan-1.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Văn phòng trọn gói Quận 1
                         </a>
@@ -1659,7 +1019,7 @@
                         <a
                            target="_blank"
                            href="van-phong-tron-goi-quan-1.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Văn phòng trọn gói Quận 3
                         </a>
@@ -1668,7 +1028,7 @@
                         <a
                            target="_blank"
                            href="van-phong-tron-goi-quan-1.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Văn phòng trọn gói Quận 4
                         </a>
@@ -1677,7 +1037,7 @@
                         <a
                            target="_blank"
                            href="van-phong-tron-goi-quan-1.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Văn phòng trọn gói Quận 5
                         </a>
@@ -1686,7 +1046,7 @@
                         <a
                            target="_blank"
                            href="van-phong-tron-goi-quan-1.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Văn phòng trọn gói Quận 7
                         </a>
@@ -1695,7 +1055,7 @@
                         <a
                            target="_blank"
                            href="van-phong-tron-goi-quan-1.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Văn phòng trọn gói Quận 10
                         </a>
@@ -1704,7 +1064,7 @@
                         <a
                            target="_blank"
                            href="van-phong-tron-goi-quan-1.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Văn phòng trọn gói Quận Bình Thạnh
                         </a>
@@ -1713,7 +1073,7 @@
                         <a
                            target="_blank"
                            href="van-phong-tron-goi-quan-1.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Văn phòng trọn gói Quận Tân Bình
                         </a>
@@ -1722,7 +1082,7 @@
                         <a
                            target="_blank"
                            href="van-phong-tron-goi-quan-1.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Văn phòng trọn gói Quận Thủ Đức
                         </a>
@@ -1731,7 +1091,7 @@
                         <a
                            target="_blank"
                            href="van-phong-tron-goi-quan-1.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Văn phòng trọn gói Quận Phú Nhuận
                         </a>
@@ -1740,7 +1100,7 @@
                         <a
                            target="_blank"
                            href="van-phong-tron-goi-quan-1.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            >Văn phòng trọn gói Quận Gò Vấp
                         </a>
@@ -1752,7 +1112,7 @@
                   <li>
                   <button
                         type="button"
-                        class="group flex w-full items-center rounded-lg p-2 text-base text-gray-900 transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                        class="group flex w-full items-center rounded-lg p-2 text-base text-gray-900 transition duration-75 hover:bg-gray-200 dark:text-white dark:hover:bg-gray-700"
                         aria-controls="dropdown-cho-thue-toa-nha"
                         data-collapse-toggle="dropdown-cho-thue-toa-nha"
                   >
@@ -1784,7 +1144,7 @@
                         <a
                            target="_blank"
                            href="cho-thue-toa-nha-quan-1.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Cho thuê tòa nhà Quận 1
                         </a>
@@ -1793,7 +1153,7 @@
                         <a
                            target="_blank"
                            href="cho-thue-toa-nha-quan-1.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Cho thuê tòa nhà Quận 3
                         </a>
@@ -1802,7 +1162,7 @@
                         <a
                            target="_blank"
                            href="cho-thue-toa-nha-quan-1.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Cho thuê tòa nhà Quận 4
                         </a>
@@ -1811,7 +1171,7 @@
                         <a
                            target="_blank"
                            href="cho-thue-toa-nha-quan-1.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Cho thuê tòa nhà Quận 5
                         </a>
@@ -1820,7 +1180,7 @@
                         <a
                            target="_blank"
                            href="cho-thue-toa-nha-quan-1.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Cho thuê tòa nhà Quận 7
                         </a>
@@ -1829,7 +1189,7 @@
                         <a
                            target="_blank"
                            href="cho-thue-toa-nha-quan-1.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Cho thuê tòa nhà Quận 10
                         </a>
@@ -1838,7 +1198,7 @@
                         <a
                            target="_blank"
                            href="cho-thue-toa-nha-quan-1.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Cho thuê toà nhà Quận Bình Thạnh
                         </a>
@@ -1847,7 +1207,7 @@
                         <a
                            target="_blank"
                            href="cho-thue-toa-nha-quan-1.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Cho thuê toà nhà Quận Tân Bình
                         </a>
@@ -1856,7 +1216,7 @@
                         <a
                            target="_blank"
                            href="cho-thue-toa-nha-quan-1.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Cho thuê toà nhà Quận Thủ Đức
                         </a>
@@ -1865,7 +1225,7 @@
                         <a
                            target="_blank"
                            href="cho-thue-toa-nha-quan-1.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Cho thuê toà nhà Quận Phú Nhuận
                         </a>
@@ -1874,7 +1234,7 @@
                         <a
                            target="_blank"
                            href="cho-thue-toa-nha-quan-1.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Cho thuê toà nhà Quận Gò Vấp
                         </a>
@@ -1886,17 +1246,11 @@
                   <li>
                   <button
                         type="button"
-                        class="group flex w-full items-center rounded-lg p-2 text-base text-gray-900 transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                        class="group flex justify-between w-full items-center rounded-lg p-2 text-base text-gray-900 transition duration-75 hover:bg-gray-200 dark:text-white dark:hover:bg-gray-700"
                         aria-controls="dropdown-noi-that-van-phong"
                         data-collapse-toggle="dropdown-noi-that-van-phong"
                   >
-                     <a 
-                        target="_blank" 
-                        class="flex-1 whitespace-nowrap text-left"
-                        href="#"
-                     >
-                        Nội thất văn phòng
-                     </a>
+                     Nội thất văn phòng
                      <svg
                         class="h-3 w-3"
                         aria-hidden="true"
@@ -1918,7 +1272,7 @@
                         <a
                            target="_blank"
                            href="thiet-ke-thi-cong-noi-that.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Thiết kế thi công nội thất
                         </a>
@@ -1926,8 +1280,8 @@
                         <li>
                         <a
                            target="_blank"
-                           href="thiet-ke-thi-cong-noi-that.html"
-                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-100"
+                           href="du-an-hoan-thien.html"
+                           class="group flex w-full items-center rounded-lg py-2 pl-5 text-gray-900 transition duration-75 hover:bg-gray-200"
                         >
                            Dự án đã hoàn thiện
                         </a>
@@ -1939,20 +1293,21 @@
             </div>
       </div>
 
-      <!-- Footer -->
+      <!-- footer -->
       <div id="footer"></div>
 
       <!-- thư viện -->
       <!-- Scripts -->
+      <script src="./js/breadcrumb.js"></script>
       <script src="js/fontawesome.min.js"></script>
       <script src="js/flowbite.min.js"></script>
       <script src="js/aos.js"></script>
       <script src="js/odometer.js"></script>
       <script src="js/swiper-bundle.min.js"></script>
       <script src="js/index.js"></script>
-      <script src="./js/breadcrumb.js"></script>
       <script src="js/users-rating-swiper.js"></script>
       <script src="js/include.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/nouislider@15.6.1/dist/nouislider.min.js"></script>
 
       <script>
          AOS.init();
@@ -1961,8 +1316,408 @@
       <script>
          document.addEventListener("DOMContentLoaded", () => {
             includeHTML("#header", "./partials/common/header.html");
+            includeHTML("#breadCrumb", "./partials/common/bread-crumb.html", initBreadcrumb);
+            includeHTML("#mega-search", "./partials/detail/search-mega.html");
+            includeHTML("#ratingStar", "./partials/common/rating-star.html");
+            includeHTML("#blogSearchSidebar", "./partials/blogs/search-sidebar.html");
             includeHTML("#footer", "./partials/common/footer.html");
          });
+      </script>
+
+      <script>
+         function toggleFullInfo() {
+            const fullContent = document.getElementById('info-full');
+            const btnText = document.getElementById('btnText');
+            const btnIcon = document.getElementById('btnIcon');
+            const btn = document.getElementById('toggleInfoBtn');
+
+            if (fullContent.classList.contains('hidden')) {
+            // Mở nội dung
+            fullContent.classList.remove('hidden');
+            btnText.textContent = 'Thu gọn';
+            btnIcon.classList.remove('fa-chevron-down');
+            btnIcon.classList.add('fa-chevron-up');
+
+            // Scroll nhẹ xuống để người dùng biết đã mở (tuỳ chọn)
+            // fullContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else {
+            // Đóng nội dung
+            fullContent.classList.add('hidden');
+            btnText.textContent = 'Xem thêm';
+            btnIcon.classList.remove('fa-chevron-up');
+            btnIcon.classList.add('fa-chevron-down');
+
+            // Scroll lại lên đầu section
+            document.getElementById('general-info-section').scrollIntoView({ behavior: 'smooth' });
+            }
+         }
+      </script>
+
+      <script>
+         AOS.init({
+            delay: 0,
+            duration: 1000,
+         });
+
+         // reviews
+         const swiper = new Swiper('.h2-reviews-swiper', {
+            slidesPerView: 3,
+            pagination: {
+            el: '.h2-reviews-swiper-pagination',
+            clickable: true,
+            dynamicBullets: true,
+            },
+            autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+            },
+            breakpoints: {
+            0: {
+               slidesPerView: 1,
+               spaceBetween: 10,
+            },
+            320: {
+               slidesPerView: 2,
+               spaceBetween: 10,
+            },
+            640: {
+               slidesPerView: 2,
+               spaceBetween: 15,
+            },
+            768: {
+               slidesPerView: 3,
+               spaceBetween: 20,
+            },
+            },
+         });
+
+         // agent
+         const agent = new Swiper('.h2-agent-swiper', {
+            slidesPerView: 3,
+            navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+            0: {
+               slidesPerView: 1,
+               spaceBetween: 10,
+            },
+            768: {
+               slidesPerView: 2,
+               spaceBetween: 20,
+            },
+            1024: {
+               slidesPerView: 3,
+               spaceBetween: 30,
+            },
+            },
+         });
+
+         function initPhuongSwiper() {
+            const el = document.querySelector('.phuong-swiper');
+            if (!el || el.classList.contains('swiper-initialized')) return;
+
+            new Swiper(el, {
+            slidesPerView: 4,
+            spaceBetween: 24,
+            loop: true,
+            speed: 800,
+            grabCursor: true,
+
+            navigation: {
+               nextEl: '.phuong-swiper-button-next',
+               prevEl: '.phuong-swiper-button-prev',
+            },
+
+            autoplay: {
+               delay: 3000,
+               disableOnInteraction: false,
+               pauseOnMouseEnter: true,
+            },
+
+            breakpoints: {
+               0: { slidesPerView: 1, spaceBetween: 16 },
+               640: { slidesPerView: 2, spaceBetween: 20 },
+               1024: { slidesPerView: 3, spaceBetween: 24 },
+               1280: { slidesPerView: 4, spaceBetween: 24 },
+            },
+            });
+         }
+
+
+         // Team Swiper
+         function initTeamSwiper() {
+            const el = document.querySelector('.team-swiper');
+
+            if (!el) return;
+
+            // chống init trùng
+            if (el.classList.contains('swiper-initialized')) return;
+
+            new Swiper(el, {
+            slidesPerView: 4,
+            spaceBetween: 24,
+            // Ensure autoHeight is false (default)
+            autoHeight: false, 
+            // This helper ensures all slides are same height
+            watchSlidesProgress: true,
+            loop: true,
+            speed: 800,
+            grabCursor: true,
+
+            autoplay: {
+               delay: 3500,
+               disableOnInteraction: false,
+               pauseOnMouseEnter: true,
+            },
+
+            breakpoints: {
+               0: { slidesPerView: 1, spaceBetween: 16 },
+               640: { slidesPerView: 2, spaceBetween: 20 },
+               1024: { slidesPerView: 3, spaceBetween: 24 },
+               1280: { slidesPerView: 4, spaceBetween: 24 },
+            },
+            });
+         }
+      </script>
+
+      <script>
+         function toggleFullInfo() {
+            const fullContent = document.getElementById('info-full');
+            const gradient = document.getElementById('seo-gradient');
+            const btn = document.getElementById('toggleInfoBtn');
+            const btnText = document.getElementById('btnText');
+            const btnIcon = document.getElementById('btnIcon');
+
+            if (fullContent.classList.contains('hidden')) {
+            fullContent.classList.remove('hidden');
+            gradient.classList.add('hidden');
+            btnText.textContent = 'Thu gọn';
+            btnIcon.classList.remove('fa-chevron-down');
+            btnIcon.classList.add('fa-chevron-up');
+            // Scroll to full content
+            fullContent.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            } else {
+            fullContent.classList.add('hidden');
+            gradient.classList.remove('hidden');
+            btnText.textContent = 'Xem thêm';
+            btnIcon.classList.remove('fa-chevron-up');
+            btnIcon.classList.add('fa-chevron-down');
+            // Scroll back to preview
+            document.getElementById('info-preview').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+         }
+      </script>
+
+      <script>
+         function initOfficeSwiper() {
+            // Wait a short moment for the includeHTML to finish rendering the content
+            setTimeout(() => {
+            const swiperSections = document.querySelectorAll(".office-rental-swiper");
+            
+            swiperSections.forEach((section) => {
+               if (section.dataset.initialized === "true") return;
+
+               // Target the correct wrapper class
+               const wrapper = section.querySelector('.swiper-wrapper');
+               const nextBtn = section.querySelector('.fa-chevron-right')?.closest('button');
+               const prevBtn = section.querySelector('.fa-chevron-left')?.closest('button');
+
+               if (wrapper && nextBtn && prevBtn) {
+                  const getScrollStep = () => {
+                  const firstCard = wrapper.querySelector('.swiper-slide');
+                  // Scroll by card width + 24px gap
+                  return firstCard ? firstCard.offsetWidth + 24 : 374; 
+                  };
+
+                  nextBtn.onclick = (e) => {
+                  e.preventDefault();
+                  wrapper.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
+                  };
+
+                  prevBtn.onclick = (e) => {
+                  e.preventDefault();
+                  wrapper.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
+                  };
+
+                  section.dataset.initialized = "true";
+               }
+            });
+            }, 400); // 400ms is safer for multiple includeHTML calls
+         }
+         initOfficeSwiper()
+      </script>
+
+      <script>
+         setTimeout(() => {
+            const slider = document.getElementById('price-slider');
+            const minDisplay = document.getElementById('min-price-display');
+            const maxDisplay = document.getElementById('max-price-display');
+            const minInput = document.getElementById('min-price-input');
+            const maxInput = document.getElementById('max-price-input');
+            // Giá tính theo VND
+            let MIN_PRICE = 20000000; // 20 triệu
+            let MAX_PRICE = 500000000; // 500 triệu
+
+            function formatVND(value) {
+            // Đổi sang "triệu"
+            let trieu = Math.round(value / 1000000);
+            return trieu.toLocaleString('vi-VN') + ' triệu';
+            }
+
+            noUiSlider.create(slider, {
+            start: [MIN_PRICE, MIN_PRICE], // điểm bắt đầu
+            connect: true,
+            step: 1000000, // bước 1 triệu
+            range: {
+               min: MIN_PRICE,
+               max: MAX_PRICE,
+            },
+            });
+            
+            slider.noUiSlider.on('update', function (values, handle) {
+            let minVal = Math.round(values[0]);
+            let maxVal = Math.round(values[1]);
+            
+            minDisplay.textContent = formatVND(minVal);
+            maxDisplay.textContent = formatVND(maxVal);
+            
+            // Gán vào input hidden để gửi form
+            minInput.value = minVal;
+            maxInput.value = maxVal;
+            });
+         
+            // Area Slider
+            const areaSlider = document.getElementById('area-slider');
+            const minAreaDisplay = document.getElementById('min-area-display');
+            const maxAreaDisplay = document.getElementById('max-area-display');
+            const minAreaInput = document.getElementById('min-area-input');
+            const maxAreaInput = document.getElementById('max-area-input');
+            let MIN_AREA = 20; // 20 m2
+            let MAX_AREA = 50; // 500 m2
+
+            if (areaSlider) {
+            noUiSlider.create(areaSlider, {
+               start: [MIN_AREA, MIN_AREA],
+               connect: true,
+               step: 10,
+               range: {
+                  min: MIN_AREA,
+                  max: MAX_AREA,
+               },
+            });
+            
+            areaSlider.noUiSlider.on('update', function (values, handle) {
+               let minVal = Math.round(values[0]);
+               let maxVal = Math.round(values[1]);
+
+               minAreaDisplay.textContent = minVal + ' m²';
+               maxAreaDisplay.textContent = maxVal + ' m²';
+
+               minAreaInput.value = minVal;
+               maxAreaInput.value = maxVal;
+            });
+            }
+         
+            // Floor Slider
+            const floorSlider = document.getElementById('floor-slider');
+            const minFloorDisplay = document.getElementById('min-floor-display');
+            const maxFloorDisplay = document.getElementById('max-floor-display');
+            const minFloorInput = document.getElementById('min-floor-input');
+            const maxFloorInput = document.getElementById('max-floor-input');
+
+            let MIN_FLOOR = 1;
+            let MAX_FLOOR = 50;
+            
+            if (floorSlider) {
+            noUiSlider.create(floorSlider, {
+               start: [MIN_FLOOR, MIN_FLOOR],
+               connect: true,
+               step: 1,
+               range: {
+                  min: MIN_FLOOR,
+                  max: MAX_FLOOR,
+               },
+            });
+            
+            floorSlider.noUiSlider.on('update', function (values, handle) {
+               let minVal = Math.round(values[0]);
+               let maxVal = Math.round(values[1]);
+               
+               minFloorDisplay.textContent = minVal;
+               maxFloorDisplay.textContent = maxVal;
+               
+               minFloorInput.value = minVal;
+               maxFloorInput.value = maxVal;
+            });
+            }
+
+            // Capacity Slider
+            const capacitySlider = document.getElementById('capacity-slider');
+            const minCapacityDisplay = document.getElementById('min-capacity-display');
+            const maxCapacityDisplay = document.getElementById('max-capacity-display');
+            const minCapacityInput = document.getElementById('min-capacity-input');
+            const maxCapacityInput = document.getElementById('max-capacity-input');
+
+            let MIN_PEOPLE = 1;
+            let MAX_PEOPLE = 100;
+
+            if (capacitySlider) {
+            noUiSlider.create(capacitySlider, {
+               start: [MIN_PEOPLE, MIN_PEOPLE],
+               connect: true,
+               step: 1,
+               range: {
+                  min: MIN_PEOPLE,
+                  max: MAX_PEOPLE,
+               },
+            });
+            
+            capacitySlider.noUiSlider.on('update', function (values, handle) {
+               let minVal = Math.round(values[0]);
+               let maxVal = Math.round(values[1]);
+               
+               minCapacityDisplay.textContent = minVal;
+               maxCapacityDisplay.textContent = maxVal;
+               
+               minCapacityInput.value = minVal;
+               maxCapacityInput.value = maxVal;
+            });
+            }
+            
+            // Toggle search form collapse/expand
+            const toggleBtn = document.getElementById('toggle-search-btn');
+            const searchFormContent = document.getElementById('search-form-content');
+            const toggleText = document.getElementById('toggle-search-text');
+            const toggleIcon = document.getElementById('toggle-search-icon');
+         
+            if (toggleBtn && searchFormContent) {
+            toggleBtn.addEventListener('click', function () {
+               // Check if currently hidden
+               var isHidden =
+               searchFormContent.classList.contains('hidden') ||
+               searchFormContent.style.display === 'none' ||
+               window.getComputedStyle(searchFormContent).display === 'none';
+               
+               if (isHidden) {
+                  // Show the form
+                  searchFormContent.classList.remove('hidden');
+                  searchFormContent.style.display = 'grid';
+                  toggleText.textContent = 'Thu gọn';
+                  toggleIcon.classList.remove('fa-chevron-down');
+                  toggleIcon.classList.add('fa-chevron-up');
+               } else {
+                  // Hide the form
+                  searchFormContent.classList.add('hidden');
+                  searchFormContent.style.display = 'none';
+                  toggleText.textContent = 'Mở rộng';
+                  toggleIcon.classList.remove('fa-chevron-up');
+                  toggleIcon.classList.add('fa-chevron-down');
+               }
+            });
+            }
+         }, 200);
       </script>
    </body>
 </html>
