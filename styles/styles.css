@@ -360,9 +360,10 @@ h5,
 h6 {
   font-size: inherit;
   font-weight: inherit;
+  color: #1BA0E1 !important;
 }
 a {
-  color: inherit;
+  color: #231F20;
   text-decoration: inherit;
 }
 b,
@@ -7303,7 +7304,7 @@ textarea:focus {
 }
 body,
 html {
-  font-family: Inter, sans-serif;
+  font-family: Poppins, sans-serif;
   scroll-behavior: smooth !important;
 }
 .chip {
