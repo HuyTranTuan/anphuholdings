@@ -66,11 +66,11 @@
   </style>
 </head>
 
-<body>
+<body class="relative">
   <!-- Header -->
-  <div id="header"></div>
+  <div id="header" class="sticky left-0 top-0 z-50 md:block"></div>
   <button
-    class="md:hidden inline-block absolute right-0 mr-2.5 z-[100]" style="top: 34px;"
+    class="fixed md:hidden" style="top: 18px; right: 18px; z-index: 999;"
     type="button"
     data-drawer-target="responsive-menu"
     data-drawer-show="responsive-menu"
@@ -93,7 +93,7 @@
   <section class="bg-primary-10">
     <div class="h-auto w-full bg-cover bg-center bg-no-repeat pb-10 pt-10" style="background-image: url('assets/images/layer.svg')">
       <div
-        class="container flex h-[170px] flex-col items-center justify-center sm:h-[200px] md:h-[250px]">
+        class="container flex h-[170px] flex-col items-center justify-center sm:h-[200px] md:h-[250px]" data-aos="flip-left">
         <h1 id="pageTitle" class="common-hero-heading">Văn phòng trọn gói theo thương hiệu</h1>
 
         <!-- Breadcrumb -->
@@ -106,64 +106,31 @@
     </div>
   </section>
 
+  <!-- Rating start -->
+  <div class="container">
+    <section id="ratingStar" data-aos="fade-right"></section>
+  </div>
 
-  <!-- Content Started -->
-  <section class="container overflow-x-hidden">
+  <!-- Building rentals by district -->
+  <div id="officeRental" class="bg-slate-50"></div>
 
-
-    <!-- Rating start -->
-    <div id="ratingStar" data-aos="fade-right"></div>
-
-    <!-- Building rentals by district -->
-    <div id="officeRental"></div>
-
-    <!-- VĂN PHÒNG CHO THUÊ  -->
-    <section id="officeRentalWard1"></section>
-    <section id="officeRentalWard2"></section>
-    <section id="officeRentalWard3"></section>
-    <section id="officeRentalWard4"></section>
-    <section id="officeRentalWard5"></section>
-    <section id="officeRentalWard6"></section>
-    <section id="officeRentalWard7"></section>
-    <section id="officeRentalWard8"></section>
-    <section id="officeRentalWard9"></section>
-    <section id="officeRentalWard10"></section>
-    <section id="officeRentalWard11"></section>
-    <section id="officeRentalWard12"></section>
-    <section id="officeRentalWardBinhThanh"></section>
-    <section id="officeRentalWardGoVap"></section>
-    <section id="officeRentalWardPhuNhuan"></section>
-    <section id="officeRentalWardTanBinh"></section>
-    <section id="officeRentalWardThuDuc"></section>
-    <section id="officeRentalWardBinhChanh"></section>
-  </section>
-
-  <!-- Quy trình dịch vụ tư vấn -->
-  <section id="processConsulting"></section>
-
-  <!-- maps -->
-  <!-- đang bị sai layout -->
-  <section class="container mx-auto px-4 xl:px-0 bg-white py-16">
-    <h2 class="text-3xl font-bold text-navy uppercase mt-12 mb-5">
-      Bản đồ các tòa nhà cho thuê văn phòng tại tp.HCM
-    </h2>
-    <div id="map"></div>
-  </section>
+  <!-- Office Rental District 1 -->
+  <section id="officeRentalWard1"></section>
 
   <!-- General information -->
-  <section id="generalInformation"></section>
+  <section id="generalInformation" class="bg-slate-50"></section>
 
   <!-- FAQ Section -->
   <section id="faq"></section>
 
   <!-- Tìm thuê văn phòng theo phường mới -->
-  <section id="officeNewWard"></section>
+  <section id="officeNewWard" class="bg-slate-50"></section>
 
   <!-- Cẩm nang tìm văn phòng -->
-  <section id="handbook"></section>
+  <section id="handbook" class="bg-slate-50"></section>
 
   <!-- Consulting team -->
-  <section id="consultingTeam"></section>
+  <section id="consultingTeam" class="bg-slate-50"></section>
 
   <!-- Contact Section -->
   <section id="contact2"></section>
@@ -1095,287 +1062,7 @@
   </script>
 
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      includeHTML("#header", "./partials/common/header.html");
-      includeHTML("#breadCrumb", "./partials/common/bread-crumb.html", initBreadcrumb);
-      includeHTML("#mega-search", "./partials/detail/search-mega.html");
-      includeHTML("#ratingStar", "./partials/common/rating-star.html");
-      includeHTML("#officeRental", "./partials/office-rental/office-rental-brand.html");
-      includeHTML("#officeRentalWard1", "./partials/office-rental/office-rental-ward-1.html");
-      includeHTML("#officeRentalWard2", "./partials/office-rental/office-rental-ward-1.html");
-      includeHTML("#officeRentalWard3", "./partials/office-rental/office-rental-ward-1.html");
-      includeHTML("#officeRentalWard4", "./partials/office-rental/office-rental-ward-1.html");
-      includeHTML("#officeRentalWard5", "./partials/office-rental/office-rental-ward-1.html");
-      includeHTML("#officeRentalWard6", "./partials/office-rental/office-rental-ward-1.html");
-      includeHTML("#officeRentalWard7", "./partials/office-rental/office-rental-ward-1.html");
-      includeHTML("#officeRentalWard8", "./partials/office-rental/office-rental-ward-1.html");
-      includeHTML("#officeRentalWard9", "./partials/office-rental/office-rental-ward-1.html");
-      includeHTML("#officeRentalWard10", "./partials/office-rental/office-rental-ward-1.html");
-      includeHTML("#officeRentalWard11", "./partials/office-rental/office-rental-ward-1.html");
-      includeHTML("#officeRentalWard12", "./partials/office-rental/office-rental-ward-1.html");
-      includeHTML("#officeRentalWardBinhThanh", "./partials/office-rental/office-rental-ward-1.html");
-      includeHTML("#officeRentalWardPhuNhuan", "./partials/office-rental/office-rental-ward-1.html");
-      includeHTML("#officeRentalWardGoVap", "./partials/office-rental/office-rental-ward-1.html");
-      includeHTML("#officeRentalWardTanBinh", "./partials/office-rental/office-rental-ward-1.html");
-      includeHTML("#officeRentalWardThuDuc", "./partials/office-rental/office-rental-ward-1.html");
-      includeHTML("#officeRentalWardBinhChanh", "./partials/office-rental/office-rental-ward-1.html");
-      includeHTML("#processConsulting", "./partials/office-rental/process-consulting.html");
-      includeHTML("#map", "./partials/maps/map-1.html");
-      includeHTML("#pagination", "./partials/common/pagination.html");
-      includeHTML("#consultingTeam", "./partials/common/consulting-team.html");
-      includeHTML("#generalInformation", "./partials/common/general-information.html");
-      includeHTML("#handbook", "./partials/office-rental/handbook.html");
-      includeHTML("#officeNewWard", "./partials/office-rental/office-new-ward.html");
-      includeHTML("#faq", "./partials/common/faq.html");
-      includeHTML("#contact2", "./partials/common/contact-2.html");
-      includeHTML("#footer", "./partials/common/footer.html");
-    });
-  </script>
-
-  <script>
-    function toggleFaq(button) {
-      const answer = button.nextElementSibling;
-      const icon = button.querySelector('i');
-
-      if (answer.classList.contains('hidden')) {
-        answer.classList.remove('hidden');
-        icon.classList.add('rotate-180');
-        button.classList.add('bg-blue-50');
-      } else {
-        answer.classList.add('hidden');
-        icon.classList.remove('rotate-180');
-        button.classList.remove('bg-blue-50');
-      }
-    }
-  </script>
-
-  <script>
-    function toggleFullInfo() {
-      const fullContent = document.getElementById('info-full');
-      const btnText = document.getElementById('btnText');
-      const btnIcon = document.getElementById('btnIcon');
-      const btn = document.getElementById('toggleInfoBtn');
-
-      if (fullContent.classList.contains('hidden')) {
-        // Mở nội dung
-        fullContent.classList.remove('hidden');
-        btnText.textContent = 'Thu gọn';
-        btnIcon.classList.remove('fa-chevron-down');
-        btnIcon.classList.add('fa-chevron-up');
-
-        // Scroll nhẹ xuống để người dùng biết đã mở (tuỳ chọn)
-        // fullContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      } else {
-        // Đóng nội dung
-        fullContent.classList.add('hidden');
-        btnText.textContent = 'Xem thêm';
-        btnIcon.classList.remove('fa-chevron-up');
-        btnIcon.classList.add('fa-chevron-down');
-
-        // Scroll lại lên đầu section
-        document.getElementById('general-info-section').scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  </script>
-
-  <script>
-    AOS.init({
-      delay: 0,
-      duration: 1000,
-    });
-
-    // reviews
-    const swiper = new Swiper('.h2-reviews-swiper', {
-      slidesPerView: 3,
-      pagination: {
-        el: '.h2-reviews-swiper-pagination',
-        clickable: true,
-        dynamicBullets: true,
-      },
-      autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-      },
-      breakpoints: {
-        0: {
-          slidesPerView: 1,
-          spaceBetween: 10,
-        },
-        320: {
-          slidesPerView: 2,
-          spaceBetween: 10,
-        },
-        640: {
-          slidesPerView: 2,
-          spaceBetween: 15,
-        },
-        768: {
-          slidesPerView: 3,
-          spaceBetween: 20,
-        },
-      },
-    });
-
-    // agent
-    const agent = new Swiper('.h2-agent-swiper', {
-      slidesPerView: 3,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      breakpoints: {
-        0: {
-          slidesPerView: 1,
-          spaceBetween: 10,
-        },
-        768: {
-          slidesPerView: 2,
-          spaceBetween: 20,
-        },
-        1024: {
-          slidesPerView: 3,
-          spaceBetween: 30,
-        },
-      },
-    });
-
-    function initPhuongSwiper() {
-      const el = document.querySelector('.phuong-swiper');
-      if (!el || el.classList.contains('swiper-initialized')) return;
-
-      new Swiper(el, {
-        slidesPerView: 4,
-        spaceBetween: 24,
-        loop: true,
-        speed: 800,
-        grabCursor: true,
-
-        navigation: {
-          nextEl: '.phuong-swiper-button-next',
-          prevEl: '.phuong-swiper-button-prev',
-        },
-
-        autoplay: {
-          delay: 3000,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true,
-        },
-
-        breakpoints: {
-          0: { slidesPerView: 1, spaceBetween: 16 },
-          640: { slidesPerView: 2, spaceBetween: 20 },
-          1024: { slidesPerView: 3, spaceBetween: 24 },
-          1280: { slidesPerView: 4, spaceBetween: 24 },
-        },
-      });
-    }
-
-
-    // Team Swiper
-    function initTeamSwiper() {
-      const el = document.querySelector('.team-swiper');
-
-      if (!el) return;
-
-      // chống init trùng
-      if (el.classList.contains('swiper-initialized')) return;
-
-      new Swiper(el, {
-        slidesPerView: 4,
-        spaceBetween: 24,
-        // Ensure autoHeight is false (default)
-        autoHeight: false, 
-        // This helper ensures all slides are same height
-        watchSlidesProgress: true,
-        loop: true,
-        speed: 800,
-        grabCursor: true,
-
-        autoplay: {
-          delay: 3500,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true,
-        },
-
-        breakpoints: {
-          0: { slidesPerView: 1, spaceBetween: 16 },
-          640: { slidesPerView: 2, spaceBetween: 20 },
-          1024: { slidesPerView: 3, spaceBetween: 24 },
-          1280: { slidesPerView: 4, spaceBetween: 24 },
-        },
-      });
-    }
-  </script>
-
-  <script>
-    function toggleFullInfo() {
-      const fullContent = document.getElementById('info-full');
-      const gradient = document.getElementById('seo-gradient');
-      const btn = document.getElementById('toggleInfoBtn');
-      const btnText = document.getElementById('btnText');
-      const btnIcon = document.getElementById('btnIcon');
-
-      if (fullContent.classList.contains('hidden')) {
-        fullContent.classList.remove('hidden');
-        gradient.classList.add('hidden');
-        btnText.textContent = 'Thu gọn';
-        btnIcon.classList.remove('fa-chevron-down');
-        btnIcon.classList.add('fa-chevron-up');
-        // Scroll to full content
-        fullContent.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      } else {
-        fullContent.classList.add('hidden');
-        gradient.classList.remove('hidden');
-        btnText.textContent = 'Xem thêm';
-        btnIcon.classList.remove('fa-chevron-up');
-        btnIcon.classList.add('fa-chevron-down');
-        // Scroll back to preview
-        document.getElementById('info-preview').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }
-    }
-  </script>
-
-  <script>
-    function initOfficeSwiper() {
-      // Wait a short moment for the includeHTML to finish rendering the content
-      setTimeout(() => {
-        const swiperSections = document.querySelectorAll(".office-rental-swiper");
-        
-        swiperSections.forEach((section) => {
-          if (section.dataset.initialized === "true") return;
-
-          // Target the correct wrapper class
-          const wrapper = section.querySelector('.swiper-wrapper');
-          const nextBtn = section.querySelector('.fa-chevron-right')?.closest('button');
-          const prevBtn = section.querySelector('.fa-chevron-left')?.closest('button');
-
-          if (wrapper && nextBtn && prevBtn) {
-            const getScrollStep = () => {
-              const firstCard = wrapper.querySelector('.swiper-slide');
-              // Scroll by card width + 24px gap
-              return firstCard ? firstCard.offsetWidth + 24 : 374; 
-            };
-
-            nextBtn.onclick = (e) => {
-              e.preventDefault();
-              wrapper.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
-            };
-
-            prevBtn.onclick = (e) => {
-              e.preventDefault();
-              wrapper.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
-            };
-
-            section.dataset.initialized = "true";
-          }
-        });
-      }, 400); // 400ms is safer for multiple includeHTML calls
-    }
-    initOfficeSwiper()
-  </script>
-
-  <script>
-    setTimeout(() => {
+    function megaSearchEvent(){
       const slider = document.getElementById('price-slider');
       const minDisplay = document.getElementById('min-price-display');
       const maxDisplay = document.getElementById('max-price-display');
@@ -1542,7 +1229,210 @@
           }
         });
       }
-    }, 200);
+
+      const resetButton = document.getElementById('mega-search-reset-btn');
+
+      resetButton.addEventListener('click', function () {
+          slider.noUiSlider.reset();
+          areaSlider.noUiSlider.reset();
+          floorSlider.noUiSlider.reset();
+          capacitySlider.noUiSlider.reset();
+      });
+    }
+    function initVPChoThue() {
+      const el = document.querySelector('.office-rental-swiper');
+
+      if (!el || el.classList.contains('swiper-initialized')) return;
+
+      new Swiper(el, {
+        slidesPerView: 4,
+        spaceBetween: 24,
+        loop: true,
+        speed: 800,
+        grabCursor: true,
+
+        navigation: {
+          nextEl: '.office-rental-swiper-next',
+          prevEl: '.office-rental-swiper-prev',
+        },
+
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        },
+
+        breakpoints: {
+          0: { slidesPerView: 1, spaceBetween: 16 },
+          640: { slidesPerView: 2, spaceBetween: 20 },
+          1024: { slidesPerView: 3, spaceBetween: 24 },
+          1280: { slidesPerView: 4, spaceBetween: 24 },
+        },
+      });
+    }
+    function resetMegaSearchForm(){
+      const searchForm = document.getElementById("search-form");
+      const resetSearchFormBtn = document.getElementById("mega-search-reset-btn");
+      const minPrice = document.getElementById("min-price-input");
+      const maxPrice = document.getElementById("max-price-input");
+      const minArea = document.getElementById("min-area-input");
+      const maxArea = document.getElementById("max-area-input");
+      const minFloor = document.getElementById("min-floor-input");
+      const maxFloor = document.getElementById("max-floor-input");
+      const minCapacity = document.getElementById("min-capacity-input");
+      const maxCapacity = document.getElementById("max-capacity-input");
+
+      resetSearchFormBtn.addEventListener("click", () => {
+        searchForm.reset();
+        minPrice.value = "20000000";
+        maxPrice.value = "20000000";
+        minArea.value = "20";
+        maxArea.value = "20";
+        minFloor.value = "1";
+        maxFloor.value = "1"
+        minCapacity.value = "1";
+        maxCapacity.value = "1";
+      })
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+      includeHTML("#header", "./partials/common/header.html");
+      includeHTML("#breadCrumb", "./partials/common/bread-crumb.html", initBreadcrumb);
+      includeHTML("#ratingStar", "./partials/common/rating-star.html");
+      includeHTML("#officeRental", "./partials/office-rental/office-rental-brand.html");
+      const loads = [
+        includeHTML("#mega-search", "./partials/detail/search-mega.html"),
+        includeHTML("#officeRentalWard1", "./partials/office-rental/office-rental-ward-1.html")
+      ]
+      Promise.all(loads).then(() => {
+        megaSearchEvent();
+        initVPChoThue();
+        resetMegaSearchForm()
+      })
+      includeHTML("#consultingTeam", "./partials/common/consulting-team.html");
+      includeHTML("#generalInformation", "./partials/common/general-information.html");
+      includeHTML("#handbook", "./partials/office-rental/handbook.html");
+      includeHTML("#officeNewWard", "./partials/office-rental/office-new-ward.html");
+      includeHTML("#faq", "./partials/common/faq.html");
+      includeHTML("#contact2", "./partials/common/contact-2.html");
+      includeHTML("#footer", "./partials/common/footer.html");
+    });
+  </script>
+
+  <script>
+    function toggleFaq(button) {
+      const answer = button.nextElementSibling;
+      const icon = button.querySelector('i');
+
+      if (answer.classList.contains('hidden')) {
+        answer.classList.remove('hidden');
+        icon.classList.add('rotate-180');
+        button.classList.add('bg-blue-50');
+      } else {
+        answer.classList.add('hidden');
+        icon.classList.remove('rotate-180');
+        button.classList.remove('bg-blue-50');
+      }
+    }
+  </script>
+
+  <script>
+    AOS.init({
+      delay: 0,
+      duration: 1000,
+    });
+    function initPhuongSwiper() {
+      const el = document.querySelector('.phuong-swiper');
+      if (!el || el.classList.contains('swiper-initialized')) return;
+
+      new Swiper(el, {
+        slidesPerView: 4,
+        spaceBetween: 24,
+        loop: true,
+        speed: 800,
+        grabCursor: true,
+
+        navigation: {
+          nextEl: '.phuong-swiper-button-next',
+          prevEl: '.phuong-swiper-button-prev',
+        },
+
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        },
+
+        breakpoints: {
+          0: { slidesPerView: 1, spaceBetween: 16 },
+          640: { slidesPerView: 2, spaceBetween: 20 },
+          1024: { slidesPerView: 3, spaceBetween: 24 },
+          1280: { slidesPerView: 4, spaceBetween: 24 },
+        },
+      });
+    }
+
+    // Team Swiper
+    function initTeamSwiper() {
+      const el = document.querySelector('.team-swiper');
+
+      if (!el) return;
+
+      // chống init trùng
+      if (el.classList.contains('swiper-initialized')) return;
+
+      new Swiper(el, {
+        slidesPerView: 4,
+        spaceBetween: 24,
+        // Ensure autoHeight is false (default)
+        autoHeight: false, 
+        // This helper ensures all slides are same height
+        watchSlidesProgress: true,
+        loop: true,
+        speed: 800,
+        grabCursor: true,
+
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        },
+
+        breakpoints: {
+          0: { slidesPerView: 1, spaceBetween: 16 },
+          640: { slidesPerView: 2, spaceBetween: 20 },
+          1024: { slidesPerView: 3, spaceBetween: 24 },
+          1280: { slidesPerView: 4, spaceBetween: 24 },
+        },
+      });
+    }
+  </script>
+
+  <script>
+    function toggleFullInfo() {
+      const fullContent = document.getElementById('info-full');
+      const gradient = document.getElementById('seo-gradient');
+      const btn = document.getElementById('toggleInfoBtn');
+      const btnText = document.getElementById('btnText');
+      const btnIcon = document.getElementById('btnIcon');
+
+      if (fullContent.classList.contains('hidden')) {
+        fullContent.classList.remove('hidden');
+        gradient.classList.add('hidden');
+        btnText.textContent = 'Thu gọn';
+        btnIcon.classList.remove('fa-chevron-down');
+        btnIcon.classList.add('fa-chevron-up');
+        // Scroll to full content
+        fullContent.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      } else {
+        fullContent.classList.add('hidden');
+        gradient.classList.remove('hidden');
+        btnText.textContent = 'Xem thêm';
+        btnIcon.classList.remove('fa-chevron-up');
+        btnIcon.classList.add('fa-chevron-down');
+        // Scroll back to preview
+        document.getElementById('info-preview').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
   </script>
 </body>
 

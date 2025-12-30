@@ -66,11 +66,11 @@
   </style>
 </head>
 
-<body>
+<body class="relative">
   <!-- Header -->
-  <div id="header"></div>
+  <div id="header" class="sticky left-0 top-0 z-50 md:block"></div>
   <button
-    class="md:hidden inline-block absolute right-0 mr-2.5 z-[100]" style="top: 34px;"
+    class="fixed md:hidden" style="top: 18px; right: 18px; z-index: 999;"
     type="button"
     data-drawer-target="responsive-menu"
     data-drawer-show="responsive-menu"
@@ -105,58 +105,39 @@
     </div>
   </section>
 
-  
-  <!-- Content Started -->
-  <section class="container overflow-x-hidden">
-    
+  <!-- Rating start -->
+  <div class="container">
+    <section id="ratingStar" data-aos="fade-right"></section>
+  </div>
 
-    <!-- Rating start -->
-    <div id="ratingStar" data-aos="fade-right"></div>
+  <!-- Building rentals by district -->
+  <section id="officeRental" class="bg-slate-50"></section>
 
-    <!-- Building rentals by district -->
-    <section id="officeRental"></section>
-
-    <!-- VĂN PHÒNG CHO THUÊ  -->
-    <section id="officeRentalWard1"></section>
-    <section id="officeRentalWard2"></section>
-    <section id="officeRentalWard3"></section>
-    <section id="officeRentalWard4"></section>
-    <section id="officeRentalWard5"></section>
-    <section id="officeRentalWard6"></section>
-    <section id="officeRentalWard7"></section>
-    <section id="officeRentalWard8"></section>
-    <section id="officeRentalWard9"></section>
-    <section id="officeRentalWard10"></section>
-    <section id="officeRentalWard11"></section>
-    <section id="officeRentalWard12"></section>
-    <section id="officeRentalWardBinhThanh"></section>
-    <section id="officeRentalWardGoVap"></section>
-    <section id="officeRentalWardPhuNhuan"></section>
-    <section id="officeRentalWardTanBinh"></section>
-    <section id="officeRentalWardThuDuc"></section>
-    <section id="officeRentalWardBinhChanh"></section>
-  </section>
-
-  <!-- Quy trình dịch vụ tư vấn -->
-  <section id="processConsulting" class="bg-slate-50"></section>
-
-  <!-- maps -->
-  <!-- đang bị sai layout -->
-  <section class="container mx-auto px-4 xl:px-0 bg-white py-16">
-    <h2 class="text-3xl font-bold text-navy uppercase mt-12 mb-5" data-aos="fade-up">
-      Bản đồ các tòa nhà cho thuê văn phòng tại tp.HCM
-    </h2>
-    <div id="map"></div>
-  </section>
+  <!-- VĂN PHÒNG CHO THUÊ  -->
+  <section id="officeRentalWard1"></section>
+  <section id="officeRentalWard2"></section>
+  <section id="officeRentalWard3"></section>
+  <section id="officeRentalWard4"></section>
+  <section id="officeRentalWard5"></section>
+  <section id="officeRentalWard6"></section>
+  <section id="officeRentalWard7"></section>
+  <section id="officeRentalWard8"></section>
+  <section id="officeRentalWard9"></section>
+  <section id="officeRentalWard10"></section>
+  <section id="officeRentalWard11"></section>
+  <section id="officeRentalWard12"></section>
+  <section id="officeRentalWardBinhThanh"></section>
+  <section id="officeRentalWardGoVap"></section>
+  <section id="officeRentalWardPhuNhuan"></section>
+  <section id="officeRentalWardTanBinh"></section>
+  <section id="officeRentalWardThuDuc"></section>
+  <section id="officeRentalWardBinhChanh"></section>
 
   <!-- General information -->
   <section id="generalInformation" class="bg-slate-50"></section>
 
-  <!-- FAQ Section -->
-  <section id="faq"></section>
-
   <!-- Tìm thuê văn phòng theo phường mới -->
-  <section id="officeNewWard" class="bg-slate-50"></section>
+  <section id="officeNewWard"></section>
 
   <!-- Cẩm nang tìm văn phòng -->
   <section id="handbook"></section>
@@ -1362,14 +1343,11 @@
       Promise.all(loads).then(() => {
         initVPChoThue();
       });
-      includeHTML("#processConsulting", "./partials/office-rental/process-consulting.html");
-      includeHTML("#map", "./partials/maps/map-1.html");
       includeHTML("#pagination", "./partials/common/pagination.html");
       includeHTML("#consultingTeam", "./partials/common/consulting-team.html");
       includeHTML("#generalInformation", "./partials/common/general-information.html");
       includeHTML("#handbook", "./partials/office-rental/handbook.html");
       includeHTML("#officeNewWard", "./partials/office-rental/office-new-ward.html");
-      includeHTML("#faq", "./partials/common/faq.html");
       includeHTML("#contact2", "./partials/common/contact-2.html");
       includeHTML("#footer", "./partials/common/footer.html");
     });

@@ -37,11 +37,11 @@
   </style>
 </head>
 
-<body>
+<body class="relative">
   <!-- Header -->
-  <div id="header"></div>
+  <div id="header" class="sticky left-0 top-0 z-50 md:block"></div>
   <button
-    class="md:hidden inline-block absolute right-0 mr-2.5 z-[100]" style="top: 34px;"
+    class="fixed md:hidden" style="top: 18px; right: 18px; z-index: 999;"
     type="button"
     data-drawer-target="responsive-menu"
     data-drawer-show="responsive-menu"
@@ -64,7 +64,7 @@
   <section class="bg-primary-10">
     <div class="h-auto w-full bg-cover bg-center bg-no-repeat pb-10 pt-10" style="background-image: url('assets/images/layer.svg')">
       <div
-        class="container flex h-[170px] flex-col items-center justify-center sm:h-[200px] md:h-[250px]">
+        class="container flex h-[170px] flex-col items-center justify-center sm:h-[200px] md:h-[250px]" data-aos="fade-up">
         <h1 id="pageTitle" class="common-hero-heading">Văn phòng trọn gói phường Tân Định</h1>
 
         <!-- Breadcrumb -->
@@ -77,476 +77,393 @@
     </div>
   </section>
 
-  <!-- Content Started -->
-  <div class="container overflow-x-hidden">
+  <!-- Rating start -->
+  <div class="container">
+    <section id="ratingStar" data-aos="fade-right"></section>
+  </div>
 
-    <!-- Rating start -->
-    <div id="ratingStar" data-aos="fade-right"></div>
-
-    <section id="officeRentalWard1"></section>
-
-    <!-- DANH SÁCH CÁC CAO ỐC VĂN PHÒNG QUẬN 1 -->
+  <!-- DANH SÁCH CÁC CAO ỐC VĂN PHÒNG QUẬN 1 -->
+  <section>
     <div class="container py-8 px-4 mx-auto">
-      <h1 class="mb-8 text-3xl font-bold text-gray-900">DANH SÁCH CÁC CAO ỐC VĂN PHÒNG QUẬN 1</h1>
+      <h1 class="mb-8 text-3xl font-bold text-gray-900" data-aos="fade-up">DANH SÁCH CÁC CAO ỐC VĂN PHÒNG QUẬN 1</h1>
 
-      <div class="grid grid-cols-1 gap-8 lg:grid-cols-12">
-        <div class="grid grid-cols-1 gap-6 lg:col-span-8 sm:grid-cols-2 xl:grid-cols-3">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-3 lg:gap-2">
 
-          <!-- Card 1 -->
-          <div class="overflow-hidden transition bg-white shadow-md rounded-2xl hover:shadow-xl h-fit">
-            <div class="relative">
-              <span
-                class="absolute z-10 px-3 py-1 text-xs font-bold text-white bg-yellow-500 rounded-full top-3 left-3">LEED
-                GOLD</span>
-              <img src="assets/images/detail/detail-1.jpg" alt="The Nexus" class="object-cover w-full h-48" />
+        <!-- Card 1 -->
+        <div class="overflow-hidden transition bg-white shadow-md rounded-2xl hover:shadow-xl"
+        style="max-width: 292px; margin: auto"
+        data-aos="flip-left">
+          <div class="relative">
+            <span
+              class="absolute z-10 px-3 py-1 text-xs font-bold text-white bg-yellow-500 rounded-full top-3 left-3">LEED
+              GOLD</span>
+            <img src="assets/images/detail/detail-1.jpg" alt="The Nexus" class="object-cover w-full h-48" />
+          </div>
+          <div class="p-5 md:p-3 lg:p-5">
+            <h3 class="text-lg font-semibold text-gray-900 line-clamp-1 text-ellipsis">The Nexus</h3>
+            <p class="mt-1 text-sm text-gray-600 line-clamp-2 text-ellipsis">3A-3B Tôn Đức Thắng, Phường Sài Gòn, Quận 1</p>
+
+            <div class="flex items-center gap-4 mt-4 text-sm">
+              <div class="flex items-center gap-1">
+                <i class="text-blue-600 fa-regular fa-building"></i>
+                <span class="text-gray-700 line-clamp-1 text-ellipsis">60 - 66 USD/m²</span>
+              </div>
+              <div class="flex gap-2 ml-auto">
+                <button class="flex items-center justify-center bg-gray-100 rounded-full w-9 h-9 hover:bg-gray-200">
+                  <i class="text-gray-600 fa-regular fa-heart"></i>
+                </button>
+                <button class="flex items-center justify-center text-white bg-blue-600 rounded-full w-9 h-9">
+                  <i class="fa-solid fa-360"></i>
+                </button>
+              </div>
             </div>
-            <div class="p-5">
-              <h3 class="text-lg font-semibold text-gray-900">The Nexus</h3>
-              <p class="mt-1 text-sm text-gray-600">3A-3B Tôn Đức Thắng, Phường Sài Gòn, Quận 1</p>
 
-              <div class="flex items-center gap-4 mt-4 text-sm">
-                <div class="flex items-center gap-1">
-                  <i class="text-blue-600 fa-regular fa-building"></i>
-                  <span class="text-gray-700">60 - 66 USD/m²</span>
-                </div>
-                <div class="flex gap-2 ml-auto">
-                  <button class="flex items-center justify-center bg-gray-100 rounded-full w-9 h-9 hover:bg-gray-200">
-                    <i class="text-gray-600 fa-regular fa-heart"></i>
-                  </button>
-                  <button class="flex items-center justify-center text-white bg-blue-600 rounded-full w-9 h-9">
-                    <i class="fa-solid fa-360"></i>
-                  </button>
-                </div>
-              </div>
-
-              <div class="flex items-center justify-between mt-4 text-xs text-gray-500">
-                <span>Cập nhật ngày 02/12/2025</span>
-                <label class="flex items-center gap-2 cursor-pointer">
-                  <input type="checkbox" class="w-4 h-4 text-blue-600 rounded" />
-                  <span>So sánh</span>
-                </label>
-              </div>
+            <div class="flex items-center justify-between mt-4 text-xs text-gray-500">
+              <span class="line-clamp-1 text-ellipsis">Cập nhật ngày 02/12/2025</span>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" class="w-4 h-4 text-blue-600 rounded" />
+                <span>So sánh</span>
+              </label>
             </div>
           </div>
-
-          <!-- Card 2 -->
-          <div class="overflow-hidden transition bg-white shadow-md rounded-2xl hover:shadow-xl h-fit">
-            <div class="relative">
-              <span
-                class="absolute z-10 px-3 py-1 text-xs font-bold text-white bg-yellow-500 rounded-full top-3 left-3">LEED
-                GOLD</span>
-              <img src="assets/images/detail/detail-2.jpg" alt="Saigon Marina IFC Tower"
-                class="object-cover w-full h-48" />
-            </div>
-            <div class="p-5">
-              <h3 class="text-lg font-semibold text-gray-900">Saigon Marina IFC Tower</h3>
-              <p class="mt-1 text-sm text-gray-600">2 Tôn Đức Thắng, Phường Sài Gòn, Quận 1</p>
-
-              <div class="flex items-center gap-4 mt-4 text-sm">
-                <div class="flex items-center gap-1">
-                  <i class="text-blue-600 fa-regular fa-building"></i>
-                  <span class="text-gray-700">66 - 66 USD/m²</span>
-                </div>
-                <div class="flex gap-2 ml-auto">
-                  <button class="flex items-center justify-center bg-gray-100 rounded-full w-9 h-9 hover:bg-gray-200">
-                    <i class="text-gray-600 fa-regular fa-heart"></i>
-                  </button>
-                  <button class="flex items-center justify-center text-white bg-blue-600 rounded-full w-9 h-9">
-                    <i class="fa-solid fa-360"></i>
-                  </button>
-                </div>
-              </div>
-
-              <div class="flex items-center justify-between mt-4 text-xs text-gray-500">
-                <span>Cập nhật ngày 02/12/2025</span>
-                <label class="flex items-center gap-2 cursor-pointer">
-                  <input type="checkbox" class="w-4 h-4 text-blue-600 rounded" />
-                  <span>So sánh</span>
-                </label>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 3 -->
-          <div class="overflow-hidden transition bg-white shadow-md rounded-2xl hover:shadow-xl h-fit">
-            <div class="relative">
-              <span
-                class="absolute z-10 px-3 py-1 text-xs font-bold text-white bg-yellow-500 rounded-full top-3 left-3">LEED
-                GOLD</span>
-              <img src="assets/images/detail/detail-3.jpg" alt="The Nexus" class="object-cover w-full h-48" />
-            </div>
-            <div class="p-5">
-              <h3 class="text-lg font-semibold text-gray-900">The Nexus</h3>
-              <p class="mt-1 text-sm text-gray-600">3A-3B Tôn Đức Thắng, Phường Sài Gòn, Quận 1</p>
-
-              <div class="flex items-center gap-4 mt-4 text-sm">
-                <div class="flex items-center gap-1">
-                  <i class="text-blue-600 fa-regular fa-building"></i>
-                  <span class="text-gray-700">60 - 66 USD/m²</span>
-                </div>
-                <div class="flex gap-2 ml-auto">
-                  <button class="flex items-center justify-center bg-gray-100 rounded-full w-9 h-9 hover:bg-gray-200">
-                    <i class="text-gray-600 fa-regular fa-heart"></i>
-                  </button>
-                  <button class="flex items-center justify-center text-white bg-blue-600 rounded-full w-9 h-9">
-                    <i class="fa-solid fa-360"></i>
-                  </button>
-                </div>
-              </div>
-
-              <div class="flex items-center justify-between mt-4 text-xs text-gray-500">
-                <span>Cập nhật ngày 02/12/2025</span>
-                <label class="flex items-center gap-2 cursor-pointer">
-                  <input type="checkbox" class="w-4 h-4 text-blue-600 rounded" />
-                  <span>So sánh</span>
-                </label>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 4 -->
-          <div class="overflow-hidden transition bg-white shadow-md rounded-2xl hover:shadow-xl h-fit">
-            <div class="relative">
-              <span
-                class="absolute z-10 px-3 py-1 text-xs font-bold text-white bg-yellow-500 rounded-full top-3 left-3">LEED
-                GOLD</span>
-              <img src="assets/images/detail/detail-4.jpg" alt="Saigon Marina IFC Tower"
-                class="object-cover w-full h-48" />
-            </div>
-            <div class="p-5">
-              <h3 class="text-lg font-semibold text-gray-900">Saigon Marina IFC Tower</h3>
-              <p class="mt-1 text-sm text-gray-600">2 Tôn Đức Thắng, Phường Sài Gòn, Quận 1</p>
-
-              <div class="flex items-center gap-4 mt-4 text-sm">
-                <div class="flex items-center gap-1">
-                  <i class="text-blue-600 fa-regular fa-building"></i>
-                  <span class="text-gray-700">66 - 66 USD/m²</span>
-                </div>
-                <div class="flex gap-2 ml-auto">
-                  <button class="flex items-center justify-center bg-gray-100 rounded-full w-9 h-9 hover:bg-gray-200">
-                    <i class="text-gray-600 fa-regular fa-heart"></i>
-                  </button>
-                  <button class="flex items-center justify-center text-white bg-blue-600 rounded-full w-9 h-9">
-                    <i class="fa-solid fa-360"></i>
-                  </button>
-                </div>
-              </div>
-
-              <div class="flex items-center justify-between mt-4 text-xs text-gray-500">
-                <span>Cập nhật ngày 02/12/2025</span>
-                <label class="flex items-center gap-2 cursor-pointer">
-                  <input type="checkbox" class="w-4 h-4 text-blue-600 rounded" />
-                  <span>So sánh</span>
-                </label>
-              </div>
-            </div>
-          </div>
-          <!-- Card 5 -->
-          <div class="overflow-hidden transition bg-white shadow-md rounded-2xl hover:shadow-xl h-fit">
-            <div class="relative">
-              <span
-                class="absolute z-10 px-3 py-1 text-xs font-bold text-white bg-yellow-500 rounded-full top-3 left-3">LEED
-                GOLD</span>
-              <img src="assets/images/detail/detail-5.jpg" alt="The Nexus" class="object-cover w-full h-48" />
-            </div>
-            <div class="p-5">
-              <h3 class="text-lg font-semibold text-gray-900">The Nexus</h3>
-              <p class="mt-1 text-sm text-gray-600">3A-3B Tôn Đức Thắng, Phường Sài Gòn, Quận 1</p>
-
-              <div class="flex items-center gap-4 mt-4 text-sm">
-                <div class="flex items-center gap-1">
-                  <i class="text-blue-600 fa-regular fa-building"></i>
-                  <span class="text-gray-700">60 - 66 USD/m²</span>
-                </div>
-                <div class="flex gap-2 ml-auto">
-                  <button class="flex items-center justify-center bg-gray-100 rounded-full w-9 h-9 hover:bg-gray-200">
-                    <i class="text-gray-600 fa-regular fa-heart"></i>
-                  </button>
-                  <button class="flex items-center justify-center text-white bg-blue-600 rounded-full w-9 h-9">
-                    <i class="fa-solid fa-360"></i>
-                  </button>
-                </div>
-              </div>
-
-              <div class="flex items-center justify-between mt-4 text-xs text-gray-500">
-                <span>Cập nhật ngày 02/12/2025</span>
-                <label class="flex items-center gap-2 cursor-pointer">
-                  <input type="checkbox" class="w-4 h-4 text-blue-600 rounded" />
-                  <span>So sánh</span>
-                </label>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 6 -->
-          <div class="overflow-hidden transition bg-white shadow-md rounded-2xl hover:shadow-xl h-fit">
-            <div class="relative">
-              <span
-                class="absolute z-10 px-3 py-1 text-xs font-bold text-white bg-yellow-500 rounded-full top-3 left-3">LEED
-                GOLD</span>
-              <img src="assets/images/detail/detail-6.jpg" alt="Saigon Marina IFC Tower"
-                class="object-cover w-full h-48" />
-            </div>
-            <div class="p-5">
-              <h3 class="text-lg font-semibold text-gray-900">Saigon Marina IFC Tower</h3>
-              <p class="mt-1 text-sm text-gray-600">2 Tôn Đức Thắng, Phường Sài Gòn, Quận 1</p>
-
-              <div class="flex items-center gap-4 mt-4 text-sm">
-                <div class="flex items-center gap-1">
-                  <i class="text-blue-600 fa-regular fa-building"></i>
-                  <span class="text-gray-700">66 - 66 USD/m²</span>
-                </div>
-                <div class="flex gap-2 ml-auto">
-                  <button class="flex items-center justify-center bg-gray-100 rounded-full w-9 h-9 hover:bg-gray-200">
-                    <i class="text-gray-600 fa-regular fa-heart"></i>
-                  </button>
-                  <button class="flex items-center justify-center text-white bg-blue-600 rounded-full w-9 h-9">
-                    <i class="fa-solid fa-360"></i>
-                  </button>
-                </div>
-              </div>
-
-              <div class="flex items-center justify-between mt-4 text-xs text-gray-500">
-                <span>Cập nhật ngày 02/12/2025</span>
-                <label class="flex items-center gap-2 cursor-pointer">
-                  <input type="checkbox" class="w-4 h-4 text-blue-600 rounded" />
-                  <span>So sánh</span>
-                </label>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 7 -->
-          <div class="overflow-hidden transition bg-white shadow-md rounded-2xl hover:shadow-xl h-fit">
-            <div class="relative">
-              <span
-                class="absolute z-10 px-3 py-1 text-xs font-bold text-white bg-yellow-500 rounded-full top-3 left-3">LEED
-                GOLD</span>
-              <img src="assets/images/detail/detail-7.jpg" alt="The Nexus" class="object-cover w-full h-48" />
-            </div>
-            <div class="p-5">
-              <h3 class="text-lg font-semibold text-gray-900">The Nexus</h3>
-              <p class="mt-1 text-sm text-gray-600">3A-3B Tôn Đức Thắng, Phường Sài Gòn, Quận 1</p>
-
-              <div class="flex items-center gap-4 mt-4 text-sm">
-                <div class="flex items-center gap-1">
-                  <i class="text-blue-600 fa-regular fa-building"></i>
-                  <span class="text-gray-700">60 - 66 USD/m²</span>
-                </div>
-                <div class="flex gap-2 ml-auto">
-                  <button class="flex items-center justify-center bg-gray-100 rounded-full w-9 h-9 hover:bg-gray-200">
-                    <i class="text-gray-600 fa-regular fa-heart"></i>
-                  </button>
-                  <button class="flex items-center justify-center text-white bg-blue-600 rounded-full w-9 h-9">
-                    <i class="fa-solid fa-360"></i>
-                  </button>
-                </div>
-              </div>
-
-              <div class="flex items-center justify-between mt-4 text-xs text-gray-500">
-                <span>Cập nhật ngày 02/12/2025</span>
-                <label class="flex items-center gap-2 cursor-pointer">
-                  <input type="checkbox" class="w-4 h-4 text-blue-600 rounded" />
-                  <span>So sánh</span>
-                </label>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 8 -->
-          <div class="overflow-hidden transition bg-white shadow-md rounded-2xl hover:shadow-xl h-fit">
-            <div class="relative">
-              <span
-                class="absolute z-10 px-3 py-1 text-xs font-bold text-white bg-yellow-500 rounded-full top-3 left-3">LEED
-                GOLD</span>
-              <img src="assets/images/detail/detail-8.jpg" alt="Saigon Marina IFC Tower"
-                class="object-cover w-full h-48" />
-            </div>
-            <div class="p-5">
-              <h3 class="text-lg font-semibold text-gray-900">Saigon Marina IFC Tower</h3>
-              <p class="mt-1 text-sm text-gray-600">2 Tôn Đức Thắng, Phường Sài Gòn, Quận 1</p>
-
-              <div class="flex items-center gap-4 mt-4 text-sm">
-                <div class="flex items-center gap-1">
-                  <i class="text-blue-600 fa-regular fa-building"></i>
-                  <span class="text-gray-700">66 - 66 USD/m²</span>
-                </div>
-                <div class="flex gap-2 ml-auto">
-                  <button class="flex items-center justify-center bg-gray-100 rounded-full w-9 h-9 hover:bg-gray-200">
-                    <i class="text-gray-600 fa-regular fa-heart"></i>
-                  </button>
-                  <button class="flex items-center justify-center text-white bg-blue-600 rounded-full w-9 h-9">
-                    <i class="fa-solid fa-360"></i>
-                  </button>
-                </div>
-              </div>
-
-              <div class="flex items-center justify-between mt-4 text-xs text-gray-500">
-                <span>Cập nhật ngày 02/12/2025</span>
-                <label class="flex items-center gap-2 cursor-pointer">
-                  <input type="checkbox" class="w-4 h-4 text-blue-600 rounded" />
-                  <span>So sánh</span>
-                </label>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 9 -->
-          <div class="overflow-hidden transition bg-white shadow-md rounded-2xl hover:shadow-xl h-fit">
-            <div class="relative">
-              <span
-                class="absolute z-10 px-3 py-1 text-xs font-bold text-white bg-yellow-500 rounded-full top-3 left-3">LEED
-                GOLD</span>
-              <img src="assets/images/detail/detail-9.jpg" alt="Saigon Marina IFC Tower"
-                class="object-cover w-full h-48" />
-            </div>
-            <div class="p-5">
-              <h3 class="text-lg font-semibold text-gray-900">Saigon Marina IFC Tower</h3>
-              <p class="mt-1 text-sm text-gray-600">2 Tôn Đức Thắng, Phường Sài Gòn, Quận 1</p>
-
-              <div class="flex items-center gap-4 mt-4 text-sm">
-                <div class="flex items-center gap-1">
-                  <i class="text-blue-600 fa-regular fa-building"></i>
-                  <span class="text-gray-700">66 - 66 USD/m²</span>
-                </div>
-                <div class="flex gap-2 ml-auto">
-                  <button class="flex items-center justify-center bg-gray-100 rounded-full w-9 h-9 hover:bg-gray-200">
-                    <i class="text-gray-600 fa-regular fa-heart"></i>
-                  </button>
-                  <button class="flex items-center justify-center text-white bg-blue-600 rounded-full w-9 h-9">
-                    <i class="fa-solid fa-360"></i>
-                  </button>
-                </div>
-              </div>
-
-              <div class="flex items-center justify-between mt-4 text-xs text-gray-500">
-                <span>Cập nhật ngày 02/12/2025</span>
-                <label class="flex items-center gap-2 cursor-pointer">
-                  <input type="checkbox" class="w-4 h-4 text-blue-600 rounded" />
-                  <span>So sánh</span>
-                </label>
-              </div>
-            </div>
-          </div>
-
-        </div>
-        <!-- Pagination -->
-        <div class="flex justify-center mt-5 lg:hidden">
-          <div id="pagination1"></div>
         </div>
 
-        <!-- Office rental filter -->
-        <div class="lg:col-span-4">
-            <!-- Bộ lọc cố định khi scroll (có thể thêm sticky sau) -->
-            <div class="border border-gray-300 p-6 space-y-8 bg-white shadow-md rounded-2xl">
+        <!-- Card 2 -->
+        <div class="overflow-hidden transition bg-white shadow-md rounded-2xl hover:shadow-xl"
+        style="max-width: 292px; margin: auto"
+        data-aos="flip-left">
+          <div class="relative">
+            <span
+              class="absolute z-10 px-3 py-1 text-xs font-bold text-white bg-yellow-500 rounded-full top-3 left-3">LEED
+              GOLD</span>
+            <img src="assets/images/detail/detail-2.jpg" alt="Saigon Marina IFC Tower"
+              class="object-cover w-full h-48" />
+          </div>
+          <div class="p-5 md:p-3 lg:p-5">
+            <h3 class="text-lg font-semibold text-gray-900 line-clamp-1 text-ellipsis">Saigon Marina IFC Tower</h3>
+            <p class="mt-1 text-sm text-gray-600 line-clamp-2 text-ellipsis">2 Tôn Đức Thắng, Phường Sài Gòn, Quận 1</p>
 
-            <!-- diện tích và giá thuê -->
-            <!-- Slider diện tích -->
-            <div class="mb-6">
-                <h3 class="mb-3 text-lg font-bold">Diện tích Quận 1</h3>
-                <label class="block mb-2 text-sm font-medium text-gray-700">Diện tích (m²)</label>
-                <div id="areaSlider"></div>
-                <div class="mt-2 text-sm text-gray-600">
-                Từ <span id="areaMinVal">0</span> m² đến <span id="areaMaxVal">0</span> m²
-                </div>
+            <div class="flex items-center gap-4 mt-4 text-sm">
+              <div class="flex items-center gap-1">
+                <i class="text-blue-600 fa-regular fa-building"></i>
+                <span class="text-gray-700 line-clamp-1 text-ellipsis">66 - 66 USD/m²</span>
+              </div>
+              <div class="flex gap-2 ml-auto">
+                <button class="flex items-center justify-center bg-gray-100 rounded-full w-9 h-9 hover:bg-gray-200">
+                  <i class="text-gray-600 fa-regular fa-heart"></i>
+                </button>
+                <button class="flex items-center justify-center text-white bg-blue-600 rounded-full w-9 h-9">
+                  <i class="fa-solid fa-360"></i>
+                </button>
+              </div>
             </div>
 
-            <!-- Slider giá thuê -->
-            <div class="mb-6">
-                <h3 class="mb-3 text-lg font-bold">Giá thuê Quận 1</h3>
-                <label class="block mb-2 text-sm font-medium text-gray-700">Giá thuê ($/m²/tháng)</label>
-                <div id="priceSlider"></div>
-                <div class="mt-2 text-sm text-gray-600">
-                Từ $<span id="priceMinVal">0</span> đến $<span id="priceMaxVal">0</span>
-                </div>
+            <div class="flex items-center justify-between mt-4 text-xs text-gray-500">
+              <span class="line-clamp-1 text-ellipsis">Cập nhật ngày 02/12/2025</span>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" class="w-4 h-4 text-blue-600 rounded" />
+                <span>So sánh</span>
+              </label>
             </div>
-
-            <!-- diện tích và giá thuê -->
-
-
-            <!-- Hạng văn phòng -->
-            <div class="space-y-4">
-                <div>
-                <h3 class="mb-3 text-lg font-bold">Hạng văn phòng Quận 1</h3>
-                <div class="flex flex-wrap justify-between text-sm gap-2">
-                    <button class="px-4 py-2 border border-gray-300 rounded-full hover:bg-blue-50">Hạng A</button>
-                    <button class="px-4 py-2 border border-gray-300 rounded-full hover:bg-blue-50">Hạng B</button>
-                    <button class="px-4 py-2 border border-gray-300 rounded-full hover:bg-blue-50">Hạng C</button>
-                    <button class="px-4 py-2 border border-gray-300 rounded-full hover:bg-blue-50">Giá rẻ</button>
-                </div>
-                </div>
-
-                <div>
-                <h3 class="mb-3 text-lg font-bold">Hướng Quận 1</h3>
-                <div class="flex flex-wrap justify-between text-sm gap-3">
-                    <button class="px-4 py-2 border border-gray-300 rounded-full hover:bg-blue-50">Đông</button>
-                    <button class="px-4 py-2 border border-gray-300 rounded-full hover:bg-blue-50">Tây</button>
-                    <button class="px-4 py-2 border border-gray-300 rounded-full hover:bg-blue-50">Nam</button>
-                    <button class="px-4 py-2 border border-gray-300 rounded-full hover:bg-blue-50">Bắc</button>
-                </div>
-                </div>
-
-                <div>
-                <h3 class="mb-3 text-lg font-bold">Phường mới Quận 1</h3>
-                <select
-                    class="w-full px-4 text-sm py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <option>Chọn phường</option>
-                    <option>Phường Bến Nghé</option>
-                    <option>Phường Đa Kao</option>
-                    <!-- thêm các phường khác -->
-                </select>
-                </div>
-
-                <div>
-                <h3 class="mb-3 text-lg font-bold">Đường Quận 1</h3>
-                <select
-                    class="w-full px-4 text-sm py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <option>Chọn đường</option>
-                    <option>Tôn Đức Thắng</option>
-                    <option>Lê Duẩn</option>
-                    <option>Hai Bà Trưng</option>
-                    <!-- thêm đường khác -->
-                </select>
-                </div>
-            </div>
-
-            <button
-                class="w-full py-4 font-bold text-white transition bg-blue-600 rounded-xl hover:bg-blue-700">
-                Đặt lại
-            </button>
-            </div>
+          </div>
         </div>
 
-        <!-- Pagination -->
-        <div class="hidden lg:flex justify-center mt-5 lg:col-span-8">
-          <div id="pagination2"></div>
+        <!-- Card 3 -->
+        <div class="overflow-hidden transition bg-white shadow-md rounded-2xl hover:shadow-xl"
+        style="max-width: 292px; margin: auto"
+        data-aos="flip-left">
+          <div class="relative">
+            <span
+              class="absolute z-10 px-3 py-1 text-xs font-bold text-white bg-yellow-500 rounded-full top-3 left-3">LEED
+              GOLD</span>
+            <img src="assets/images/detail/detail-3.jpg" alt="The Nexus" class="object-cover w-full h-48" />
+          </div>
+          <div class="p-5 md:p-3 lg:p-5">
+            <h3 class="text-lg font-semibold text-gray-900 line-clamp-1 text-ellipsis">The Nexus</h3>
+            <p class="mt-1 text-sm text-gray-600 line-clamp-2 text-ellipsis">3A-3B Tôn Đức Thắng, Phường Sài Gòn, Quận 1</p>
+
+            <div class="flex items-center gap-4 mt-4 text-sm">
+              <div class="flex items-center gap-1">
+                <i class="text-blue-600 fa-regular fa-building"></i>
+                <span class="text-gray-700 line-clamp-1 text-ellipsis">60 - 66 USD/m²</span>
+              </div>
+              <div class="flex gap-2 ml-auto">
+                <button class="flex items-center justify-center bg-gray-100 rounded-full w-9 h-9 hover:bg-gray-200">
+                  <i class="text-gray-600 fa-regular fa-heart"></i>
+                </button>
+                <button class="flex items-center justify-center text-white bg-blue-600 rounded-full w-9 h-9">
+                  <i class="fa-solid fa-360"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between mt-4 text-xs text-gray-500">
+              <span class="line-clamp-1 text-ellipsis">Cập nhật ngày 02/12/2025</span>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" class="w-4 h-4 text-blue-600 rounded" />
+                <span>So sánh</span>
+              </label>
+            </div>
+          </div>
         </div>
-        
+
+        <!-- Card 4 -->
+        <div class="overflow-hidden transition bg-white shadow-md rounded-2xl hover:shadow-xl"
+        style="max-width: 292px; margin: auto"
+        data-aos="flip-left">
+          <div class="relative">
+            <span
+              class="absolute z-10 px-3 py-1 text-xs font-bold text-white bg-yellow-500 rounded-full top-3 left-3">LEED
+              GOLD</span>
+            <img src="assets/images/detail/detail-4.jpg" alt="Saigon Marina IFC Tower"
+              class="object-cover w-full h-48" />
+          </div>
+          <div class="p-5 md:p-3 lg:p-5">
+            <h3 class="text-lg font-semibold text-gray-900 line-clamp-1 text-ellipsis">Saigon Marina IFC Tower</h3>
+            <p class="mt-1 text-sm text-gray-600 line-clamp-2 text-ellipsis">2 Tôn Đức Thắng, Phường Sài Gòn, Quận 1</p>
+
+            <div class="flex items-center gap-4 mt-4 text-sm">
+              <div class="flex items-center gap-1">
+                <i class="text-blue-600 fa-regular fa-building"></i>
+                <span class="text-gray-700 line-clamp-1 text-ellipsis">66 - 66 USD/m²</span>
+              </div>
+              <div class="flex gap-2 ml-auto">
+                <button class="flex items-center justify-center bg-gray-100 rounded-full w-9 h-9 hover:bg-gray-200">
+                  <i class="text-gray-600 fa-regular fa-heart"></i>
+                </button>
+                <button class="flex items-center justify-center text-white bg-blue-600 rounded-full w-9 h-9">
+                  <i class="fa-solid fa-360"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between mt-4 text-xs text-gray-500">
+              <span class="line-clamp-1 text-ellipsis">Cập nhật ngày 02/12/2025</span>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" class="w-4 h-4 text-blue-600 rounded" />
+                <span>So sánh</span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <!-- Card 5 -->
+        <div class="overflow-hidden transition bg-white shadow-md rounded-2xl hover:shadow-xl"
+        style="max-width: 292px; margin: auto"
+        data-aos="flip-left">
+          <div class="relative">
+            <span
+              class="absolute z-10 px-3 py-1 text-xs font-bold text-white bg-yellow-500 rounded-full top-3 left-3">LEED
+              GOLD</span>
+            <img src="assets/images/detail/detail-5.jpg" alt="The Nexus" class="object-cover w-full h-48" />
+          </div>
+          <div class="p-5 md:p-3 lg:p-5">
+            <h3 class="text-lg font-semibold text-gray-900 line-clamp-1 text-ellipsis">The Nexus</h3>
+            <p class="mt-1 text-sm text-gray-600 line-clamp-2 text-ellipsis">3A-3B Tôn Đức Thắng, Phường Sài Gòn, Quận 1</p>
+
+            <div class="flex items-center gap-4 mt-4 text-sm">
+              <div class="flex items-center gap-1">
+                <i class="text-blue-600 fa-regular fa-building"></i>
+                <span class="text-gray-700 line-clamp-1 text-ellipsis">60 - 66 USD/m²</span>
+              </div>
+              <div class="flex gap-2 ml-auto">
+                <button class="flex items-center justify-center bg-gray-100 rounded-full w-9 h-9 hover:bg-gray-200">
+                  <i class="text-gray-600 fa-regular fa-heart"></i>
+                </button>
+                <button class="flex items-center justify-center text-white bg-blue-600 rounded-full w-9 h-9">
+                  <i class="fa-solid fa-360"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between mt-4 text-xs text-gray-500">
+              <span class="line-clamp-1 text-ellipsis">Cập nhật ngày 02/12/2025</span>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" class="w-4 h-4 text-blue-600 rounded" />
+                <span>So sánh</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="overflow-hidden transition bg-white shadow-md rounded-2xl hover:shadow-xl"
+        style="max-width: 292px; margin: auto"
+        data-aos="flip-left">
+          <div class="relative">
+            <span
+              class="absolute z-10 px-3 py-1 text-xs font-bold text-white bg-yellow-500 rounded-full top-3 left-3">LEED
+              GOLD</span>
+            <img src="assets/images/detail/detail-6.jpg" alt="Saigon Marina IFC Tower"
+              class="object-cover w-full h-48" />
+          </div>
+          <div class="p-5 md:p-3 lg:p-5">
+            <h3 class="text-lg font-semibold text-gray-900 line-clamp-1 text-ellipsis">Saigon Marina IFC Tower</h3>
+            <p class="mt-1 text-sm text-gray-600 line-clamp-2 text-ellipsis">2 Tôn Đức Thắng, Phường Sài Gòn, Quận 1</p>
+
+            <div class="flex items-center gap-4 mt-4 text-sm">
+              <div class="flex items-center gap-1">
+                <i class="text-blue-600 fa-regular fa-building"></i>
+                <span class="text-gray-700 line-clamp-1 text-ellipsis">66 - 66 USD/m²</span>
+              </div>
+              <div class="flex gap-2 ml-auto">
+                <button class="flex items-center justify-center bg-gray-100 rounded-full w-9 h-9 hover:bg-gray-200">
+                  <i class="text-gray-600 fa-regular fa-heart"></i>
+                </button>
+                <button class="flex items-center justify-center text-white bg-blue-600 rounded-full w-9 h-9">
+                  <i class="fa-solid fa-360"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between mt-4 text-xs text-gray-500">
+              <span class="line-clamp-1 text-ellipsis">Cập nhật ngày 02/12/2025</span>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" class="w-4 h-4 text-blue-600 rounded" />
+                <span>So sánh</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="overflow-hidden transition bg-white shadow-md rounded-2xl hover:shadow-xl"
+        style="max-width: 292px; margin: auto"
+        data-aos="flip-left">
+          <div class="relative">
+            <span
+              class="absolute z-10 px-3 py-1 text-xs font-bold text-white bg-yellow-500 rounded-full top-3 left-3">LEED
+              GOLD</span>
+            <img src="assets/images/detail/detail-7.jpg" alt="The Nexus" class="object-cover w-full h-48" />
+          </div>
+          <div class="p-5 md:p-3 lg:p-5">
+            <h3 class="text-lg font-semibold text-gray-900 line-clamp-1 text-ellipsis">The Nexus</h3>
+            <p class="mt-1 text-sm text-gray-600 line-clamp-2 text-ellipsis">3A-3B Tôn Đức Thắng, Phường Sài Gòn, Quận 1</p>
+
+            <div class="flex items-center gap-4 mt-4 text-sm">
+              <div class="flex items-center gap-1">
+                <i class="text-blue-600 fa-regular fa-building"></i>
+                <span class="text-gray-700 line-clamp-1 text-ellipsis">60 - 66 USD/m²</span>
+              </div>
+              <div class="flex gap-2 ml-auto">
+                <button class="flex items-center justify-center bg-gray-100 rounded-full w-9 h-9 hover:bg-gray-200">
+                  <i class="text-gray-600 fa-regular fa-heart"></i>
+                </button>
+                <button class="flex items-center justify-center text-white bg-blue-600 rounded-full w-9 h-9">
+                  <i class="fa-solid fa-360"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between mt-4 text-xs text-gray-500">
+              <span class="line-clamp-1 text-ellipsis">Cập nhật ngày 02/12/2025</span>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" class="w-4 h-4 text-blue-600 rounded" />
+                <span>So sánh</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="overflow-hidden transition bg-white shadow-md rounded-2xl hover:shadow-xl"
+        style="max-width: 292px; margin: auto"
+        data-aos="flip-left">
+          <div class="relative">
+            <span
+              class="absolute z-10 px-3 py-1 text-xs font-bold text-white bg-yellow-500 rounded-full top-3 left-3">LEED
+              GOLD</span>
+            <img src="assets/images/detail/detail-8.jpg" alt="Saigon Marina IFC Tower"
+              class="object-cover w-full h-48" />
+          </div>
+          <div class="p-5 md:p-3 lg:p-5">
+            <h3 class="text-lg font-semibold text-gray-900 line-clamp-1 text-ellipsis">Saigon Marina IFC Tower</h3>
+            <p class="mt-1 text-sm text-gray-600 line-clamp-2 text-ellipsis">2 Tôn Đức Thắng, Phường Sài Gòn, Quận 1</p>
+
+            <div class="flex items-center gap-4 mt-4 text-sm">
+              <div class="flex items-center gap-1">
+                <i class="text-blue-600 fa-regular fa-building"></i>
+                <span class="text-gray-700 line-clamp-1 text-ellipsis">66 - 66 USD/m²</span>
+              </div>
+              <div class="flex gap-2 ml-auto">
+                <button class="flex items-center justify-center bg-gray-100 rounded-full w-9 h-9 hover:bg-gray-200">
+                  <i class="text-gray-600 fa-regular fa-heart"></i>
+                </button>
+                <button class="flex items-center justify-center text-white bg-blue-600 rounded-full w-9 h-9">
+                  <i class="fa-solid fa-360"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between mt-4 text-xs text-gray-500">
+              <span class="line-clamp-1 text-ellipsis">Cập nhật ngày 02/12/2025</span>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" class="w-4 h-4 text-blue-600 rounded" />
+                <span>So sánh</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 9 -->
+        <div class="overflow-hidden transition bg-white shadow-md rounded-2xl hover:shadow-xl"
+        style="max-width: 292px; margin: auto"
+        data-aos="flip-left">
+          <div class="relative">
+            <span
+              class="absolute z-10 px-3 py-1 text-xs font-bold text-white bg-yellow-500 rounded-full top-3 left-3">LEED
+              GOLD</span>
+            <img src="assets/images/detail/detail-9.jpg" alt="Saigon Marina IFC Tower"
+              class="object-cover w-full h-48" />
+          </div>
+          <div class="p-5 md:p-3 lg:p-5">
+            <h3 class="text-lg font-semibold text-gray-900 line-clamp-1 text-ellipsis">Saigon Marina IFC Tower</h3>
+            <p class="mt-1 text-sm text-gray-600 line-clamp-2 text-ellipsis">2 Tôn Đức Thắng, Phường Sài Gòn, Quận 1</p>
+
+            <div class="flex items-center gap-4 mt-4 text-sm">
+              <div class="flex items-center gap-1">
+                <i class="text-blue-600 fa-regular fa-building"></i>
+                <span class="text-gray-700 line-clamp-1 text-ellipsis">66 - 66 USD/m²</span>
+              </div>
+              <div class="flex gap-2 ml-auto">
+                <button class="flex items-center justify-center bg-gray-100 rounded-full w-9 h-9 hover:bg-gray-200">
+                  <i class="text-gray-600 fa-regular fa-heart"></i>
+                </button>
+                <button class="flex items-center justify-center text-white bg-blue-600 rounded-full w-9 h-9">
+                  <i class="fa-solid fa-360"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between mt-4 text-xs text-gray-500">
+              <span class="line-clamp-1 text-ellipsis">Cập nhật ngày 02/12/2025</span>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" class="w-4 h-4 text-blue-600 rounded" />
+                <span>So sánh</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Pagination -->
+      <div class="flex justify-center mt-5" data-aos="fade-up">
+        <div id="pagination"></div>
       </div>
     </div>
+  </section>
 
-    <!-- Map -->
-    <div id="map"></div>
+  <!-- Thông tin chung -->
+  <div id="generalInformation" class="bg-slate-50"></div>
 
-    <!-- Thông tin chung -->
-    <div id="generalInformation"></div>
+  <!-- Văn phòng theo phường mới Start -->
+    <section id="officeNewWard"></section>
 
-    <!-- Raiting Product -->
-    <div id="ratingProduct"></div>
+  <!-- Cẩm nang tìm văn phòng -->
+    <section id="handbook"></section>
 
-    <!-- FAQ Section -->
-      <section id="faq"></section>
-
-    <!-- Văn phòng theo phường mới Start -->
-      <section id="officeNewWard"></section>
-
-    <!-- Cẩm nang tìm văn phòng -->
-      <section id="handbook"></section>
-
-    <!-- Gặp gỡ đội ngũ tư vấn -->
-    <section id="consultingTeam"></section>
-
-  </div>
+  <!-- Gặp gỡ đội ngũ tư vấn -->
+  <section id="consultingTeam"></section>
 
   <!-- Responsive menu -->
   <div
@@ -1475,275 +1392,7 @@
   </script>
 
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      includeHTML("#header", "./partials/common/header.html");
-      includeHTML("#breadCrumb", "./partials/common/bread-crumb.html", initBreadcrumb);
-      includeHTML("#mega-search", "./partials/detail/search-mega.html");
-      includeHTML("#ratingStar", "./partials/common/rating-star.html");
-      includeHTML("#officeRentalWard1", "./partials/office-rental/office-rental-ward-1.html");
-      includeHTML("#office-rental-filter", "./partials/office-rental/office-rental-filter.html");
-      includeHTML("#map", "./partials/maps/map-1.html");
-      includeHTML("#pagination1", "./partials/common/pagination.html");
-      includeHTML("#pagination2", "./partials/common/pagination.html");
-      includeHTML("#contact2", "./partials/common/contact-2.html");
-      includeHTML("#generalInformation", "./partials/common/general-information.html");
-      includeHTML("#ratingProduct", "./partials/common/rating-product.html");
-      includeHTML("#handbook", "./partials/office-rental/handbook.html");
-      includeHTML("#officeNewWard", "./partials/office-rental/office-new-ward.html");
-      includeHTML("#faq", "./partials/common/faq.html");
-      includeHTML("#consultingTeam", "./partials/common/consulting-team.html");
-      includeHTML("#footer", "./partials/common/footer.html");
-    });
-  </script>
-
-  <script>
-    AOS.init({
-      delay: 0,
-      duration: 1000,
-    });
-
-    // reviews
-    const swiper = new Swiper('.h2-reviews-swiper', {
-      slidesPerView: 3,
-      pagination: {
-        el: '.h2-reviews-swiper-pagination',
-        clickable: true,
-        dynamicBullets: true,
-      },
-      autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-      },
-      breakpoints: {
-        0: {
-          slidesPerView: 1,
-          spaceBetween: 10,
-        },
-        320: {
-          slidesPerView: 2,
-          spaceBetween: 10,
-        },
-        640: {
-          slidesPerView: 2,
-          spaceBetween: 15,
-        },
-        768: {
-          slidesPerView: 3,
-          spaceBetween: 20,
-        },
-      },
-    });
-
-    // agent
-    const agent = new Swiper('.h2-agent-swiper', {
-      slidesPerView: 3,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      breakpoints: {
-        0: {
-          slidesPerView: 1,
-          spaceBetween: 10,
-        },
-        768: {
-          slidesPerView: 2,
-          spaceBetween: 20,
-        },
-        1024: {
-          slidesPerView: 3,
-          spaceBetween: 30,
-        },
-      },
-    });
-
-    // New ward
-    function initPhuongSwiper() {
-      const el = document.querySelector('.phuong-swiper');
-      if (!el || el.classList.contains('swiper-initialized')) return;
-
-      new Swiper(el, {
-        slidesPerView: 4,
-        spaceBetween: 24,
-        loop: true,
-        speed: 800,
-        grabCursor: true,
-
-        navigation: {
-          nextEl: '.phuong-swiper-button-next',
-          prevEl: '.phuong-swiper-button-prev',
-        },
-
-        autoplay: {
-          delay: 3000,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true,
-        },
-
-        breakpoints: {
-          0: { slidesPerView: 1, spaceBetween: 16 },
-          640: { slidesPerView: 2, spaceBetween: 20 },
-          1024: { slidesPerView: 3, spaceBetween: 24 },
-          1280: { slidesPerView: 4, spaceBetween: 24 },
-        },
-      });
-    }
-
-    // Team Swiper
-    function initTeamSwiper() {
-      const el = document.querySelector('.team-swiper');
-
-      if (!el) return;
-
-      // chống init trùng
-      if (el.classList.contains('swiper-initialized')) return;
-
-      new Swiper(el, {
-        slidesPerView: 4,
-        spaceBetween: 24,
-        // Ensure autoHeight is false (default)
-        autoHeight: false, 
-        // This helper ensures all slides are same height
-        watchSlidesProgress: true,
-        loop: true,
-        speed: 800,
-        grabCursor: true,
-
-        autoplay: {
-          delay: 3500,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true,
-        },
-
-        breakpoints: {
-          0: { slidesPerView: 1, spaceBetween: 16 },
-          640: { slidesPerView: 2, spaceBetween: 20 },
-          1024: { slidesPerView: 3, spaceBetween: 24 },
-          1280: { slidesPerView: 4, spaceBetween: 24 },
-        },
-      });
-    }
-  </script>
-
-  <script>
-    // Slider diện tích
-    const areaSlider = document.getElementById('areaSlider');
-    noUiSlider.create(areaSlider, {
-      start: [0, 0], // giá trị mặc định
-      connect: true,
-      range: {
-        min: 0,
-        max: 2000
-      },
-      step: 10,
-      tooltips: true,
-      format: {
-        to: value => Math.round(value),
-        from: value => Number(value)
-      }
-    });
-
-    const areaMinVal = document.getElementById('areaMinVal');
-    const areaMaxVal = document.getElementById('areaMaxVal');
-    areaSlider.noUiSlider.on('update', (values) => {
-      areaMinVal.textContent = values[0];
-      areaMaxVal.textContent = values[1];
-    });
-
-    // Slider giá thuê
-    const priceSlider = document.getElementById('priceSlider');
-    noUiSlider.create(priceSlider, {
-      start: [0, 0], // giá trị mặc định
-      connect: true,
-      range: {
-        min: 0,
-        max: 65
-      },
-      step: 1,
-      tooltips: true,
-      format: {
-        to: value => Math.round(value),
-        from: value => Number(value)
-      }
-    });
-
-    const priceMinVal = document.getElementById('priceMinVal');
-    const priceMaxVal = document.getElementById('priceMaxVal');
-    priceSlider.noUiSlider.on('update', (values) => {
-      priceMinVal.textContent = values[0];
-      priceMaxVal.textContent = values[1];
-    });
-  </script>
-
-  <script>
-    function toggleFullInfo() {
-      const fullContent = document.getElementById('info-full');
-      const gradient = document.getElementById('seo-gradient');
-      const btn = document.getElementById('toggleInfoBtn');
-      const btnText = document.getElementById('btnText');
-      const btnIcon = document.getElementById('btnIcon');
-
-      if (fullContent.classList.contains('hidden')) {
-        fullContent.classList.remove('hidden');
-        gradient.classList.add('hidden');
-        btnText.textContent = 'Thu gọn';
-        btnIcon.classList.remove('fa-chevron-down');
-        btnIcon.classList.add('fa-chevron-up');
-        // Scroll to full content
-        fullContent.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      } else {
-        fullContent.classList.add('hidden');
-        gradient.classList.remove('hidden');
-        btnText.textContent = 'Xem thêm';
-        btnIcon.classList.remove('fa-chevron-up');
-        btnIcon.classList.add('fa-chevron-down');
-        // Scroll back to preview
-        document.getElementById('info-preview').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }
-    }
-  </script>
-
-  <script>
-    function initOfficeSwiper() {
-      // Wait a short moment for the includeHTML to finish rendering the content
-      setTimeout(() => {
-        const swiperSections = document.querySelectorAll(".office-rental-swiper");
-        
-        swiperSections.forEach((section) => {
-          if (section.dataset.initialized === "true") return;
-
-          // Target the correct wrapper class
-          const wrapper = section.querySelector('.swiper-wrapper');
-          const nextBtn = section.querySelector('.fa-chevron-right')?.closest('button');
-          const prevBtn = section.querySelector('.fa-chevron-left')?.closest('button');
-
-          if (wrapper && nextBtn && prevBtn) {
-            const getScrollStep = () => {
-              const firstCard = wrapper.querySelector('.swiper-slide');
-              // Scroll by card width + 24px gap
-              return firstCard ? firstCard.offsetWidth + 24 : 374; 
-            };
-
-            nextBtn.onclick = (e) => {
-              e.preventDefault();
-              wrapper.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
-            };
-
-            prevBtn.onclick = (e) => {
-              e.preventDefault();
-              wrapper.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
-            };
-
-            section.dataset.initialized = "true";
-          }
-        });
-      }, 400); // 400ms is safer for multiple includeHTML calls
-    }
-    initOfficeSwiper()
-  </script>
-
-  <script>
-    setTimeout(() => {
+    function megaSearchEvent(){
       const slider = document.getElementById('price-slider');
       const minDisplay = document.getElementById('min-price-display');
       const maxDisplay = document.getElementById('max-price-display');
@@ -1910,7 +1559,217 @@
           }
         });
       }
-    }, 200);
+
+      const resetButton = document.getElementById('mega-search-reset-btn');
+
+      resetButton.addEventListener('click', function () {
+          slider.noUiSlider.reset();
+          areaSlider.noUiSlider.reset();
+          floorSlider.noUiSlider.reset();
+          capacitySlider.noUiSlider.reset();
+      });
+    }
+    function resetMegaSearchForm(){
+      const searchForm = document.getElementById("search-form");
+      const resetSearchFormBtn = document.getElementById("mega-search-reset-btn");
+      const minPrice = document.getElementById("min-price-input");
+      const maxPrice = document.getElementById("max-price-input");
+      const minArea = document.getElementById("min-area-input");
+      const maxArea = document.getElementById("max-area-input");
+      const minFloor = document.getElementById("min-floor-input");
+      const maxFloor = document.getElementById("max-floor-input");
+      const minCapacity = document.getElementById("min-capacity-input");
+      const maxCapacity = document.getElementById("max-capacity-input");
+
+      resetSearchFormBtn.addEventListener("click", () => {
+        searchForm.reset();
+        minPrice.value = "20000000";
+        maxPrice.value = "20000000";
+        minArea.value = "20";
+        maxArea.value = "20";
+        minFloor.value = "1";
+        maxFloor.value = "1"
+        minCapacity.value = "1";
+        maxCapacity.value = "1";
+      })
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+      includeHTML("#header", "./partials/common/header.html");
+      includeHTML("#breadCrumb", "./partials/common/bread-crumb.html", initBreadcrumb);
+      const loads = [
+        includeHTML("#mega-search", "./partials/detail/search-mega.html"),
+      ]
+      Promise.all(loads).then(() => {
+        megaSearchEvent();
+        resetMegaSearchForm()
+      })
+      includeHTML("#ratingStar", "./partials/common/rating-star.html");
+      includeHTML("#office-rental-filter", "./partials/office-rental/office-rental-filter.html");
+      includeHTML("#pagination", "./partials/common/pagination.html");
+      includeHTML("#contact2", "./partials/common/contact-2.html");
+      includeHTML("#generalInformation", "./partials/common/general-information.html");
+      includeHTML("#handbook", "./partials/office-rental/handbook.html");
+      includeHTML("#officeNewWard", "./partials/office-rental/office-new-ward.html");
+      includeHTML("#consultingTeam", "./partials/common/consulting-team.html");
+      includeHTML("#footer", "./partials/common/footer.html");
+    });
+  </script>
+
+  <script>
+    AOS.init({
+      delay: 0,
+      duration: 1000,
+    });
+
+    // reviews
+    const swiper = new Swiper('.h2-reviews-swiper', {
+      slidesPerView: 3,
+      pagination: {
+        el: '.h2-reviews-swiper-pagination',
+        clickable: true,
+        dynamicBullets: true,
+      },
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
+        320: {
+          slidesPerView: 2,
+          spaceBetween: 10,
+        },
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 15,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+      },
+    });
+
+    // agent
+    const agent = new Swiper('.h2-agent-swiper', {
+      slidesPerView: 3,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+      },
+    });
+
+    // New ward
+    function initPhuongSwiper() {
+      const el = document.querySelector('.phuong-swiper');
+      if (!el || el.classList.contains('swiper-initialized')) return;
+
+      new Swiper(el, {
+        slidesPerView: 4,
+        spaceBetween: 24,
+        loop: true,
+        speed: 800,
+        grabCursor: true,
+
+        navigation: {
+          nextEl: '.phuong-swiper-button-next',
+          prevEl: '.phuong-swiper-button-prev',
+        },
+
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        },
+
+        breakpoints: {
+          0: { slidesPerView: 1, spaceBetween: 16 },
+          640: { slidesPerView: 2, spaceBetween: 20 },
+          1024: { slidesPerView: 3, spaceBetween: 24 },
+          1280: { slidesPerView: 4, spaceBetween: 24 },
+        },
+      });
+    }
+
+    // Team Swiper
+    function initTeamSwiper() {
+      const el = document.querySelector('.team-swiper');
+
+      if (!el) return;
+
+      // chống init trùng
+      if (el.classList.contains('swiper-initialized')) return;
+
+      new Swiper(el, {
+        slidesPerView: 4,
+        spaceBetween: 24,
+        // Ensure autoHeight is false (default)
+        autoHeight: false, 
+        // This helper ensures all slides are same height
+        watchSlidesProgress: true,
+        loop: true,
+        speed: 800,
+        grabCursor: true,
+
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        },
+
+        breakpoints: {
+          0: { slidesPerView: 1, spaceBetween: 16 },
+          640: { slidesPerView: 2, spaceBetween: 20 },
+          1024: { slidesPerView: 3, spaceBetween: 24 },
+          1280: { slidesPerView: 4, spaceBetween: 24 },
+        },
+      });
+    }
+  </script>
+
+  <script>
+    function toggleFullInfo() {
+      const fullContent = document.getElementById('info-full');
+      const gradient = document.getElementById('seo-gradient');
+      const btn = document.getElementById('toggleInfoBtn');
+      const btnText = document.getElementById('btnText');
+      const btnIcon = document.getElementById('btnIcon');
+
+      if (fullContent.classList.contains('hidden')) {
+        fullContent.classList.remove('hidden');
+        gradient.classList.add('hidden');
+        btnText.textContent = 'Thu gọn';
+        btnIcon.classList.remove('fa-chevron-down');
+        btnIcon.classList.add('fa-chevron-up');
+        // Scroll to full content
+        fullContent.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      } else {
+        fullContent.classList.add('hidden');
+        gradient.classList.remove('hidden');
+        btnText.textContent = 'Xem thêm';
+        btnIcon.classList.remove('fa-chevron-up');
+        btnIcon.classList.add('fa-chevron-down');
+        // Scroll back to preview
+        document.getElementById('info-preview').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
   </script>
 </body>
 

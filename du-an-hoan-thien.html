@@ -37,11 +37,11 @@
   </style>
 </head>
 
-<body>
+<body class="relative">
   <!-- Header -->
-  <div id="header"></div>
+  <div id="header" class="sticky left-0 top-0 z-50 md:block"></div>
   <button
-    class="md:hidden inline-block absolute right-0 mr-2.5 z-[100]" style="top: 34px;"
+    class="fixed md:hidden" style="top: 18px; right: 18px; z-index: 999;"
     type="button"
     data-drawer-target="responsive-menu"
     data-drawer-show="responsive-menu"
@@ -63,7 +63,7 @@
   <section class="bg-primary-10">
     <div class="h-auto w-full bg-cover bg-center bg-no-repeat pb-10 pt-10" style="background-image: url('assets/images/layer.svg')">
       <div
-        class="container flex h-[170px] flex-col items-center justify-center sm:h-[200px] md:h-[250px]">
+        class="container flex h-[170px] flex-col items-center justify-center sm:h-[200px] md:h-[250px]" data-aos="fade-up">
         <h1 id="pageTitle" class="common-hero-heading">Dự án hoàn thiện</h1>
 
         <!-- Breadcrumb -->
@@ -82,12 +82,12 @@
   </div>
 
   <!-- DANH SÁCH DỰ ÁN HOÀN THIỆN -->
-  <div class="container py-8 px-4 mx-auto">
-    <h1 class="mb-8 text-3xl font-bold text-gray-900">DANH SÁCH DỰ ÁN HOÀN THIỆN</h1>
+  <div class="container py-8 px-4 mx-auto overflow-hidden">
+    <h1 class="mb-8 text-3xl font-bold text-gray-900" data-aos="fade-down">DANH SÁCH DỰ ÁN HOÀN THIỆN</h1>
 
     <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         <!-- Card 1 -->
-        <div class="overflow-hidden transition bg-white shadow-md rounded-2xl hover:shadow-xl h-fit">
+        <div class="overflow-hidden transition bg-white shadow-md rounded-2xl hover:shadow-xl h-fit" data-aos="fade-up">
           <div class="relative">
             <span
               class="absolute z-10 px-3 py-1 text-xs font-bold text-white bg-yellow-500 rounded-full top-3 left-3">LEED
@@ -124,7 +124,7 @@
         </div>
 
         <!-- Card 2 -->
-        <div class="overflow-hidden transition bg-white shadow-md rounded-2xl hover:shadow-xl h-fit">
+        <div class="overflow-hidden transition bg-white shadow-md rounded-2xl hover:shadow-xl h-fit" data-aos="fade-up">
           <div class="relative">
             <span
               class="absolute z-10 px-3 py-1 text-xs font-bold text-white bg-yellow-500 rounded-full top-3 left-3">LEED
@@ -162,7 +162,7 @@
         </div>
 
         <!-- Card 3 -->
-        <div class="overflow-hidden transition bg-white shadow-md rounded-2xl hover:shadow-xl h-fit">
+        <div class="overflow-hidden transition bg-white shadow-md rounded-2xl hover:shadow-xl h-fit" data-aos="fade-up">
           <div class="relative">
             <span
               class="absolute z-10 px-3 py-1 text-xs font-bold text-white bg-yellow-500 rounded-full top-3 left-3">LEED
@@ -199,7 +199,7 @@
         </div>
 
         <!-- Card 4 -->
-        <div class="overflow-hidden transition bg-white shadow-md rounded-2xl hover:shadow-xl h-fit">
+        <div class="overflow-hidden transition bg-white shadow-md rounded-2xl hover:shadow-xl h-fit" data-aos="fade-up">
           <div class="relative">
             <span
               class="absolute z-10 px-3 py-1 text-xs font-bold text-white bg-yellow-500 rounded-full top-3 left-3">LEED
@@ -236,7 +236,7 @@
           </div>
         </div>
         <!-- Card 5 -->
-        <div class="overflow-hidden transition bg-white shadow-md rounded-2xl hover:shadow-xl h-fit">
+        <div class="overflow-hidden transition bg-white shadow-md rounded-2xl hover:shadow-xl h-fit" data-aos="fade-up">
           <div class="relative">
             <span
               class="absolute z-10 px-3 py-1 text-xs font-bold text-white bg-yellow-500 rounded-full top-3 left-3">LEED
@@ -273,7 +273,7 @@
         </div>
 
         <!-- Card 6 -->
-        <div class="overflow-hidden transition bg-white shadow-md rounded-2xl hover:shadow-xl h-fit">
+        <div class="overflow-hidden transition bg-white shadow-md rounded-2xl hover:shadow-xl h-fit" data-aos="fade-up">
           <div class="relative">
             <span
               class="absolute z-10 px-3 py-1 text-xs font-bold text-white bg-yellow-500 rounded-full top-3 left-3">LEED
@@ -311,7 +311,7 @@
         </div>
 
         <!-- Card 7 -->
-        <div class="overflow-hidden transition bg-white shadow-md rounded-2xl hover:shadow-xl h-fit">
+        <div class="overflow-hidden transition bg-white shadow-md rounded-2xl hover:shadow-xl h-fit" data-aos="fade-up">
           <div class="relative">
             <span
               class="absolute z-10 px-3 py-1 text-xs font-bold text-white bg-yellow-500 rounded-full top-3 left-3">LEED
@@ -348,7 +348,7 @@
         </div>
 
         <!-- Card 8 -->
-        <div class="overflow-hidden transition bg-white shadow-md rounded-2xl hover:shadow-xl h-fit">
+        <div class="overflow-hidden transition bg-white shadow-md rounded-2xl hover:shadow-xl h-fit" data-aos="fade-up">
           <div class="relative">
             <span
               class="absolute z-10 px-3 py-1 text-xs font-bold text-white bg-yellow-500 rounded-full top-3 left-3">LEED
@@ -386,7 +386,7 @@
         </div>
 
         <!-- Card 9 -->
-        <div class="overflow-hidden transition bg-white shadow-md rounded-2xl hover:shadow-xl h-fit">
+        <div class="overflow-hidden transition bg-white shadow-md rounded-2xl hover:shadow-xl h-fit" data-aos="fade-up">
           <div class="relative">
             <span
               class="absolute z-10 px-3 py-1 text-xs font-bold text-white bg-yellow-500 rounded-full top-3 left-3">LEED
@@ -423,19 +423,15 @@
           </div>
         </div>
     </div>
-    <!-- Pagination -->
-    <div class="flex justify-center mt-5">
-      <div id="pagination1"></div>
-    </div>
   </div>
   
   <!-- Pagination -->
-  <section class="container text-center">
+  <section class="container text-center" style="padding-bottom: 32px;">
     <div id="pagination"></div>
   </section>
   
   <!-- Why choose us -->
-  <section id="whyChooseUs"></section>
+  <section id="whyChooseUs" class="bg-slate-50"></section>
 
   <!-- Gặp gỡ đội ngũ tư vấn -->
   <section id="consultingTeam"></section>
@@ -1370,215 +1366,7 @@
   </script>
 
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      includeHTML("#header", "./partials/common/header.html");
-      includeHTML("#breadCrumb", "./partials/common/bread-crumb.html", initBreadcrumb);
-      includeHTML("#mega-search", "./partials/detail/search-mega.html");
-      includeHTML("#ratingStar", "./partials/common/rating-star.html");
-      includeHTML("#pagination", "./partials/common/pagination.html");
-      includeHTML("#officeRentalLevelA", "./partials/office-rental/office-rental-level-a.html");
-      includeHTML("#contact2", "./partials/common/contact-2.html");
-      includeHTML("#whyChooseUs", "./partials/tk-tk-nt/tktknt-why-choose-us.html");
-      includeHTML("#consultingTeam", "./partials/common/consulting-team.html");
-      includeHTML("#footer", "./partials/common/footer.html");
-    });
-  </script>
-
-  <script>
-    AOS.init({
-      delay: 0,
-      duration: 1000,
-    });
-
-    // reviews
-    const swiper = new Swiper('.h2-reviews-swiper', {
-      slidesPerView: 3,
-      pagination: {
-        el: '.h2-reviews-swiper-pagination',
-        clickable: true,
-        dynamicBullets: true,
-      },
-      autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-      },
-      breakpoints: {
-        0: {
-          slidesPerView: 1,
-          spaceBetween: 10,
-        },
-        320: {
-          slidesPerView: 2,
-          spaceBetween: 10,
-        },
-        640: {
-          slidesPerView: 2,
-          spaceBetween: 15,
-        },
-        768: {
-          slidesPerView: 3,
-          spaceBetween: 20,
-        },
-      },
-    });
-
-    // agent
-    const agent = new Swiper('.h2-agent-swiper', {
-      slidesPerView: 3,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      breakpoints: {
-        0: {
-          slidesPerView: 1,
-          spaceBetween: 10,
-        },
-        768: {
-          slidesPerView: 2,
-          spaceBetween: 20,
-        },
-        1024: {
-          slidesPerView: 3,
-          spaceBetween: 30,
-        },
-      },
-    });
-
-    // New ward
-    function initPhuongSwiper() {
-      const el = document.querySelector('.phuong-swiper');
-      if (!el || el.classList.contains('swiper-initialized')) return;
-
-      new Swiper(el, {
-        slidesPerView: 4,
-        spaceBetween: 24,
-        loop: true,
-        speed: 800,
-        grabCursor: true,
-
-        navigation: {
-          nextEl: '.phuong-swiper-button-next',
-          prevEl: '.phuong-swiper-button-prev',
-        },
-
-        autoplay: {
-          delay: 3000,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true,
-        },
-
-        breakpoints: {
-          0: { slidesPerView: 1, spaceBetween: 16 },
-          640: { slidesPerView: 2, spaceBetween: 20 },
-          1024: { slidesPerView: 3, spaceBetween: 24 },
-          1280: { slidesPerView: 4, spaceBetween: 24 },
-        },
-      });
-    }
-
-    // Team Swiper
-    function initTeamSwiper() {
-      const el = document.querySelector('.team-swiper');
-
-      if (!el) return;
-
-      // chống init trùng
-      if (el.classList.contains('swiper-initialized')) return;
-
-      new Swiper(el, {
-        slidesPerView: 4,
-        spaceBetween: 24,
-        // Ensure autoHeight is false (default)
-        autoHeight: false, 
-        // This helper ensures all slides are same height
-        watchSlidesProgress: true,
-        loop: true,
-        speed: 800,
-        grabCursor: true,
-
-        autoplay: {
-          delay: 3500,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true,
-        },
-
-        breakpoints: {
-          0: { slidesPerView: 1, spaceBetween: 16 },
-          640: { slidesPerView: 2, spaceBetween: 20 },
-          1024: { slidesPerView: 3, spaceBetween: 24 },
-          1280: { slidesPerView: 4, spaceBetween: 24 },
-        },
-      });
-    }
-  </script>
-
-  <script>
-    function toggleFullInfo() {
-      const fullContent = document.getElementById('info-full');
-      const btn = document.getElementById('toggleInfoBtn');
-      const btnText = document.getElementById('btnText');
-      const btnIcon = document.getElementById('btnIcon');
-
-      if (fullContent.classList.contains('hidden')) {
-        fullContent.classList.remove('hidden');
-        btnText.textContent = 'Thu gọn';
-        btnIcon.classList.remove('fa-chevron-down');
-        btnIcon.classList.add('fa-chevron-up');
-        // Scroll to full content
-        fullContent.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      } else {
-        fullContent.classList.add('hidden');
-        btnText.textContent = 'Xem thêm';
-        btnIcon.classList.remove('fa-chevron-up');
-        btnIcon.classList.add('fa-chevron-down');
-        // Scroll back to preview
-        document.getElementById('info-preview').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }
-    }
-  </script>
-
-  <script>
-    function initOfficeSwiper() {
-      // Wait a short moment for the includeHTML to finish rendering the content
-      setTimeout(() => {
-        const swiperSections = document.querySelectorAll(".office-rental-swiper");
-        
-        swiperSections.forEach((section) => {
-          if (section.dataset.initialized === "true") return;
-
-          // Target the correct wrapper class
-          const wrapper = section.querySelector('.swiper-wrapper');
-          const nextBtn = section.querySelector('.fa-chevron-right')?.closest('button');
-          const prevBtn = section.querySelector('.fa-chevron-left')?.closest('button');
-
-          if (wrapper && nextBtn && prevBtn) {
-            const getScrollStep = () => {
-              const firstCard = wrapper.querySelector('.swiper-slide');
-              // Scroll by card width + 24px gap
-              return firstCard ? firstCard.offsetWidth + 24 : 374; 
-            };
-
-            nextBtn.onclick = (e) => {
-              e.preventDefault();
-              wrapper.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
-            };
-
-            prevBtn.onclick = (e) => {
-              e.preventDefault();
-              wrapper.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
-            };
-
-            section.dataset.initialized = "true";
-          }
-        });
-      }, 400); // 400ms is safer for multiple includeHTML calls
-    }
-    initOfficeSwiper()
-  </script>
-
-  <script>
-    setTimeout(() => {
+    function megaSearchEvent(){
       const slider = document.getElementById('price-slider');
       const minDisplay = document.getElementById('min-price-display');
       const maxDisplay = document.getElementById('max-price-display');
@@ -1745,7 +1533,97 @@
           }
         });
       }
-    }, 200);
+
+      const resetButton = document.getElementById('mega-search-reset-btn');
+
+      resetButton.addEventListener('click', function () {
+          slider.noUiSlider.reset();
+          areaSlider.noUiSlider.reset();
+          floorSlider.noUiSlider.reset();
+          capacitySlider.noUiSlider.reset();
+      });
+    }
+    function resetMegaSearchForm(){
+      const searchForm = document.getElementById("search-form");
+      const resetSearchFormBtn = document.getElementById("mega-search-reset-btn");
+      const minPrice = document.getElementById("min-price-input");
+      const maxPrice = document.getElementById("max-price-input");
+      const minArea = document.getElementById("min-area-input");
+      const maxArea = document.getElementById("max-area-input");
+      const minFloor = document.getElementById("min-floor-input");
+      const maxFloor = document.getElementById("max-floor-input");
+      const minCapacity = document.getElementById("min-capacity-input");
+      const maxCapacity = document.getElementById("max-capacity-input");
+
+      resetSearchFormBtn.addEventListener("click", () => {
+        searchForm.reset();
+        minPrice.value = "20000000";
+        maxPrice.value = "20000000";
+        minArea.value = "20";
+        maxArea.value = "20";
+        minFloor.value = "1";
+        maxFloor.value = "1"
+        minCapacity.value = "1";
+        maxCapacity.value = "1";
+      })
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+      includeHTML("#header", "./partials/common/header.html");
+      includeHTML("#breadCrumb", "./partials/common/bread-crumb.html", initBreadcrumb);
+      const megasearch = [includeHTML("#mega-search", "./partials/detail/search-mega.html")]
+      Promise.all(megasearch).then(()=> {
+        megaSearchEvent();
+        resetMegaSearchForm()
+      })
+      includeHTML("#ratingStar", "./partials/common/rating-star.html");
+      includeHTML("#pagination", "./partials/common/pagination.html");
+      includeHTML("#officeRentalLevelA", "./partials/office-rental/office-rental-level-a.html");
+      includeHTML("#contact2", "./partials/common/contact-2.html");
+      includeHTML("#whyChooseUs", "./partials/tk-tk-nt/tktknt-why-choose-us.html");
+      includeHTML("#consultingTeam", "./partials/common/consulting-team.html");
+      includeHTML("#footer", "./partials/common/footer.html");
+    });
+  </script>
+
+  <script>
+    AOS.init({
+      delay: 0,
+      duration: 1000,
+    });
+    // Team Swiper
+    function initTeamSwiper() {
+      const el = document.querySelector('.team-swiper');
+
+      if (!el) return;
+
+      // chống init trùng
+      if (el.classList.contains('swiper-initialized')) return;
+
+      new Swiper(el, {
+        slidesPerView: 4,
+        spaceBetween: 24,
+        // Ensure autoHeight is false (default)
+        autoHeight: false, 
+        // This helper ensures all slides are same height
+        watchSlidesProgress: true,
+        loop: true,
+        speed: 800,
+        grabCursor: true,
+
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        },
+
+        breakpoints: {
+          0: { slidesPerView: 1, spaceBetween: 16 },
+          640: { slidesPerView: 2, spaceBetween: 20 },
+          1024: { slidesPerView: 3, spaceBetween: 24 },
+          1280: { slidesPerView: 4, spaceBetween: 24 },
+        },
+      });
+    }
   </script>
 </body>
 
