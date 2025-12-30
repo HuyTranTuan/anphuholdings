@@ -1248,13 +1248,72 @@
         maxCapacity.value = "1";
       })
     }
+    function setCounter(){
+      class Counter{
+        constructor(config){
+          this.selector = config.selector;
+          this.element = null;
+          this.count = 0;
+          this.countEnd = config.countEnd;
+          this.step = config.step;
+          this.intervalMS = config.intervalMS;
+          this.init();
+        }
+
+        getElement() {
+          this.element = document.querySelector(this.selector);
+        }
+
+        startCounter(){
+          this.element.innerHTML = `${this.count}+`;
+          setTimeout(() => {
+            if(this.count < this.countEnd){
+              this.count += this.step;
+              this.startCounter();
+            }
+          }, this.intervalMS)
+        }
+
+        init(){
+          this.getElement();
+          this.startCounter();
+        }
+      }
+
+      const yearElement = {
+        selector: "#yearCounter",
+        countEnd: 10,
+        step: 1,
+        intervalMS: 50
+      }
+      const projectElement = {
+        selector: "#projectCounter",
+        countEnd: 520,
+        step: 2,
+        intervalMS: 1
+      }
+      const peopleElement = {
+        selector: "#peopleCounter",
+        countEnd: 75,
+        step: 1,
+        intervalMS: 30
+      }
+
+      new Counter(yearElement);
+      new Counter(projectElement);
+      new Counter(peopleElement);
+    }
     document.addEventListener("DOMContentLoaded", () => {
       includeHTML("#header", "./partials/common/header.html");
       includeHTML("#breadCrumb", "./partials/common/bread-crumb.html", initBreadcrumb);
-      const megasearch = [includeHTML("#mega-search", "./partials/detail/search-mega.html")]
-      Promise.all(megasearch).then(()=> {
+      const loads = [
+        includeHTML("#mega-search", "./partials/detail/search-mega.html"),
+        includeHTML("#tktkntGeneralInformation", "./partials/tk-tk-nt/tktknt-general-inforamtion.html"),
+      ]
+      Promise.all(loads).then(()=> {
         megaSearchEvent();
-        resetMegaSearchForm()
+        resetMegaSearchForm();
+        setCounter();
       })
       includeHTML("#ratingStar", "./partials/common/rating-star.html");
       includeHTML("#usersReview", "./partials/home/users-reviews.html");
@@ -1262,7 +1321,6 @@
       includeHTML("#tktkntAnswer", "./partials/tk-tk-nt/tktknt-answer.html");
       includeHTML("#demotivated", "./partials/tk-tk-nt/tktknt-demotivated.html");
       includeHTML("#tktkntProjectDone", "./partials/tk-tk-nt/tktknt-project-done.html");
-      includeHTML("#tktkntGeneralInformation", "./partials/tk-tk-nt/tktknt-general-inforamtion.html");
       includeHTML("#tktkntWorkProcess", "./partials/tk-tk-nt/tktknt-work-process.html");
       includeHTML("#tktkntSignToDesign", "./partials/tk-tk-nt/tktknt-sign-to-design.html");
       includeHTML("#tktkntPackages", "./partials/tk-tk-nt/tktknt-packages.html");
@@ -1310,61 +1368,6 @@
         },
       },
     });
-
-    // agent
-    const agent = new Swiper('.h2-agent-swiper', {
-      slidesPerView: 3,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      breakpoints: {
-        0: {
-          slidesPerView: 1,
-          spaceBetween: 10,
-        },
-        768: {
-          slidesPerView: 2,
-          spaceBetween: 20,
-        },
-        1024: {
-          slidesPerView: 3,
-          spaceBetween: 30,
-        },
-      },
-    });
-
-    // New ward
-    function initPhuongSwiper() {
-      const el = document.querySelector('.phuong-swiper');
-      if (!el || el.classList.contains('swiper-initialized')) return;
-
-      new Swiper(el, {
-        slidesPerView: 4,
-        spaceBetween: 24,
-        loop: true,
-        speed: 800,
-        grabCursor: true,
-
-        navigation: {
-          nextEl: '.phuong-swiper-button-next',
-          prevEl: '.phuong-swiper-button-prev',
-        },
-
-        autoplay: {
-          delay: 3000,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true,
-        },
-
-        breakpoints: {
-          0: { slidesPerView: 1, spaceBetween: 16 },
-          640: { slidesPerView: 2, spaceBetween: 20 },
-          1024: { slidesPerView: 3, spaceBetween: 24 },
-          1280: { slidesPerView: 4, spaceBetween: 24 },
-        },
-      });
-    }
 
     // Team Swiper
     function initTeamSwiper() {
@@ -1428,235 +1431,6 @@
         document.getElementById('info-preview').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }
     }
-  </script>
-
-  <script>
-    class Counter{
-      constructor(config){
-        this.selector = config.selector;
-        this.element = null;
-        this.count = 0;
-        this.countEnd = config.countEnd;
-        this.step = config.step;
-        this.intervalMS = config.intervalMS;
-        this.init();
-      }
-
-      getElement() {
-        this.element = document.querySelector(this.selector);
-      }
-
-      startCounter(){
-        this.element.innerHTML = `${this.count}+`;
-        setTimeout(() => {
-          if(this.count < this.countEnd){
-            this.count += this.step;
-            this.startCounter();
-          }
-        }, this.intervalMS)
-      }
-
-      init(){
-        this.getElement();
-        this.startCounter();
-      }
-    }
-
-    const yearElement = {
-      selector: "#yearCounter",
-      countEnd: 10,
-      step: 1,
-      intervalMS: 50
-    }
-    const projectElement = {
-      selector: "#projectCounter",
-      countEnd: 520,
-      step: 2,
-      intervalMS: 1
-    }
-    const peopleElement = {
-      selector: "#peopleCounter",
-      countEnd: 75,
-      step: 1,
-      intervalMS: 30
-    }
-
-    setTimeout(() => {
-      new Counter(yearElement);
-      new Counter(projectElement);
-      new Counter(peopleElement);
-    }, 200);
-  </script>
-
-  <script>
-    setTimeout(() => {
-      const slider = document.getElementById('price-slider');
-      const minDisplay = document.getElementById('min-price-display');
-      const maxDisplay = document.getElementById('max-price-display');
-      const minInput = document.getElementById('min-price-input');
-      const maxInput = document.getElementById('max-price-input');
-      // Giá tính theo VND
-      let MIN_PRICE = 20000000; // 20 triệu
-      let MAX_PRICE = 500000000; // 500 triệu
-
-      function formatVND(value) {
-        // Đổi sang "triệu"
-        let trieu = Math.round(value / 1000000);
-        return trieu.toLocaleString('vi-VN') + ' triệu';
-      }
-
-      noUiSlider.create(slider, {
-        start: [MIN_PRICE, MIN_PRICE], // điểm bắt đầu
-        connect: true,
-        step: 1000000, // bước 1 triệu
-        range: {
-          min: MIN_PRICE,
-          max: MAX_PRICE,
-        },
-      });
-      
-      slider.noUiSlider.on('update', function (values, handle) {
-        let minVal = Math.round(values[0]);
-        let maxVal = Math.round(values[1]);
-        
-        minDisplay.textContent = formatVND(minVal);
-        maxDisplay.textContent = formatVND(maxVal);
-        
-        // Gán vào input hidden để gửi form
-        minInput.value = minVal;
-        maxInput.value = maxVal;
-      });
-    
-      // Area Slider
-      const areaSlider = document.getElementById('area-slider');
-      const minAreaDisplay = document.getElementById('min-area-display');
-      const maxAreaDisplay = document.getElementById('max-area-display');
-      const minAreaInput = document.getElementById('min-area-input');
-      const maxAreaInput = document.getElementById('max-area-input');
-      let MIN_AREA = 20; // 20 m2
-      let MAX_AREA = 50; // 500 m2
-
-      if (areaSlider) {
-        noUiSlider.create(areaSlider, {
-          start: [MIN_AREA, MIN_AREA],
-          connect: true,
-          step: 10,
-          range: {
-            min: MIN_AREA,
-            max: MAX_AREA,
-          },
-        });
-        
-        areaSlider.noUiSlider.on('update', function (values, handle) {
-          let minVal = Math.round(values[0]);
-          let maxVal = Math.round(values[1]);
-
-          minAreaDisplay.textContent = minVal + ' m²';
-          maxAreaDisplay.textContent = maxVal + ' m²';
-
-          minAreaInput.value = minVal;
-          maxAreaInput.value = maxVal;
-        });
-      }
-    
-      // Floor Slider
-      const floorSlider = document.getElementById('floor-slider');
-      const minFloorDisplay = document.getElementById('min-floor-display');
-      const maxFloorDisplay = document.getElementById('max-floor-display');
-      const minFloorInput = document.getElementById('min-floor-input');
-      const maxFloorInput = document.getElementById('max-floor-input');
-
-      let MIN_FLOOR = 1;
-      let MAX_FLOOR = 50;
-      
-      if (floorSlider) {
-        noUiSlider.create(floorSlider, {
-          start: [MIN_FLOOR, MIN_FLOOR],
-          connect: true,
-          step: 1,
-          range: {
-            min: MIN_FLOOR,
-            max: MAX_FLOOR,
-          },
-        });
-        
-        floorSlider.noUiSlider.on('update', function (values, handle) {
-          let minVal = Math.round(values[0]);
-          let maxVal = Math.round(values[1]);
-          
-          minFloorDisplay.textContent = minVal;
-          maxFloorDisplay.textContent = maxVal;
-          
-          minFloorInput.value = minVal;
-          maxFloorInput.value = maxVal;
-        });
-      }
-
-      // Capacity Slider
-      const capacitySlider = document.getElementById('capacity-slider');
-      const minCapacityDisplay = document.getElementById('min-capacity-display');
-      const maxCapacityDisplay = document.getElementById('max-capacity-display');
-      const minCapacityInput = document.getElementById('min-capacity-input');
-      const maxCapacityInput = document.getElementById('max-capacity-input');
-
-      let MIN_PEOPLE = 1;
-      let MAX_PEOPLE = 100;
-
-      if (capacitySlider) {
-        noUiSlider.create(capacitySlider, {
-          start: [MIN_PEOPLE, MIN_PEOPLE],
-          connect: true,
-          step: 1,
-          range: {
-            min: MIN_PEOPLE,
-            max: MAX_PEOPLE,
-          },
-        });
-        
-        capacitySlider.noUiSlider.on('update', function (values, handle) {
-          let minVal = Math.round(values[0]);
-          let maxVal = Math.round(values[1]);
-          
-          minCapacityDisplay.textContent = minVal;
-          maxCapacityDisplay.textContent = maxVal;
-          
-          minCapacityInput.value = minVal;
-          maxCapacityInput.value = maxVal;
-        });
-      }
-      
-      // Toggle search form collapse/expand
-      const toggleBtn = document.getElementById('toggle-search-btn');
-      const searchFormContent = document.getElementById('search-form-content');
-      const toggleText = document.getElementById('toggle-search-text');
-      const toggleIcon = document.getElementById('toggle-search-icon');
-    
-      if (toggleBtn && searchFormContent) {
-        toggleBtn.addEventListener('click', function () {
-          // Check if currently hidden
-          var isHidden =
-          searchFormContent.classList.contains('hidden') ||
-          searchFormContent.style.display === 'none' ||
-          window.getComputedStyle(searchFormContent).display === 'none';
-          
-          if (isHidden) {
-            // Show the form
-            searchFormContent.classList.remove('hidden');
-            searchFormContent.style.display = 'grid';
-            toggleText.textContent = 'Thu gọn';
-            toggleIcon.classList.remove('fa-chevron-down');
-            toggleIcon.classList.add('fa-chevron-up');
-          } else {
-            // Hide the form
-            searchFormContent.classList.add('hidden');
-            searchFormContent.style.display = 'none';
-            toggleText.textContent = 'Mở rộng';
-            toggleIcon.classList.remove('fa-chevron-up');
-            toggleIcon.classList.add('fa-chevron-down');
-          }
-        });
-      }
-    }, 200);
   </script>
 </body>
 
