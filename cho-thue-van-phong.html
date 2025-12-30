@@ -137,8 +137,8 @@
     <section id="officeRentalWardBinhChanh"></section>
   </section>
 
-  <!-- Quy trình dịch vụ tư vấn -->
-  <section id="processConsulting" class="bg-slate-50"></section>
+  <!-- Investor slider -->
+  <section id="investorSlider" class="bg-slate-50"></section>
 
   <!-- maps -->
   <!-- đang bị sai layout -->
@@ -1328,6 +1328,39 @@
         maxCapacity.value = "1";
       })
     }
+    function initInvestor() {
+      const arrayEl = document.querySelectorAll('.investor-logo-swiper');
+
+      arrayEl.forEach(el => {
+        if (!el || el.classList.contains('swiper-initialized')) return;
+
+        new Swiper(el, {
+          slidesPerView: 4,
+          spaceBetween: 24,
+          loop: true,
+          speed: 800,
+          grabCursor: true,
+
+          navigation: {
+            nextEl: '.investor-logo-swiper-next',
+            prevEl: '.investor-logo-swiper-prev',
+          },
+
+          autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          },
+
+          breakpoints: {
+            0: { slidesPerView: 1, spaceBetween: 16 },
+            640: { slidesPerView: 2, spaceBetween: 20 },
+            1024: { slidesPerView: 3, spaceBetween: 24 },
+            1280: { slidesPerView: 4, spaceBetween: 24 },
+          },
+        });
+      });      
+    }
     document.addEventListener("DOMContentLoaded", () => {
       includeHTML("#header", "./partials/common/header.html");
       includeHTML("#breadCrumb", "./partials/common/bread-crumb.html", initBreadcrumb);
@@ -1357,12 +1390,14 @@
         includeHTML("#officeRentalWardTanBinh", "./partials/office-rental/office-rental-ward-1.html",),
         includeHTML("#officeRentalWardThuDuc", "./partials/office-rental/office-rental-ward-1.html",), 
         includeHTML("#officeRentalWardBinhChanh", "./partials/office-rental/office-rental-ward-1.html",),
+
+        includeHTML("#investorSlider", "./partials/home/investor-logo-slider.html"),
       ]
       // Wait for ALL of them to finish, then init
       Promise.all(loads).then(() => {
         initVPChoThue();
+        initInvestor()
       });
-      includeHTML("#processConsulting", "./partials/office-rental/process-consulting.html");
       includeHTML("#map", "./partials/maps/map-1.html");
       includeHTML("#pagination", "./partials/common/pagination.html");
       includeHTML("#consultingTeam", "./partials/common/consulting-team.html");
