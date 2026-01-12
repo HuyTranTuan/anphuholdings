@@ -1,0 +1,1339 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./styles/aos.css" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="stylesheet" href="./styles/cta-style.css" />
+    <link rel="stylesheet" href="./assets/fonts/stylesheet.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/nouislider@15.6.1/dist/nouislider.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/header.css" />
+
+    <title>Cho Thuê Văn Phòng Theo Quận</title>
+
+    <style>
+      .noUi-handle {
+        width: 12px;
+        height: 12px;
+        border-radius: 9999px;
+        border: 1px solid #1e3a8a;
+        background: white;
+        box-shadow: 0 0 0 2px #eff6ff;
+        transition: all 0.3s ease;
+      }
+
+      .noUi-handle:hover {
+        background: #e0f2fe;
+      }
+
+      .noUi-connect {
+        background: linear-gradient(to right, #1e3a8a, #2563eb);
+        border-radius: 9999px;
+      }
+    </style>
+
+    <style>
+      .hover-bubble {
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        transition: color 0.4s ease-in-out;
+      }
+
+      .hover-bubble::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        right: 100%;
+        bottom: 100%;
+
+        width: 200vmax;
+        height: 100vmax;
+
+        border-radius: 50%;
+        /* background-color: #ec4899; */
+        transform-origin: center;
+        transform: translate3d(50%, 50%, 0) scale(0);
+        transition: transform 0.45s ease-in-out;
+      }
+
+      .hover-bubble:hover::before {
+        transform: translate3d(50%, 50%, 0) scale(1);
+      }
+    </style>
+  </head>
+
+  <body class="relative">
+    <!-- Header -->
+    <div id="header" class="sticky left-0 top-0 z-50 bg-white md:block"></div>
+    <button
+      class="fixed md:hidden"
+      style="top: 35px; right: 20px; z-index: 999"
+      type="button"
+      data-drawer-target="responsive-menu"
+      data-drawer-show="responsive-menu"
+      aria-controls="responsive-menu"
+    >
+      <svg
+        class="size-8"
+        fill="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path fill="none" d="M0 0h24v24H0V0z"></path>
+        <path
+          d="M3 18h13v-2H3v2zm0-5h10v-2H3v2zm0-7v2h13V6H3zm18 9.59L17.42 12 21 8.41 19.59 7l-5 5 5 5L21 15.59z"
+        ></path>
+      </svg>
+    </button>
+
+    <section class="bg-primary-10">
+      <div
+        class="h-auto w-full bg-cover bg-center bg-no-repeat pb-10 pt-10"
+        style="background-image: url('assets/images/layer.svg')"
+      >
+        <div
+          class="container flex h-[170px] flex-col items-center justify-center sm:h-[200px] md:h-[250px]"
+          data-aos="fade-up"
+        >
+          <h1 id="pageTitle" class="common-hero-heading">
+            Cho Thuê Văn Phòng Theo Quận
+          </h1>
+
+          <!-- Breadcrumb -->
+          <div
+            id="breadCrumb"
+            data-aos="fade-left"
+            data-aos-anchor="#example-anchor"
+            data-aos-offset="500"
+            data-aos-duration="500"
+            class="flex"
+            aria-label="Breadcrumb"
+          ></div>
+        </div>
+        <!-- Mega search -->
+        <div id="mega-search"></div>
+      </div>
+    </section>
+
+    <!-- Content Started -->
+    <section class="container overflow-x-hidden">
+      <!-- Rating start -->
+      <div id="ratingStar" data-aos="fade-right"></div>
+
+      <!-- Building rentals by district -->
+      <section id="officeRental"></section>
+
+      <!-- VĂN PHÒNG CHO THUÊ  -->
+      <section id="officeRentalWard1"></section>
+      <section id="officeRentalWard2"></section>
+      <section id="officeRentalWard3"></section>
+      <section id="officeRentalWard4"></section>
+      <section id="officeRentalWard5"></section>
+      <section id="officeRentalWard6"></section>
+      <section id="officeRentalWard7"></section>
+      <section id="officeRentalWard8"></section>
+      <section id="officeRentalWard9"></section>
+      <section id="officeRentalWard10"></section>
+      <section id="officeRentalWard11"></section>
+      <section id="officeRentalWard12"></section>
+      <section id="officeRentalWardBinhThanh"></section>
+      <section id="officeRentalWardGoVap"></section>
+      <section id="officeRentalWardPhuNhuan"></section>
+      <section id="officeRentalWardTanBinh"></section>
+      <section id="officeRentalWardThuDuc"></section>
+      <section id="officeRentalWardBinhChanh"></section>
+    </section>
+
+    <!-- maps -->
+    <!-- đang bị sai layout -->
+    <section class="container mx-auto bg-white px-4 py-16 xl:px-0">
+      <h2 class="mb-5 mt-12 text-3xl font-bold uppercase" data-aos="fade-up">
+        Bản đồ các tòa nhà cho thuê văn phòng tại tp.HCM
+      </h2>
+      <div id="map"></div>
+    </section>
+
+    <!-- General information -->
+    <section id="generalInformation" class="bg-slate-50"></section>
+
+    <!-- FAQ Section -->
+    <section id="faq"></section>
+
+    <!-- Tìm thuê văn phòng theo phường mới -->
+    <section id="officeNewWard" class="bg-slate-50"></section>
+
+    <!-- Cẩm nang tìm văn phòng -->
+    <section id="handbook"></section>
+
+    <!-- Consulting team -->
+    <section id="consultingTeam" class="bg-slate-50"></section>
+
+    <!-- Contact Section -->
+    <section id="contact2"></section>
+
+    <!-- Responsive menu -->
+    <div
+      id="responsive-menu"
+      tabindex="-1"
+      aria-labelledby="responsive-menu-label"
+      class="fixed left-0 top-0 z-[100] h-screen w-72 -translate-x-full overflow-y-auto border-r bg-white p-4 transition-transform"
+    >
+      <a href="#">
+        <img
+          src="assets/logo/anphu-holdinngs-80x80.png"
+          alt="An Phú Holdings"
+          class="size-fit"
+          width="80"
+          height="40"
+          loading="lazy"
+        />
+      </a>
+      <button
+        type="button"
+        data-drawer-hide="responsive-menu"
+        aria-controls="responsive-menu"
+        class="absolute end-2.5 top-2.5 inline-flex h-8 w-8 items-center justify-center rounded-lg bg-transparent text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white"
+      >
+        <svg
+          class="h-3 w-3"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 14 14"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+          />
+        </svg>
+        <span class="sr-only">Close menu</span>
+      </button>
+      <div class="overflow-y-auto py-4">
+        <ul class="space-y-2 font-medium">
+          <!-- Văn phòng cho thuê -->
+          <li>
+            <button
+              type="button"
+              class="group flex w-full items-center justify-between rounded-lg p-2 text-base text-gray-900 transition duration-75 hover:bg-gray-200 dark:text-white dark:hover:bg-gray-700"
+              aria-controls="dropdown-cho-thue-van-phong"
+              data-collapse-toggle="dropdown-cho-thue-van-phong"
+            >
+              <a
+                target="_blank"
+                class="whitespace-nowrap text-left"
+                href="cho-thue-van-phong.html"
+              >
+                Cho thuê văn phòng
+              </a>
+              <svg
+                class="h-3 w-3"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 6"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m1 1 4 4 4-4"
+                />
+              </svg>
+            </button>
+            <ul id="dropdown-cho-thue-van-phong" class="hidden space-y-2 py-2">
+              <!-- Theo quận -->
+              <li>
+                <button
+                  class="flex w-full items-center justify-between rounded-lg py-2 pl-5"
+                  type="button"
+                  aria-controls="dropdown-cho-thue-van-phong-district"
+                  data-collapse-toggle="dropdown-cho-thue-van-phong-district"
+                >
+                  <a
+                    target="_blank"
+                    href="van-phong-cho-thue-theo-quan.html"
+                    class="text-secondary"
+                  >
+                    Văn phòng theo quận
+                  </a>
+                  <svg
+                    class="h-3 w-3"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 10 6"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="m1 1 4 4 4-4"
+                    />
+                  </svg>
+                </button>
+                <ul
+                  id="dropdown-cho-thue-van-phong-district"
+                  class="hidden space-y-2 py-2"
+                >
+                  <li>
+                    <button
+                      class="flex w-full items-center rounded-lg py-2"
+                      style="padding-left: 32px"
+                    >
+                      <a
+                        target="_blank"
+                        href="van-phong-cho-thue-quan-1.html"
+                        class="text-secondary"
+                      >
+                        Quận 1
+                      </a>
+                    </button>
+                  </li>
+                </ul>
+              </li>
+
+              <!-- Theo phường -->
+              <li>
+                <button
+                  class="flex w-full items-center justify-between rounded-lg py-2 pl-5"
+                  type="button"
+                  aria-controls="dropdown-cho-thue-van-phong-ward"
+                  data-collapse-toggle="dropdown-cho-thue-van-phong-ward"
+                >
+                  <a
+                    target="_blank"
+                    href="van-phong-cho-thue-theo-phuong.html"
+                    class="text-secondary"
+                  >
+                    Văn phòng theo phường
+                  </a>
+                  <svg
+                    class="h-3 w-3"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 10 6"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="m1 1 4 4 4-4"
+                    />
+                  </svg>
+                </button>
+                <ul
+                  id="dropdown-cho-thue-van-phong-ward"
+                  class="hidden space-y-2 py-2"
+                >
+                  <li>
+                    <button
+                      class="flex w-full items-center rounded-lg py-2"
+                      style="padding-left: 32px"
+                    >
+                      <a
+                        target="_blank"
+                        href="van-phong-cho-thue-phuong-tan-dinh.html"
+                        class="text-secondary"
+                      >
+                        Sài Gòn - Q1
+                      </a>
+                    </button>
+                  </li>
+                </ul>
+              </li>
+
+              <!-- Theo hạng -->
+              <li>
+                <button
+                  class="flex w-full items-center justify-between rounded-lg py-2 pl-5"
+                  type="button"
+                  aria-controls="dropdown-cho-thue-van-phong-level"
+                  data-collapse-toggle="dropdown-cho-thue-van-phong-level"
+                >
+                  <a
+                    target="_blank"
+                    href="van-phong-cho-thue-theo-phuong.html"
+                    class="text-secondary"
+                  >
+                    Văn phòng theo hạng
+                  </a>
+                  <svg
+                    class="h-3 w-3"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 10 6"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="m1 1 4 4 4-4"
+                    />
+                  </svg>
+                </button>
+                <ul
+                  id="dropdown-cho-thue-van-phong-level"
+                  class="hidden space-y-2 py-2"
+                >
+                  <li>
+                    <button
+                      class="flex w-full items-center rounded-lg py-2"
+                      style="padding-left: 32px"
+                    >
+                      <a
+                        target="_blank"
+                        href="van-phong-hang-a.html"
+                        class="text-secondary"
+                      >
+                        Hạng A
+                      </a>
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      class="flex w-full items-center rounded-lg py-2"
+                      style="padding-left: 32px"
+                    >
+                      <a
+                        target="_blank"
+                        href="van-phong-hang-a.html"
+                        class="text-secondary"
+                      >
+                        Hạng B
+                      </a>
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      class="flex w-full items-center rounded-lg py-2"
+                      style="padding-left: 32px"
+                    >
+                      <a
+                        target="_blank"
+                        href="van-phong-hang-a.html"
+                        class="text-secondary"
+                      >
+                        Hạng C
+                      </a>
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      class="flex w-full items-center rounded-lg py-2"
+                      style="padding-left: 32px"
+                    >
+                      <a
+                        target="_blank"
+                        href="van-phong-hang-a.html"
+                        class="text-secondary"
+                      >
+                        Hạng giá rẻ
+                      </a>
+                    </button>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <!-- Văn phòng trọn gói -->
+          <li>
+            <button
+              type="button"
+              class="group flex w-full items-center justify-between rounded-lg p-2 text-base text-gray-900 transition duration-75 hover:bg-gray-200 dark:text-white dark:hover:bg-gray-700"
+              aria-controls="dropdown-vp-tron-goi"
+              data-collapse-toggle="dropdown-vp-tron-goi"
+            >
+              <a
+                target="_blank"
+                class="whitespace-nowrap text-left"
+                href="cho-thue-van-phong.html"
+              >
+                Văn phòng trọn gói
+              </a>
+              <svg
+                class="h-3 w-3"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 6"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m1 1 4 4 4-4"
+                />
+              </svg>
+            </button>
+            <ul id="dropdown-vp-tron-goi" class="hidden space-y-2 py-2">
+              <li>
+                <button
+                  class="flex w-full items-center justify-between rounded-lg py-2 pl-5"
+                  type="button"
+                  aria-controls="dropdown-vp-tron-goi-district"
+                  data-collapse-toggle="dropdown-vp-tron-goi-district"
+                >
+                  <a
+                    target="_blank"
+                    href="van-phong-tron-goi-theo-quan.html"
+                    class="text-secondary"
+                  >
+                    Trọn gói theo quận
+                  </a>
+                  <svg
+                    class="h-3 w-3"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 10 6"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="m1 1 4 4 4-4"
+                    />
+                  </svg>
+                </button>
+                <ul
+                  id="dropdown-vp-tron-goi-district"
+                  class="hidden space-y-2 py-2"
+                >
+                  <li>
+                    <button
+                      class="flex w-full items-center rounded-lg py-2"
+                      style="padding-left: 32px"
+                    >
+                      <a
+                        target="_blank"
+                        href="van-phong-tron-goi-detail.html"
+                        class="text-secondary"
+                      >
+                        Quận 1
+                      </a>
+                    </button>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <button
+                  class="flex w-full items-center justify-between rounded-lg py-2 pl-5"
+                  type="button"
+                  aria-controls="dropdown-vp-tron-goi-ward"
+                  data-collapse-toggle="dropdown-vp-tron-goi-ward"
+                >
+                  <a
+                    target="_blank"
+                    href="van-phong-tron-goi-theo-quan.html"
+                    class="text-secondary"
+                  >
+                    Văn phòng theo phường
+                  </a>
+                  <svg
+                    class="h-3 w-3"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 10 6"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="m1 1 4 4 4-4"
+                    />
+                  </svg>
+                </button>
+                <ul
+                  id="dropdown-vp-tron-goi-ward"
+                  class="hidden space-y-2 py-2"
+                >
+                  <li>
+                    <button
+                      class="flex w-full items-center rounded-lg py-2"
+                      style="padding-left: 32px"
+                    >
+                      <a
+                        target="_blank"
+                        href="van-phong-tron-goi-detail.html"
+                        class="text-secondary"
+                      >
+                        Sài Gòn - Q1
+                      </a>
+                    </button>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <!-- Văn phòng ảo -->
+          <li>
+            <button
+              type="button"
+              class="group flex w-full items-center justify-between rounded-lg p-2 text-base text-secondary"
+              aria-controls="dropdown-van-phong-ao"
+              data-collapse-toggle="dropdown-van-phong-ao"
+            >
+              <a
+                target="_blank"
+                class="whitespace-nowrap text-left"
+                href="van-phong-ao.html"
+              >
+                Văn phòng ảo
+              </a>
+              <svg
+                class="h-3 w-3"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 6"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m1 1 4 4 4-4"
+                />
+              </svg>
+            </button>
+            <ul id="dropdown-van-phong-ao" class="hidden space-y-2 py-2">
+              <li>
+                <button
+                  class="flex w-full items-center justify-between rounded-lg py-2 pl-5"
+                  type="button"
+                  aria-controls="dropdown-van-phong-ao-district"
+                  data-collapse-toggle="dropdown-van-phong-ao-district"
+                >
+                  <a
+                    target="_blank"
+                    href="van-phong-ao-theo-quan.html"
+                    class="text-secondary"
+                  >
+                    Văn phòng theo quận
+                  </a>
+                  <svg
+                    class="h-3 w-3"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 10 6"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="m1 1 4 4 4-4"
+                    />
+                  </svg>
+                </button>
+                <ul
+                  id="dropdown-van-phong-ao-district"
+                  class="hidden space-y-2 py-2"
+                >
+                  <li>
+                    <button
+                      class="flex w-full items-center rounded-lg py-2"
+                      style="padding-left: 32px"
+                    >
+                      <a
+                        target="_blank"
+                        href="van-phong-ao-quan-1.html"
+                        class="text-secondary"
+                      >
+                        Quận 1
+                      </a>
+                    </button>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <button
+                  class="flex w-full items-center justify-between rounded-lg py-2 pl-5"
+                  type="button"
+                  aria-controls="dropdown-van-phong-ao-ward"
+                  data-collapse-toggle="dropdown-van-phong-ao-ward"
+                >
+                  <a
+                    target="_blank"
+                    href="van-phong-ao-theo-phuong.html"
+                    class="text-secondary"
+                  >
+                    Văn phòng theo phường
+                  </a>
+                  <svg
+                    class="h-3 w-3"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 10 6"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="m1 1 4 4 4-4"
+                    />
+                  </svg>
+                </button>
+                <ul
+                  id="dropdown-van-phong-ao-ward"
+                  class="hidden space-y-2 py-2"
+                >
+                  <li>
+                    <button
+                      class="flex w-full items-center rounded-lg py-2"
+                      style="padding-left: 32px"
+                    >
+                      <a
+                        target="_blank"
+                        href="van-phong-ao-phuong-tan-dinh.html"
+                        class="text-secondary"
+                      >
+                        Sài Gòn - Q1
+                      </a>
+                    </button>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <div id="footer"></div>
+
+    <!-- thư viện -->
+    <!-- Scripts -->
+    <script src="js/breadcrumb.js"></script>
+    <script src="js/fontawesome.min.js"></script>
+    <script src="js/flowbite.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/include.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/nouislider@15.6.1/dist/nouislider.min.js"></script>
+
+    <script>
+      AOS.init();
+    </script>
+
+    <script>
+      function showHeader() {
+        const rentalOfficeTabWard = document.querySelector('.rent-office-ward');
+        const rentalOfficeTabDistrict = document.querySelector(
+          '.rent-office-district',
+        );
+
+        rentalOfficeTabDistrict.addEventListener('click', () => {
+          rentalOfficeTabDistrict.classList.add('active');
+          rentalOfficeTabWard.classList.remove('active');
+        });
+
+        rentalOfficeTabWard.addEventListener('click', () => {
+          rentalOfficeTabWard.classList.add('active');
+          rentalOfficeTabDistrict.classList.remove('active');
+        });
+
+        const packageOfficeTabWard = document.querySelector(
+          '.package-office-ward',
+        );
+        const packageOfficeTabDistrict = document.querySelector(
+          '.package-office-district',
+        );
+
+        packageOfficeTabDistrict.addEventListener('click', () => {
+          packageOfficeTabDistrict.classList.add('active');
+          packageOfficeTabWard.classList.remove('active');
+        });
+
+        packageOfficeTabWard.addEventListener('click', () => {
+          packageOfficeTabWard.classList.add('active');
+          packageOfficeTabDistrict.classList.remove('active');
+        });
+
+        const virtualOfficeTabWard = document.querySelector(
+          '.virtual-office-ward',
+        );
+        const virtualOfficeTabDistrict = document.querySelector(
+          '.virtual-office-district',
+        );
+
+        virtualOfficeTabDistrict.addEventListener('click', () => {
+          virtualOfficeTabDistrict.classList.add('active');
+          virtualOfficeTabWard.classList.remove('active');
+        });
+
+        virtualOfficeTabWard.addEventListener('click', () => {
+          virtualOfficeTabWard.classList.add('active');
+          virtualOfficeTabDistrict.classList.remove('active');
+        });
+
+        const headerPhoneBtn = document.querySelector('.header-phone-btn');
+        const headerPhoneText = document.querySelector('.header-phone-text');
+
+        headerPhoneBtn.addEventListener('click', () => {
+          headerPhoneText.classList.toggle('active');
+        });
+      }
+      function megaSearchEvent() {
+        const slider = document.getElementById('price-slider');
+        const minDisplay = document.getElementById('min-price-display');
+        const maxDisplay = document.getElementById('max-price-display');
+        const minInput = document.getElementById('min-price-input');
+        const maxInput = document.getElementById('max-price-input');
+        // Giá tính theo VND
+        let MIN_PRICE = 20000000; // 20 triệu
+        let MAX_PRICE = 500000000; // 500 triệu
+
+        function formatVND(value) {
+          // Đổi sang "triệu"
+          let trieu = Math.round(value / 1000000);
+          return trieu.toLocaleString('vi-VN') + ' triệu';
+        }
+
+        noUiSlider.create(slider, {
+          start: [MIN_PRICE, MIN_PRICE], // điểm bắt đầu
+          connect: true,
+          step: 1000000, // bước 1 triệu
+          range: {
+            min: MIN_PRICE,
+            max: MAX_PRICE,
+          },
+        });
+
+        slider.noUiSlider.on('update', function (values, handle) {
+          let minVal = Math.round(values[0]);
+          let maxVal = Math.round(values[1]);
+
+          minDisplay.textContent = formatVND(minVal);
+          maxDisplay.textContent = formatVND(maxVal);
+
+          // Gán vào input hidden để gửi form
+          minInput.value = minVal;
+          maxInput.value = maxVal;
+        });
+
+        // Area Slider
+        const areaSlider = document.getElementById('area-slider');
+        const minAreaDisplay = document.getElementById('min-area-display');
+        const maxAreaDisplay = document.getElementById('max-area-display');
+        const minAreaInput = document.getElementById('min-area-input');
+        const maxAreaInput = document.getElementById('max-area-input');
+        let MIN_AREA = 20; // 20 m2
+        let MAX_AREA = 50; // 500 m2
+
+        if (areaSlider) {
+          noUiSlider.create(areaSlider, {
+            start: [MIN_AREA, MIN_AREA],
+            connect: true,
+            step: 10,
+            range: {
+              min: MIN_AREA,
+              max: MAX_AREA,
+            },
+          });
+
+          areaSlider.noUiSlider.on('update', function (values, handle) {
+            let minVal = Math.round(values[0]);
+            let maxVal = Math.round(values[1]);
+
+            minAreaDisplay.textContent = minVal + ' m²';
+            maxAreaDisplay.textContent = maxVal + ' m²';
+
+            minAreaInput.value = minVal;
+            maxAreaInput.value = maxVal;
+          });
+        }
+
+        // Floor Slider
+        const floorSlider = document.getElementById('floor-slider');
+        const minFloorDisplay = document.getElementById('min-floor-display');
+        const maxFloorDisplay = document.getElementById('max-floor-display');
+        const minFloorInput = document.getElementById('min-floor-input');
+        const maxFloorInput = document.getElementById('max-floor-input');
+
+        let MIN_FLOOR = 1;
+        let MAX_FLOOR = 50;
+
+        if (floorSlider) {
+          noUiSlider.create(floorSlider, {
+            start: [MIN_FLOOR, MIN_FLOOR],
+            connect: true,
+            step: 1,
+            range: {
+              min: MIN_FLOOR,
+              max: MAX_FLOOR,
+            },
+          });
+
+          floorSlider.noUiSlider.on('update', function (values, handle) {
+            let minVal = Math.round(values[0]);
+            let maxVal = Math.round(values[1]);
+
+            minFloorDisplay.textContent = minVal;
+            maxFloorDisplay.textContent = maxVal;
+
+            minFloorInput.value = minVal;
+            maxFloorInput.value = maxVal;
+          });
+        }
+
+        // Capacity Slider
+        const capacitySlider = document.getElementById('capacity-slider');
+        const minCapacityDisplay = document.getElementById(
+          'min-capacity-display',
+        );
+        const maxCapacityDisplay = document.getElementById(
+          'max-capacity-display',
+        );
+        const minCapacityInput = document.getElementById('min-capacity-input');
+        const maxCapacityInput = document.getElementById('max-capacity-input');
+
+        let MIN_PEOPLE = 1;
+        let MAX_PEOPLE = 100;
+
+        if (capacitySlider) {
+          noUiSlider.create(capacitySlider, {
+            start: [MIN_PEOPLE, MIN_PEOPLE],
+            connect: true,
+            step: 1,
+            range: {
+              min: MIN_PEOPLE,
+              max: MAX_PEOPLE,
+            },
+          });
+
+          capacitySlider.noUiSlider.on('update', function (values, handle) {
+            let minVal = Math.round(values[0]);
+            let maxVal = Math.round(values[1]);
+
+            minCapacityDisplay.textContent = minVal;
+            maxCapacityDisplay.textContent = maxVal;
+
+            minCapacityInput.value = minVal;
+            maxCapacityInput.value = maxVal;
+          });
+        }
+
+        // Toggle search form collapse/expand
+        const toggleBtn = document.getElementById('toggle-search-btn');
+        const searchFormContent = document.getElementById(
+          'search-form-content',
+        );
+        const toggleText = document.getElementById('toggle-search-text');
+        const toggleIcon = document.getElementById('toggle-search-icon');
+
+        if (toggleBtn && searchFormContent) {
+          toggleBtn.addEventListener('click', function () {
+            // Check if currently hidden
+            var isHidden =
+              searchFormContent.classList.contains('hidden') ||
+              searchFormContent.style.display === 'none' ||
+              window.getComputedStyle(searchFormContent).display === 'none';
+
+            if (isHidden) {
+              // Show the form
+              searchFormContent.classList.remove('hidden');
+              searchFormContent.style.display = 'grid';
+              toggleText.textContent = 'Thu gọn';
+              toggleIcon.classList.remove('fa-chevron-down');
+              toggleIcon.classList.add('fa-chevron-up');
+            } else {
+              // Hide the form
+              searchFormContent.classList.add('hidden');
+              searchFormContent.style.display = 'none';
+              toggleText.textContent = 'Mở rộng';
+              toggleIcon.classList.remove('fa-chevron-up');
+              toggleIcon.classList.add('fa-chevron-down');
+            }
+          });
+        }
+
+        const resetButton = document.getElementById('mega-search-reset-btn');
+
+        resetButton.addEventListener('click', function () {
+          slider.noUiSlider.reset();
+          areaSlider.noUiSlider.reset();
+          floorSlider.noUiSlider.reset();
+          capacitySlider.noUiSlider.reset();
+        });
+      }
+      function initVPChoThue() {
+        const arrayEl = document.querySelectorAll('.office-rental-swiper');
+
+        arrayEl.forEach((el) => {
+          if (!el || el.classList.contains('swiper-initialized')) return;
+
+          new Swiper(el, {
+            slidesPerView: 4,
+            spaceBetween: 24,
+            loop: true,
+            speed: 800,
+            grabCursor: true,
+
+            navigation: {
+              nextEl: '.office-rental-swiper-next',
+              prevEl: '.office-rental-swiper-prev',
+            },
+
+            autoplay: {
+              delay: 3000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            },
+
+            breakpoints: {
+              0: { slidesPerView: 1, spaceBetween: 16 },
+              640: { slidesPerView: 2, spaceBetween: 20 },
+              1024: { slidesPerView: 3, spaceBetween: 24 },
+              1280: { slidesPerView: 4, spaceBetween: 24 },
+            },
+          });
+        });
+      }
+      function resetMegaSearchForm() {
+        const searchForm = document.getElementById('search-form');
+        const resetSearchFormBtn = document.getElementById(
+          'mega-search-reset-btn',
+        );
+        const minPrice = document.getElementById('min-price-input');
+        const maxPrice = document.getElementById('max-price-input');
+        const minArea = document.getElementById('min-area-input');
+        const maxArea = document.getElementById('max-area-input');
+        const minFloor = document.getElementById('min-floor-input');
+        const maxFloor = document.getElementById('max-floor-input');
+        const minCapacity = document.getElementById('min-capacity-input');
+        const maxCapacity = document.getElementById('max-capacity-input');
+
+        resetSearchFormBtn.addEventListener('click', () => {
+          searchForm.reset();
+          minPrice.value = '20000000';
+          maxPrice.value = '20000000';
+          minArea.value = '20';
+          maxArea.value = '20';
+          minFloor.value = '1';
+          maxFloor.value = '1';
+          minCapacity.value = '1';
+          maxCapacity.value = '1';
+        });
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const header = [
+          includeHTML('#header', './partials/common/header2.html'),
+        ];
+        Promise.all(header).then(() => {
+          showHeader();
+        });
+        includeHTML(
+          '#breadCrumb',
+          './partials/common/bread-crumb.html',
+          initBreadcrumb,
+        );
+        const megasearch = [
+          includeHTML('#mega-search', './partials/detail/search-mega.html'),
+        ];
+        Promise.all(megasearch).then(() => {
+          megaSearchEvent();
+          resetMegaSearchForm();
+        });
+        includeHTML('#ratingStar', './partials/common/rating-star.html');
+        const loads = [
+          includeHTML(
+            '#officeRental',
+            './partials/office-rental/office-rental.html',
+          ),
+          includeHTML(
+            '#officeRentalWard1',
+            './partials/office-rental/office-rental-ward-1.html',
+          ),
+          includeHTML(
+            '#officeRentalWard2',
+            './partials/office-rental/office-rental-ward-2.html',
+          ),
+          includeHTML(
+            '#officeRentalWard3',
+            './partials/office-rental/office-rental-ward-3.html',
+          ),
+          includeHTML(
+            '#officeRentalWard4',
+            './partials/office-rental/office-rental-ward-4.html',
+          ),
+          includeHTML(
+            '#officeRentalWard5',
+            './partials/office-rental/office-rental-ward-5.html',
+          ),
+          includeHTML(
+            '#officeRentalWard7',
+            './partials/office-rental/office-rental-ward-7.html',
+          ),
+          includeHTML(
+            '#officeRentalWard8',
+            './partials/office-rental/office-rental-ward-8.html',
+          ),
+          includeHTML(
+            '#officeRentalWard9',
+            './partials/office-rental/office-rental-ward-9.html',
+          ),
+          includeHTML(
+            '#officeRentalWard10',
+            './partials/office-rental/office-rental-ward-10.html',
+          ),
+          includeHTML(
+            '#officeRentalWard11',
+            './partials/office-rental/office-rental-ward-11.html',
+          ),
+          includeHTML(
+            '#officeRentalWard12',
+            './partials/office-rental/office-rental-ward-12.html',
+          ),
+          includeHTML(
+            '#officeRentalWardBinhThanh',
+            './partials/office-rental/office-rental-ward-binh-thanh.html',
+          ),
+          includeHTML(
+            '#officeRentalWardPhuNhuan',
+            './partials/office-rental/office-rental-ward-phu-nhuan.html',
+          ),
+          includeHTML(
+            '#officeRentalWardGoVap',
+            './partials/office-rental/office-rental-ward-go-vap.html',
+          ),
+          includeHTML(
+            '#officeRentalWardTanBinh',
+            './partials/office-rental/office-rental-ward-tan-binh.html',
+          ),
+          includeHTML(
+            '#officeRentalWardThuDuc',
+            './partials/office-rental/office-rental-ward-thu-duc.html',
+          ),
+          includeHTML(
+            '#officeRentalWardBinhChanh',
+            './partials/office-rental/office-rental-ward-binh-chanh.html',
+          ),
+        ];
+        // Wait for ALL of them to finish, then init
+        Promise.all(loads).then(() => {
+          initVPChoThue();
+        });
+        includeHTML('#map', './partials/maps/map-1.html');
+        includeHTML('#pagination', './partials/common/pagination.html');
+        includeHTML(
+          '#consultingTeam',
+          './partials/common/consulting-team.html',
+        );
+        includeHTML(
+          '#generalInformation',
+          './partials/common/general-information.html',
+        );
+        includeHTML('#handbook', './partials/office-rental/handbook.html');
+        includeHTML(
+          '#officeNewWard',
+          './partials/office-rental/office-new-ward.html',
+        );
+        includeHTML('#faq', './partials/common/faq.html');
+        includeHTML('#contact2', './partials/common/contact.html');
+        includeHTML('#footer', './partials/common/footer.html');
+      });
+    </script>
+
+    <script>
+      function toggleFaq(button) {
+        const answer = button.nextElementSibling;
+        const icon = button.querySelector('i');
+
+        if (answer.classList.contains('hidden')) {
+          answer.classList.remove('hidden');
+          icon.classList.add('rotate-180');
+          button.classList.add('bg-blue-50');
+        } else {
+          answer.classList.add('hidden');
+          icon.classList.remove('rotate-180');
+          button.classList.remove('bg-blue-50');
+        }
+      }
+    </script>
+
+    <script>
+      AOS.init({
+        delay: 0,
+        duration: 1000,
+      });
+
+      // reviews
+      const swiper = new Swiper('.h2-reviews-swiper', {
+        slidesPerView: 3,
+        pagination: {
+          el: '.h2-reviews-swiper-pagination',
+          clickable: true,
+          dynamicBullets: true,
+        },
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        breakpoints: {
+          0: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+          320: {
+            slidesPerView: 2,
+            spaceBetween: 10,
+          },
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 15,
+          },
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+        },
+      });
+
+      // agent
+      const agent = new Swiper('.h2-agent-swiper', {
+        slidesPerView: 3,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+          0: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+        },
+      });
+
+      function initPhuongSwiper() {
+        const el = document.querySelector('.phuong-swiper');
+        if (!el || el.classList.contains('swiper-initialized')) return;
+
+        new Swiper(el, {
+          slidesPerView: 4,
+          spaceBetween: 24,
+          loop: true,
+          speed: 800,
+          grabCursor: true,
+
+          navigation: {
+            nextEl: '.phuong-swiper-button-next',
+            prevEl: '.phuong-swiper-button-prev',
+          },
+
+          autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          },
+
+          breakpoints: {
+            0: { slidesPerView: 1, spaceBetween: 16 },
+            640: { slidesPerView: 2, spaceBetween: 20 },
+            1024: { slidesPerView: 3, spaceBetween: 24 },
+            1280: { slidesPerView: 4, spaceBetween: 24 },
+          },
+        });
+      }
+
+      // Team Swiper
+      function initTeamSwiper() {
+        const el = document.querySelector('.team-swiper');
+
+        if (!el) return;
+
+        // chống init trùng
+        if (el.classList.contains('swiper-initialized')) return;
+
+        new Swiper(el, {
+          slidesPerView: 4,
+          spaceBetween: 24,
+          // Ensure autoHeight is false (default)
+          autoHeight: false,
+          // This helper ensures all slides are same height
+          watchSlidesProgress: true,
+          loop: true,
+          speed: 800,
+          grabCursor: true,
+
+          autoplay: {
+            delay: 3500,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          },
+
+          breakpoints: {
+            0: { slidesPerView: 1, spaceBetween: 16 },
+            640: { slidesPerView: 2, spaceBetween: 20 },
+            1024: { slidesPerView: 3, spaceBetween: 24 },
+            1280: { slidesPerView: 4, spaceBetween: 24 },
+          },
+        });
+      }
+    </script>
+
+    <script>
+      function toggleFullInfo() {
+        const fullContent = document.getElementById('info-full');
+        const gradient = document.getElementById('seo-gradient');
+        const btn = document.getElementById('toggleInfoBtn');
+        const btnText = document.getElementById('btnText');
+        const btnIcon = document.getElementById('btnIcon');
+
+        if (fullContent.classList.contains('hidden')) {
+          fullContent.classList.remove('hidden');
+          gradient.classList.add('hidden');
+          btnText.textContent = 'Thu gọn';
+          btnIcon.classList.remove('fa-chevron-down');
+          btnIcon.classList.add('fa-chevron-up');
+          // Scroll to full content
+          fullContent.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } else {
+          fullContent.classList.add('hidden');
+          gradient.classList.remove('hidden');
+          btnText.textContent = 'Xem thêm';
+          btnIcon.classList.remove('fa-chevron-up');
+          btnIcon.classList.add('fa-chevron-down');
+          // Scroll back to preview
+          document
+            .getElementById('info-preview')
+            .scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      }
+    </script>
+  </body>
+</html>

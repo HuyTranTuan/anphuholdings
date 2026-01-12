@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'UTM Times';
+  src:
+    url('/assets/fonts/UTMTimesBold/UTMTimes.woff2') format('woff2'),
+    url('/assets/fonts/UTMTimesBold/UTMTimes.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'UTM Times';
+  src:
+    url('/assets/fonts/UTMTimesBold/UTMTimesBold.woff2') format('woff2'),
+    url('/assets/fonts/UTMTimesBold/UTMTimesBold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-utm {
+  font-family: 'UTM Times', serif !important;
+}
+.font-utm-bold {
+  font-family: 'UTM Times', serif !important;
+  font-weight: 700 !important;
+}

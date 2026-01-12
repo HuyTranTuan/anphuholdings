@@ -1,0 +1,1124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- font styles -->
+    <link rel="stylesheet" href="./assets/fonts/stylesheet.css" />
+    <link rel="stylesheet" href="./styles/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./styles/aos.css" />
+    <link rel="stylesheet" href="./styles/odometer-theme-default.css" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles/cta-style.css" />
+    <!-- style tailwind -->
+    <link rel="stylesheet" href="./styles/output.css" />
+    <link rel="stylesheet" href="./src/styles/custom.css" />
+    <link rel="stylesheet" href="./styles/header.css" />
+
+    <title>An Phú Holdings</title>
+
+    <style>
+      .home-search-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 15px;
+        border: 1px solid #231f20;
+        color: #231f20;
+        border-radius: 8px;
+      }
+      .home-search-btn:hover {
+        border: 1px solid #1ba0e1e6;
+        color: #1ba0e1e6;
+      }
+
+      .one-screen {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      @media (max-width: 767px) {
+        .one-screen {
+          height: auto;
+          min-height: 0;
+          padding-top: 50px;
+          padding-bottom: 50px;
+        }
+      }
+
+      .hero-container {
+        height: calc(100vh - 100px);
+        background-image: url('assets/banner/banner-botom-2.jpg');
+        background-position: center;
+        background-size: cover;
+      }
+
+      .about-counter-container {
+        flex-direction: column;
+      }
+    </style>
+  </head>
+
+  <body class="relative">
+    <!-- Header -->
+    <div id="header" class="sticky left-0 top-0 z-50 bg-white md:block"></div>
+    <button
+      class="fixed md:hidden"
+      style="top: 35px; right: 20px; z-index: 999"
+      type="button"
+      data-drawer-target="responsive-menu"
+      data-drawer-show="responsive-menu"
+      aria-controls="responsive-menu"
+    >
+      <svg
+        class="size-8"
+        fill="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path fill="none" d="M0 0h24v24H0V0z"></path>
+        <path
+          d="M3 18h13v-2H3v2zm0-5h10v-2H3v2zm0-7v2h13V6H3zm18 9.59L17.42 12 21 8.41 19.59 7l-5 5 5 5L21 15.59z"
+        ></path>
+      </svg>
+    </button>
+
+    <div class="one-screen hero-container">
+      <!-- Hero Started -->
+      <section
+        class="container flex w-full max-w-4xl flex-col justify-center space-y-6 px-4 text-white xl:px-0"
+      >
+        <h1 data-aos="fade-up" class="heading-hero relative text-center">
+          An Phú Holdings
+        </h1>
+        <p
+          data-aos="fade-up"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-delay="200"
+          class="heading-tagline text-secondary"
+        >
+          Chúng tôi đã hoạt động trong
+          <span class="font-bold">hơn một thập kỷ</span>, cung cấp các dịch vụ
+          hàng đầu cho khách hàng và xây dựng thành tích vững chắc trên thị
+          trường.
+        </p>
+
+        <!-- Small to SM -->
+        <!-- <div class="container my-5 sm:hidden 2xl:pr-0">
+            <form action="#" class="w-full">
+              <div class="space-y-2 pb-2">
+                <div class="flex">
+                  <span
+                    class="inline-flex items-center rounded-s-md border border-e-0 border-gray-300 bg-gray-200 px-3 text-sm text-gray-900 dark:border-gray-600 dark:bg-gray-600 dark:text-gray-400">
+                    <i class="fa-solid fa-location-crosshairs text-sm"></i>
+                  </span>
+                  <input type="text"
+                    class="block w-full min-w-0 flex-1 rounded-none rounded-e-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                    placeholder="Quận 1" />
+                </div>
+  
+                <div class="flex">
+                  <span
+                    class="inline-flex items-center rounded-s-md border border-e-0 border-gray-300 bg-gray-200 px-3 text-sm text-gray-900 dark:border-gray-600 dark:bg-gray-600 dark:text-gray-400">
+                    <i class="fa-solid fa-house-chimney text-sm"></i>
+                  </span>
+                  <input type="text"
+                    class="block w-full min-w-0 flex-1 rounded-none rounded-e-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                    placeholder="Saigon Centre" />
+                </div>
+  
+                <div class="flex">
+                  <span
+                    class="inline-flex items-center rounded-s-md border border-e-0 border-gray-300 bg-gray-200 px-3 text-sm text-gray-900 dark:border-gray-600 dark:bg-gray-600 dark:text-gray-400">
+                    <i class="fa-solid fa-sack-dollar text-sm lg:text-base"></i>
+                  </span>
+                  <input type="text"
+                    class="block w-full min-w-0 flex-1 rounded-none rounded-e-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                    placeholder="4,00 - 5,00$" />
+                </div>
+              </div>
+              <div class="grid w-full grid-cols-4 divide-x font-medium">
+                <button type="button" class="h1-search-sm active rounded-l-md py-2">
+                  Sell
+                </button>
+                <button type="button" class="h1-search-sm py-2">Buy</button>
+                <button type="button" class="h1-search-sm py-2">Rent</button>
+                <button type="submit" class="h1-search-sm rounded-r-md bg-primary py-2 text-white">
+                  <i class="fa-solid fa-magnifying-glass text-lg"></i>
+                </button>
+              </div>
+            </form>
+          </div> -->
+
+        <!-- From sm to large -->
+        <!-- <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="300"
+            class="my__gradient hidden w-full items-center justify-between rounded-md border border-[#ededed] bg-white px-4 py-4 shadow-shadow4 sm:flex md:rounded-xl md:px-6 md:py-[18px] lg:w-[945px] lg:rounded-[20px] lg:px-8 lg:py-5 xl:px-10 xl:py-[25px]">
+            <div class="space-y-1 lg:space-y-[10px]">
+              <p class="text-xs font-normal text-primary md:text-sm lg:text-base">
+                Quận:
+              </p>
+              <div class="flex items-center gap-x-1.5 lg:gap-x-2.5">
+                <input type="text" id="city"
+                  class="focus:placeholder:text-new-300 m-0 block size-fit w-full max-w-28 appearance-none rounded-lg border-0 bg-transparent !p-0 text-xs text-nature-500 shadow-none placeholder:text-xs placeholder:font-medium placeholder:text-nature-500 focus:outline-none focus:ring-0 md:text-sm placeholder:md:text-sm lg:text-base placeholder:lg:text-base"
+                  placeholder="Quận 1" />
+              </div>
+            </div>
+  
+            <div class="hidden !h-[50px] !w-[1px] bg-gray-300 md:block"></div>
+  
+            <div class="flex flex-col items-center justify-center">
+              <div class="space-y-1 lg:space-y-[10px]">
+                <p class="text-xs font-normal text-primary md:text-sm lg:text-base">
+                  Toà nhà:
+                </p>
+                <div class="flex items-center gap-x-1.5 lg:gap-x-2.5">
+                  <input type="text" id="type"
+                    class="focus:placeholder:text-new-300 m-0 block size-fit w-full max-w-28 appearance-none rounded-lg border-0 bg-transparent !p-0 text-xs text-nature-500 shadow-none placeholder:text-xs placeholder:font-medium placeholder:text-nature-500 focus:outline-none focus:ring-0 md:text-sm placeholder:md:text-sm lg:text-base placeholder:lg:text-base"
+                    placeholder="Saigon Centre" />
+                </div>
+              </div>
+            </div>
+  
+            <div class="hidden !h-[50px] !w-[1px] bg-gray-300 md:block"></div>
+            <div class="flex flex-col items-center justify-center">
+              <div class="space-y-1 lg:space-y-[10px]">
+                <p class="text-xs font-normal text-primary md:text-sm lg:text-base">
+                  Giá thuê:
+                </p>
+                <div class="flex items-center gap-x-1.5 lg:gap-x-2.5">
+                  <input type="text" id="price"
+                    class="focus:placeholder:text-new-300 m-0 block size-fit w-full max-w-28 appearance-none rounded-lg border-0 bg-transparent !p-0 text-xs text-nature-500 shadow-none placeholder:text-xs placeholder:font-medium placeholder:text-nature-500 focus:outline-none focus:ring-0 md:text-sm placeholder:md:text-sm lg:text-base placeholder:lg:text-base"
+                    placeholder="$8,000 - 60,000" />
+                </div>
+              </div>
+            </div>
+  
+            <div class="hidden !h-[50px] !w-[1px] bg-gray-300 md:block"></div>
+  
+            <div class="flex items-center justify-center md:w-auto">
+              <div>
+                <button
+                  class="flex size-fit items-center gap-x-4 rounded-full bg-primary px-5 py-2.5 text-sm font-normal text-white lg:text-base">
+                  <span class="!font-normal">Search</span>
+                </button>
+              </div>
+            </div>
+          </div> -->
+
+        <!-- From sm to large -->
+        <div
+          data-aos="fade-up"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-delay="300"
+          class="flex w-full items-center justify-between gap-16 rounded-md border border-[#ededed] bg-white p-4 shadow-shadow4"
+        >
+          <div class="w-full grow space-y-1 lg:space-y-[10px]">
+            <input
+              type="text"
+              class="w-full rounded-md border-slate-50 px-4 py-2 text-xl text-secondary"
+              placeholder="Search..."
+            />
+          </div>
+          <button class="home-search-btn">
+            <svg
+              class="svg-inline--fa fa-magnifying-glass mr-1.5 text-lg"
+              aria-hidden="true"
+              focusable="false"
+              data-prefix="fas"
+              data-icon="magnifying-glass"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+            >
+              <path
+                fill="currentColor"
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </section>
+    </div>
+
+    <div class="about-counter-container one-screen">
+      <!-- About started -->
+      <section
+        id="about"
+        class="container grid grid-cols-1 gap-4 overflow-hidden p-10 md:grid-cols-2 md:gap-7"
+      >
+        <div data-aos="flip-up" class="flex! h-full items-center">
+          <img
+            src="assets/images/working-meeting-asian-colleagues.jpg"
+            alt="Homelist4_property"
+            class="object-cover object-center"
+          />
+        </div>
+
+        <div data-aos="flip-down" class="flex flex-col justify-center">
+          <h2>VỀ CHÚNG TÔI</h2>
+          <p
+            class="text-new-800 mb-4 mt-3.5 text-base font-medium sm:mb-5 md:mb-6 md:mt-4 lg:mb-[30px] lg:mt-5 lg:text-lg"
+          >
+            Công ty TNHH Dịch Vụ Bất Động Sản An Phú Holdings thành lập
+            06/06/2013. Phương chăm chúng tôi hoạt động là: luôn lấy lợi ích
+            khách hàng làm mục tiêu phấn đấu và phát triển. "Chúng tôi không chỉ
+            mỉm cười với khách hàng mà còn khiến khách hàng phải mỉm cười với
+            chúng tôi".
+          </p>
+          <p class="text-new-800 text-base font-medium lg:text-lg">
+            Với nhiệm vụ giúp khách hàng tìm kiếm được những sản phẩm tốt nhất,
+            Chúng tôi không ngừng cố gắng cải thiện chất lượng dịch vụ, tuyển
+            dụng và đào tạo nhân sự, thay đổi cơ cấu. Và chỉ trong vòng 4 năm
+            chúng tôi đã là một trong những công ty bất động sản có chất lượng
+            dịch vụ đứng số 1 tại TPHCM cũng như khu vực phía Nam do hiệp hội
+            bất động sản cũng như khách hàng công nhận.
+          </p>
+
+          <div
+            class="mt-10 flex items-center gap-5 lg:gap-6 xl:gap-8 2xl:gap-11"
+          >
+            <a
+              href="#"
+              class="text-new-900 rounded-full border border-secondary px-4 py-1.5 text-xs font-medium transition-all hover:text-secondary sm:px-5 sm:py-3.5 sm:text-sm md:px-6 md:py-4 md:text-base lg:gap-x-2 lg:px-7 lg:py-[18px] lg:text-lg xl:gap-x-2.5 xl:px-[30px] xl:py-5"
+              ><span class="pr-1.5">Read More</span
+              ><i class="fa fa-arrow-right-long"></i
+            ></a>
+            <button class="group flex items-center gap-x-2.5">
+              <i
+                class="fa-regular fa-circle-play text-3xl text-secondary lg:text-4xl xl:text-5xl 2xl:text-[54px]"
+              ></i>
+              <span
+                class="text-new-900 text-base font-medium transition-all group-hover:text-secondary lg:text-lg"
+                >Watch Our Videos</span
+              >
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Counter started -->
+      <section
+        id="h4-counter"
+        class="container grid grid-cols-2 gap-5 p-10 sm:gap-6 md:grid-cols-4 md:gap-8"
+      >
+        <!-- Card 1 -->
+        <div
+          class="flex flex-col items-center justify-center gap-x-4 md:gap-x-6 lg:flex-row lg:justify-start lg:gap-x-8 xl:gap-x-10"
+        >
+          <div
+            class="flex size-20 items-center justify-center rounded-full bg-white shadow-shadow8"
+          >
+            <img
+              src="assets/icons/counter-1.svg"
+              alt="Homelist4_counter"
+              class="size-[45px]"
+            />
+          </div>
+          <div>
+            <h2
+              class="text-new-900 text-center text-2xl font-bold tracking-tight md:text-3xl lg:text-start lg:text-4xl xl:text-5xl"
+            >
+              <span id="h4-team-members" class="odometer"></span>+
+            </h2>
+            <p
+              class="text-new-900 text-center text-sm md:text-base lg:text-start lg:text-lg"
+            >
+              Team Members
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div
+          class="flex flex-col items-center justify-center gap-x-4 md:gap-x-6 lg:flex-row lg:justify-start lg:gap-x-8 xl:gap-x-10"
+        >
+          <div
+            class="flex size-20 items-center justify-center rounded-full bg-white shadow-shadow8"
+          >
+            <img
+              src="assets/icons/counter-2.svg"
+              alt="Homelist4_counter"
+              class="size-[45px]"
+            />
+          </div>
+          <div>
+            <h2
+              class="text-new-900 text-center text-2xl font-bold tracking-tight md:text-3xl lg:text-start lg:text-4xl xl:text-5xl"
+            >
+              <span id="h4-client-reviews" class="odometer"></span>+
+            </h2>
+            <p
+              class="text-new-900 text-center text-sm md:text-base lg:text-start lg:text-lg"
+            >
+              Client Reviews
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div
+          class="flex flex-col items-center justify-center gap-x-4 md:gap-x-6 lg:flex-row lg:justify-start lg:gap-x-8 xl:gap-x-10"
+        >
+          <div
+            class="flex size-20 items-center justify-center rounded-full bg-white shadow-shadow8"
+          >
+            <img
+              src="assets/icons/counter-3.svg"
+              alt="Homelist4_counter"
+              class="size-[45px]"
+            />
+          </div>
+          <div>
+            <h2
+              class="text-new-900 text-center text-2xl font-bold tracking-tight md:text-3xl lg:text-start lg:text-4xl xl:text-5xl"
+            >
+              <span id="h4-projects-com" class="odometer"></span>+
+            </h2>
+            <p
+              class="text-new-900 text-center text-sm md:text-base lg:text-start lg:text-lg"
+            >
+              Comp. Projects
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div
+          class="flex flex-col items-center justify-center gap-x-4 md:gap-x-6 lg:flex-row lg:justify-start lg:gap-x-8 xl:gap-x-10"
+        >
+          <div
+            class="flex size-20 items-center justify-center rounded-full bg-white shadow-shadow8"
+          >
+            <img
+              src="assets/icons/counter-4.svg"
+              alt="Homelist4_counter"
+              class="size-[45px]"
+            />
+          </div>
+          <div>
+            <h2
+              class="text-new-900 text-center text-2xl font-bold tracking-tight md:text-3xl lg:text-start lg:text-4xl xl:text-5xl"
+            >
+              <span id="h4-win-awards" class="odometer"></span>k
+            </h2>
+            <p
+              class="text-new-900 text-center text-sm md:text-base lg:text-start lg:text-lg"
+            >
+              Win. Awards
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Why choose us? -->
+    <section id="whyChooseUs" class="one-screen"></section>
+
+    <!-- our services -->
+    <!-- <section class="container bg-white  p-4 py-12 md:py-16 lg:py-20">
+    <div id="ourServices" class="mb-16" data-aos="fade-up" data-aos-delay="200"></div>
+  </section> -->
+
+    <!-- our services -->
+    <section class="one-screen" id="ourServices"></section>
+
+    <!-- office search process -->
+    <!-- <section class="container bg-white py-12 md:py-16 lg:py-20">
+    <div id="officeSearchProcess" data-aos="fade-up" data-aos-delay="300"></div>
+  </section> -->
+
+    <!-- Quy trình tìm văn phòng2 -->
+    <section id="officeSearchProcess2"></section>
+
+    <!-- Offices by district -->
+    <section id="officesByDistrict" class="one-screen"></section>
+
+    <!-- New ward office -->
+    <section id="newWardOffice" class="bg-gray-50"></section>
+
+    <!-- Outstanding Building -->
+    <section id="outstandingBuilding"></section>
+
+    <!-- User Reviews -->
+    <section id="usersReview" class="one-screen"></section>
+
+    <!-- Partners and investors -->
+    <section id="partners" class="one-screen bg-gray-50 py-12"></section>
+
+    <!-- Contact Us Section  -->
+    <section id="contact" class="one-screen overflow-hidden"></section>
+
+    <!-- Awards Section -->
+    <section id="awards" class="one-screen bg-white py-16"></section>
+
+    <!-- press news -->
+    <section id="pressNews" class="one-screen bg-white py-16"></section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="bg-white py-16"></section>
+
+    <!-- Responsive menu -->
+    <div
+      id="responsive-menu"
+      tabindex="-1"
+      aria-labelledby="responsive-menu-label"
+      class="fixed left-0 top-0 z-[100] h-screen w-72 -translate-x-full overflow-y-auto border-r bg-white p-4 transition-transform"
+    >
+      <a href="#">
+        <img
+          src="assets/logo/anphu-holdinngs-80x80.png"
+          alt="An Phú Holdings"
+          class="size-fit"
+          width="80"
+          height="40"
+          loading="lazy"
+        />
+      </a>
+      <button
+        type="button"
+        data-drawer-hide="responsive-menu"
+        aria-controls="responsive-menu"
+        class="absolute end-2.5 top-2.5 inline-flex h-8 w-8 items-center justify-center rounded-lg bg-transparent text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white"
+      >
+        <svg
+          class="h-3 w-3"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 14 14"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+          />
+        </svg>
+        <span class="sr-only">Close menu</span>
+      </button>
+      <div class="overflow-y-auto py-4">
+        <ul class="space-y-2 font-medium">
+          <!-- Văn phòng cho thuê -->
+          <li>
+            <button
+              type="button"
+              class="group flex w-full items-center justify-between rounded-lg p-2 text-base text-gray-900 transition duration-75 hover:bg-gray-200 dark:text-white dark:hover:bg-gray-700"
+              aria-controls="dropdown-cho-thue-van-phong"
+              data-collapse-toggle="dropdown-cho-thue-van-phong"
+            >
+              <a
+                target="_blank"
+                class="whitespace-nowrap text-left"
+                href="cho-thue-van-phong.html"
+              >
+                Cho thuê văn phòng
+              </a>
+              <svg
+                class="h-3 w-3"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 6"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m1 1 4 4 4-4"
+                />
+              </svg>
+            </button>
+            <ul id="dropdown-cho-thue-van-phong" class="hidden space-y-2 py-2">
+              <!-- Theo quận -->
+              <li>
+                <button
+                  class="flex w-full items-center justify-between rounded-lg py-2 pl-5"
+                  type="button"
+                  aria-controls="dropdown-cho-thue-van-phong-district"
+                  data-collapse-toggle="dropdown-cho-thue-van-phong-district"
+                >
+                  <a
+                    target="_blank"
+                    href="van-phong-cho-thue-theo-quan.html"
+                    class="text-secondary"
+                  >
+                    Văn phòng theo quận
+                  </a>
+                  <svg
+                    class="h-3 w-3"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 10 6"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="m1 1 4 4 4-4"
+                    />
+                  </svg>
+                </button>
+                <ul
+                  id="dropdown-cho-thue-van-phong-district"
+                  class="hidden space-y-2 py-2"
+                >
+                  <li>
+                    <button
+                      class="flex w-full items-center rounded-lg py-2"
+                      style="padding-left: 32px"
+                    >
+                      <a
+                        target="_blank"
+                        href="van-phong-cho-thue-quan-1.html"
+                        class="text-secondary"
+                      >
+                        Quận 1
+                      </a>
+                    </button>
+                  </li>
+                </ul>
+              </li>
+
+              <!-- Theo phường -->
+              <li>
+                <button
+                  class="flex w-full items-center justify-between rounded-lg py-2 pl-5"
+                  type="button"
+                  aria-controls="dropdown-cho-thue-van-phong-ward"
+                  data-collapse-toggle="dropdown-cho-thue-van-phong-ward"
+                >
+                  <a
+                    target="_blank"
+                    href="van-phong-cho-thue-theo-phuong.html"
+                    class="text-secondary"
+                  >
+                    Văn phòng theo phường
+                  </a>
+                  <svg
+                    class="h-3 w-3"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 10 6"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="m1 1 4 4 4-4"
+                    />
+                  </svg>
+                </button>
+                <ul
+                  id="dropdown-cho-thue-van-phong-ward"
+                  class="hidden space-y-2 py-2"
+                >
+                  <li>
+                    <button
+                      class="flex w-full items-center rounded-lg py-2"
+                      style="padding-left: 32px"
+                    >
+                      <a
+                        target="_blank"
+                        href="van-phong-cho-thue-phuong-tan-dinh.html"
+                        class="text-secondary"
+                      >
+                        Sài Gòn - Q1
+                      </a>
+                    </button>
+                  </li>
+                </ul>
+              </li>
+
+              <!-- Theo hạng -->
+              <li>
+                <button
+                  class="flex w-full items-center justify-between rounded-lg py-2 pl-5"
+                  type="button"
+                  aria-controls="dropdown-cho-thue-van-phong-level"
+                  data-collapse-toggle="dropdown-cho-thue-van-phong-level"
+                >
+                  <a
+                    target="_blank"
+                    href="van-phong-cho-thue-theo-phuong.html"
+                    class="text-secondary"
+                  >
+                    Văn phòng theo hạng
+                  </a>
+                  <svg
+                    class="h-3 w-3"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 10 6"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="m1 1 4 4 4-4"
+                    />
+                  </svg>
+                </button>
+                <ul
+                  id="dropdown-cho-thue-van-phong-level"
+                  class="hidden space-y-2 py-2"
+                >
+                  <li>
+                    <button
+                      class="flex w-full items-center rounded-lg py-2"
+                      style="padding-left: 32px"
+                    >
+                      <a
+                        target="_blank"
+                        href="van-phong-hang-a.html"
+                        class="text-secondary"
+                      >
+                        Hạng A
+                      </a>
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      class="flex w-full items-center rounded-lg py-2"
+                      style="padding-left: 32px"
+                    >
+                      <a
+                        target="_blank"
+                        href="van-phong-hang-a.html"
+                        class="text-secondary"
+                      >
+                        Hạng B
+                      </a>
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      class="flex w-full items-center rounded-lg py-2"
+                      style="padding-left: 32px"
+                    >
+                      <a
+                        target="_blank"
+                        href="van-phong-hang-a.html"
+                        class="text-secondary"
+                      >
+                        Hạng C
+                      </a>
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      class="flex w-full items-center rounded-lg py-2"
+                      style="padding-left: 32px"
+                    >
+                      <a
+                        target="_blank"
+                        href="van-phong-hang-a.html"
+                        class="text-secondary"
+                      >
+                        Hạng giá rẻ
+                      </a>
+                    </button>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <!-- Văn phòng trọn gói -->
+          <li>
+            <button
+              type="button"
+              class="group flex w-full items-center justify-between rounded-lg p-2 text-base text-gray-900 transition duration-75 hover:bg-gray-200 dark:text-white dark:hover:bg-gray-700"
+              aria-controls="dropdown-vp-tron-goi"
+              data-collapse-toggle="dropdown-vp-tron-goi"
+            >
+              <a
+                target="_blank"
+                class="whitespace-nowrap text-left"
+                href="cho-thue-van-phong.html"
+              >
+                Văn phòng trọn gói
+              </a>
+              <svg
+                class="h-3 w-3"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 6"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m1 1 4 4 4-4"
+                />
+              </svg>
+            </button>
+            <ul id="dropdown-vp-tron-goi" class="hidden space-y-2 py-2">
+              <li>
+                <button
+                  class="flex w-full items-center justify-between rounded-lg py-2 pl-5"
+                  type="button"
+                  aria-controls="dropdown-vp-tron-goi-district"
+                  data-collapse-toggle="dropdown-vp-tron-goi-district"
+                >
+                  <a
+                    target="_blank"
+                    href="van-phong-tron-goi-theo-quan.html"
+                    class="text-secondary"
+                  >
+                    Trọn gói theo quận
+                  </a>
+                  <svg
+                    class="h-3 w-3"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 10 6"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="m1 1 4 4 4-4"
+                    />
+                  </svg>
+                </button>
+                <ul
+                  id="dropdown-vp-tron-goi-district"
+                  class="hidden space-y-2 py-2"
+                >
+                  <li>
+                    <button
+                      class="flex w-full items-center rounded-lg py-2"
+                      style="padding-left: 32px"
+                    >
+                      <a
+                        target="_blank"
+                        href="van-phong-tron-goi-detail.html"
+                        class="text-secondary"
+                      >
+                        Quận 1
+                      </a>
+                    </button>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <button
+                  class="flex w-full items-center justify-between rounded-lg py-2 pl-5"
+                  type="button"
+                  aria-controls="dropdown-vp-tron-goi-ward"
+                  data-collapse-toggle="dropdown-vp-tron-goi-ward"
+                >
+                  <a
+                    target="_blank"
+                    href="van-phong-tron-goi-theo-quan.html"
+                    class="text-secondary"
+                  >
+                    Văn phòng theo phường
+                  </a>
+                  <svg
+                    class="h-3 w-3"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 10 6"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="m1 1 4 4 4-4"
+                    />
+                  </svg>
+                </button>
+                <ul
+                  id="dropdown-vp-tron-goi-ward"
+                  class="hidden space-y-2 py-2"
+                >
+                  <li>
+                    <button
+                      class="flex w-full items-center rounded-lg py-2"
+                      style="padding-left: 32px"
+                    >
+                      <a
+                        target="_blank"
+                        href="van-phong-tron-goi-detail.html"
+                        class="text-secondary"
+                      >
+                        Sài Gòn - Q1
+                      </a>
+                    </button>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <!-- Văn phòng ảo -->
+          <li>
+            <button
+              type="button"
+              class="group flex w-full items-center justify-between rounded-lg p-2 text-base text-secondary"
+              aria-controls="dropdown-van-phong-ao"
+              data-collapse-toggle="dropdown-van-phong-ao"
+            >
+              <a
+                target="_blank"
+                class="whitespace-nowrap text-left"
+                href="van-phong-ao.html"
+              >
+                Văn phòng ảo
+              </a>
+              <svg
+                class="h-3 w-3"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 6"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m1 1 4 4 4-4"
+                />
+              </svg>
+            </button>
+            <ul id="dropdown-van-phong-ao" class="hidden space-y-2 py-2">
+              <li>
+                <button
+                  class="flex w-full items-center justify-between rounded-lg py-2 pl-5"
+                  type="button"
+                  aria-controls="dropdown-van-phong-ao-district"
+                  data-collapse-toggle="dropdown-van-phong-ao-district"
+                >
+                  <a
+                    target="_blank"
+                    href="van-phong-ao-theo-quan.html"
+                    class="text-secondary"
+                  >
+                    Văn phòng theo quận
+                  </a>
+                  <svg
+                    class="h-3 w-3"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 10 6"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="m1 1 4 4 4-4"
+                    />
+                  </svg>
+                </button>
+                <ul
+                  id="dropdown-van-phong-ao-district"
+                  class="hidden space-y-2 py-2"
+                >
+                  <li>
+                    <button
+                      class="flex w-full items-center rounded-lg py-2"
+                      style="padding-left: 32px"
+                    >
+                      <a
+                        target="_blank"
+                        href="van-phong-ao-quan-1.html"
+                        class="text-secondary"
+                      >
+                        Quận 1
+                      </a>
+                    </button>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <button
+                  class="flex w-full items-center justify-between rounded-lg py-2 pl-5"
+                  type="button"
+                  aria-controls="dropdown-van-phong-ao-ward"
+                  data-collapse-toggle="dropdown-van-phong-ao-ward"
+                >
+                  <a
+                    target="_blank"
+                    href="van-phong-ao-theo-phuong.html"
+                    class="text-secondary"
+                  >
+                    Văn phòng theo phường
+                  </a>
+                  <svg
+                    class="h-3 w-3"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 10 6"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="m1 1 4 4 4-4"
+                    />
+                  </svg>
+                </button>
+                <ul
+                  id="dropdown-van-phong-ao-ward"
+                  class="hidden space-y-2 py-2"
+                >
+                  <li>
+                    <button
+                      class="flex w-full items-center rounded-lg py-2"
+                      style="padding-left: 32px"
+                    >
+                      <a
+                        target="_blank"
+                        href="van-phong-ao-phuong-tan-dinh.html"
+                        class="text-secondary"
+                      >
+                        Sài Gòn - Q1
+                      </a>
+                    </button>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <div id="footer"></div>
+
+    <!-- thư viện -->
+    <!-- Scripts -->
+    <script src="js/fontawesome.min.js"></script>
+    <script src="js/flowbite.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/odometer.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/users-rating-swiper.js"></script>
+    <script src="js/include.js"></script>
+
+    <script>
+      AOS.init();
+    </script>
+
+    <script>
+      function showHeader() {
+        const rentalOfficeTabWard = document.querySelector('.rent-office-ward');
+        const rentalOfficeTabDistrict = document.querySelector(
+          '.rent-office-district',
+        );
+
+        rentalOfficeTabDistrict.addEventListener('click', () => {
+          rentalOfficeTabDistrict.classList.add('active');
+          rentalOfficeTabWard.classList.remove('active');
+        });
+
+        rentalOfficeTabWard.addEventListener('click', () => {
+          rentalOfficeTabWard.classList.add('active');
+          rentalOfficeTabDistrict.classList.remove('active');
+        });
+
+        const packageOfficeTabWard = document.querySelector(
+          '.package-office-ward',
+        );
+        const packageOfficeTabDistrict = document.querySelector(
+          '.package-office-district',
+        );
+
+        packageOfficeTabDistrict.addEventListener('click', () => {
+          packageOfficeTabDistrict.classList.add('active');
+          packageOfficeTabWard.classList.remove('active');
+        });
+
+        packageOfficeTabWard.addEventListener('click', () => {
+          packageOfficeTabWard.classList.add('active');
+          packageOfficeTabDistrict.classList.remove('active');
+        });
+
+        const virtualOfficeTabWard = document.querySelector(
+          '.virtual-office-ward',
+        );
+        const virtualOfficeTabDistrict = document.querySelector(
+          '.virtual-office-district',
+        );
+
+        virtualOfficeTabDistrict.addEventListener('click', () => {
+          virtualOfficeTabDistrict.classList.add('active');
+          virtualOfficeTabWard.classList.remove('active');
+        });
+
+        virtualOfficeTabWard.addEventListener('click', () => {
+          virtualOfficeTabWard.classList.add('active');
+          virtualOfficeTabDistrict.classList.remove('active');
+        });
+
+        const headerPhoneBtn = document.querySelector('.header-phone-btn');
+        const headerPhoneText = document.querySelector('.header-phone-text');
+
+        headerPhoneBtn.addEventListener('click', () => {
+          headerPhoneText.classList.toggle('active');
+        });
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const header = [
+          includeHTML('#header', './partials/common/header2.html'),
+        ];
+        Promise.all(header).then(() => {
+          showHeader();
+        });
+        includeHTML('#about', './partials/home/about.html');
+        includeHTML('#whyChooseUs', './partials/home/why-choose-us.html');
+        includeHTML('#ourServices', './partials/home/our-services.html');
+        includeHTML(
+          '#officeSearchProcess',
+          './partials/home/office-search-process.html',
+        );
+
+        includeHTML(
+          '#officeSearchProcess2',
+          './partials/home/quy-trinh-tim-van-phong-2.html',
+        );
+        includeHTML(
+          '#officesByDistrict',
+          './partials/home/office-by-district.html',
+        );
+        includeHTML('#newWardOffice', './partials/home/new-ward-office.html');
+        includeHTML(
+          '#outstandingBuilding',
+          './partials/home/outstanding-building.html',
+        );
+        includeHTML('#usersReview', './partials/home/users-reviews.html');
+        includeHTML('#partners', './partials/home/partners-and-investors.html');
+        includeHTML('#contact', './partials/common/contact.html');
+        includeHTML('#awards', './partials/home/awards.html');
+        includeHTML('#pressNews', './partials/home/press-news.html');
+        includeHTML('#faq', './partials/common/faq.html');
+        includeHTML('#footer', './partials/common/footer.html');
+      });
+    </script>
+  </body>
+</html>

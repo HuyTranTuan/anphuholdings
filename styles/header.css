@@ -1,0 +1,417 @@
+/* Cho thue van phong */
+.dropdown-rent {
+  position: relative;
+}
+
+.dropdown-rent-child {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  z-index: 50;
+  min-width: 750px;
+  max-width: 1290px;
+  height: 400px;
+  overflow: hidden;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  border: 1px solid #ddd;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    visibility 0.5s ease,
+    opacity 0.5s ease;
+}
+
+.dropdown-rent:hover .dropdown-rent-child {
+  visibility: visible;
+  opacity: 1;
+}
+
+.rent-child-left {
+  flex-grow: 1;
+  display: flex;
+  gap: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.rent-left-body {
+  position: absolute;
+  top: 30px;
+  width: 100%;
+  height: 100%;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+.rent-left-body-district {
+  display: grid;
+  padding: 10px;
+  padding-bottom: 60px;
+  overflow-y: auto;
+  overscroll-behavior: none;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.rent-left-body-ward {
+  display: none;
+  padding: 10px;
+  padding-bottom: 60px;
+  overflow-y: auto;
+  overscroll-behavior: none;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  height: 100%;
+}
+
+.rent-left-tab {
+  flex-grow: 1;
+  text-align: left;
+  height: 40px;
+  cursor: pointer;
+}
+
+.rent-left-tab > a {
+  color: #231f20;
+  text-decoration: none;
+  padding: 10px 15px;
+}
+
+.rent-left-tab:hover > a {
+  color: #1ba0e1 !important;
+}
+
+.rent-office-district:hover ~ .rent-left-body > .rent-left-body-district {
+  display: grid;
+}
+.rent-office-district:hover ~ .rent-left-body > .rent-left-body-ward {
+  display: none;
+}
+.rent-office-district.active ~ .rent-left-body > .rent-left-body-district {
+  display: grid;
+}
+.rent-office-district.active ~ .rent-left-body > .rent-left-body-ward {
+  display: none;
+}
+
+.rent-office-ward:hover ~ .rent-left-body > .rent-left-body-ward {
+  display: grid;
+}
+.rent-office-ward:hover ~ .rent-left-body > .rent-left-body-district {
+  display: none;
+}
+.rent-office-ward.active ~ .rent-left-body > .rent-left-body-ward {
+  display: grid;
+}
+.rent-office-ward.active ~ .rent-left-body > .rent-left-body-district {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .dropdown-rent-child {
+    transform: translateX(-35%);
+  }
+}
+@media (min-width: 900px) {
+  .dropdown-rent-child {
+    transform: translateX(-40%);
+    height: 420px;
+  }
+}
+
+/* Vp tron goi */
+.dropdown-package {
+  position: relative;
+}
+
+.dropdown-package-child {
+  position: absolute;
+  top: 35px;
+  z-index: 50;
+  min-width: 600px;
+  max-width: 1290px;
+  height: 400px;
+  overflow: hidden;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  border: 1px solid #ddd;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    visibility 0.5s ease,
+    opacity 0.5s ease;
+}
+
+.package-child {
+  flex-grow: 1;
+  display: flex;
+  gap: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.dropdown-package:hover .dropdown-package-child {
+  visibility: visible;
+  opacity: 1;
+}
+
+.package-body {
+  position: absolute;
+  top: 30px;
+  width: 100%;
+  height: 100%;
+  margin: 5px;
+  border-radius: 10px;
+  box-sizing: border-box !important;
+}
+
+.package-body-district {
+  display: grid;
+  padding: 10px;
+  padding-bottom: 60px;
+  overflow-y: auto;
+  overscroll-behavior: none;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.package-body-ward {
+  display: none;
+  padding: 10px;
+  padding-bottom: 60px;
+  overflow-y: auto;
+  overscroll-behavior: none;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  height: 100%;
+}
+
+.package-tab {
+  flex-grow: 1;
+  text-align: left;
+  height: 40px;
+  cursor: pointer;
+}
+
+.package-tab > a {
+  color: #231f20;
+  text-decoration: none;
+  padding: 10px 15px;
+}
+
+.package-tab:hover > a {
+  color: #1ba0e1 !important;
+}
+
+.package-office-district:hover ~ .package-body > .package-body-district {
+  display: grid;
+}
+.package-office-district:hover ~ .package-body > .package-body-ward {
+  display: none;
+}
+.package-office-district.active ~ .package-body > .package-body-district {
+  display: grid;
+}
+.package-office-district.active ~ .package-body > .package-body-ward {
+  display: none;
+}
+
+.package-office-ward:hover ~ .package-body > .package-body-ward {
+  display: grid;
+}
+.package-office-ward:hover ~ .package-body > .package-body-district {
+  display: none;
+}
+.package-office-ward.active ~ .package-body > .package-body-ward {
+  display: grid;
+}
+.package-office-ward.active ~ .package-body > .package-body-district {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .dropdown-package-child {
+    transform: translateX(-35%);
+  }
+}
+@media (min-width: 900px) {
+  .dropdown-package-child {
+    transform: translateX(-40%);
+    height: 420px;
+  }
+}
+
+/* Vp ao */
+.dropdown-virtual {
+  position: relative;
+}
+
+.dropdown-virtual-child {
+  position: absolute;
+  top: 35px;
+  left: 50%;
+  z-index: 50;
+  min-width: 600px;
+  max-width: 1290px;
+  height: 400px;
+  overflow: hidden;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  border: 1px solid #ddd;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    visibility 0.5s ease,
+    opacity 0.5s ease;
+}
+
+.virtual-child {
+  flex-grow: 1;
+  display: flex;
+  gap: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.dropdown-virtual:hover .dropdown-virtual-child {
+  visibility: visible;
+  opacity: 1;
+}
+
+.virtual-body {
+  position: absolute;
+  top: 30px;
+  width: 100%;
+  height: 100%;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+.virtual-body-district {
+  display: grid;
+  padding: 10px;
+  padding-bottom: 60px;
+  overflow-y: auto;
+  overscroll-behavior: none;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.virtual-body-ward {
+  display: none;
+  padding: 10px;
+  padding-bottom: 60px;
+  overflow-y: auto;
+  overscroll-behavior: none;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  height: 100%;
+}
+
+.virtual-tab {
+  flex-grow: 1;
+  text-align: left;
+  height: 40px;
+  cursor: pointer;
+}
+
+.virtual-tab > a {
+  color: #231f20;
+  text-decoration: none;
+  padding: 10px 15px;
+}
+
+.virtual-tab:hover > a {
+  color: #1ba0e1 !important;
+}
+
+.virtual-office-district:hover ~ .virtual-body > .virtual-body-district {
+  display: grid;
+}
+.virtual-office-district:hover ~ .virtual-body > .virtual-body-ward {
+  display: none;
+}
+.virtual-office-district.active ~ .virtual-body > .virtual-body-district {
+  display: grid;
+}
+.virtual-office-district.active ~ .virtual-body > .virtual-body-ward {
+  display: none;
+}
+
+.virtual-office-ward:hover ~ .virtual-body > .virtual-body-ward {
+  display: grid;
+}
+.virtual-office-ward:hover ~ .virtual-body > .virtual-body-district {
+  display: none;
+}
+.virtual-office-ward.active ~ .virtual-body > .virtual-body-ward {
+  display: grid;
+}
+.virtual-office-ward.active ~ .virtual-body > .virtual-body-district {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .dropdown-virtual-child {
+    transform: translateX(-70%);
+  }
+}
+@media (min-width: 900px) {
+  .dropdown-virtual-child {
+    transform: translateX(-60%);
+    height: 420px;
+  }
+}
+
+.header-phone-btn {
+  padding: 0.25rem 0.5rem;
+  background-color: #ffffff;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  position: relative;
+}
+
+.header-phone-btn:hover {
+  background-color: #f8fafc;
+  border-color: #94a3b8;
+}
+
+.header-phone-text {
+  font-size: 15px;
+  color: #444;
+  display: inline-block;
+  width: max-content;
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    visibility 0.5s ease,
+    opacity 0.5s ease;
+  position: absolute;
+  right: 0%;
+  top: 100%;
+  padding: 10px;
+}
+
+.header-phone-text.active {
+  visibility: visible;
+  opacity: 1;
+}
