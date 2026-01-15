@@ -976,7 +976,7 @@
           initBreadcrumb,
         );
         const loads = [
-          includeHTML('#mega-search', './partials/detail/search-mega.html'),
+          includeHTML('#mega-search', './partials/common/search-mega.html'),
         ];
         Promise.all(loads).then(() => {
           megaSearchEvent();
@@ -993,7 +993,7 @@
           './partials/office-rental/office-rental-level-a.html',
         );
         includeHTML('#contact2', './partials/common/contact.html');
-        includeHTML('#map', './partials/maps/map-1.html');
+        includeHTML('#map', './partials/common/map-1');
         includeHTML(
           '#generalInformationLevel',
           './partials/common/general-information-level.html',

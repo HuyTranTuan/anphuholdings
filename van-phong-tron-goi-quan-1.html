@@ -723,167 +723,167 @@
           <!-- Office rental filter -->
           <div class="relative lg:col-span-4" data-aos="flip-right">
             <!-- Bộ lọc cố định khi scroll (có thể thêm sticky sau) -->
-            <form
-              class="sticky top-24 space-y-8 rounded-2xl border border-gray-300 bg-white p-6 shadow-md"
-              id="side-filter-form"
-            >
-              <!-- diện tích và giá thuê -->
-              <!-- Slider diện tích -->
-              <div class="mb-6">
-                <h3 class="mb-3 text-lg font-bold">Diện tích Quận 1</h3>
-                <label class="mb-2 block text-sm font-medium text-secondary"
-                  >Diện tích (m²)</label
-                >
-                <div id="areaSlider" data-aos="zoom-in"></div>
-                <div class="mt-2 text-sm text-gray-600">
-                  Từ <span id="areaMinVal">0</span> m² đến
-                  <span id="areaMaxVal">0</span> m²
-                </div>
-                <!-- Giá trị thực để submit form (ẩn) -->
-                <input
-                  type="hidden"
-                  id="min-area-district"
-                  name="min_price"
-                  value="0"
-                />
-                <input
-                  type="hidden"
-                  id="max-area-district"
-                  name="max_price"
-                  value="2000"
-                />
-              </div>
-
-              <!-- Slider giá thuê -->
-              <div class="mb-6">
-                <h3 class="mb-3 text-lg font-bold">Giá thuê Quận 1</h3>
-                <label class="mb-2 block text-sm font-medium text-secondary"
-                  >Giá thuê ($/m²/tháng)</label
-                >
-                <div id="priceSlider" data-aos="zoom-in"></div>
-                <div class="mt-2 text-sm text-gray-600">
-                  Từ $<span id="priceMinVal">0</span> đến $<span
-                    id="priceMaxVal"
-                    >0</span
-                  >
-                </div>
-                <!-- Giá trị thực để submit form (ẩn) -->
-                <input
-                  type="hidden"
-                  id="min-price-district"
-                  name="min_price"
-                  value="0"
-                />
-                <input
-                  type="hidden"
-                  id="max-price-district"
-                  name="max_price"
-                  value="65"
-                />
-              </div>
-
-              <!-- diện tích và giá thuê -->
-
-              <!-- Hạng văn phòng -->
-              <div class="space-y-4">
-                <div>
-                  <h3 class="mb-3 text-lg font-bold">Hạng văn phòng Quận 1</h3>
-                  <div class="flex flex-wrap justify-between gap-2 text-sm">
-                    <button
-                      class="btn-district-class rounded-full border border-gray-300 px-4 py-2 hover:bg-blue-50"
-                    >
-                      Hạng A
-                    </button>
-                    <button
-                      class="btn-district-class rounded-full border border-gray-300 px-4 py-2 hover:bg-blue-50"
-                    >
-                      Hạng B
-                    </button>
-                    <button
-                      class="btn-district-class rounded-full border border-gray-300 px-4 py-2 hover:bg-blue-50"
-                    >
-                      Hạng C
-                    </button>
-                    <button
-                      class="btn-district-class rounded-full border border-gray-300 px-4 py-2 hover:bg-blue-50"
-                    >
-                      Giá rẻ
-                    </button>
-                    <input
-                      type="text"
-                      name=""
-                      id="class-district"
-                      value=""
-                      class="hidden"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <h3 class="mb-3 text-lg font-bold">Hướng Quận 1</h3>
-                  <div class="flex flex-wrap justify-between gap-3 text-sm">
-                    <button
-                      class="btn-district-side rounded-full border border-gray-300 px-4 py-2 hover:bg-blue-50"
-                    >
-                      Đông
-                    </button>
-                    <button
-                      class="btn-district-side rounded-full border border-gray-300 px-4 py-2 hover:bg-blue-50"
-                    >
-                      Tây
-                    </button>
-                    <button
-                      class="btn-district-side rounded-full border border-gray-300 px-4 py-2 hover:bg-blue-50"
-                    >
-                      Nam
-                    </button>
-                    <button
-                      class="btn-district-side rounded-full border border-gray-300 px-4 py-2 hover:bg-blue-50"
-                    >
-                      Bắc
-                    </button>
-                    <input
-                      type="text"
-                      name=""
-                      id="side-district"
-                      value=""
-                      class="hidden"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <h3 class="mb-3 text-lg font-bold">Phường mới Quận 1</h3>
-                  <select
-                    class="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  >
-                    <option value="">Chọn phường</option>
-                    <option value="ben-nghe">Phường Bến Nghé</option>
-                    <option value="da-kao">Phường Đa Kao</option>
-                    <!-- thêm các phường khác -->
-                  </select>
-                </div>
-
-                <div>
-                  <h3 class="mb-3 text-lg font-bold">Đường Quận 1</h3>
-                  <select
-                    class="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  >
-                    <option value="">Chọn đường</option>
-                    <option value="ton-duc-thang">Tôn Đức Thắng</option>
-                    <option value="le-duan">Lê Duẩn</option>
-                    <option value="hai-ba-trung">Hai Bà Trưng</option>
-                    <!-- thêm đường khác -->
-                  </select>
-                </div>
-              </div>
-
-              <button
-                class="w-full rounded-xl bg-primary py-4 font-bold text-white transition hover:bg-blue-700"
-                id="side-filter-form-reset-btn"
+            <form class="sticky top-24 pt-3" id="side-filter-form">
+              <div
+                class="space-y-8 rounded-2xl border border-gray-300 bg-white p-6 shadow-md"
               >
-                Đặt lại
-              </button>
+                <!-- Slider diện tích -->
+                <div class="mb-6">
+                  <h3 class="mb-3 text-lg font-bold">Diện tích Quận 1</h3>
+                  <label class="mb-2 block text-sm font-medium text-secondary"
+                    >Diện tích (m²)</label
+                  >
+                  <div id="areaSlider" data-aos="zoom-in"></div>
+                  <div class="mt-2 text-sm text-gray-600">
+                    Từ <span id="areaMinVal">0</span> m² đến
+                    <span id="areaMaxVal">0</span> m²
+                  </div>
+                  <!-- Giá trị thực để submit form (ẩn) -->
+                  <input
+                    type="hidden"
+                    id="min-area-district"
+                    name="min_price"
+                    value="0"
+                  />
+                  <input
+                    type="hidden"
+                    id="max-area-district"
+                    name="max_price"
+                    value="2000"
+                  />
+                </div>
+
+                <!-- Slider giá thuê -->
+                <div class="mb-6">
+                  <h3 class="mb-3 text-lg font-bold">Giá thuê Quận 1</h3>
+                  <label class="mb-2 block text-sm font-medium text-secondary"
+                    >Giá thuê ($/m²/tháng)</label
+                  >
+                  <div id="priceSlider" data-aos="zoom-in"></div>
+                  <div class="mt-2 text-sm text-gray-600">
+                    Từ $<span id="priceMinVal">0</span> đến $<span
+                      id="priceMaxVal"
+                      >0</span
+                    >
+                  </div>
+                  <!-- Giá trị thực để submit form (ẩn) -->
+                  <input
+                    type="hidden"
+                    id="min-price-district"
+                    name="min_price"
+                    value="0"
+                  />
+                  <input
+                    type="hidden"
+                    id="max-price-district"
+                    name="max_price"
+                    value="65"
+                  />
+                </div>
+
+                <!-- Hạng văn phòng -->
+                <div class="space-y-4">
+                  <div>
+                    <h3 class="mb-3 text-lg font-bold">
+                      Hạng văn phòng Quận 1
+                    </h3>
+                    <div class="flex flex-wrap justify-between gap-2 text-sm">
+                      <button
+                        class="btn-district-class rounded-full border border-gray-300 px-4 py-2 hover:bg-blue-50"
+                      >
+                        Hạng A
+                      </button>
+                      <button
+                        class="btn-district-class rounded-full border border-gray-300 px-4 py-2 hover:bg-blue-50"
+                      >
+                        Hạng B
+                      </button>
+                      <button
+                        class="btn-district-class rounded-full border border-gray-300 px-4 py-2 hover:bg-blue-50"
+                      >
+                        Hạng C
+                      </button>
+                      <button
+                        class="btn-district-class rounded-full border border-gray-300 px-4 py-2 hover:bg-blue-50"
+                      >
+                        Giá rẻ
+                      </button>
+                      <input
+                        type="text"
+                        name=""
+                        id="class-district"
+                        value=""
+                        class="hidden"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <h3 class="mb-3 text-lg font-bold">Hướng Quận 1</h3>
+                    <div class="flex flex-wrap justify-between gap-3 text-sm">
+                      <button
+                        class="btn-district-side rounded-full border border-gray-300 px-4 py-2 hover:bg-blue-50"
+                      >
+                        Đông
+                      </button>
+                      <button
+                        class="btn-district-side rounded-full border border-gray-300 px-4 py-2 hover:bg-blue-50"
+                      >
+                        Tây
+                      </button>
+                      <button
+                        class="btn-district-side rounded-full border border-gray-300 px-4 py-2 hover:bg-blue-50"
+                      >
+                        Nam
+                      </button>
+                      <button
+                        class="btn-district-side rounded-full border border-gray-300 px-4 py-2 hover:bg-blue-50"
+                      >
+                        Bắc
+                      </button>
+                      <input
+                        type="text"
+                        name=""
+                        id="side-district"
+                        value=""
+                        class="hidden"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <h3 class="mb-3 text-lg font-bold">Phường mới Quận 1</h3>
+                    <select
+                      class="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    >
+                      <option value="">Chọn phường</option>
+                      <option value="ben-nghe">Phường Bến Nghé</option>
+                      <option value="da-kao">Phường Đa Kao</option>
+                      <!-- thêm các phường khác -->
+                    </select>
+                  </div>
+
+                  <div>
+                    <h3 class="mb-3 text-lg font-bold">Đường Quận 1</h3>
+                    <select
+                      class="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    >
+                      <option value="">Chọn đường</option>
+                      <option value="ton-duc-thang">Tôn Đức Thắng</option>
+                      <option value="le-duan">Lê Duẩn</option>
+                      <option value="hai-ba-trung">Hai Bà Trưng</option>
+                      <!-- thêm đường khác -->
+                    </select>
+                  </div>
+                </div>
+
+                <button
+                  class="w-full rounded-xl bg-primary py-4 font-bold text-white transition hover:bg-blue-700"
+                  id="side-filter-form-reset-btn"
+                >
+                  Đặt lại
+                </button>
+              </div>
             </form>
           </div>
 
@@ -1798,7 +1798,7 @@
         );
         includeHTML('#ratingStar', './partials/common/rating-star.html');
         const loads = [
-          includeHTML('#mega-search', './partials/detail/search-mega.html'),
+          includeHTML('#mega-search', './partials/common/search-mega.html'),
           includeHTML(
             '#officeRentalWard1',
             './partials/office-rental/office-rental-ward-1.html',
@@ -1813,7 +1813,7 @@
           '#office-rental-filter',
           './partials/office-rental/office-rental-filter.html',
         );
-        includeHTML('#map', './partials/maps/map-1.html');
+        includeHTML('#map', './partials/common/map-1');
         includeHTML('#pagination1', './partials/common/pagination.html');
         includeHTML('#pagination2', './partials/common/pagination.html');
         includeHTML('#contact2', './partials/common/contact.html');

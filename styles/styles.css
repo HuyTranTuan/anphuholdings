@@ -13698,3 +13698,10 @@ html {
 .rtl\:text-right:where([dir='rtl'], [dir='rtl'] *) {
   text-align: right;
 }
+
+.bg-primary-20-blur {
+  background-color: rgba(27, 160, 225, 0.2) !important;
+  --tw-backdrop-blur: blur(4px);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur);
+  backdrop-filter: var(--tw-backdrop-blur);
+}

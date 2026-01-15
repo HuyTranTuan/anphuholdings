@@ -1265,7 +1265,7 @@
           initBreadcrumb,
         );
         const megasearch = [
-          includeHTML('#mega-search', './partials/detail/search-mega.html'),
+          includeHTML('#mega-search', './partials/common/search-mega.html'),
         ];
         Promise.all(megasearch).then(() => {
           megaSearchEvent();
@@ -1354,7 +1354,7 @@
           '#processConsulting',
           './partials/office-rental/process-consulting.html',
         );
-        includeHTML('#map', './partials/maps/map-1.html');
+        includeHTML('#map', './partials/common/map-1');
         includeHTML('#pagination', './partials/common/pagination.html');
         includeHTML(
           '#consultingTeam',
