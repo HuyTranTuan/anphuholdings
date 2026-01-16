@@ -1293,14 +1293,9 @@
     <script src="js/aos.js"></script>
     <script src="js/odometer.js"></script>
     <script src="js/swiper-bundle.min.js"></script>
-    <script src="js/index.js"></script>
     <script src="js/users-rating-swiper.js"></script>
     <script src="js/include.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/nouislider@15.6.1/dist/nouislider.min.js"></script>
-
-    <script>
-      AOS.init();
-    </script>
 
     <script>
       function megaSearchEvent() {
@@ -1656,36 +1651,6 @@
             1280: { slidesPerView: 4, spaceBetween: 24 },
           },
         });
-      }
-    </script>
-
-    <script>
-      function toggleFullInfo() {
-        const fullContent = document.getElementById('info-full');
-        const gradient = document.getElementById('seo-gradient');
-        const btn = document.getElementById('toggleInfoBtn');
-        const btnText = document.getElementById('btnText');
-        const btnIcon = document.getElementById('btnIcon');
-
-        if (fullContent.classList.contains('hidden')) {
-          fullContent.classList.remove('hidden');
-          gradient.classList.add('hidden');
-          btnText.textContent = 'Thu gọn';
-          btnIcon.classList.remove('fa-chevron-down');
-          btnIcon.classList.add('fa-chevron-up');
-          // Scroll to full content
-          fullContent.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        } else {
-          fullContent.classList.add('hidden');
-          gradient.classList.remove('hidden');
-          btnText.textContent = 'Xem thêm';
-          btnIcon.classList.remove('fa-chevron-up');
-          btnIcon.classList.add('fa-chevron-down');
-          // Scroll back to preview
-          document
-            .getElementById('info-preview')
-            .scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
       }
     </script>
   </body>

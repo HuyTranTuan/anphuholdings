@@ -943,315 +943,12 @@
     <script src="js/aos.js"></script>
     <script src="js/odometer.js"></script>
     <script src="js/swiper-bundle.min.js"></script>
-    <script src="js/index.js"></script>
     <script src="js/users-rating-swiper.js"></script>
     <script src="js/include.js"></script>
+    <script src="js/ultilities.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/nouislider@15.6.1/dist/nouislider.min.js"></script>
 
     <script>
-      AOS.init();
-    </script>
-
-    <script>
-      function showHeader() {
-        const rentalOfficeTabWard = document.querySelector('.rent-office-ward');
-        const rentalOfficeTabDistrict = document.querySelector(
-          '.rent-office-district',
-        );
-
-        rentalOfficeTabDistrict.addEventListener('click', () => {
-          rentalOfficeTabDistrict.classList.add('active');
-          rentalOfficeTabWard.classList.remove('active');
-        });
-
-        rentalOfficeTabWard.addEventListener('click', () => {
-          rentalOfficeTabWard.classList.add('active');
-          rentalOfficeTabDistrict.classList.remove('active');
-        });
-
-        const packageOfficeTabWard = document.querySelector(
-          '.package-office-ward',
-        );
-        const packageOfficeTabDistrict = document.querySelector(
-          '.package-office-district',
-        );
-
-        packageOfficeTabDistrict.addEventListener('click', () => {
-          packageOfficeTabDistrict.classList.add('active');
-          packageOfficeTabWard.classList.remove('active');
-        });
-
-        packageOfficeTabWard.addEventListener('click', () => {
-          packageOfficeTabWard.classList.add('active');
-          packageOfficeTabDistrict.classList.remove('active');
-        });
-
-        const virtualOfficeTabWard = document.querySelector(
-          '.virtual-office-ward',
-        );
-        const virtualOfficeTabDistrict = document.querySelector(
-          '.virtual-office-district',
-        );
-
-        virtualOfficeTabDistrict.addEventListener('click', () => {
-          virtualOfficeTabDistrict.classList.add('active');
-          virtualOfficeTabWard.classList.remove('active');
-        });
-
-        virtualOfficeTabWard.addEventListener('click', () => {
-          virtualOfficeTabWard.classList.add('active');
-          virtualOfficeTabDistrict.classList.remove('active');
-        });
-
-        const headerPhoneBtn = document.querySelector('.header-phone-btn');
-        const headerPhoneText = document.querySelector('.header-phone-text');
-
-        headerPhoneBtn.addEventListener('click', () => {
-          headerPhoneText.classList.toggle('active');
-        });
-      }
-      function megaSearchEvent() {
-        const slider = document.getElementById('price-slider');
-        const minDisplay = document.getElementById('min-price-display');
-        const maxDisplay = document.getElementById('max-price-display');
-        const minInput = document.getElementById('min-price-input');
-        const maxInput = document.getElementById('max-price-input');
-        // Giá tính theo VND
-        let MIN_PRICE = 20000000; // 20 triệu
-        let MAX_PRICE = 500000000; // 500 triệu
-
-        function formatVND(value) {
-          // Đổi sang "triệu"
-          let trieu = Math.round(value / 1000000);
-          return trieu.toLocaleString('vi-VN') + ' triệu';
-        }
-
-        noUiSlider.create(slider, {
-          start: [MIN_PRICE, MIN_PRICE], // điểm bắt đầu
-          connect: true,
-          step: 1000000, // bước 1 triệu
-          range: {
-            min: MIN_PRICE,
-            max: MAX_PRICE,
-          },
-        });
-
-        slider.noUiSlider.on('update', function (values, handle) {
-          let minVal = Math.round(values[0]);
-          let maxVal = Math.round(values[1]);
-
-          minDisplay.textContent = formatVND(minVal);
-          maxDisplay.textContent = formatVND(maxVal);
-
-          // Gán vào input hidden để gửi form
-          minInput.value = minVal;
-          maxInput.value = maxVal;
-        });
-
-        // Area Slider
-        const areaSlider = document.getElementById('area-slider');
-        const minAreaDisplay = document.getElementById('min-area-display');
-        const maxAreaDisplay = document.getElementById('max-area-display');
-        const minAreaInput = document.getElementById('min-area-input');
-        const maxAreaInput = document.getElementById('max-area-input');
-        let MIN_AREA = 20; // 20 m2
-        let MAX_AREA = 50; // 500 m2
-
-        if (areaSlider) {
-          noUiSlider.create(areaSlider, {
-            start: [MIN_AREA, MIN_AREA],
-            connect: true,
-            step: 10,
-            range: {
-              min: MIN_AREA,
-              max: MAX_AREA,
-            },
-          });
-
-          areaSlider.noUiSlider.on('update', function (values, handle) {
-            let minVal = Math.round(values[0]);
-            let maxVal = Math.round(values[1]);
-
-            minAreaDisplay.textContent = minVal + ' m²';
-            maxAreaDisplay.textContent = maxVal + ' m²';
-
-            minAreaInput.value = minVal;
-            maxAreaInput.value = maxVal;
-          });
-        }
-
-        // Floor Slider
-        const floorSlider = document.getElementById('floor-slider');
-        const minFloorDisplay = document.getElementById('min-floor-display');
-        const maxFloorDisplay = document.getElementById('max-floor-display');
-        const minFloorInput = document.getElementById('min-floor-input');
-        const maxFloorInput = document.getElementById('max-floor-input');
-
-        let MIN_FLOOR = 1;
-        let MAX_FLOOR = 50;
-
-        if (floorSlider) {
-          noUiSlider.create(floorSlider, {
-            start: [MIN_FLOOR, MIN_FLOOR],
-            connect: true,
-            step: 1,
-            range: {
-              min: MIN_FLOOR,
-              max: MAX_FLOOR,
-            },
-          });
-
-          floorSlider.noUiSlider.on('update', function (values, handle) {
-            let minVal = Math.round(values[0]);
-            let maxVal = Math.round(values[1]);
-
-            minFloorDisplay.textContent = minVal;
-            maxFloorDisplay.textContent = maxVal;
-
-            minFloorInput.value = minVal;
-            maxFloorInput.value = maxVal;
-          });
-        }
-
-        // Capacity Slider
-        const capacitySlider = document.getElementById('capacity-slider');
-        const minCapacityDisplay = document.getElementById(
-          'min-capacity-display',
-        );
-        const maxCapacityDisplay = document.getElementById(
-          'max-capacity-display',
-        );
-        const minCapacityInput = document.getElementById('min-capacity-input');
-        const maxCapacityInput = document.getElementById('max-capacity-input');
-
-        let MIN_PEOPLE = 1;
-        let MAX_PEOPLE = 100;
-
-        if (capacitySlider) {
-          noUiSlider.create(capacitySlider, {
-            start: [MIN_PEOPLE, MIN_PEOPLE],
-            connect: true,
-            step: 1,
-            range: {
-              min: MIN_PEOPLE,
-              max: MAX_PEOPLE,
-            },
-          });
-
-          capacitySlider.noUiSlider.on('update', function (values, handle) {
-            let minVal = Math.round(values[0]);
-            let maxVal = Math.round(values[1]);
-
-            minCapacityDisplay.textContent = minVal;
-            maxCapacityDisplay.textContent = maxVal;
-
-            minCapacityInput.value = minVal;
-            maxCapacityInput.value = maxVal;
-          });
-        }
-
-        // Toggle search form collapse/expand
-        const toggleBtn = document.getElementById('toggle-search-btn');
-        const searchFormContent = document.getElementById(
-          'search-form-content',
-        );
-        const toggleText = document.getElementById('toggle-search-text');
-        const toggleIcon = document.getElementById('toggle-search-icon');
-
-        if (toggleBtn && searchFormContent) {
-          toggleBtn.addEventListener('click', function () {
-            // Check if currently hidden
-            var isHidden =
-              searchFormContent.classList.contains('hidden') ||
-              searchFormContent.style.display === 'none' ||
-              window.getComputedStyle(searchFormContent).display === 'none';
-
-            if (isHidden) {
-              // Show the form
-              searchFormContent.classList.remove('hidden');
-              searchFormContent.style.display = 'grid';
-              toggleText.textContent = 'Thu gọn';
-              toggleIcon.classList.remove('fa-chevron-down');
-              toggleIcon.classList.add('fa-chevron-up');
-            } else {
-              // Hide the form
-              searchFormContent.classList.add('hidden');
-              searchFormContent.style.display = 'none';
-              toggleText.textContent = 'Mở rộng';
-              toggleIcon.classList.remove('fa-chevron-up');
-              toggleIcon.classList.add('fa-chevron-down');
-            }
-          });
-        }
-
-        const resetButton = document.getElementById('mega-search-reset-btn');
-
-        resetButton.addEventListener('click', function () {
-          slider.noUiSlider.reset();
-          areaSlider.noUiSlider.reset();
-          floorSlider.noUiSlider.reset();
-          capacitySlider.noUiSlider.reset();
-        });
-      }
-      function initVPChoThue() {
-        const arrayEl = document.querySelectorAll('.office-rental-swiper');
-
-        arrayEl.forEach((el) => {
-          if (!el || el.classList.contains('swiper-initialized')) return;
-
-          new Swiper(el, {
-            slidesPerView: 4,
-            spaceBetween: 24,
-            loop: true,
-            speed: 800,
-            grabCursor: true,
-
-            navigation: {
-              nextEl: '.office-rental-swiper-next',
-              prevEl: '.office-rental-swiper-prev',
-            },
-
-            autoplay: {
-              delay: 3000,
-              disableOnInteraction: false,
-              pauseOnMouseEnter: true,
-            },
-
-            breakpoints: {
-              0: { slidesPerView: 1, spaceBetween: 16 },
-              640: { slidesPerView: 2, spaceBetween: 20 },
-              1024: { slidesPerView: 3, spaceBetween: 24 },
-              1280: { slidesPerView: 4, spaceBetween: 24 },
-            },
-          });
-        });
-      }
-      function resetMegaSearchForm() {
-        const searchForm = document.getElementById('search-form');
-        const resetSearchFormBtn = document.getElementById(
-          'mega-search-reset-btn',
-        );
-        const minPrice = document.getElementById('min-price-input');
-        const maxPrice = document.getElementById('max-price-input');
-        const minArea = document.getElementById('min-area-input');
-        const maxArea = document.getElementById('max-area-input');
-        const minFloor = document.getElementById('min-floor-input');
-        const maxFloor = document.getElementById('max-floor-input');
-        const minCapacity = document.getElementById('min-capacity-input');
-        const maxCapacity = document.getElementById('max-capacity-input');
-
-        resetSearchFormBtn.addEventListener('click', () => {
-          searchForm.reset();
-          minPrice.value = '20000000';
-          maxPrice.value = '20000000';
-          minArea.value = '20';
-          maxArea.value = '20';
-          minFloor.value = '1';
-          maxFloor.value = '1';
-          minCapacity.value = '1';
-          maxCapacity.value = '1';
-        });
-      }
       document.addEventListener('DOMContentLoaded', () => {
         const header = [
           includeHTML('#header', './partials/common/header2.html'),
@@ -1275,75 +972,75 @@
         const loads = [
           includeHTML(
             '#officeRentalOutstanding',
-            './partials/office-rental/office-rental-outstanding.html',
+            './partials/packageRental/office-package-outstanding-district.html',
           ),
           includeHTML(
             '#officeRentalWard1',
-            './partials/office-rental/office-rental-ward-1.html',
+            './partials/packageRental/office-package-ward-1.html',
           ),
           includeHTML(
             '#officeRentalWard2',
-            './partials/office-rental/office-rental-ward-2.html',
+            './partials/packageRental/office-package-ward-2.html',
           ),
           includeHTML(
             '#officeRentalWard3',
-            './partials/office-rental/office-rental-ward-3.html',
+            './partials/packageRental/office-package-ward-3.html',
           ),
           includeHTML(
             '#officeRentalWard4',
-            './partials/office-rental/office-rental-ward-4.html',
+            './partials/packageRental/office-package-ward-4.html',
           ),
           includeHTML(
             '#officeRentalWard5',
-            './partials/office-rental/office-rental-ward-5.html',
+            './partials/packageRental/office-package-ward-5.html',
           ),
           includeHTML(
             '#officeRentalWard7',
-            './partials/office-rental/office-rental-ward-7.html',
+            './partials/packageRental/office-package-ward-7.html',
           ),
           includeHTML(
             '#officeRentalWard8',
-            './partials/office-rental/office-rental-ward-8.html',
+            './partials/packageRental/office-package-ward-8.html',
           ),
           includeHTML(
             '#officeRentalWard9',
-            './partials/office-rental/office-rental-ward-9.html',
+            './partials/packageRental/office-package-ward-9.html',
           ),
           includeHTML(
             '#officeRentalWard10',
-            './partials/office-rental/office-rental-ward-10.html',
+            './partials/packageRental/office-package-ward-10.html',
           ),
           includeHTML(
             '#officeRentalWard11',
-            './partials/office-rental/office-rental-ward-11.html',
+            './partials/packageRental/office-package-ward-11.html',
           ),
           includeHTML(
             '#officeRentalWard12',
-            './partials/office-rental/office-rental-ward-12.html',
+            './partials/packageRental/office-package-ward-12.html',
           ),
           includeHTML(
             '#officeRentalWardBinhThanh',
-            './partials/office-rental/office-rental-ward-binh-thanh.html',
+            './partials/packageRental/office-package-ward-binh-thanh.html',
           ),
           includeHTML(
             '#officeRentalWardPhuNhuan',
-            './partials/office-rental/office-rental-ward-phu-nhuan.html',
+            './partials/packageRental/office-package-ward-phu-nhuan.html',
           ),
           includeHTML(
             '#officeRentalWardGoVap',
-            './partials/office-rental/office-rental-ward-go-vap.html',
+            './partials/packageRental/office-package-ward-go-vap.html',
           ),
           includeHTML(
             '#officeRentalWardTanBinh',
-            './partials/office-rental/office-rental-ward-tan-binh.html',
+            './partials/packageRental/office-package-ward-tan-binh.html',
           ),
           includeHTML(
             '#officeRentalWardThuDuc',
-            './partials/office-rental/office-rental-ward-thu-duc.html',
+            './partials/packageRental/office-package-ward-thu-duc.html',
           ),
           includeHTML(
             '#officeRentalWardBinhChanh',
-            './partials/office-rental/office-rental-ward-binh-chanh.html',
+            './partials/packageRental/office-package-ward-binh-chanh.html',
           ),
         ];
         // Wait for ALL of them to finish, then init
@@ -1354,7 +1051,7 @@
           '#processConsulting',
           './partials/office-rental/process-consulting.html',
         );
-        includeHTML('#map', './partials/common/map-1');
+        includeHTML('#map', './partials/common/map-1.html');
         includeHTML('#pagination', './partials/common/pagination.html');
         includeHTML(
           '#consultingTeam',
@@ -1374,23 +1071,6 @@
 
         includeHTML('#footer', './partials/common/footer.html');
       });
-    </script>
-
-    <script>
-      function toggleFaq(button) {
-        const answer = button.nextElementSibling;
-        const icon = button.querySelector('i');
-
-        if (answer.classList.contains('hidden')) {
-          answer.classList.remove('hidden');
-          icon.classList.add('rotate-180');
-          button.classList.add('bg-blue-50');
-        } else {
-          answer.classList.add('hidden');
-          icon.classList.remove('rotate-180');
-          button.classList.remove('bg-blue-50');
-        }
-      }
     </script>
 
     <script>
@@ -1518,36 +1198,6 @@
             1280: { slidesPerView: 4, spaceBetween: 24 },
           },
         });
-      }
-    </script>
-
-    <script>
-      function toggleFullInfo() {
-        const fullContent = document.getElementById('info-full');
-        const gradient = document.getElementById('seo-gradient');
-        const btn = document.getElementById('toggleInfoBtn');
-        const btnText = document.getElementById('btnText');
-        const btnIcon = document.getElementById('btnIcon');
-
-        if (fullContent.classList.contains('hidden')) {
-          fullContent.classList.remove('hidden');
-          gradient.classList.add('hidden');
-          btnText.textContent = 'Thu gọn';
-          btnIcon.classList.remove('fa-chevron-down');
-          btnIcon.classList.add('fa-chevron-up');
-          // Scroll to full content
-          fullContent.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        } else {
-          fullContent.classList.add('hidden');
-          gradient.classList.remove('hidden');
-          btnText.textContent = 'Xem thêm';
-          btnIcon.classList.remove('fa-chevron-up');
-          btnIcon.classList.add('fa-chevron-down');
-          // Scroll back to preview
-          document
-            .getElementById('info-preview')
-            .scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
       }
     </script>
   </body>

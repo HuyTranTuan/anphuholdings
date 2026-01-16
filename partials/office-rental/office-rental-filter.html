@@ -2,14 +2,13 @@
 <div class="container overflow-hidden px-4 py-8">
   <!-- Bộ lọc cố định khi scroll (có thể thêm sticky sau) -->
   <div
-    class="space-y-8 rounded-2xl border border-gray-300 bg-white p-6 shadow-md"
+    class="space-y-4 rounded-2xl border border-gray-300 bg-white p-6 shadow-md"
   >
-    <!-- diện tích và giá thuê -->
     <!-- Slider diện tích -->
-    <div class="mb-6">
+    <div>
       <h3 class="mb-3 text-lg font-bold">Diện tích Quận 1</h3>
-      <label class="mb-2 block text-sm font-medium text-secondary"
-        >Diện tích (m²)</label
+      <span class="mb-2 block text-sm font-medium text-secondary"
+        >Diện tích (m²)</span
       >
       <div id="areaSlider"></div>
       <div class="mt-2 text-sm text-gray-600">
@@ -19,18 +18,16 @@
     </div>
 
     <!-- Slider giá thuê -->
-    <div class="mb-6">
+    <div>
       <h3 class="mb-3 text-lg font-bold">Giá thuê Quận 1</h3>
-      <label class="mb-2 block text-sm font-medium text-secondary"
-        >Giá thuê ($/m²/tháng)</label
+      <span class="mb-2 block text-sm font-medium text-secondary"
+        >Giá thuê ($/m²/tháng)</span
       >
       <div id="priceSlider"></div>
       <div class="mt-2 text-sm text-gray-600">
         Từ $<span id="priceMinVal">0</span> đến $<span id="priceMaxVal">0</span>
       </div>
     </div>
-
-    <!-- diện tích và giá thuê -->
 
     <!-- Hạng văn phòng -->
     <div class="space-y-4">
