@@ -114,12 +114,12 @@
 
 @media (min-width: 768px) {
   .dropdown-rent-child {
-    transform: translateX(-25%);
+    transform: translateX(-37%);
   }
 }
 @media (min-width: 900px) {
   .dropdown-rent-child {
-    transform: translateX(-35%);
+    transform: translateX(-40%);
     height: 420px;
   }
 }
@@ -244,7 +244,7 @@
 
 @media (min-width: 768px) {
   .dropdown-package-child {
-    transform: translateX(-25%);
+    transform: translateX(-43%);
   }
 }
 @media (min-width: 900px) {
@@ -374,7 +374,7 @@
 
 @media (min-width: 768px) {
   .dropdown-virtual-child {
-    transform: translateX(-25%);
+    transform: translateX(-43%);
   }
 }
 @media (min-width: 900px) {
@@ -469,12 +469,25 @@ li[class*='-left-body-ward-district-']:hover
     visibility 0.5s ease,
     opacity 0.5s ease;
   position: absolute;
-  right: 0%;
-  top: 100%;
+  right: 120%;
+  top: -20%;
   padding: 10px;
 }
 
 .header-phone-text.active {
   visibility: visible;
   opacity: 1;
+}
+
+@media (min-width: 768px) {
+  .header-phone-text {
+    right: 0%;
+    top: 100%;
+  }
+}
+@media (min-width: 900px) {
+  .header-phone-text {
+    right: 120%;
+    top: -20%;
+  }
 }
