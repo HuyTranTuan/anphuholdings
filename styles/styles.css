@@ -7457,17 +7457,20 @@ html {
 }
 @media (min-width: 1536px) {
   .heading-hero {
-    font-size: 98px;
+    font-size: 60px;
     line-height: 112px;
   }
 }
 .heading-2 {
   margin-bottom: 0.75rem;
   text-align: center;
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+  font-size: 24px;
   font-weight: 700;
   letter-spacing: -2%;
+  color: var(--nature-500);
+}
+.text-content-custom {
+  font-size: 18px;
   color: var(--nature-500);
 }
 @media (min-width: 768px) {
@@ -7478,22 +7481,19 @@ html {
 @media (min-width: 1024px) {
   .heading-2 {
     margin-bottom: 1.25rem;
-    font-size: 2.25rem;
-    line-height: 2.5rem;
+    font-size: 30px;
+  }
+  .text-content-custom {
+    font-size: 20px;
   }
 }
-@media (min-width: 1280px) {
-  .heading-2 {
-    font-size: 3rem;
-    line-height: 1;
-  }
-}
+
 .heading-tagline {
   margin-bottom: 1.5rem;
   text-align: center;
   font-family: 'UTM Times', serif;
   font-weight: 400;
-  /* color: var(--nature-200); */
+  font-size: 20px;
 }
 @media (min-width: 768px) {
   .heading-tagline {
@@ -7503,9 +7503,8 @@ html {
 @media (min-width: 1024px) {
   .heading-tagline {
     margin-bottom: 2.5rem;
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-    line-height: 26px;
+    font-size: 24px;
+    line-height: 2rem;
   }
 }
 @media (min-width: 1280px) {
@@ -12161,6 +12160,9 @@ html {
   .md\:font-medium {
     font-weight: 500;
   }
+  .md\:grid {
+    display: grid;
+  }
   .md\:\*\:size-10 > * {
     width: 2.5rem;
     height: 2.5rem;
@@ -12505,6 +12507,9 @@ html {
   }
   .lg\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .lg\:grid-cols-5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
   .lg\:grid-cols-6 {
     grid-template-columns: repeat(6, minmax(0, 1fr));

@@ -72,7 +72,7 @@
       >
         <div
           class="container flex h-[170px] flex-col items-center justify-center sm:h-[200px] md:h-[250px]"
-          data-aos="flip-left"
+          data-aos="fade-up"
         >
           <h1 id="pageTitle" class="common-hero-heading">Văn phòng ảo Cirgo</h1>
 
@@ -103,20 +103,20 @@
     <!-- DANH SÁCH CÁC CAO ỐC VĂN PHÒNG Cirgo -->
     <section class="bg-slate-50">
       <div class="container mx-auto px-4 py-8">
-        <h1 class="mb-8 text-3xl font-bold text-gray-900" data-aos="fade-up">
+        <h1 class="heading-2 mb-8 text-gray-900" data-aos="fade-up">
           DANH SÁCH CÁC CAO ỐC VĂN PHÒNG CIRGO
         </h1>
 
-        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12">
+        <div class="">
           <div
-            class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 md:gap-3 lg:col-span-8 lg:grid-cols-2 lg:gap-2 xl:grid-cols-3"
+            class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 md:gap-3 lg:col-span-12 lg:grid-cols-4 lg:gap-2 xl:grid-cols-5"
           >
             <!-- Card 1 -->
             <a href="van-phong-ao-detail.html">
               <div
                 class="overflow-hidden rounded-2xl bg-white shadow-md transition hover:shadow-xl"
                 style="max-width: 292px; margin: auto"
-                data-aos="flip-left"
+                data-aos="fade-up"
               >
                 <div class="relative">
                   <span
@@ -185,7 +185,7 @@
               <div
                 class="overflow-hidden rounded-2xl bg-white shadow-md transition hover:shadow-xl"
                 style="max-width: 292px; margin: auto"
-                data-aos="flip-left"
+                data-aos="fade-up"
               >
                 <div class="relative">
                   <span
@@ -254,7 +254,7 @@
               <div
                 class="overflow-hidden rounded-2xl bg-white shadow-md transition hover:shadow-xl"
                 style="max-width: 292px; margin: auto"
-                data-aos="flip-left"
+                data-aos="fade-up"
               >
                 <div class="relative">
                   <span
@@ -323,7 +323,7 @@
               <div
                 class="overflow-hidden rounded-2xl bg-white shadow-md transition hover:shadow-xl"
                 style="max-width: 292px; margin: auto"
-                data-aos="flip-left"
+                data-aos="fade-up"
               >
                 <div class="relative">
                   <span
@@ -391,7 +391,7 @@
               <div
                 class="overflow-hidden rounded-2xl bg-white shadow-md transition hover:shadow-xl"
                 style="max-width: 292px; margin: auto"
-                data-aos="flip-left"
+                data-aos="fade-up"
               >
                 <div class="relative">
                   <span
@@ -460,7 +460,7 @@
               <div
                 class="overflow-hidden rounded-2xl bg-white shadow-md transition hover:shadow-xl"
                 style="max-width: 292px; margin: auto"
-                data-aos="flip-left"
+                data-aos="fade-up"
               >
                 <div class="relative">
                   <span
@@ -529,7 +529,7 @@
               <div
                 class="overflow-hidden rounded-2xl bg-white shadow-md transition hover:shadow-xl"
                 style="max-width: 292px; margin: auto"
-                data-aos="flip-left"
+                data-aos="fade-up"
               >
                 <div class="relative">
                   <span
@@ -598,7 +598,7 @@
               <div
                 class="overflow-hidden rounded-2xl bg-white shadow-md transition hover:shadow-xl"
                 style="max-width: 292px; margin: auto"
-                data-aos="flip-left"
+                data-aos="fade-up"
               >
                 <div class="relative">
                   <span
@@ -667,7 +667,7 @@
               <div
                 class="overflow-hidden rounded-2xl bg-white shadow-md transition hover:shadow-xl"
                 style="max-width: 292px; margin: auto"
-                data-aos="flip-left"
+                data-aos="fade-up"
               >
                 <div class="relative">
                   <span
@@ -732,183 +732,8 @@
             </a>
           </div>
           <!-- Pagination -->
-          <div class="mt-5 flex justify-center lg:hidden" data-aos="fade-up">
+          <div class="mt-5 flex justify-center" data-aos="fade-up">
             <div id="pagination1"></div>
-          </div>
-
-          <!-- Office rental filter -->
-          <div class="relative lg:col-span-4" data-aos="flip-right">
-            <!-- Bộ lọc cố định khi scroll (có thể thêm sticky sau) -->
-            <form class="sticky top-24 pt-3" id="side-filter-form">
-              <div
-                class="space-y-8 rounded-2xl border border-gray-300 bg-white p-6 shadow-md"
-              >
-                <!-- Slider diện tích -->
-                <div class="mb-6">
-                  <h3 class="mb-3 text-lg font-bold">Diện tích Quận 1</h3>
-                  <span class="mb-2 block text-sm font-medium text-secondary"
-                    >Diện tích (m²)</span
-                  >
-                  <div id="areaSlider" data-aos="zoom-in"></div>
-                  <div class="mt-2 text-sm text-gray-600">
-                    Từ <span id="areaMinVal">0</span> m² đến
-                    <span id="areaMaxVal">0</span> m²
-                  </div>
-                  <!-- Giá trị thực để submit form (ẩn) -->
-                  <input
-                    type="hidden"
-                    id="min-area-district"
-                    name="min_price"
-                    value="0"
-                  />
-                  <input
-                    type="hidden"
-                    id="max-area-district"
-                    name="max_price"
-                    value="2000"
-                  />
-                </div>
-
-                <!-- Slider giá thuê -->
-                <div class="mb-6">
-                  <h3 class="mb-3 text-lg font-bold">Giá thuê Quận 1</h3>
-                  <span class="mb-2 block text-sm font-medium text-secondary"
-                    >Giá thuê ($/m²/tháng)</span
-                  >
-                  <div id="priceSlider" data-aos="zoom-in"></div>
-                  <div class="mt-2 text-sm text-gray-600">
-                    Từ $<span id="priceMinVal">0</span> đến $<span
-                      id="priceMaxVal"
-                      >0</span
-                    >
-                  </div>
-                  <!-- Giá trị thực để submit form (ẩn) -->
-                  <input
-                    type="hidden"
-                    id="min-price-district"
-                    name="min_price"
-                    value="0"
-                  />
-                  <input
-                    type="hidden"
-                    id="max-price-district"
-                    name="max_price"
-                    value="65"
-                  />
-                </div>
-
-                <!-- Hạng văn phòng -->
-                <div class="space-y-4">
-                  <div>
-                    <h3 class="mb-3 text-lg font-bold">
-                      Hạng văn phòng Quận 1
-                    </h3>
-                    <div class="flex flex-wrap justify-between gap-2 text-sm">
-                      <button
-                        class="btn-district-class rounded-full border border-gray-300 px-4 py-2 hover:bg-blue-50"
-                      >
-                        Hạng A
-                      </button>
-                      <button
-                        class="btn-district-class rounded-full border border-gray-300 px-4 py-2 hover:bg-blue-50"
-                      >
-                        Hạng B
-                      </button>
-                      <button
-                        class="btn-district-class rounded-full border border-gray-300 px-4 py-2 hover:bg-blue-50"
-                      >
-                        Hạng C
-                      </button>
-                      <button
-                        class="btn-district-class rounded-full border border-gray-300 px-4 py-2 hover:bg-blue-50"
-                      >
-                        Giá rẻ
-                      </button>
-                      <input
-                        type="text"
-                        name=""
-                        id="class-district"
-                        value=""
-                        class="hidden"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <h3 class="mb-3 text-lg font-bold">Hướng Quận 1</h3>
-                    <div class="flex flex-wrap justify-between gap-3 text-sm">
-                      <button
-                        class="btn-district-side rounded-full border border-gray-300 px-4 py-2 hover:bg-blue-50"
-                      >
-                        Đông
-                      </button>
-                      <button
-                        class="btn-district-side rounded-full border border-gray-300 px-4 py-2 hover:bg-blue-50"
-                      >
-                        Tây
-                      </button>
-                      <button
-                        class="btn-district-side rounded-full border border-gray-300 px-4 py-2 hover:bg-blue-50"
-                      >
-                        Nam
-                      </button>
-                      <button
-                        class="btn-district-side rounded-full border border-gray-300 px-4 py-2 hover:bg-blue-50"
-                      >
-                        Bắc
-                      </button>
-                      <input
-                        type="text"
-                        name=""
-                        id="side-district"
-                        value=""
-                        class="hidden"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <h3 class="mb-3 text-lg font-bold">Phường mới Quận 1</h3>
-                    <select
-                      class="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    >
-                      <option value="">Chọn phường</option>
-                      <option value="ben-nghe">Phường Bến Nghé</option>
-                      <option value="da-kao">Phường Đa Kao</option>
-                      <!-- thêm các phường khác -->
-                    </select>
-                  </div>
-
-                  <div>
-                    <h3 class="mb-3 text-lg font-bold">Đường Quận 1</h3>
-                    <select
-                      class="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    >
-                      <option value="">Chọn đường</option>
-                      <option value="ton-duc-thang">Tôn Đức Thắng</option>
-                      <option value="le-duan">Lê Duẩn</option>
-                      <option value="hai-ba-trung">Hai Bà Trưng</option>
-                      <!-- thêm đường khác -->
-                    </select>
-                  </div>
-                </div>
-
-                <button
-                  class="w-full rounded-xl bg-primary py-4 font-bold text-white transition hover:bg-blue-700"
-                  id="side-filter-form-reset-btn"
-                >
-                  Đặt lại
-                </button>
-              </div>
-            </form>
-          </div>
-
-          <!-- Pagination -->
-          <div
-            class="mt-5 hidden justify-center lg:col-span-8 lg:flex"
-            data-aos="fade-up"
-          >
-            <div id="pagination2"></div>
           </div>
         </div>
       </div>
@@ -981,7 +806,7 @@
           <li>
             <button
               type="button"
-              class="group flex w-full items-center justify-between rounded-lg p-2 text-base text-gray-900 transition duration-75 hover:bg-gray-200 dark:text-white dark:hover:bg-gray-700"
+              class="text-content-custom group flex w-full items-center justify-between rounded-lg p-2 transition duration-75 hover:bg-gray-200 dark:text-white dark:hover:bg-gray-700"
               aria-controls="dropdown-cho-thue-van-phong"
               data-collapse-toggle="dropdown-cho-thue-van-phong"
             >
@@ -1213,7 +1038,7 @@
           <li>
             <button
               type="button"
-              class="group flex w-full items-center justify-between rounded-lg p-2 text-base text-gray-900 transition duration-75 hover:bg-gray-200 dark:text-white dark:hover:bg-gray-700"
+              class="text-content-custom group flex w-full items-center justify-between rounded-lg p-2 transition duration-75 hover:bg-gray-200 dark:text-white dark:hover:bg-gray-700"
               aria-controls="dropdown-vp-tron-goi"
               data-collapse-toggle="dropdown-vp-tron-goi"
             >
@@ -1348,7 +1173,7 @@
           <li>
             <button
               type="button"
-              class="group flex w-full items-center justify-between rounded-lg p-2 text-base text-secondary"
+              class="text-content-custom group flex w-full items-center justify-between rounded-lg p-2"
               aria-controls="dropdown-van-phong-ao"
               data-collapse-toggle="dropdown-van-phong-ao"
             >
@@ -1679,8 +1504,6 @@
           },
         });
       }
-
-      sideSlider();
     </script>
   </body>
 </html>

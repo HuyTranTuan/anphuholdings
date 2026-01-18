@@ -1,448 +1,249 @@
-<style>
-  html,
-  body {
-    /* background-color: #1BA0E1; */
-    height: 100%;
-    font-family: 'UTM Times', serif;
-    box-sizing: border-box;
-  }
-
-  .cd-container {
-    width: 90%;
-    max-width: 1080px;
-    margin: 0 auto;
-    /* background: #2B343A; */
-    padding: 0 10%;
-    border-radius: 2px;
-  }
-
-  .cd-container::after {
-    content: '';
-    display: table;
-    clear: both;
-  }
-
-  /* -------------------------------- 
-
-Main components 
-
--------------------------------- */
-
-  #cd-timeline {
-    position: relative;
-    padding: 2em 0;
-    margin-top: 2em;
-    margin-bottom: 2em;
-  }
-
-  #cd-timeline::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 25px;
-    height: 100%;
-    width: 4px;
-    background: #1ba0e1;
-  }
-
-  @media only screen and (min-width: 1170px) {
-    #cd-timeline {
-      margin-top: 3em;
-      margin-bottom: 3em;
-    }
-
-    #cd-timeline::before {
-      left: 50%;
-      margin-left: -2px;
-    }
-  }
-
-  .cd-timeline-block {
-    position: relative;
-    margin: 2em 0;
-  }
-
-  .cd-timeline-block:after {
-    content: '';
-    display: table;
-    clear: both;
-  }
-
-  .cd-timeline-block:first-child {
-    margin-top: 0;
-  }
-
-  .cd-timeline-block:last-child {
-    margin-bottom: 0;
-  }
-
-  @media only screen and (min-width: 1170px) {
-    .cd-timeline-block {
-      margin: 4em 0;
-    }
-
-    .cd-timeline-block:first-child {
-      margin-top: 0;
-    }
-
-    .cd-timeline-block:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  .cd-timeline-img {
-    position: absolute;
-    top: 8px;
-    left: 12px;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    box-shadow:
-      0 0 0 4px #1ba0e1,
-      inset 0 2px 0 rgba(0, 0, 0, 0.08),
-      0 3px 0 4px rgba(0, 0, 0, 0.05);
-  }
-
-  .cd-timeline-img {
-    background: #0955e8;
-  }
-
-  @media only screen and (min-width: 1170px) {
-    .cd-timeline-img {
-      width: 30px;
-      height: 30px;
-      left: 50%;
-      margin-left: -15px;
-      margin-top: 15px;
-      /* Force Hardware Acceleration in WebKit */
-      -webkit-transform: translateZ(0);
-      -webkit-backface-visibility: hidden;
-    }
-  }
-
-  .cd-timeline-content {
-    position: relative;
-    margin-left: 60px;
-    margin-right: 30px;
-    background: #1ba0e1;
-    border-radius: 12px;
-    padding: 1em;
-
-    .timeline-content-info {
-      background: #2b343a;
-      padding: 5px 10px;
-      color: rgba(255, 255, 255, 0.7);
-      font-size: 12px;
-      box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.08);
-      border-radius: 2px;
-
-      i {
-        margin-right: 5px;
-      }
-
-      .timeline-content-info-title,
-      .timeline-content-info-date {
-        width: calc(50% - 2px);
-        display: inline-block;
-      }
-
-      @media (max-width: 500px) {
-        .timeline-content-info-title,
-        .timeline-content-info-date {
-          display: block;
-          width: 100%;
-        }
-      }
-    }
-
-    .content-skills {
-      font-size: 12px;
-      padding: 0;
-      margin-bottom: 0;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-
-      li {
-        background: #40484d;
-        border-radius: 2px;
-        display: inline-block;
-        padding: 2px 10px;
-        color: rgba(255, 255, 255, 0.7);
-        margin: 3px 2px;
-        text-align: center;
-        flex-grow: 1;
-      }
-    }
-  }
-
-  .cd-timeline-content:after {
-    content: '';
-    display: table;
-    clear: both;
-  }
-
-  .cd-timeline-content h3.procedure {
-    color: #231f20;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.25);
-    font-weight: bold;
-    margin-top: 0;
-    margin-bottom: 5px;
-  }
-
-  .cd-timeline-content p,
-  .cd-timeline-content .cd-date {
-    color: #231f20;
-    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.15);
-    font-size: 13px;
-    font-size: 0.8125rem;
-  }
-
-  .cd-timeline-content .cd-date {
-    display: inline-block;
-  }
-
-  .cd-timeline-content p {
-    margin: 1em 0;
-    line-height: 1.6;
-  }
-
-  .cd-timeline-content::before {
-    content: '';
-    position: absolute;
-    top: 16px;
-    right: 100%;
-    height: 0;
-    width: 0;
-    border: 7px solid transparent;
-    border-right: 7px solid #1ba0e1e6;
-  }
-
-  @media only screen and (min-width: 768px) {
-    .cd-timeline-content h3 {
-      font-size: 20px;
-      font-size: 1.25rem;
-    }
-
-    .cd-timeline-content p {
-      font-size: 16px;
-      font-size: 1rem;
-    }
-
-    .cd-timeline-content .cd-read-more,
-    .cd-timeline-content .cd-date {
-      font-size: 14px;
-      font-size: 0.875rem;
-    }
-  }
-
-  @media only screen and (min-width: 1170px) {
-    .cd-timeline-content {
-      color: white;
-      margin-left: 0;
-      padding: 1.6em;
-      width: 36%;
-      margin: 0 5%;
-    }
-
-    .cd-timeline-content::before {
-      top: 24px;
-      left: 100%;
-      border-color: transparent;
-      border-left-color: #1ba0e1;
-    }
-
-    .cd-timeline-content .cd-date {
-      position: absolute;
-      width: 100%;
-      left: 122%;
-      top: 6px;
-      font-size: 16px;
-      font-size: 1rem;
-    }
-
-    .cd-timeline-block:nth-child(even) .cd-timeline-content {
-      float: right;
-    }
-
-    .cd-timeline-block:nth-child(even) .cd-timeline-content::before {
-      top: 24px;
-      left: auto;
-      right: 100%;
-      border-color: transparent;
-      border-right-color: #1ba0e1;
-    }
-
-    .cd-timeline-block:nth-child(even) .cd-timeline-content .cd-read-more {
-      float: right;
-    }
-
-    .cd-timeline-block:nth-child(even) .cd-timeline-content .cd-date {
-      left: auto;
-      right: 122%;
-      text-align: right;
-    }
-  }
-
-  /* ========== TIMELINE UI POLISH (SAFE OVERRIDE) ========== */
-
-  /* 1. Trục timeline: có nhịp hơn */
-  #cd-timeline::before {
-    background: linear-gradient(
-      to bottom,
-      rgba(27, 160, 225, 0.25),
-      rgba(27, 160, 225, 0.9),
-      rgba(27, 160, 225, 0.25)
-    );
-  }
-
-  /* 2. Dot: rõ & sang hơn */
-  .cd-timeline-img {
-    background: #1ba0e1;
-    box-shadow:
-      0 0 0 6px rgba(27, 160, 225, 0.18),
-      0 8px 20px rgba(27, 160, 225, 0.35);
-  }
-
-  /* 3. Card: bớt phẳng, có chiều sâu */
-  .cd-timeline-content {
-    background: linear-gradient(
-      135deg,
-      rgba(27, 160, 225, 0.95),
-      rgba(27, 160, 225, 0.85)
-    );
-    border: 1px solid rgba(27, 160, 225, 0.35);
-    border-radius: 16px;
-    box-shadow:
-      0 12px 30px rgba(0, 0, 0, 0.12),
-      inset 0 1px 0 rgba(255, 255, 255, 0.35);
-    transition:
-      transform 0.3s ease,
-      box-shadow 0.3s ease;
-  }
-
-  /* 4. Hover nhẹ (desktop nhìn cao cấp hơn) */
-  .cd-timeline-block:hover .cd-timeline-content {
-    transform: translateY(-4px);
-    box-shadow: 0 18px 40px rgba(27, 160, 225, 0.35);
-  }
-
-  /* 5. Arrow: đồng bộ màu card */
-  .cd-timeline-content::before {
-    /* border-right-color: rgba(27, 160, 225, 0.9); */
-  }
-
-  @media only screen and (min-width: 1170px) {
-    .cd-timeline-content::before {
-      border-left-color: rgba(27, 160, 225, 0.9);
-    }
-
-    .cd-timeline-block:nth-child(even) .cd-timeline-content::before {
-      border-right-color: rgba(27, 160, 225, 0.9);
-    }
-  }
-
-  /* 6. Chữ: chắc hơn chút */
-  .cd-timeline-content h3.procedure {
-    letter-spacing: 0.4px;
-    font-weight: 700;
-  }
-
-  .cd-timeline-content p {
-    opacity: 0.95;
-  }
-</style>
-
-<div class="container">
+<div class="container overflow-hidden px-4 py-8">
   <h2
     data-aos="fade-up"
     data-aos-delay="300"
-    class="heading-2 mb-12 text-3xl font-bold uppercase leading-tight md:text-4xl"
+    class="heading-2 text-center uppercase"
   >
     quy trình tìm văn phòng
   </h2>
-  <p data-aos="zoom-in-up" data-aos-delay="150" class="heading-tagline">
-    Với quy trình tìm văn phòng rõ ràng và minh bạch,
-    <span class="font-bold text-primary">An Phú Holdings</span> đồng hành
-    <br />cùng doanh nghiệp từ khâu tư vấn đến ký hợp đồng và bàn giao.
+  <p
+    data-aos="zoom-in-up"
+    data-aos-delay="150"
+    class="text-content-custom text-center"
+  >
+    Với quy trình tìm văn phòng rõ ràng và minh bạch, An Phú Holdings Office
+    đồng hành <br />cùng doanh nghiệp từ khâu tư vấn đến ký hợp đồng và bàn
+    giao.
   </p>
-
-  <div id="cd-timeline" class="cd-container">
-    <div data-aos="fade-up" data-aos-delay="300" class="cd-timeline-block">
-      <div class="cd-timeline-img cd-movie"></div>
-
-      <div class="cd-timeline-content">
-        <h3 class="procedure">1. Nhận nhu cầu thuê</h3>
-        <p>Khách hàng cung cấp diện tích – ngân sách – vị trí mong muốn.</p>
-        <!-- <span class="cd-date">Jan 18</span> -->
+  <div class="timeline-wrapper mt-lg">
+    <!-- Top Cards -->
+    <div class="cards-row top-row flex flex-col lg:flex-row">
+      <!-- card 1 -->
+      <div data-aos="zoom-in" class="cardProced blue-card">
+        <div class="chart-box">
+          <img
+            src="../../assets/images/services/checklist.jpg"
+            alt=""
+            class="procedureImg transition-transform duration-300 hover:scale-110"
+          />
+        </div>
+        <h3 class="text-content-custom mt-1">1. Nhận nhu cầu thuê</h3>
+        <p class="text-content-custom">
+          Khách hàng cung cấp diện tích – ngân sách – vị trí mong muốn.
+        </p>
+        <div class="connector-line"></div>
       </div>
-      <!-- cd-timeline-content -->
-    </div>
-    <!-- cd-timeline-block -->
-
-    <div data-aos="fade-up" data-aos-delay="300" class="cd-timeline-block">
-      <div class="cd-timeline-img cd-picture"></div>
-
-      <div class="cd-timeline-content">
-        <h3 class="procedure">2. Gửi báo giá phù hợp</h3>
-        <p>Chọn lọc tòa nhà phù hợp và gửi danh sách báo giá chi tiết.</p>
-        <!-- <span class="cd-date">Jan 24</span> -->
+      <!-- Arrow Timeline mobile -->
+      <div class="arrow-timelinemobile">
+        <div
+          data-aos="zoom-in"
+          data-aos-delay="0"
+          class="arrow-mobile blue-arrow"
+        >
+          <p class="text-content-custom">
+            <span class="text-white">Bước 1</span>
+          </p>
+        </div>
       </div>
-      <!-- cd-timeline-content -->
-    </div>
-    <!-- cd-timeline-block -->
 
-    <div data-aos="fade-up" data-aos-delay="300" class="cd-timeline-block">
-      <div class="cd-timeline-img cd-location"></div>
-
-      <div class="cd-timeline-content">
-        <h3 class="procedure">3. Khảo sát thực tế</h3>
-        <p>Sắp xếp khảo sát trực tiếp từng văn phòng để khách hàng đánh giá.</p>
-        <!-- <span class="cd-date">Feb 14</span> -->
+      <!-- card 2 -->
+      <div class="spacer"></div>
+      <div data-aos="zoom-in" data-aos-delay="200" class="cardProced blue-card">
+        <div class="chart-box">
+          <img
+            src="../../assets/images/services/Consultation.jpg"
+            alt=""
+            class="procedureImg transition-transform duration-300 hover:scale-110"
+          />
+        </div>
+        <h3 class="text-content-custom mt-1">3. Khảo sát thực tế</h3>
+        <p class="text-content-custom">
+          Sắp xếp khảo sát trực tiếp từng văn phòng để khách hàng đánh giá.
+        </p>
+        <div class="connector-line"></div>
       </div>
-      <!-- cd-timeline-content -->
+      <!-- Arrow Timeline mobile -->
+      <div class="arrow-timelinemobile">
+        <div
+          data-aos="zoom-in"
+          data-aos-delay="100"
+          class="arrow-mobile black-arrow"
+        >
+          <p class="text-content-custom">
+            <span class="text-white">Bước 3</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- card 3 -->
+      <div class="spacer"></div>
+      <div data-aos="zoom-in" data-aos-delay="400" class="cardProced blue-card">
+        <div class="chart-box">
+          <img
+            src="../../assets/images/services/Cost-optimization.jpg"
+            alt=""
+            class="procedureImg transition-transform duration-300 hover:scale-110"
+          />
+        </div>
+        <h3 class="text-content-custom mt-1">5. Đàm phán</h3>
+        <p class="text-content-custom">
+          Hỗ trợ đàm phán mức giá và điều khoản hợp đồng tốt nhất.
+        </p>
+        <div class="connector-line"></div>
+      </div>
+      <!-- Arrow Timeline mobile -->
+      <div class="arrow-timelinemobile">
+        <div
+          data-aos="zoom-in"
+          data-aos-delay="200"
+          class="arrow-mobile blue-arrow"
+        >
+          <p class="text-content-custom">
+            <span class="text-white">Bước 5</span>
+          </p>
+        </div>
+      </div>
     </div>
-    <!-- cd-timeline-block -->
+    <!-- Arrow Timeline -->
+    <div class="arrow-timeline hidden lg:flex-row">
+      <div data-aos="zoom-in" data-aos-delay="0" class="arrow blue-arrow">
+        <p class="text-content-custom">
+          <span class="text-white">Bước 1</span>
+        </p>
+      </div>
+      <div data-aos="zoom-in" data-aos-delay="100" class="arrow black-arrow">
+        <p class="text-content-custom">
+          <span class="text-white">Bước 2</span>
+        </p>
+      </div>
+      <div data-aos="zoom-in" data-aos-delay="200" class="arrow blue-arrow">
+        <p class="text-content-custom">
+          <span class="text-white">Bước 3</span>
+        </p>
+      </div>
+      <div data-aos="zoom-in" data-aos-delay="300" class="arrow black-arrow">
+        <p class="text-content-custom">
+          <span class="text-white">Bước 4</span>
+        </p>
+      </div>
+      <div data-aos="zoom-in" data-aos-delay="400" class="arrow blue-arrow">
+        <p class="text-content-custom">
+          <span class="text-white">Bước 5</span>
+        </p>
+      </div>
+      <div data-aos="zoom-in" data-aos-delay="500" class="arrow black-arrow">
+        <p class="text-content-custom">
+          <span class="text-white">Bước 6</span>
+        </p>
+      </div>
+    </div>
 
-    <div data-aos="fade-up" data-aos-delay="300" class="cd-timeline-block">
-      <div class="cd-timeline-img cd-location"></div>
+    <!-- Bottom Cards -->
+    <div class="cards-row bottom-row flex flex-col lg:flex-row">
+      <div class="spacer2"></div>
+      <!-- card 4 -->
+      <div
+        data-aos="zoom-in"
+        data-aos-delay="300"
+        class="cardProced green-card"
+      >
+        <div class="connector-line top"></div>
+        <div class="chart-box">
+          <img
+            src="../../assets/images/services/dam-phan-chinh-sach-toi-uu.jpg"
+            alt=""
+            class="procedureImg transition-transform duration-300 hover:scale-110"
+          />
+        </div>
+        <h3 class="text-content-custom mt-1">2. Gửi báo giá phù hợp</h3>
+        <p class="text-content-custom">
+          Chọn lọc tòa nhà phù hợp và gửi danh sách báo giá chi tiết.
+        </p>
+        <div class="connector-linemobile"></div>
+      </div>
+      <!-- Arrow Timeline mobile -->
+      <div class="arrow-timelinemobile">
+        <div
+          data-aos="zoom-in"
+          data-aos-delay="0"
+          class="arrow-mobile blue-arrow"
+        >
+          <p class="text-content-custom">
+            <span class="text-white">Bước 2</span>
+          </p>
+        </div>
+      </div>
 
-      <div class="cd-timeline-content">
-        <h3 class="procedure">4. Tư vấn chuyên sâu</h3>
-        <p>
+      <div class="spacer2"></div>
+      <!-- card 5 -->
+      <div
+        data-aos="zoom-in"
+        data-aos-delay="500"
+        class="cardProced green-card"
+      >
+        <div class="connector-line top"></div>
+        <div class="chart-box">
+          <img
+            src="../../assets/images/services/gui-thong-tin-bao-gia.jpg"
+            alt=""
+            class="procedureImg transition-transform duration-300 hover:scale-110"
+          />
+          <!-- <div class="pie-chart" style="--percent: 80;">
+                                <span class="percent-text">80%</span>
+                            </div> -->
+        </div>
+        <h3 class="text-content-custom mt-1">4. Tư vấn chuyên sâu</h3>
+        <p class="text-content-custom">
           Phân tích ưu – nhược điểm từng tòa nhà và đề xuất lựa chọn tối ưu.
         </p>
-        <!-- <span class="cd-date">Feb 18</span> -->
+        <div class="connector-linemobile"></div>
       </div>
-      <!-- cd-timeline-content -->
-    </div>
-    <!-- cd-timeline-block -->
-
-    <div data-aos="fade-up" data-aos-delay="300" class="cd-timeline-block">
-      <div class="cd-timeline-img cd-movie"></div>
-
-      <div class="cd-timeline-content">
-        <h3 class="procedure">5. Đàm phán</h3>
-        <p>Hỗ trợ đàm phán mức giá và điều khoản hợp đồng tốt nhất.</p>
-        <!-- <span class="cd-date">Feb 26</span> -->
+      <!-- Arrow Timeline mobile -->
+      <div class="arrow-timelinemobile">
+        <div
+          data-aos="zoom-in"
+          data-aos-delay="300"
+          class="arrow-mobile black-arrow"
+        >
+          <p class="text-content-custom">
+            <span class="text-white">Bước 4</span>
+          </p>
+        </div>
       </div>
-      <!-- cd-timeline-content -->
-    </div>
-    <!-- cd-timeline-block -->
 
-    <div data-aos="fade-up" data-aos-delay="300" class="cd-timeline-block">
-      <div class="cd-timeline-img cd-movie"></div>
-
-      <div class="cd-timeline-content">
-        <h3 class="procedure">6. Ký hợp đồng & bàn giao</h3>
-        <p>Hỗ trợ ký hợp đồng thuê và chuẩn bị chuyển vào văn phòng mới.</p>
-        <!-- <span class="cd-date">Feb 26</span> -->
+      <div class="spacer2"></div>
+      <!-- card 6 -->
+      <div
+        data-aos="zoom-in"
+        data-aos-delay="700"
+        class="cardProced green-card"
+      >
+        <div class="connector-line top"></div>
+        <div class="chart-box">
+          <img
+            src="../../assets/images/services/hoan-thien-va-ban-giao.jpg"
+            alt=""
+            class="procedureImg transition-transform duration-300 hover:scale-110"
+          />
+        </div>
+        <h3 class="text-content-custom mt-1">6. Ký hợp đồng & bàn giao</h3>
+        <p class="text-content-custom">
+          Hỗ trợ ký hợp đồng thuê và chuẩn bị chuyển vào văn phòng mới.
+        </p>
+        <div class="connector-linemobile"></div>
       </div>
-      <!-- cd-timeline-content -->
+      <!-- Arrow Timeline mobile -->
+      <div class="arrow-timelinemobile">
+        <div
+          data-aos="zoom-in"
+          data-aos-delay="200"
+          class="arrow-mobile blue-arrow"
+        >
+          <p class="text-content-custom">
+            <span class="text-white">Bước 6</span>
+          </p>
+        </div>
+      </div>
     </div>
-    <!-- cd-timeline-block -->
   </div>
-  <!-- cd-timeline -->
 </div>

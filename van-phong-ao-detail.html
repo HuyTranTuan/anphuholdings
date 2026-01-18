@@ -249,7 +249,7 @@
       <!-- Ảnh lớn -->
       <figure
         class="overflow-hidden rounded-xl shadow-sm lg:col-span-2"
-        data-aos="flip-left"
+        data-aos="fade-up"
       >
         <a
           href="assets/images/detail/detail-1.jpg"
@@ -266,7 +266,7 @@
       </figure>
       <!-- 4 hình bên phải (hidden on mobile) -->
       <div class="hidden grid-cols-2 gap-2 lg:col-span-2 lg:!grid">
-        <div class="overflow-hidden rounded-xl shadow-sm" data-aos="flip-right">
+        <div class="overflow-hidden rounded-xl shadow-sm" data-aos="fade-up">
           <a
             href="assets/images/detail/detail-2.jpg"
             data-fancybox="gallery"
@@ -280,7 +280,7 @@
             />
           </a>
         </div>
-        <div class="overflow-hidden rounded-xl shadow-sm" data-aos="flip-right">
+        <div class="overflow-hidden rounded-xl shadow-sm" data-aos="fade-up">
           <a
             href="assets/images/detail/detail-3.jpg"
             data-fancybox="gallery"
@@ -294,7 +294,7 @@
             />
           </a>
         </div>
-        <div class="overflow-hidden rounded-xl shadow-sm" data-aos="flip-right">
+        <div class="overflow-hidden rounded-xl shadow-sm" data-aos="fade-up">
           <a
             href="assets/images/detail/detail-4.jpg"
             data-fancybox="gallery"
@@ -308,7 +308,7 @@
             />
           </a>
         </div>
-        <div class="overflow-hidden rounded-xl shadow-sm" data-aos="flip-right">
+        <div class="overflow-hidden rounded-xl shadow-sm" data-aos="fade-up">
           <a
             href="assets/images/detail/detail-5.jpg"
             data-fancybox="gallery"
@@ -332,12 +332,10 @@
           <!-- Left Column - Main Description (8 columns) -->
           <article
             class="rounded-xl bg-white p-6 shadow-sm lg:col-span-8"
-            data-aos="flip-left"
+            data-aos="fade-up"
             data-aos-delay="100"
           >
-            <h2 class="mb-4 text-2xl font-bold text-slate-900 lg:text-3xl">
-              Beyond Coworking Space
-            </h2>
+            <h2 class="heading-2 mb-4">Beyond Coworking Space</h2>
 
             <!-- Building Badges -->
             <!-- <div class="mb-4 flex flex-wrap gap-2">
@@ -361,7 +359,7 @@
             <address
               class="mb-4 flex items-center gap-2 text-sm not-italic text-slate-600"
             >
-              <i class="fas fa-location-dot text-base"></i>
+              <i class="fas fa-location-dot text-content-custom"></i>
               <strong>Địa chỉ:</strong>
               <a
                 href="https://www.google.com/maps/search/?api=1&query=9+Đinh+Tiên+Hoàng,+Quận+1,+TP.+Hồ+Chí+Minh"
@@ -375,13 +373,11 @@
 
             <div class="my-4 h-px bg-slate-100" role="separator"></div>
 
-            <h2 class="mb-3 text-xl font-semibold text-slate-900">
-              Giới thiệu Beyond Coworking Space
-            </h2>
+            <h2 class="heading-2 mb-3">Giới thiệu Beyond Coworking Space</h2>
 
             <!-- building parameters -->
             <section class="rounded-xl bg-white p-6 shadow-sm">
-              <h2 class="mb-6 text-lg font-bold">Thông số tòa nhà</h2>
+              <h2 class="heading-2 mb-6">Thông số tòa nhà</h2>
               <div class="grid grid-cols-1 gap-4 text-sm md:grid-cols-3">
                 <div
                   class="border-greey-500 flex items-center gap-3 rounded-[10px] border p-1.5"
@@ -692,9 +688,7 @@
 
             <!-- Building Service -->
             <section class="rounded-xl bg-white p-6 shadow-sm">
-              <h2 class="mb-6 text-lg font-bold !text-secondary">
-                Giá, phí dịch vụ và chi phí khác
-              </h2>
+              <h2 class="heading-2 mb-6">Giá, phí dịch vụ và chi phí khác</h2>
               <dl
                 class="grid grid-cols-1 gap-4 text-sm text-slate-700 md:grid-cols-3"
               >
@@ -947,9 +941,7 @@
               nghiệm làm việc chất lượng cao.
             </p>
 
-            <h2 class="mb-3 mt-6 text-xl font-semibold text-slate-900">
-              Ưu điểm nổi bật
-            </h2>
+            <h2 class="heading-2 mb-3 mt-6">Ưu điểm nổi bật</h2>
             <ul
               class="mb-4 ml-5 list-disc space-y-2 text-sm leading-relaxed text-slate-700"
             >
@@ -1049,7 +1041,7 @@
 
             <button
               id="toggle-content-btn"
-              class="mx-auto mt-4 flex items-center gap-2 rounded-lg border-2 border-primary px-6 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white"
+              class="mx-auto mt-4 flex items-center gap-2 rounded-lg border-2 border-secondary px-6 py-2.5 text-sm font-semibold text-secondary transition-colors hover:border-primary hover:text-primary"
               onclick="
                 document
                   .getElementById('expandable-content')
@@ -1065,30 +1057,28 @@
 
           <!-- Right Column - Building Info & Amenities (4 columns) -->
           <aside class="relative lg:col-span-4">
-            <div class="sticky top-24 pt-2" data-aos="flip-right">
-              <div
-                class="border-navy/20 rounded-xl border-2 bg-gradient-to-br from-blue-50 to-blue-100 p-6"
-              >
+            <div class="sticky top-24 pt-2" data-aos="fade-up">
+              <div class="rounded-xl border-2 border-primary bg-white p-6">
                 <!-- Fixed Rental Price Banner -->
                 <div
-                  class="from-navy to-navy-light mb-2 rounded-xl bg-gradient-to-r p-4 text-center shadow-lg"
+                  class="mb-2 rounded-xl border border-primary bg-primary p-4 text-center shadow-lg"
                 >
                   <p class="mb-1 text-xs font-semibold uppercase text-white">
                     Giá thuê
                   </p>
-                  <p class="text-2xl font-extrabold text-secondary-300">
+                  <p class="text-2xl font-extrabold text-white">
                     20 ~ 22 USD
                     <span class="text-sm text-white">/m²/tháng</span>
                   </p>
                 </div>
                 <!-- Contact Buttons -->
-                <div class="mb-5 flex justify-between gap-2.5">
+                <div class="mb-3 mt-3 flex justify-between gap-2.5">
                   <a
                     href="tel:0987110011"
-                    class="from-navy to-navy-light inline-flex w-1/2 items-center gap-2 rounded-lg bg-gradient-to-r p-2 text-white transition-all duration-300 hover:shadow-xl"
+                    class="group inline-flex w-1/2 items-center gap-2 rounded-lg border border-secondary bg-gradient-to-r p-2 text-secondary transition-all duration-300 hover:border-primary hover:shadow-xl"
                   >
                     <svg
-                      class="svg-inline--fa fa-phone text-base"
+                      class="svg-inline--fa fa-phone group-hover:text-primary"
                       aria-hidden="true"
                       focusable="false"
                       data-prefix="fas"
@@ -1103,13 +1093,15 @@
                         d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"
                       ></path>
                     </svg>
-                    <span class="font-semibold">0987110011</span>
+                    <span class="font-semibold group-hover:text-primary"
+                      >0987110011</span
+                    >
                   </a>
                   <button
-                    class="border-navy hover:bg-navy w-1/2 rounded-lg border-[1px] bg-white p-2 font-semibold text-primary transition-all duration-300 hover:text-white"
+                    class="group w-1/2 rounded-lg border border-secondary p-2 font-semibold transition-all duration-300 hover:border-primary"
                   >
                     <svg
-                      class="svg-inline--fa fa-comments mr-1.5"
+                      class="svg-inline--fa fa-comments mr-1.5 group-hover:text-primary"
                       aria-hidden="true"
                       focusable="false"
                       data-prefix="fas"
@@ -1124,7 +1116,7 @@
                         d="M208 352c114.9 0 208-78.8 208-176S322.9 0 208 0S0 78.8 0 176c0 38.6 14.7 74.3 39.6 103.4c-3.5 9.4-8.7 17.7-14.2 24.7c-4.8 6.2-9.7 11-13.3 14.3c-1.8 1.6-3.3 2.9-4.3 3.7c-.5 .4-.9 .7-1.1 .8l-.2 .2s0 0 0 0s0 0 0 0C1 327.2-1.4 334.4 .8 340.9S9.1 352 16 352c21.8 0 43.8-5.6 62.1-12.5c9.2-3.5 17.8-7.4 25.2-11.4C134.1 343.3 169.8 352 208 352zM448 176c0 112.3-99.1 196.9-216.5 207C255.8 457.4 336.4 512 432 512c38.2 0 73.9-8.7 104.7-23.9c7.5 4 16 7.9 25.2 11.4c18.3 6.9 40.3 12.5 62.1 12.5c6.9 0 13.1-4.5 15.2-11.1c2.1-6.6-.2-13.8-5.8-17.9c0 0 0 0 0 0s0 0 0 0l-.2-.2c-.2-.2-.6-.4-1.1-.8c-1-.8-2.5-2-4.3-3.7c-3.6-3.3-8.5-8.1-13.3-14.3c-5.5-7-10.7-15.4-14.2-24.7c24.9-29 39.6-64.7 39.6-103.4c0-92.8-84.9-168.9-192.6-175.5c.4 5.1 .6 10.3 .6 15.5z"
                       ></path>
                     </svg>
-                    Tư vấn nhanh
+                    <span class="group-hover:text-primary">Tư vấn nhanh</span>
                   </button>
                 </div>
 
@@ -1173,7 +1165,7 @@
 
                   <button
                     type="submit"
-                    class="from-navy to-navy-light w-full rounded-lg bg-gradient-to-r py-2.5 text-base font-bold text-white transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                    class="text-content-custom w-full rounded-lg border border-secondary py-2.5 font-bold text-secondary transition-all duration-300 hover:scale-105 hover:border-primary hover:text-primary hover:shadow-xl"
                   >
                     Cần Tư Vấn Ngay
                   </button>
@@ -1311,7 +1303,7 @@
           <li>
             <button
               type="button"
-              class="group flex w-full items-center justify-between rounded-lg p-2 text-base text-gray-900 transition duration-75 hover:bg-gray-200 dark:text-white dark:hover:bg-gray-700"
+              class="text-content-custom group flex w-full items-center justify-between rounded-lg p-2 transition duration-75 hover:bg-gray-200 dark:text-white dark:hover:bg-gray-700"
               aria-controls="dropdown-cho-thue-van-phong"
               data-collapse-toggle="dropdown-cho-thue-van-phong"
             >
@@ -1543,7 +1535,7 @@
           <li>
             <button
               type="button"
-              class="group flex w-full items-center justify-between rounded-lg p-2 text-base text-gray-900 transition duration-75 hover:bg-gray-200 dark:text-white dark:hover:bg-gray-700"
+              class="text-content-custom group flex w-full items-center justify-between rounded-lg p-2 transition duration-75 hover:bg-gray-200 dark:text-white dark:hover:bg-gray-700"
               aria-controls="dropdown-vp-tron-goi"
               data-collapse-toggle="dropdown-vp-tron-goi"
             >
@@ -1678,7 +1670,7 @@
           <li>
             <button
               type="button"
-              class="group flex w-full items-center justify-between rounded-lg p-2 text-base text-secondary"
+              class="text-content-custom group flex w-full items-center justify-between rounded-lg p-2"
               aria-controls="dropdown-van-phong-ao"
               data-collapse-toggle="dropdown-van-phong-ao"
             >

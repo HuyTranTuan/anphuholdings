@@ -191,7 +191,7 @@
 
   /* form */
   .form-input {
-    @apply border-line-100 placeholder:text-nature-200 w-full rounded-lg border bg-white px-4 py-2 text-base text-secondary transition focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20;
+    @apply border-line-100 placeholder:text-nature-200 text-content-custom w-full rounded-lg border bg-white px-4 py-2 transition focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20;
   }
 
   /* text area */
