@@ -3488,6 +3488,9 @@ textarea:focus {
 .justify-around {
   justify-content: space-around;
 }
+.justify-evenly {
+  justify-content: space-evenly;
+}
 .gap-0 {
   gap: 0;
 }
@@ -7327,27 +7330,27 @@ html {
 }
 @media (min-width: 640px) {
   .common-hero-heading {
-    font-size: 35px;
+    font-size: 30px;
   }
 }
 @media (min-width: 768px) {
   .common-hero-heading {
-    font-size: 45px;
+    font-size: 33px;
   }
 }
 @media (min-width: 1024px) {
   .common-hero-heading {
-    font-size: 55px;
+    font-size: 35px;
   }
 }
 @media (min-width: 1280px) {
   .common-hero-heading {
-    font-size: 65px;
+    font-size: 37px;
   }
 }
 @media (min-width: 1536px) {
   .common-hero-heading {
-    font-size: 75px;
+    font-size: 40px;
   }
 }
 .common-details-heading {
@@ -7470,7 +7473,15 @@ html {
   color: var(--nature-500);
 }
 .text-content-custom {
-  font-size: 18px;
+  font-size: 16px;
+  color: var(--nature-500);
+}
+.percent-satisfy {
+  margin-bottom: 0.75rem;
+  text-align: center;
+  font-size: 35px;
+  font-weight: 700;
+  letter-spacing: -2%;
   color: var(--nature-500);
 }
 @media (min-width: 768px) {
@@ -7482,6 +7493,10 @@ html {
   .heading-2 {
     margin-bottom: 1.25rem;
     font-size: 30px;
+  }
+  .percent-satisfy {
+    margin-bottom: 1.25rem;
+    font-size: 40px;
   }
   .text-content-custom {
     font-size: 20px;
@@ -10243,6 +10258,21 @@ html {
 .\*\:justify-center > * {
   justify-content: center;
 }
+.\*\:justify-start > * {
+  justify-content: flex-start;
+}
+.\*\:justify-end > * {
+  justify-content: flex-end;
+}
+.\*\:justify-around > * {
+  justify-content: space-around;
+}
+.\*\:justify-between > * {
+  justify-content: space-between;
+}
+.\*\:justify-evenly > * {
+  justify-content: space-evenly;
+}
 .\*\:gap-2 > * {
   gap: 0.5rem;
 }
@@ -12181,6 +12211,24 @@ html {
     font-size: 1.125rem;
     line-height: 1.75rem;
   }
+  .\*\:md\:justify-center > * {
+    justify-content: center;
+  }
+  .\*\:md\:justify-start > * {
+    justify-content: flex-start;
+  }
+  .\*\:md\:justify-end > * {
+    justify-content: flex-end;
+  }
+  .\*\:md\:justify-between > * {
+    justify-content: space-between;
+  }
+  .\*\:md\:justify-around > * {
+    justify-content: space-around;
+  }
+  .\*\:md\:justify-evenly > * {
+    justify-content: space-evenly;
+  }
   .placeholder\:md\:text-base::-moz-placeholder {
     font-size: 1rem;
     line-height: 1.5rem;
@@ -13469,6 +13517,12 @@ html {
   .xl\:\*\:justify-center > * {
     justify-content: center;
   }
+  .xl\:\*\:justify-start > * {
+    justify-content: flex-start;
+  }
+  .xl\:\*\:justify-end > * {
+    justify-content: flex-end;
+  }
   .\*\:xl\:text-2xl > * {
     font-size: 1.5rem;
     line-height: 2rem;
@@ -13709,4 +13763,16 @@ html {
   --tw-backdrop-blur: blur(4px);
   -webkit-backdrop-filter: var(--tw-backdrop-blur);
   backdrop-filter: var(--tw-backdrop-blur);
+}
+
+.rating-product-btn {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 769px) {
+  .rating-product-btn {
+    justify-content: flex-end;
+  }
 }

@@ -5,11 +5,11 @@
 
 .dropdown-rent-child {
   position: absolute;
-  top: 60px;
-  left: 70%;
+  top: 40px;
+  left: 60%;
   z-index: 50;
-  min-width: 750px;
-  max-width: 1290px;
+  min-width: 730px;
+  max-width: 1250px;
   height: 400px;
   overflow: hidden;
   display: flex;
@@ -58,11 +58,10 @@
 }
 
 .rent-left-body-ward {
-  display: none;
   padding: 10px;
   overflow: hidden;
   overscroll-behavior: none;
-  position: relative;
+  display: none;
 }
 
 .rent-left-tab {
@@ -88,10 +87,10 @@
 .rent-office-district:hover ~ .rent-left-body > .rent-left-body-ward {
   display: none;
 }
-.rent-office-district.active ~ .rent-left-body > .rent-left-body-district {
+.rent-office-district.activate ~ .rent-left-body > .rent-left-body-district {
   display: grid;
 }
-.rent-office-district.active ~ .rent-left-body > .rent-left-body-ward {
+.rent-office-district.activate ~ .rent-left-body > .rent-left-body-ward {
   display: none;
 }
 
@@ -101,10 +100,10 @@
 .rent-office-ward:hover ~ .rent-left-body > .rent-left-body-district {
   display: none;
 }
-.rent-office-ward.active ~ .rent-left-body > .rent-left-body-ward {
+.rent-office-ward.activate ~ .rent-left-body > .rent-left-body-ward {
   display: block;
 }
-.rent-office-ward.active ~ .rent-left-body > .rent-left-body-district {
+.rent-office-ward.activate ~ .rent-left-body > .rent-left-body-district {
   display: none;
 }
 
@@ -132,10 +131,10 @@
 .dropdown-package-child {
   position: absolute;
   top: 40px;
-  left: -10%;
+  left: -20%;
   z-index: 50;
-  min-width: 750px;
-  max-width: 1290px;
+  min-width: 730px;
+  max-width: 1250px;
   height: 400px;
   overflow: hidden;
   display: flex;
@@ -216,12 +215,14 @@
 .package-office-district:hover ~ .package-left-body > .package-left-body-ward {
   display: none;
 }
-.package-office-district.active
+.package-office-district.activate
   ~ .package-left-body
   > .package-left-body-district {
   display: grid;
 }
-.package-office-district.active ~ .package-left-body > .package-left-body-ward {
+.package-office-district.activate
+  ~ .package-left-body
+  > .package-left-body-ward {
   display: none;
 }
 
@@ -231,10 +232,12 @@
 .package-office-ward:hover ~ .package-left-body > .package-left-body-district {
   display: none;
 }
-.package-office-ward.active ~ .package-left-body > .package-left-body-ward {
+.package-office-ward.activate ~ .package-left-body > .package-left-body-ward {
   display: block;
 }
-.package-office-ward.active ~ .package-left-body > .package-left-body-district {
+.package-office-ward.activate
+  ~ .package-left-body
+  > .package-left-body-district {
   display: none;
 }
 
@@ -262,10 +265,10 @@
 .dropdown-virtual-child {
   position: absolute;
   top: 40px;
-  left: -150%;
+  left: -175%;
   z-index: 50;
-  min-width: 750px;
-  max-width: 1290px;
+  min-width: 730px;
+  max-width: 1250px;
   height: 400px;
   overflow: hidden;
   display: flex;
@@ -346,12 +349,14 @@
 .virtual-office-district:hover ~ .virtual-left-body > .virtual-left-body-ward {
   display: none;
 }
-.virtual-office-district.active
+.virtual-office-district.activate
   ~ .virtual-left-body
   > .virtual-left-body-district {
   display: grid;
 }
-.virtual-office-district.active ~ .virtual-left-body > .virtual-left-body-ward {
+.virtual-office-district.activate
+  ~ .virtual-left-body
+  > .virtual-left-body-ward {
   display: none;
 }
 
@@ -361,10 +366,12 @@
 .virtual-office-ward:hover ~ .virtual-left-body > .virtual-left-body-district {
   display: none;
 }
-.virtual-office-ward.active ~ .virtual-left-body > .virtual-left-body-ward {
+.virtual-office-ward.activate ~ .virtual-left-body > .virtual-left-body-ward {
   display: block;
 }
-.virtual-office-ward.active ~ .virtual-left-body > .virtual-left-body-district {
+.virtual-office-ward.activate
+  ~ .virtual-left-body
+  > .virtual-left-body-district {
   display: none;
 }
 
@@ -409,17 +416,20 @@ ul[class*='-left-body-ward-container'] {
 }
 
 div[class*='rent-left-body-ward']
-  > ul[class*='-left-body-ward-ward-']:first-child {
+  li:first-child
+  ul[class*='-left-body-ward-ward-'] {
   visibility: visible;
   opacity: 1;
 }
-ul[class*='package-left-body-ward']
-  > ul[class*='-left-body-ward-ward-']:first-child {
+div[class*='package-left-body-ward']
+  li:first-child
+  ul[class*='-left-body-ward-ward-'] {
   visibility: visible;
   opacity: 1;
 }
-ul[class*='page-left-body-ward']
-  > ul[class*='-left-body-ward-ward-']:first-child {
+div[class*='page-left-body-ward']
+  li:first-child
+  ul[class*='-left-body-ward-ward-'] {
   visibility: visible;
   opacity: 1;
 }
@@ -440,6 +450,14 @@ li[class*='-left-body-ward-district-']:hover
   > ul[class*='-left-body-ward-ward-'] {
   visibility: visible;
   opacity: 1;
+}
+
+li:has(+ li[class*='-left-body-ward-district-']:hover)
+  > ul[class*='-left-body-ward-ward-'],
+li:has(~ li[class*='-left-body-ward-district-']:hover)
+  > ul[class*='-left-body-ward-ward-'] {
+  visibility: hidden;
+  opacity: 0;
 }
 
 .header-phone-btn {
@@ -489,5 +507,24 @@ li[class*='-left-body-ward-district-']:hover
   .header-phone-text {
     right: 120%;
     top: -20%;
+  }
+}
+
+.nav-item-header {
+  color: #231f20;
+  font-weight: bold;
+}
+.nav-item-header:hover {
+  color: #1ba0e1;
+}
+
+@media (min-width: 768px) {
+  .nav-item-header {
+    font-size: 16px;
+  }
+}
+@media (min-width: 900px) {
+  .nav-item-header {
+    font-size: 18px;
   }
 }

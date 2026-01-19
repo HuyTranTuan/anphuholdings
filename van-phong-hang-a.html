@@ -694,48 +694,49 @@
 
     <script>
       document.addEventListener('DOMContentLoaded', () => {
-        const header = [
-          includeHTML('#header', './partials/common/header2.html'),
-        ];
-        Promise.all(header).then(() => {
-          showHeader();
-        });
-        includeHTML(
-          '#breadCrumb',
-          './partials/common/bread-crumb.html',
-          initBreadcrumb,
-        );
         const loads = [
+          includeHTML('#header', './partials/common/header2.html'),
+          includeHTML(
+            '#breadCrumb',
+            './partials/common/bread-crumb.html',
+            initBreadcrumb,
+          ),
           includeHTML('#mega-search', './partials/common/search-mega.html'),
+          includeHTML('#ratingStar', './partials/common/rating-star.html'),
+          includeHTML(
+            '#officeRentalFilter',
+            './partials/office-rental/office-rental-level-filter.html',
+          ),
+          includeHTML('#pagination', './partials/common/pagination.html'),
+          includeHTML(
+            '#officeRentalLevelA',
+            './partials/office-rental/office-rental-level-a.html',
+          ),
+          includeHTML('#contact2', './partials/common/contact.html'),
+          includeHTML('#map', './partials/common/map-1.html'),
+          includeHTML(
+            '#generalInformationLevel',
+            './partials/common/general-information-level.html',
+          ),
+          includeHTML(
+            '#ratingProduct',
+            './partials/common/rating-product.html',
+          ),
+          includeHTML('#faqLevel', './partials/common/faq-level.html'),
+          includeHTML(
+            '#consultingTeam',
+            './partials/common/consulting-team.html',
+          ),
+
+          includeHTML('#footer', './partials/common/footer.html'),
         ];
+
         Promise.all(loads).then(() => {
+          showHeader();
+          initVPChoThue();
           megaSearchEvent();
           resetMegaSearchForm();
         });
-        includeHTML('#ratingStar', './partials/common/rating-star.html');
-        includeHTML(
-          '#officeRentalFilter',
-          './partials/office-rental/office-rental-level-filter.html',
-        );
-        includeHTML('#pagination', './partials/common/pagination.html');
-        includeHTML(
-          '#officeRentalLevelA',
-          './partials/office-rental/office-rental-level-a.html',
-        );
-        includeHTML('#contact2', './partials/common/contact.html');
-        includeHTML('#map', './partials/common/map-1.html');
-        includeHTML(
-          '#generalInformationLevel',
-          './partials/common/general-information-level.html',
-        );
-        includeHTML('#ratingProduct', './partials/common/rating-product.html');
-        includeHTML('#faqLevel', './partials/common/faq-level.html');
-        includeHTML(
-          '#consultingTeam',
-          './partials/common/consulting-team.html',
-        );
-
-        includeHTML('#footer', './partials/common/footer.html');
       });
     </script>
 

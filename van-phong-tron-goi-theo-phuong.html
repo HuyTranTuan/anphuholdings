@@ -950,26 +950,16 @@
 
     <script>
       document.addEventListener('DOMContentLoaded', () => {
-        const header = [
-          includeHTML('#header', './partials/common/header2.html'),
-        ];
-        Promise.all(header).then(() => {
-          showHeader();
-        });
-        includeHTML(
-          '#breadCrumb',
-          './partials/common/bread-crumb.html',
-          initBreadcrumb,
-        );
-        const megasearch = [
-          includeHTML('#mega-search', './partials/common/search-mega.html'),
-        ];
-        Promise.all(megasearch).then(() => {
-          megaSearchEvent();
-          resetMegaSearchForm();
-        });
-        includeHTML('#ratingStar', './partials/common/rating-star.html');
         const loads = [
+          includeHTML('#header', './partials/common/header2.html'),
+          includeHTML(
+            '#breadCrumb',
+            './partials/common/bread-crumb.html',
+            initBreadcrumb,
+          ),
+          includeHTML('#mega-search', './partials/common/search-mega.html'),
+
+          includeHTML('#ratingStar', './partials/common/rating-star.html'),
           includeHTML(
             '#officeRentalOutstanding',
             './partials/packageRental/office-package-outstanding-ward.html',
@@ -1042,34 +1032,37 @@
             '#officeRentalWardBinhChanh',
             './partials/packageRental/office-package-ward-sample.html',
           ),
+          includeHTML(
+            '#processConsulting',
+            './partials/office-rental/process-consulting.html',
+          ),
+          includeHTML('#map', './partials/common/map-1.html'),
+          includeHTML('#pagination', './partials/common/pagination.html'),
+          includeHTML(
+            '#consultingTeam',
+            './partials/common/consulting-team.html',
+          ),
+          includeHTML(
+            '#generalInformation',
+            './partials/common/general-information.html',
+          ),
+          includeHTML('#handbook', './partials/office-rental/handbook.html'),
+          includeHTML(
+            '#officeNewWard',
+            './partials/office-rental/office-new-ward.html',
+          ),
+          includeHTML('#faq', './partials/common/faq.html'),
+          includeHTML('#contact2', './partials/common/contact.html'),
+
+          includeHTML('#footer', './partials/common/footer.html'),
         ];
-        // Wait for ALL of them to finish, then init
+
         Promise.all(loads).then(() => {
           initVPChoThue();
+          showHeader();
+          megaSearchEvent();
+          resetMegaSearchForm();
         });
-        includeHTML(
-          '#processConsulting',
-          './partials/office-rental/process-consulting.html',
-        );
-        includeHTML('#map', './partials/common/map-1.html');
-        includeHTML('#pagination', './partials/common/pagination.html');
-        includeHTML(
-          '#consultingTeam',
-          './partials/common/consulting-team.html',
-        );
-        includeHTML(
-          '#generalInformation',
-          './partials/common/general-information.html',
-        );
-        includeHTML('#handbook', './partials/office-rental/handbook.html');
-        includeHTML(
-          '#officeNewWard',
-          './partials/office-rental/office-new-ward.html',
-        );
-        includeHTML('#faq', './partials/common/faq.html');
-        includeHTML('#contact2', './partials/common/contact.html');
-
-        includeHTML('#footer', './partials/common/footer.html');
       });
     </script>
 
@@ -1199,6 +1192,39 @@
           },
         });
       }
+
+      function initlogoSwiper() {
+        const el = document.querySelector('.investor-logo-swiper');
+        console.log(el);
+        if (!el || el.classList.contains('swiper-initialized')) return;
+
+        new Swiper(el, {
+          slidesPerView: 4,
+          spaceBetween: 24,
+          loop: true,
+          speed: 800,
+          grabCursor: true,
+
+          // navigation: {
+          //   nextEl: '.investor-logo-swiper-next',
+          //   prevEl: '.investor-logo-swiper-prev',
+          // },
+
+          autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          },
+
+          breakpoints: {
+            0: { slidesPerView: 1, spaceBetween: 16 },
+            640: { slidesPerView: 2, spaceBetween: 20 },
+            1024: { slidesPerView: 3, spaceBetween: 24 },
+            1280: { slidesPerView: 4, spaceBetween: 24 },
+          },
+        });
+      }
+      initlogoSwiper();
     </script>
   </body>
 </html>

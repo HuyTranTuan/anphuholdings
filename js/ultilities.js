@@ -1,54 +1,69 @@
 function showHeader() {
+  // rentalOffice
   const rentalOfficeTabWard = document.querySelector('.rent-office-ward');
   const rentalOfficeTabDistrict = document.querySelector(
     '.rent-office-district',
   );
-
-  rentalOfficeTabDistrict.addEventListener('click', () => {
-    rentalOfficeTabDistrict.classList.add('active');
-    rentalOfficeTabWard.classList.remove('active');
+  rentalOfficeTabDistrict.addEventListener('mouseenter', () => {
+    rentalOfficeTabDistrict.classList.add('activate');
+    rentalOfficeTabWard.classList.remove('activate');
   });
 
-  rentalOfficeTabWard.addEventListener('click', () => {
-    rentalOfficeTabWard.classList.add('active');
-    rentalOfficeTabDistrict.classList.remove('active');
+  rentalOfficeTabWard.addEventListener('mouseenter', () => {
+    rentalOfficeTabWard.classList.add('activate');
+    rentalOfficeTabDistrict.classList.remove('activate');
   });
 
+  // packageOffice
   const packageOfficeTabWard = document.querySelector('.package-office-ward');
   const packageOfficeTabDistrict = document.querySelector(
     '.package-office-district',
   );
 
-  packageOfficeTabDistrict.addEventListener('click', () => {
-    packageOfficeTabDistrict.classList.add('active');
-    packageOfficeTabWard.classList.remove('active');
+  packageOfficeTabDistrict.addEventListener('mouseenter', () => {
+    packageOfficeTabDistrict.classList.add('activate');
+    packageOfficeTabWard.classList.remove('activate');
   });
 
-  packageOfficeTabWard.addEventListener('click', () => {
-    packageOfficeTabWard.classList.add('active');
-    packageOfficeTabDistrict.classList.remove('active');
+  packageOfficeTabWard.addEventListener('mouseenter', () => {
+    packageOfficeTabWard.classList.add('activate');
+    packageOfficeTabDistrict.classList.remove('activate');
   });
 
+  // virtualOffice
   const virtualOfficeTabWard = document.querySelector('.virtual-office-ward');
   const virtualOfficeTabDistrict = document.querySelector(
     '.virtual-office-district',
   );
 
-  virtualOfficeTabDistrict.addEventListener('click', () => {
-    virtualOfficeTabDistrict.classList.add('active');
-    virtualOfficeTabWard.classList.remove('active');
+  virtualOfficeTabDistrict.addEventListener('mouseenter', () => {
+    virtualOfficeTabDistrict.classList.add('activate');
+    virtualOfficeTabWard.classList.remove('activate');
   });
 
-  virtualOfficeTabWard.addEventListener('click', () => {
-    virtualOfficeTabWard.classList.add('active');
-    virtualOfficeTabDistrict.classList.remove('active');
+  virtualOfficeTabWard.addEventListener('mouseenter', () => {
+    virtualOfficeTabWard.classList.add('activate');
+    virtualOfficeTabDistrict.classList.remove('activate');
+  });
+
+  const header = document.querySelector('#header');
+  header.addEventListener('mouseleave', () => {
+    rentalOfficeTabWard.classList.remove('activate');
+    rentalOfficeTabDistrict.classList.remove('activate');
+    packageOfficeTabWard.classList.remove('activate');
+    packageOfficeTabDistrict.classList.remove('activate');
+    virtualOfficeTabWard.classList.remove('activate');
+    virtualOfficeTabDistrict.classList.remove('activate');
   });
 
   const headerPhoneBtn = document.querySelector('.header-phone-btn');
   const headerPhoneText = document.querySelector('.header-phone-text');
 
-  headerPhoneBtn.addEventListener('click', () => {
-    headerPhoneText.classList.toggle('active');
+  headerPhoneBtn.addEventListener('mouseenter', () => {
+    headerPhoneText.classList.add('active');
+  });
+  headerPhoneBtn.addEventListener('mouseleave', () => {
+    headerPhoneText.classList.remove('active');
   });
 }
 function megaSearchEvent() {

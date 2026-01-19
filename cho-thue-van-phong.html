@@ -13,6 +13,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="./styles/quy-trinh-tim-van-phong.css" />
 
     <title>Cho Thuê Văn Phòng Theo Quận</title>
 
@@ -101,9 +102,7 @@
           class="container flex h-[170px] flex-col items-center justify-center sm:h-[200px] md:h-[250px]"
           data-aos="fade-up"
         >
-          <h1 id="pageTitle" class="common-hero-heading">
-            Cho Thuê Văn Phòng Theo Quận
-          </h1>
+          <h1 id="pageTitle" class="common-hero-heading">Cho Thuê Văn Phòng</h1>
 
           <!-- Breadcrumb -->
           <div
@@ -149,6 +148,9 @@
       <section id="officeRentalWardThuDuc"></section>
       <section id="officeRentalWardBinhChanh"></section>
     </section>
+
+    <!-- Quy trình tìm văn phòng2 -->
+    <section id="officeSearchProcess2"></section>
 
     <!-- maps -->
     <!-- đang bị sai layout -->
@@ -740,26 +742,15 @@
 
     <script>
       document.addEventListener('DOMContentLoaded', () => {
-        const header = [
-          includeHTML('#header', './partials/common/header2.html'),
-        ];
-        Promise.all(header).then(() => {
-          showHeader();
-        });
-        includeHTML(
-          '#breadCrumb',
-          './partials/common/bread-crumb.html',
-          initBreadcrumb,
-        );
-        const megasearch = [
-          includeHTML('#mega-search', './partials/common/search-mega.html'),
-        ];
-        Promise.all(megasearch).then(() => {
-          megaSearchEvent();
-          resetMegaSearchForm();
-        });
-        includeHTML('#ratingStar', './partials/common/rating-star.html');
         const loads = [
+          includeHTML('#header', './partials/common/header2.html'),
+          includeHTML(
+            '#breadCrumb',
+            './partials/common/bread-crumb.html',
+            initBreadcrumb,
+          ),
+          includeHTML('#mega-search', './partials/common/search-mega.html'),
+          includeHTML('#ratingStar', './partials/common/rating-star.html'),
           includeHTML(
             '#officeRental',
             './partials/office-rental/office-rental.html',
@@ -832,29 +823,35 @@
             '#officeRentalWardBinhChanh',
             './partials/office-rental/office-rental-ward-binh-chanh.html',
           ),
+          includeHTML(
+            '#officeSearchProcess2',
+            './partials/home/quy-trinh-tim-van-phong-2.html',
+          ),
+          includeHTML('#map', './partials/common/map-1.html'),
+          includeHTML('#pagination', './partials/common/pagination.html'),
+          includeHTML(
+            '#consultingTeam',
+            './partials/common/consulting-team.html',
+          ),
+          includeHTML(
+            '#generalInformation',
+            './partials/common/general-information.html',
+          ),
+          includeHTML('#handbook', './partials/office-rental/handbook.html'),
+          includeHTML(
+            '#officeNewWard',
+            './partials/office-rental/office-new-ward.html',
+          ),
+          includeHTML('#faq', './partials/common/faq.html'),
+          includeHTML('#contact2', './partials/common/contact.html'),
+          includeHTML('#footer', './partials/common/footer.html'),
         ];
-        // Wait for ALL of them to finish, then init
         Promise.all(loads).then(() => {
+          showHeader();
           initVPChoThue();
+          megaSearchEvent();
+          resetMegaSearchForm();
         });
-        includeHTML('#map', './partials/common/map-1.html');
-        includeHTML('#pagination', './partials/common/pagination.html');
-        includeHTML(
-          '#consultingTeam',
-          './partials/common/consulting-team.html',
-        );
-        includeHTML(
-          '#generalInformation',
-          './partials/common/general-information.html',
-        );
-        includeHTML('#handbook', './partials/office-rental/handbook.html');
-        includeHTML(
-          '#officeNewWard',
-          './partials/office-rental/office-new-ward.html',
-        );
-        includeHTML('#faq', './partials/common/faq.html');
-        includeHTML('#contact2', './partials/common/contact.html');
-        includeHTML('#footer', './partials/common/footer.html');
       });
     </script>
 
