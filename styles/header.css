@@ -428,7 +428,7 @@ ul[class*='-child-right'] > ul {
 ul[class*='-left-body-ward-ward-'] {
   position: absolute;
   top: 5px;
-  left: 165px;
+  left: 155px;
   height: 100%;
   display: flex;
   gap: 10px;
@@ -447,7 +447,7 @@ ul[class*='-left-body-ward-ward-'] {
 ul[class*='-left-body-ward-container'] {
   width: 170px;
   height: 270px;
-  padding: 10px;
+  padding: 10px 0;
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: #231f20 #f4f5f6;
