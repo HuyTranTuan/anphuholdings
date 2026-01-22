@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="./styles/header.css" />
     <link rel="stylesheet" href="./styles/quy-trinh-tim-van-phong.css" />
 
-    <title>An Phú Holdings</title>
+    <title>An Phú Office</title>
 
     <style>
       .home-search-btn {
@@ -110,7 +110,7 @@
           data-aos="fade-up"
           data-aos-anchor-placement="top-bottom"
           data-aos-delay="300"
-          class="flex w-full items-center justify-between gap-20 rounded-md border border-[#ededed] bg-white p-4 shadow-shadow4"
+          class="flex w-full items-center justify-between gap-10 rounded-md border border-[#ededed] bg-white p-4 shadow-shadow4"
         >
           <div class="w-full grow space-y-1 lg:space-y-[10px]">
             <input
@@ -140,7 +140,7 @@
       </section>
     </div>
 
-    <div class="about-counter-container one-screen">
+    <div class="about-counter-container one-screen bg-gray-50">
       <!-- About started -->
       <section
         id="about"
@@ -590,37 +590,43 @@
     <section id="whyChooseUs" class="one-screen"></section>
 
     <!-- our services -->
-    <section class="one-screen" id="ourServices"></section>
+    <section class="one-screen bg-gray-50" id="ourServices"></section>
 
     <!-- Quy trình tìm văn phòng2 -->
     <section id="officeSearchProcess2"></section>
 
     <!-- Offices by district -->
-    <section id="officesByDistrict" class="one-screen"></section>
+    <section id="officesByDistrict" class="one-screen bg-gray-50"></section>
 
     <!-- New ward office -->
-    <section id="newWardOffice" class="one-screen bg-gray-50"></section>
+    <section id="newWardOffice" class="one-screen"></section>
 
     <!-- Outstanding Building -->
-    <section id="outstandingBuilding"></section>
+    <!-- <section id="outstandingBuilding"></section> -->
+
+    <!-- Outstanding Building -->
+    <section id="outstandingBuildingDistrict" class="bg-gray-50"></section>
 
     <!-- User Reviews -->
     <section id="usersReview" class="one-screen"></section>
 
     <!-- Partners and investors -->
-    <section id="partners" class="one-screen bg-gray-50 py-12"></section>
+    <section id="partners" class="one-screen bg-gray-50"></section>
+
+    <!-- Customer -->
+    <section id="customer" class="pb-30 bg-slate-50"></section>
 
     <!-- Awards Section -->
-    <section id="awards" class="one-screen bg-white py-16"></section>
+    <!-- <section id="awards" class="one-screen bg-white py-16"></section> -->
 
     <!-- press news -->
-    <section id="pressNews" class="one-screen bg-white py-16"></section>
+    <!-- <section id="pressNews" class="one-screen bg-white py-16"></section> -->
 
     <!-- FAQ Section -->
-    <section id="faq" class="bg-white py-16"></section>
+    <section id="faq" class="py-16"></section>
 
     <!-- Contact Us Section  -->
-    <section id="contact" class="one-screen overflow-hidden"></section>
+    <section id="contact" class="overflow-hidden"></section>
 
     <!-- Responsive menu -->
     <div
@@ -632,7 +638,7 @@
       <a href="#">
         <img
           src="assets/logo/anphu-holdinngs-80x80.png"
-          alt="An Phú Holdings"
+          alt="An Phú Office"
           class="size-fit"
           width="80"
           height="40"
@@ -1181,6 +1187,7 @@
     <script src="js/swiper-bundle.min.js"></script>
     <script src="js/users-rating-swiper.js"></script>
     <script src="js/include.js"></script>
+    <script src="js/counter.js"></script>
     <script src="js/ultilities.js"></script>
 
     <script>
@@ -1204,58 +1211,37 @@
             './partials/home/office-by-district.html',
           ),
           includeHTML('#newWardOffice', './partials/home/new-ward-office.html'),
+          // includeHTML(
+          //   '#outstandingBuilding',
+          //   './partials/home/outstanding-building.html',
+          // ),
           includeHTML(
-            '#outstandingBuilding',
-            './partials/home/outstanding-building.html',
+            '#outstandingBuildingDistrict',
+            './partials/office-rental/office-rent-outstanding-district.html',
           ),
           includeHTML('#usersReview', './partials/home/users-reviews.html'),
           includeHTML(
             '#partners',
             './partials/home/partners-and-investors.html',
           ),
+          includeHTML('#customer', './partials/home/customer-logo-slider.html'),
           includeHTML('#contact', './partials/common/contact.html'),
-          includeHTML('#awards', './partials/home/awards.html'),
-          includeHTML('#pressNews', './partials/home/press-news.html'),
+          // includeHTML('#awards', './partials/home/awards.html'),
+          // includeHTML('#pressNews', './partials/home/press-news.html'),
           includeHTML('#faq', './partials/common/faq.html'),
           includeHTML('#footer', './partials/common/footer.html'),
         ];
 
         Promise.all(loads).then(() => {
           showHeader();
-
-          // 1. Re-initialize Flowbite for the drawer/dropdowns
-          if (typeof initFlowbite === 'function') {
-            initFlowbite();
-          }
-
-          // 2. INITIALIZE ODOMETERS MANUALLY
-          // We check for the Odometer object and trigger the counters
-          setTimeout(() => {
-            const teamMembers = document.querySelector('#h4-team-members');
-            const clientReviews = document.querySelector('#h4-client-reviews');
-            const projectsCom = document.querySelector('#h4-projects-com');
-            const winAwards = document.querySelector('#h4-win-awards');
-
-            if (teamMembers) {
-              // Create new Odometer instances and set their final values
-              const od1 = new Odometer({ el: teamMembers, value: 0 });
-              od1.update(2900); // The number you want to count up to
-            }
-
-            if (clientReviews) {
-              const od2 = new Odometer({ el: clientReviews, value: 0 });
-              od2.update(23500); // The number you want to count up to
-            }
-            if (projectsCom) {
-              const od3 = new Odometer({ el: projectsCom, value: 0 });
-              od3.update(500000); // The number you want to count up to
-            }
-            if (winAwards) {
-              const od4 = new Odometer({ el: winAwards, value: 0 });
-              od4.update(50); // The number you want to count up to
-            }
-          }, 500); // Small delay to ensure the DOM is fully painted
+          initVPChoThue();
+          initCustomerLogoSwiper();
+          counter();
         });
+        // 1. Re-initialize Flowbite for the drawer/dropdowns
+        if (typeof initFlowbite === 'function') {
+          initFlowbite();
+        }
       });
     </script>
   </body>

@@ -1,3 +1,20 @@
+.header-nav {
+  /* min-width: 700px; */
+  justify-content: space-around;
+  align-items: center;
+}
+@media (min-width: 950px) {
+  .header-nav {
+    min-width: 700px;
+  }
+}
+
+@media (min-width: 768px) {
+  .header-nav {
+    min-width: 600px;
+  }
+}
+
 /* Cho thue van phong */
 .dropdown-rent {
   position: relative;
@@ -6,11 +23,11 @@
 .dropdown-rent-child {
   position: absolute;
   top: 40px;
-  left: 60%;
+  left: 0%;
   z-index: 50;
-  min-width: 730px;
+  min-width: 800px;
   max-width: 1250px;
-  height: 400px;
+  height: 370px;
   overflow: hidden;
   display: flex;
   gap: 10px;
@@ -35,49 +52,52 @@
 .rent-child-left {
   flex-grow: 1;
   display: flex;
-  gap: 20px;
   position: relative;
   overflow: hidden;
 }
 
 .rent-left-body {
   position: absolute;
-  top: 30px;
+  top: 25px;
   width: 100%;
   margin: 5px;
-  border-radius: 10px;
 }
 
 .rent-left-body-district {
   display: grid;
-  padding: 10px;
+  margin-top: 10px;
+  padding-top: 3px;
   overflow-y: auto;
   overscroll-behavior: none;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 10px;
+  border-top: 1px solid #ddd;
 }
 
 .rent-left-body-ward {
-  padding: 10px;
+  margin-top: 10px;
+  padding-top: 3px;
   overflow: hidden;
   overscroll-behavior: none;
   display: none;
+  border-top: 1px solid #ddd;
 }
 
 .rent-left-tab {
-  flex-grow: 1;
   text-align: left;
   height: 40px;
+  padding: 5px 10px;
   cursor: pointer;
 }
 
-.rent-left-tab > a {
+.rent-left-tab > span {
   color: #231f20;
   text-decoration: none;
   padding: 10px 15px;
+  font-size: 18px;
 }
 
-.rent-left-tab:hover > a {
+.rent-left-tab:hover > span {
   color: #1ba0e1 !important;
 }
 
@@ -86,6 +106,9 @@
 }
 .rent-office-district:hover ~ .rent-left-body > .rent-left-body-ward {
   display: none;
+}
+.rent-office-district.activate {
+  color: #1ba0e1;
 }
 .rent-office-district.activate ~ .rent-left-body > .rent-left-body-district {
   display: grid;
@@ -97,6 +120,7 @@
 .rent-office-ward:hover ~ .rent-left-body > .rent-left-body-ward {
   display: block;
 }
+
 .rent-office-ward:hover ~ .rent-left-body > .rent-left-body-district {
   display: none;
 }
@@ -113,13 +137,12 @@
 
 @media (min-width: 768px) {
   .dropdown-rent-child {
-    transform: translateX(-37%);
+    transform: translateX(-20%);
   }
 }
-@media (min-width: 900px) {
+@media (min-width: 950px) {
   .dropdown-rent-child {
-    transform: translateX(-40%);
-    height: 420px;
+    transform: translateX(-100px);
   }
 }
 
@@ -131,11 +154,11 @@
 .dropdown-package-child {
   position: absolute;
   top: 40px;
-  left: -20%;
+  left: 0px;
   z-index: 50;
-  min-width: 730px;
+  min-width: 800px;
   max-width: 1250px;
-  height: 400px;
+  height: 370px;
   overflow: hidden;
   display: flex;
   gap: 10px;
@@ -160,38 +183,39 @@
 .package-child-left {
   flex-grow: 1;
   display: flex;
-  gap: 20px;
   position: relative;
   overflow: hidden;
 }
 
 .package-left-body {
   position: absolute;
-  top: 30px;
+  top: 25px;
   width: 100%;
   margin: 5px;
-  border-radius: 10px;
 }
 
 .package-left-body-district {
   display: grid;
-  padding: 10px;
+  margin-top: 10px;
+  padding-top: 3px;
   overflow-y: auto;
   overscroll-behavior: none;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 10px;
+  border-top: 1px solid #ddd;
 }
 
 .package-left-body-ward {
   display: none;
-  padding: 10px;
+  margin-top: 10px;
+  padding-top: 3px;
   overflow: hidden;
   overscroll-behavior: none;
   position: relative;
+  border-top: 1px solid #ddd;
 }
 
 .package-left-tab {
-  flex-grow: 1;
   text-align: left;
   height: 40px;
   cursor: pointer;
@@ -201,6 +225,7 @@
   color: #231f20;
   text-decoration: none;
   padding: 10px 15px;
+  font-size: 18px;
 }
 
 .package-left-tab:hover > a {
@@ -247,13 +272,12 @@
 
 @media (min-width: 768px) {
   .dropdown-package-child {
-    transform: translateX(-43%);
+    transform: translateX(-47%);
   }
 }
-@media (min-width: 900px) {
+@media (min-width: 950px) {
   .dropdown-package-child {
-    transform: translateX(-35%);
-    height: 420px;
+    transform: translateX(-43%);
   }
 }
 
@@ -265,11 +289,11 @@
 .dropdown-virtual-child {
   position: absolute;
   top: 40px;
-  left: -175%;
+  left: 0%;
   z-index: 50;
-  min-width: 730px;
+  min-width: 800px;
   max-width: 1250px;
-  height: 400px;
+  height: 370px;
   overflow: hidden;
   display: flex;
   gap: 10px;
@@ -294,38 +318,39 @@
 .virtual-child-left {
   flex-grow: 1;
   display: flex;
-  gap: 20px;
   position: relative;
   overflow: hidden;
 }
 
 .virtual-left-body {
   position: absolute;
-  top: 30px;
+  top: 25px;
   width: 100%;
   margin: 5px;
-  border-radius: 10px;
 }
 
 .virtual-left-body-district {
   display: grid;
-  padding: 10px;
+  margin-top: 10px;
+  padding-top: 3px;
   overflow-y: auto;
   overscroll-behavior: none;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 10px;
+  border-top: 1px solid #ddd;
 }
 
 .virtual-left-body-ward {
   display: none;
-  padding: 10px;
+  margin-top: 10px;
+  padding-top: 3px;
   overflow: hidden;
   overscroll-behavior: none;
   position: relative;
+  border-top: 1px solid #ddd;
 }
 
 .virtual-left-tab {
-  flex-grow: 1;
   text-align: left;
   height: 40px;
   cursor: pointer;
@@ -335,6 +360,7 @@
   color: #231f20;
   text-decoration: none;
   padding: 10px 15px;
+  font-size: 18px;
 }
 
 .virtual-left-tab:hover > a {
@@ -381,27 +407,36 @@
 
 @media (min-width: 768px) {
   .dropdown-virtual-child {
-    transform: translateX(-43%);
+    transform: translateX(-75%);
   }
 }
-@media (min-width: 900px) {
+@media (min-width: 950px) {
   .dropdown-virtual-child {
-    transform: translateX(-35%);
-    height: 420px;
+    transform: translateX(-68%);
   }
+}
+
+ul[class*='-child-right'] > li:first-child {
+  font-size: 18px;
+  font-weight: bold;
+}
+ul[class*='-child-right'] > ul {
+  margin-top: 13px;
+  border-top: 1px solid #ddd;
 }
 
 ul[class*='-left-body-ward-ward-'] {
   position: absolute;
-  top: 0;
-  left: 160px;
+  top: 5px;
+  left: 165px;
   height: 100%;
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
   align-content: flex-start;
   min-width: 350px;
-  padding: 10px;
+  padding: 10px 40px;
+
   visibility: hidden;
   opacity: 0;
   transition: visbility, opacity;
@@ -410,9 +445,12 @@ ul[class*='-left-body-ward-ward-'] {
 }
 
 ul[class*='-left-body-ward-container'] {
-  width: 160px;
-  padding: 0 5px;
+  width: 170px;
+  height: 270px;
+  padding: 10px;
   overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #231f20 #f4f5f6;
 }
 
 div[class*='rent-left-body-ward']
@@ -421,17 +459,41 @@ div[class*='rent-left-body-ward']
   visibility: visible;
   opacity: 1;
 }
+.rent-office-ward:hover
+  ~ .rent-left-body
+  > .rent-left-body-ward
+  > .rent-left-body-ward-container
+  > li.rent-left-body-ward-district-1 {
+  background-color: #1ba0e1;
+  color: #ffffff;
+}
 div[class*='package-left-body-ward']
   li:first-child
   ul[class*='-left-body-ward-ward-'] {
   visibility: visible;
   opacity: 1;
 }
-div[class*='page-left-body-ward']
+.package-office-ward:hover
+  ~ .package-left-body
+  > .package-left-body-ward
+  > .package-left-body-ward-container
+  > li.package-left-body-ward-district-1 {
+  background-color: #1ba0e1;
+  color: #ffffff;
+}
+div[class*='virtual-left-body-ward']
   li:first-child
   ul[class*='-left-body-ward-ward-'] {
   visibility: visible;
   opacity: 1;
+}
+.virtual-office-ward:hover
+  ~ .virtual-left-body
+  > .virtual-left-body-ward
+  > .virtual-left-body-ward-container
+  > li.virtual-left-body-ward-district-1 {
+  background-color: #1ba0e1;
+  color: #ffffff;
 }
 
 li[class*='-left-body-ward-district-'] {
@@ -463,8 +525,8 @@ li:has(~ li[class*='-left-body-ward-district-']:hover)
 .header-phone-btn {
   padding: 0.25rem 0.5rem;
   background-color: #ffffff;
-  color: #334155;
-  border: 1px solid #cbd5e1;
+  color: #231f20;
+  border: 1px solid #231f20;
   border-radius: 0.5rem;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
@@ -472,8 +534,8 @@ li:has(~ li[class*='-left-body-ward-district-']:hover)
 }
 
 .header-phone-btn:hover {
-  background-color: #f8fafc;
-  border-color: #94a3b8;
+  border-color: #1ba0e1;
+  color: #1ba0e1;
 }
 
 .header-phone-text {
@@ -503,7 +565,7 @@ li:has(~ li[class*='-left-body-ward-district-']:hover)
     top: 100%;
   }
 }
-@media (min-width: 900px) {
+@media (min-width: 950px) {
   .header-phone-text {
     right: 120%;
     top: -20%;
@@ -523,8 +585,15 @@ li:has(~ li[class*='-left-body-ward-district-']:hover)
     font-size: 16px;
   }
 }
-@media (min-width: 900px) {
+@media (min-width: 950px) {
   .nav-item-header {
     font-size: 18px;
   }
+}
+
+.spliter {
+  width: 2px;
+  height: 30px;
+  background-color: #231f20;
+  margin: 5px 10px;
 }

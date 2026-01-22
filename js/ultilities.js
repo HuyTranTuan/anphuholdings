@@ -488,3 +488,190 @@ function sideSlider() {
     priceSlider.noUiSlider.reset();
   });
 }
+
+function initReviewSwiper() {
+  // reviews
+  const swiper = new Swiper('.h2-reviews-swiper', {
+    slidesPerView: 3,
+    pagination: {
+      el: '.h2-reviews-swiper-pagination',
+      clickable: true,
+      dynamicBullets: true,
+    },
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+        spaceBetween: 10,
+      },
+      320: {
+        slidesPerView: 2,
+        spaceBetween: 10,
+      },
+      640: {
+        slidesPerView: 2,
+        spaceBetween: 15,
+      },
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+    },
+  });
+}
+
+function initAgentSwiper() {
+  // agent
+  const agent = new Swiper('.h2-agent-swiper', {
+    slidesPerView: 3,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+        spaceBetween: 10,
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+    },
+  });
+}
+
+function initPhuongSwiper() {
+  const el = document.querySelector('.phuong-swiper');
+  if (!el || el.classList.contains('swiper-initialized')) return;
+
+  new Swiper(el, {
+    slidesPerView: 4,
+    spaceBetween: 24,
+    loop: true,
+    speed: 800,
+    grabCursor: true,
+
+    navigation: {
+      nextEl: '.phuong-swiper-button-next',
+      prevEl: '.phuong-swiper-button-prev',
+    },
+
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
+    },
+
+    breakpoints: {
+      0: { slidesPerView: 1, spaceBetween: 16 },
+      640: { slidesPerView: 2, spaceBetween: 20 },
+      1024: { slidesPerView: 3, spaceBetween: 24 },
+      1280: { slidesPerView: 4, spaceBetween: 24 },
+    },
+  });
+}
+
+// Team Swiper
+function initTeamSwiper() {
+  const el = document.querySelector('.team-swiper');
+
+  if (!el) return;
+
+  // chống init trùng
+  if (el.classList.contains('swiper-initialized')) return;
+
+  new Swiper(el, {
+    slidesPerView: 4,
+    spaceBetween: 24,
+    // Ensure autoHeight is false (default)
+    autoHeight: false,
+    // This helper ensures all slides are same height
+    watchSlidesProgress: true,
+    loop: true,
+    speed: 800,
+    grabCursor: true,
+
+    autoplay: {
+      delay: 3500,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
+    },
+
+    breakpoints: {
+      0: { slidesPerView: 1, spaceBetween: 16 },
+      640: { slidesPerView: 2, spaceBetween: 20 },
+      1024: { slidesPerView: 3, spaceBetween: 24 },
+      1280: { slidesPerView: 4, spaceBetween: 24 },
+    },
+  });
+}
+
+function initInvestorLogoSwiper() {
+  const el = document.querySelector('.investor-logo-swiper');
+  if (!el || el.classList.contains('swiper-initialized')) return;
+
+  new Swiper(el, {
+    slidesPerView: 4,
+    spaceBetween: 24,
+    loop: true,
+    speed: 800,
+    grabCursor: true,
+
+    navigation: {
+      nextEl: '.investor-logo-swiper-next',
+      prevEl: '.investor-logo-swiper-prev',
+    },
+
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
+    },
+
+    breakpoints: {
+      0: { slidesPerView: 1, spaceBetween: 16 },
+      640: { slidesPerView: 2, spaceBetween: 20 },
+      1024: { slidesPerView: 3, spaceBetween: 24 },
+      1280: { slidesPerView: 4, spaceBetween: 24 },
+    },
+  });
+}
+
+function initCustomerLogoSwiper() {
+  const el = document.querySelector('.customer-logo-swiper');
+  if (!el || el.classList.contains('swiper-initialized')) return;
+
+  new Swiper(el, {
+    slidesPerView: 4,
+    spaceBetween: 24,
+    loop: true,
+    speed: 800,
+    grabCursor: true,
+
+    navigation: {
+      nextEl: '.customer-logo-swiper-next',
+      prevEl: '.customer-logo-swiper-prev',
+    },
+
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
+    },
+
+    breakpoints: {
+      0: { slidesPerView: 1, spaceBetween: 16 },
+      640: { slidesPerView: 2, spaceBetween: 20 },
+      1024: { slidesPerView: 3, spaceBetween: 24 },
+      1280: { slidesPerView: 4, spaceBetween: 24 },
+    },
+  });
+}

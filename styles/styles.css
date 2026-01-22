@@ -2681,6 +2681,19 @@ textarea:focus {
 .line-clamp-2 {
   -webkit-line-clamp: 2;
 }
+
+.line-clamp-3 {
+  -webkit-line-clamp: 3;
+}
+.line-clamp-3,
+.line-clamp-4 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+.line-clamp-4 {
+  -webkit-line-clamp: 4;
+}
 .block {
   display: block;
 }
@@ -2990,6 +3003,9 @@ textarea:focus {
 .max-h-\[38px\] {
   max-height: 38px;
 }
+.max-h-\[150px\] {
+  max-height: 150px;
+}
 .max-h-\[432px\] {
   max-height: 432px;
 }
@@ -3007,6 +3023,9 @@ textarea:focus {
 }
 .min-h-96 {
   min-height: 24rem;
+}
+.min-h-\[150px\] {
+  min-height: 150px;
 }
 .min-h-\[600px\] {
   min-height: 600px;
@@ -7446,24 +7465,7 @@ html {
   letter-spacing: -0.025em;
   /* color: var(--nature-600); */
 }
-@media (min-width: 1024px) {
-  .heading-hero {
-    font-size: 3.75rem;
-    line-height: 1;
-  }
-}
-@media (min-width: 1280px) {
-  .heading-hero {
-    font-size: 6rem;
-    line-height: 1;
-  }
-}
-@media (min-width: 1536px) {
-  .heading-hero {
-    font-size: 60px;
-    line-height: 112px;
-  }
-}
+
 .heading-2 {
   margin-bottom: 0.75rem;
   text-align: center;
@@ -7484,12 +7486,28 @@ html {
   letter-spacing: -2%;
   color: var(--nature-500);
 }
+
+.heading-tagline {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-family: 'UTM Times', serif;
+  font-weight: 400;
+  font-size: 18px;
+}
 @media (min-width: 768px) {
   .heading-2 {
     margin-bottom: 0.875rem;
   }
+  .heading-tagline {
+    margin-bottom: 2rem;
+    font-size: 20px;
+  }
 }
 @media (min-width: 1024px) {
+  .heading-hero {
+    font-size: 45px;
+    line-height: 1;
+  }
   .heading-2 {
     margin-bottom: 1.25rem;
     font-size: 30px;
@@ -7501,30 +7519,29 @@ html {
   .text-content-custom {
     font-size: 20px;
   }
-}
-
-.heading-tagline {
-  margin-bottom: 1.5rem;
-  text-align: center;
-  font-family: 'UTM Times', serif;
-  font-weight: 400;
-  font-size: 20px;
-}
-@media (min-width: 768px) {
-  .heading-tagline {
-    margin-bottom: 2rem;
-  }
-}
-@media (min-width: 1024px) {
   .heading-tagline {
     margin-bottom: 2.5rem;
-    font-size: 24px;
+    font-size: 22px;
     line-height: 2rem;
   }
 }
 @media (min-width: 1280px) {
+  .heading-hero {
+    font-size: 50px;
+    line-height: 1;
+  }
   .heading-tagline {
     margin-bottom: 3rem;
+    font-size: 24px;
+  }
+  .text-content-custom {
+    font-size: 22px;
+  }
+}
+@media (min-width: 1536px) {
+  .heading-hero {
+    font-size: 60px;
+    line-height: 112px;
   }
 }
 .section-padding {
@@ -11064,6 +11081,12 @@ html {
 }
 .group:hover .group-hover\:border {
   border-width: 1px;
+}
+.group:hover .group-hover\:border-primary {
+  border-color: var(--primary-500);
+}
+.group:hover .group-hover\:border-secondary {
+  border-color: var(--secondary-500);
 }
 .group:hover .group-hover\:border-new-200 {
   border-color: var(--new-200);
