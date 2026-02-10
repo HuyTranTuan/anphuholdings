@@ -34,7 +34,7 @@
     content: "";
     background: url(/assets/images/cup.png) no-repeat;
     width: 160px;
-    height: 160px;
+    height: 140px;
     position: absolute;
     right: 0;
     bottom: 0;
@@ -42,8 +42,8 @@
 
 @media (min-width: 992px) {
     .left-col {
-    grid-column: 1 / span 5;
-    text-align: left;
+        grid-column: 1 / span 5;
+        text-align: left;
     }
 }
 
